@@ -1,0 +1,14 @@
+[
+  {"id":"email-security","icon":"mail-check","name":"VCLOUD & Email Security",
+   "tagline":{"en":"Sovereign cloud + email defense","vi":"Đám mây chủ quyền + bảo mật email"},
+   "description":{"en":"Secure cloud hosting that keeps your financial data inside Vietnam, paired with advanced email defense that stops phishing, executive spoofing, and ransomware before they reach employee inboxes.","vi":"Hạ tầng đám mây bảo mật giữ dữ liệu tài chính của bạn ngay tại Việt Nam, kết hợp bảo vệ email nâng cao chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."}},
+  {"id":"ai-legal","icon":"scale","name":"AI Legal & Compliance",
+   "tagline":{"en":"AI assistant for contracts & regulation","vi":"Trợ lý AI cho hợp đồng & quy định"},
+   "description":{"en":"A specialized AI assistant trained on State Bank of Vietnam regulations with 95% accuracy. It automates loan and contract reviews to cut routine workload by 42%, with an on-premise option to ensure total data privacy.","vi":"Trợ lý AI chuyên biệt được huấn luyện trên quy định của Ngân hàng Nhà nước, độ chính xác 95%. Tự động rà soát hợp đồng tín dụng, giảm 42% khối lượng công việc thường nhật, có tùy chọn triển khai on-premise để đảm bảo riêng tư dữ liệu tuyệt đối."}},
+  {"id":"dlp","icon":"shield-check","name":"Data Loss Prevention",
+   "tagline":{"en":"360° insider & leak protection","vi":"Chống thất thoát dữ liệu 360°"},
+   "description":{"en":"Full 360-degree monitoring across chat apps, personal webmail, and USB drives. It automatically detects sensitive customer records to stop insider fraud, prevent data leaks, and ensure Decree 13 compliance.","vi":"Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB. Tự động phát hiện hồ sơ khách hàng nhạy cảm để ngăn gian lận nội bộ, rò rỉ dữ liệu và đảm bảo tuân thủ Nghị định 13."}},
+  {"id":"database-security","icon":"database","name":"Database Security",
+   "tagline":{"en":"Query-level control & real-time masking","vi":"Kiểm soát truy vấn & che giấu dữ liệu thời gian thực"},
+   "description":{"en":"Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.","vi":"Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."}}
+]
