@@ -7,7 +7,9 @@ const read = (p) => fs.readFileSync(p, 'utf8');
 const strip = (src) => src.replace(/^import .*$/gm, '').replace(/^export /gm, '');
 const industries = fs.readdirSync('data/industries').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(read('data/industries/' + f)));
 const data = { ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
-const js = [read('js/config.js'), read('js/icons.js'), read('js/scenes.js'), read('js/app.js')].map(strip).join('\n');
+const lite = (src) => src.replace(/^\s*\/\/.*$/gm, '').replace(/\n{2,}/g, '\n');                       // drop whole-line // comments and blank runs (never touches strings/URLs)
+const css = read('css/styles.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^[ \t]+/gm, '').replace(/\n{2,}/g, '\n');
+const js = [read('js/config.js'), read('js/icons.js'), read('js/scenes.js'), read('js/app.js')].map(strip).map(lite).join('\n');
 const libs = local
   ? ['gsap.min.js', 'ScrollTrigger.min.js', 'lenis.min.js'].map((f) => `<script>${read('assets/vendor/' + f)}</script>`).join('\n')
   : ['gsap@3.12.5/dist/gsap.min.js', 'gsap@3.12.5/dist/ScrollTrigger.min.js', 'lenis@1.1.18/dist/lenis.min.js'].map((p) => `<script src="https://cdn.jsdelivr.net/npm/${p}"></script>`).join('\n');
@@ -15,9 +17,9 @@ const html = `<meta charset="utf-8">
 <title>V-TECH HUB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
 <style>
-${read('css/styles.css')}
+${css}
 </style>
 <div id="app"></div>
 ${libs}

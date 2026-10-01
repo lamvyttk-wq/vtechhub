@@ -694,5 +694,31 @@
     "vi": "Ổn định"
    }
   }
+ },
+ "ap": {
+  "play": {
+   "en": "Auto-play",
+   "vi": "Tự động phát"
+  },
+  "pause": {
+   "en": "Pause",
+   "vi": "Tạm dừng"
+  },
+  "watch": {
+   "en": "Watch the story",
+   "vi": "Xem câu chuyện tự chạy"
+  },
+  "replay": {
+   "en": "Replay",
+   "vi": "Phát lại"
+  },
+  "speed": {
+   "en": "Playback speed",
+   "vi": "Tốc độ phát"
+  },
+  "hint": {
+   "en": "Scroll or tap anywhere to take over",
+   "vi": "Cuộn hoặc chạm để tự điều khiển"
+  }
  }
 }

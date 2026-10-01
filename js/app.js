@@ -23,6 +23,8 @@ const ic = (name, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill=
 const motionOK = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasGsap = () => typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
 let lenis = null;
+const view = { max: 0, contactTop: Infinity, bundleTop: 0, chs: [], sts: [], storyTop: 0, storyH: 0 };   // layout read once per refresh, never per scroll frame
+const ap = { on: false, pending: false, speed: 1, y: 0, last: 0, tok: 0 };                                              // story auto-play
 let mm = null;
 let tickerFn = null;
 
@@ -149,6 +151,8 @@ function ctxHTML() {
   const c = state.ctx; if (!c) return '';
   return `<span class="eyebrow">${u('cta.context')}</span><b>${u('ind.chOf')} ${num(c.k + 1)} · ${esc(c.title)}</b><i>${esc(c.sols)}</i>`;
 }
+const canAuto = () => motionOK && hasGsap();
+const autoControls = () => (canAuto() ? `<span class="apbox"><button class="ap" id="ap" type="button" aria-pressed="false" title="${esc(u('ap.hint'))}">${ic('play')}<span>${u('ap.play')}</span></button><button class="apspeed" id="apspeed" type="button" aria-label="${esc(u('ap.speed'))}">1\u00d7</button></span>` : '');
 const floatCta = () => `<a class="fab btn btn-red" id="fab" href="#contact" data-scroll="#contact">${ic('phone')}<span>${u('cta.float')}</span></a>`;
 
 function footer() {
@@ -256,6 +260,7 @@ function industryPage() {
       <p class="lede hero-in" style="animation-delay:.5s">${esc(t(d.tagline))}</p>
       <div class="chips hero-in" style="animation-delay:.56s">${chips}</div>
       <div class="actions hero-in" style="animation-delay:.62s"><a class="btn btn-red" href="#story" data-scroll="#story">${u('ind.begin')} ${ic('arrow-down')}</a>
+        ${canAuto() ? `<button class="btn btn-line" type="button" data-autoplay>${ic('play')} ${u('ap.watch')}</button>` : ''}
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div>
     </div>
     <aside class="match glass spot hero-in" style="animation-delay:.45s"><span class="eyebrow">${u('ind.match')}</span><p>${u('ind.matchSub')}</p><div class="m-list">${match}</div></aside>
@@ -263,7 +268,7 @@ function industryPage() {
     <nav class="switcher hero-in" style="animation-delay:.7s" aria-label="${u('ind.otherIndustries')}">${sw}</nav></div></section>
   <section class="intro" id="intro"><div class="wrap"><span class="eyebrow rv">${u('ind.whyNow')}</span><p class="statement rv">${esc(t(d.challengesIntro))}</p></div></section>
   <div class="story" id="story">
-    <div class="story-bar"><div class="wrap"><span class="now" id="now">${u('ind.chapter')} 01 ${u('ind.of')} ${num(n)}</span><span class="name" id="nowname">${esc(t(d.chapters[0].challenge.title))}</span><div class="ticks">${ticks}</div></div><div class="progress"><i id="prog"></i></div></div>
+    <div class="story-bar"><div class="wrap"><span class="now" id="now">${u('ind.chapter')} 01 ${u('ind.of')} ${num(n)}</span><span class="name" id="nowname">${esc(t(d.chapters[0].challenge.title))}</span>${autoControls()}<div class="ticks">${ticks}</div></div><div class="progress"><i id="prog"></i></div></div>
     ${chapters}</div>
   <section class="sec resolved" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.resolved')}</h2><p class="lede rv">${u('ind.resolvedP')}</p></div><div class="tiles">${bundle}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span></div><div class="cols3">${outcomes}</div></div></section>
@@ -295,22 +300,23 @@ const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="di
 
 /* ---------------------------------------------------------------- behaviour */
 function bindChrome() {
-  const hdr = $('#hdr'), bar = $('#pgbar'), fab = $('#fab'), box = () => $('#contact');
+  const hdr = $('#hdr'), bar = $('#pgbar'), fab = $('#fab');
   let ticking = false;
   const onScroll = () => {
+    state.scrollTs = performance.now();
     if (ticking) return; ticking = true;
     requestAnimationFrame(() => {
       ticking = false;
       hdr.classList.toggle('solid', scrollY > 24);
-      const max = document.documentElement.scrollHeight - innerHeight;
-      if (bar) bar.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
-      if (fab) { const c = box(); const hide = c && c.getBoundingClientRect().top < innerHeight * .75; fab.classList.toggle('show', scrollY > 520 && !hide); }
+      if (bar) bar.style.transform = `scaleX(${view.max > 0 ? Math.min(1, scrollY / view.max) : 0})`;
+      if (fab) fab.classList.toggle('show', scrollY > 520 && view.contactTop - scrollY > innerHeight * .75);
       trackChapters();
     });
     clearTimeout(state.settle); state.settle = setTimeout(trackChapters, 160); // after a long jump, pins settle a frame later
   };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  addEventListener('scroll', onScroll, { passive: true });
   state.offScroll = () => removeEventListener('scroll', onScroll);
+  measure(); onScroll();
 
   const dds = $$('.dd');
   const closeAll = () => dds.forEach((d) => { d.classList.remove('open'); $('.nav-btn', d).setAttribute('aria-expanded', 'false'); });
@@ -329,12 +335,23 @@ function bindChrome() {
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
   state.closeAll = closeAll;
 
-  // sector explorer (home): hover/focus expands; on touch the first tap expands, the second opens
-  $$('[data-sector]').forEach((s) => {
-    const on = () => $$('[data-sector]').forEach((x) => x.classList.toggle('on', x === s));
-    s.addEventListener('mouseenter', on); s.addEventListener('focus', on);
-    s.addEventListener('click', (e) => { if (matchMedia('(hover:none)').matches && !s.classList.contains('on')) { e.preventDefault(); e.stopPropagation(); on(); } });
-  });
+  // sector explorer (home): hover/focus expands; on touch the first tap expands, the second opens. It also plays itself until the visitor takes over.
+  const secs = $$('[data-sector]');
+  if (secs.length) {
+    let idx = 0, hold = false, seen = true;
+    const setOn = (k) => { idx = k; secs.forEach((x, j) => x.classList.toggle('on', j === k)); };
+    secs.forEach((el, k) => {
+      el.addEventListener('mouseenter', () => setOn(k)); el.addEventListener('focus', () => setOn(k));
+      el.addEventListener('click', (e) => { if (matchMedia('(hover:none)').matches && !el.classList.contains('on')) { e.preventDefault(); e.stopPropagation(); setOn(k); } });
+    });
+    const box = $('#sectors');
+    ['pointerenter', 'focusin'].forEach((ev) => box.addEventListener(ev, () => { hold = true; }));
+    ['pointerleave', 'focusout'].forEach((ev) => box.addEventListener(ev, () => { hold = false; }));
+    if (motionOK && 'IntersectionObserver' in window && matchMedia('(min-width: 961px)').matches) {
+      new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe(box);
+      state.timer = setInterval(() => { if (!hold && seen && !document.hidden) setOn((idx + 1) % secs.length); }, 4200);
+    }
+  }
   // hero demo: the pain blurs away and the answer resolves; swap the copy each time the CSS loop restarts
   const demo = $('#demo');
   if (demo) {
@@ -370,6 +387,9 @@ document.addEventListener('click', (e) => {
     if (a.dataset.prefill === 'poc') { const nn = $('#f-need'); if (nn && !nn.value) nn.value = 'PoC sandbox'; }
     scrollToEl(target); return;
   }
+  if (e.target.closest('[data-autoplay]')) { apStart(); return; }
+  if (e.target.closest('#ap')) { ap.on ? apStop() : apStart(); return; }
+  if (e.target.closest('#apspeed')) { const sp = [1, 1.5, 2]; ap.speed = sp[(sp.indexOf(ap.speed) + 1) % sp.length]; apUI(); return; }
   const cp = e.target.closest('[data-copy]');
   if (cp) {
     const done = () => { const s = $('span', cp); s.textContent = u('cta.copied'); setTimeout(() => { s.textContent = u('cta.copy'); }, 1400); };
@@ -378,9 +398,15 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') state.closeAll?.(); });
+let spotEv = null;
 document.addEventListener('pointermove', (e) => {
-  const g = e.target.closest?.('.spot'); if (!g) return;
-  const r = g.getBoundingClientRect(); g.style.setProperty('--mx', `${e.clientX - r.left}px`); g.style.setProperty('--my', `${e.clientY - r.top}px`);
+  if (e.pointerType === 'touch') return;
+  const first = !spotEv; spotEv = e;
+  if (first) requestAnimationFrame(() => {
+    const ev = spotEv; spotEv = null;
+    const g = ev.target.closest?.('.spot'); if (!g) return;
+    const r = g.getBoundingClientRect(); g.style.setProperty('--mx', `${ev.clientX - r.left}px`); g.style.setProperty('--my', `${ev.clientY - r.top}px`);
+  });
 }, { passive: true });
 
 function scrollToEl(el, offset) {
@@ -391,26 +417,35 @@ function scrollToEl(el, offset) {
 }
 
 /* chapter bookkeeping (works with or without GSAP): active chapter, progress bar, contact context, jump buttons */
+function measure() {
+  view.max = document.documentElement.scrollHeight - innerHeight;
+  const c = $('#contact'); view.contactTop = c ? c.getBoundingClientRect().top + scrollY : Infinity;
+  const b = $('#bundle'); view.bundleTop = b ? b.getBoundingClientRect().top + scrollY : 0;
+  view.chs = $$('.chapter');
+  view.sts = hasGsap() ? view.chs.map((_, j) => ScrollTrigger.getById(`ch${j}`)).filter(Boolean) : [];
+  const st = $('#story'); if (st) { const r = st.getBoundingClientRect(); view.storyTop = r.top + scrollY; view.storyH = r.height; }
+}
 function trackChapters() {
-  const chs = $$('.chapter'); if (!chs.length) return;
-  const mid = innerHeight * .5, sts = hasGsap() ? chs.map((_, j) => ScrollTrigger.getById(`ch${j}`)) : [];
+  const chs = view.chs; if (!chs.length) return;
+  const mid = innerHeight * .5;
   let k = 0;
   // pinned (desktop): decide from the scroll triggers, so a long jump can't be fooled by half-applied pins
-  if (sts.length && sts.every(Boolean)) chs.forEach((_, j) => { if (scrollY >= sts[j].start - mid) k = j; });
+  if (view.sts.length === chs.length) view.sts.forEach((st, j) => { if (scrollY >= st.start - mid) k = j; });
   else chs.forEach((ch, j) => { if (ch.getBoundingClientRect().top <= mid + 40) k = j; });
-  if (state.ctx?.k === k && state.ctx.lang === state.lang) { setProgress(); return; }
+  setProgress();
+  if (state.ctx?.k === k && state.ctx.lang === state.lang) return;
   const ch = chs[k];
   state.ctx = { k, lang: state.lang, title: ch.dataset.title, sols: ch.dataset.sols };
+  chs.forEach((c, j) => c.classList.toggle('on', j === k));
   $('#now').textContent = `${u('ind.chapter')} ${num(k + 1)} ${u('ind.of')} ${num(chs.length)}`;
   $('#nowname').textContent = ch.dataset.title;
   $$('.ticks button').forEach((b, j) => { b.classList.toggle('on', j === k); b.classList.toggle('done', j < k); });
   const c = $('#ctx'); if (c) { c.hidden = false; c.innerHTML = ctxHTML(); }
-  setProgress();
 }
 function setProgress() {
-  const story = $('#story'), p = $('#prog'); if (!story || !p) return;
-  const r = story.getBoundingClientRect(), total = r.height - innerHeight * .3;
-  p.style.width = `${Math.max(0, Math.min(1, (innerHeight * .7 - r.top) / total)) * 100}%`;
+  const p = $('#prog'); if (!p || !view.storyH) return;
+  const f = (scrollY + innerHeight * .7 - view.storyTop) / (view.storyH - innerHeight * .3);
+  p.style.transform = `scaleX(${Math.max(0, Math.min(1, f)).toFixed(4)})`;
 }
 function bindStory() {
   $$('[data-goto]').forEach((b) => b.addEventListener('click', () => {
@@ -420,6 +455,88 @@ function bindStory() {
     else scrollToEl(ch);
   }));
 }
+
+/* ---------------------------------------------------------------- auto-play: the story plays itself
+   A linear scroll drive over the same pinned timelines, slower where there is something to read and quicker through the turn.
+   Any wheel / touch / key / click takes over instantly; it never fights the visitor. */
+function apRange() {
+  const n = view.sts.length;
+  const startY = n ? view.sts[0].start : view.storyTop - 90;
+  const endY = (view.bundleTop || view.storyTop + view.storyH) - 110;
+  return { startY, endY };
+}
+function apSpeed(y) {
+  if (!view.sts.length) return innerHeight * .14;                         // stacked layout (mobile): steady reading pace
+  const base = innerHeight * .21;
+  for (const st of view.sts) {
+    if (y < st.start || y > st.end) continue;
+    const p = (y - st.start) / (st.end - st.start);
+    return base * (p < .1 ? 1.5 : p < .36 ? .75 : p < .5 ? 1.25 : p < .92 ? .7 : 1.6);
+  }
+  return base * 1.7;                                                       // travelling between chapters
+}
+function apScroll(y) { if (lenis) lenis.scrollTo(y, { immediate: true, force: true }); else window.scrollTo(0, y); }
+function apTick() {
+  const now = performance.now(), dt = Math.min(.05, (now - ap.last) / 1000); ap.last = now;
+  if (Math.abs(scrollY - ap.y) > 80) return apStop();                      // something else moved the page
+  ap.y += apSpeed(ap.y) * ap.speed * dt;
+  if (ap.y >= apRange().endY) return apStop(true);
+  apScroll(ap.y);
+}
+function apUI() {
+  const b = $('#ap'), done = ap.done && !ap.on;
+  document.documentElement.classList.toggle('autoplaying', ap.on);
+  if (b) {
+    b.setAttribute('aria-pressed', String(ap.on));
+    b.innerHTML = `${ic(ap.on ? 'pause' : done ? 'rotate-ccw' : 'play')}<span>${u(ap.on ? 'ap.pause' : done ? 'ap.replay' : 'ap.play')}</span>`;
+  }
+  const sp = $('#apspeed'); if (sp) sp.textContent = `${ap.speed}\u00d7`;
+}
+function apStart() {
+  if (ap.on || !view.chs.length || !canAuto()) return;
+  const { startY, endY } = apRange(), tok = ++ap.tok;
+  const begin = () => {
+    if (tok !== ap.tok) return;
+    ap.pending = false; ap.y = scrollY; ap.last = performance.now(); ap.on = true; ap.done = false;
+    gsap.ticker.add(apTick); apUI();
+  };
+  if (scrollY < startY - 40 || scrollY > endY - 200) {                     // start (or restart) from chapter one
+    ap.done = false; ap.pending = true;
+    const to = startY + 2;
+    if (lenis) lenis.scrollTo(to, { duration: 1.6, onComplete: begin }); else { window.scrollTo({ top: to, behavior: 'smooth' }); setTimeout(begin, 1100); }
+  } else begin();
+}
+function apStop(finished = false) {
+  ap.tok++; ap.pending = false;
+  if (ap.on) gsap.ticker.remove(apTick);
+  ap.on = false;
+  if (finished) { ap.done = true; const f = $('#fab'); if (f) { f.classList.add('nudge'); setTimeout(() => f.classList.remove('nudge'), 4200); } }
+  apUI();
+}
+['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => addEventListener(ev, (e) => {
+  if (!ap.on && !ap.pending) return;
+  if (e.target.closest?.('#ap, #apspeed, [data-autoplay]')) return;
+  if (ev === 'keydown' && !['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(e.key)) return;
+  apStop();
+}, { passive: true, capture: true }));
+document.addEventListener('visibilitychange', () => { if (document.hidden && ap.on) apStop(); });
+
+/* adaptive quality: if the device can't hold ~30fps while the visitor scrolls, drop to "lite" (no backdrop blur / text blur) and remember it */
+const setLite = (on, persist) => { document.documentElement.classList.toggle('lite', on); if (persist) store.set('vth-lite', on ? '1' : '0'); };
+if (store.get('vth-lite') === '1' || navigator.connection?.saveData) setLite(true);
+(function governor() {
+  let last = 0, n = 0, sum = 0, skip = 6;
+  const t0 = performance.now();
+  const probe = (t) => {
+    if (last && t - (state.scrollTs || 0) < 120 && t - t0 > 800) {
+      const d = t - last;
+      if (d < 250 && skip-- <= 0) { sum += d; n++; }
+      if (n >= 40) { if (sum / n > 28) setLite(true, true); return; }
+    }
+    last = t; requestAnimationFrame(probe);
+  };
+  requestAnimationFrame(probe);
+})();
 
 function bindForm() {
   const form = $('#lead'); if (!form) return;
@@ -482,6 +599,7 @@ function countUp(el, tl, at) {
 function initMotion() {
   if (!hasGsap() || !motionOK) return;
   gsap.registerPlugin(ScrollTrigger);
+  if (!state.refreshBound) { ScrollTrigger.addEventListener('refresh', measure); state.refreshBound = true; }
   initLenis();
   mm = gsap.matchMedia();
 
@@ -532,7 +650,8 @@ function initMotion() {
   mm.add('(max-width: 960px) and (prefers-reduced-motion: no-preference)', () => {
     chapters.forEach((ch) => {
       const counter = $('[data-count]', ch), frame = $('.frame', ch), svg = $('svg.scene', frame);
-      gsap.timeline({ scrollTrigger: { trigger: frame, start: 'top 82%', end: 'bottom 30%', scrub: .5 } }).add(sceneTimeline(svg, frame.dataset.kind), 0);
+      const play = gsap.timeline({ paused: true }).add(sceneTimeline(svg, frame.dataset.kind), 0).timeScale(2.4);   // ~4s, then holds on the resolved state
+      ScrollTrigger.create({ trigger: frame, start: 'top 78%', end: 'bottom 15%', onEnter: () => play.restart(), onEnterBack: () => play.restart(), onLeave: () => play.pause(), onLeaveBack: () => play.pause(0) });
       gsap.from($('.pain', ch), { opacity: 0, y: 30, duration: .9, scrollTrigger: { trigger: ch, start: 'top 85%', once: true } });
       const tl = gsap.timeline({ scrollTrigger: { trigger: $('.ans', ch), start: 'top 85%', once: true } });
       tl.from($('.ans', ch), { opacity: 0, y: 40, filter: 'blur(10px)', duration: .9 });
@@ -543,6 +662,7 @@ function initMotion() {
 
 /* ---------------------------------------------------------------- lifecycle */
 function teardownMotion() {
+  apStop(); clearInterval(state.timer); state.io?.disconnect();
   state.offScroll?.(); state.offScroll = null;
   if (mm) { mm.revert(); mm = null; }
   if (hasGsap()) ScrollTrigger.getAll().forEach((s) => s.kill());
@@ -556,18 +676,30 @@ function render() {
   const s = page === 'solution' ? state.solutions.get(id) : null;
   document.title = d ? `${t(d.name)} | V-TECH HUB` : s ? `${s.name} | V-TECH HUB` : 'V-TECH HUB';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
-  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}${floatCta()}`;
-  const fit = () => $$('svg.scene').forEach(fitScene);
-  fit(); document.fonts?.ready.then(fit);
-  bindChrome(); bindForm();
-  initMotion();
-  if (hasGsap() && motionOK) ScrollTrigger.refresh();
+  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>${header()}<main>${body}</main>${footer()}${floatCta()}`;
+  bindChrome(); bindForm(); apUI();
+  // everything heavy (pins, timelines, measuring) starts after the first paint, so the hero is never waiting on it
+  const rid = state.rid = (state.rid || 0) + 1;
+  requestAnimationFrame(() => setTimeout(() => {
+    if (rid !== state.rid) return;
+    initMotion();
+    if (hasGsap() && motionOK) ScrollTrigger.refresh(); else measure();
+    if (state.restoreY != null) { const y = state.restoreY; state.restoreY = null; window.scrollTo(0, y); lenis?.scrollTo(y, { immediate: true, force: true }); }
+    // pause infinite CSS animations (marquee, hero demo, pulses) while they are offscreen
+    if ('IntersectionObserver' in window) {
+      state.io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('off', !e.isIntersecting)), { rootMargin: '80px' });
+      $$('.marq, .demo, .chapter').forEach((el) => state.io.observe(el));
+    }
+    const fit = () => fitScene($$('svg.scene'));
+    fit();
+    document.fonts?.ready.then(() => { if (rid !== state.rid) return; fit(); if (hasGsap() && motionOK) ScrollTrigger.refresh(); else measure(); });
+  }, 0));
 }
 
 function setLang(l) {
   if (l === state.lang) return;
   state.lang = l; store.set('vth-lang', l);
-  const y = scrollY; teardownMotion(); render(); scrollTo(0, y);
+  state.restoreY = scrollY; teardownMotion(); render();   // the scroll position is restored once the pins exist again
 }
 
 loadData().then(() => { render(); }).catch((e) => {

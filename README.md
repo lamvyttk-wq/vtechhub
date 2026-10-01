@@ -23,6 +23,21 @@ visitor ("You were reading..."), and a floating "Talk to an expert" button follo
 Header: a mega-menu grouped by industry; hovering an industry shows its packaged solutions. Solution pages loop the same scene.
 Mobile and `prefers-reduced-motion` get a non-pinned layout (reduced motion shows every scene in its resolved state). EN/VI toggle persists.
 
+## Auto-play and performance
+- **Auto-play story**: "Watch the story" in the industry hero (or Auto-play in the story bar) scrolls the pinned chapters by itself, slower while
+  there is something to read, quicker through the turn, then glides to the bundle and nudges the "Talk to an expert" button. Speed 1x/1.5x/2x.
+  Any wheel, touch, key or click takes over instantly. On phones scenes auto-play when they come into view; on the home page the sector explorer
+  and the hero demo rotate on their own. All of it is off for `prefers-reduced-motion`.
+- **Why it is fast** (measured in a software-rendered browser, so read the ratios, not the numbers; scroll through chapters 1-2):
+  frame time 123 ms -> 19 ms, p95 183 ms -> 33 ms (home 146 -> 21 ms). The cost was painting: three `filter: blur(70px)` orbs (~90 ms/frame), backdrop blur on large
+  glass (~30 ms), a full-screen grain overlay (~13 ms). Orbs are now pre-softened radial gradients with scroll parallax only; glass blur is 18px;
+  grain is gone. Layout is read once per ScrollTrigger refresh (never per scroll frame); the spotlight is rAF-throttled; infinite CSS animations
+  pause offscreen; pins/timelines start after the first paint (first paint ~800 -> ~560 ms); SVG pills are measured in one batched pass.
+- **Adaptive lite mode**: if a device averages worse than ~28 ms/frame while the visitor scrolls (or Save-Data is on) the page switches to `html.lite`
+  (no backdrop/text blur) and remembers it (`vth-lite`). Clear that key to re-evaluate.
+- Debugging a regression: toggle effects with an injected style (`.ambient i{filter:none}`, `*{backdrop-filter:none}`) and watch frame times; do not add
+  `filter: blur()` to anything that moves or scrolls.
+
 ## Editing content (no code)
 - `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md` (incl. `scenario` + `scene` per chapter).
 - `data/solutions.json` — shared product catalog (industries may add `newSolutions`).

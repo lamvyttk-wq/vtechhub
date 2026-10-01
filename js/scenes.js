@@ -286,16 +286,19 @@ export function sceneTimeline(svg, kind) {
   return T;
 }
 
-// Pills and chips are sized from the real text (any language, any font): call after the SVG is in the DOM and again once fonts load.
-export function fitScene(svg) {
-  svg.querySelectorAll('.gp, .chip, .sc-status > g').forEach((g) => {
-    const rect = g.querySelector(':scope > rect'), text = g.querySelector(':scope > text');
-    if (!rect || !text) return;
-    const gp = g.classList.contains('gp'), chip = g.classList.contains('chip');
+// Pills and chips are sized from the real text (any language, any font): call after the SVGs are in the DOM and again once fonts load.
+// Batched on purpose: all writes, then ONE layout for all reads, then all writes (interleaving them forces a layout per element).
+export function fitScene(svgs) {
+  const items = [...(svgs.querySelectorAll ? svgs.querySelectorAll('.gp, .chip, .sc-status > g') : [...svgs].flatMap((v) => [...v.querySelectorAll('.gp, .chip, .sc-status > g')]))]
+    .map((g) => ({ g, rect: g.querySelector(':scope > rect'), text: g.querySelector(':scope > text') })).filter((i) => i.rect && i.text);
+  items.forEach((i) => { i.text.style.fontSize = ''; });
+  items.forEach((i) => { i.w = i.text.getBBox().width; i.fs = parseFloat(getComputedStyle(i.text).fontSize); });
+  items.forEach((i) => {
+    if (!i.w) return;
+    const gp = i.g.classList.contains('gp'), chip = i.g.classList.contains('chip');
     const max = gp ? 198 : chip ? 148 : 260, pad = gp ? 44 : chip ? 40 : 44;
-    text.style.fontSize = '';
-    let w = text.getBBox().width; if (!w) return;
-    if (w + pad > max) { text.style.fontSize = `${(parseFloat(getComputedStyle(text).fontSize) * (max - pad) / w).toFixed(2)}px`; w = text.getBBox().width; }
-    rect.setAttribute('width', Math.ceil(w + pad));
+    let w = i.w;
+    if (w + pad > max) { i.text.style.fontSize = `${(i.fs * (max - pad) / w).toFixed(2)}px`; w = w * (max - pad) / w; }
+    i.rect.setAttribute('width', Math.ceil(w + pad));
   });
 }
