@@ -1,68 +1,564 @@
 {
-  "id":"retail","order":4,"icon":"shopping-bag",
-  "name":{"en":"Retail & E-Commerce","vi":"Bán lẻ & Thương mại điện tử"},
-  "title":{"en":"Retail & E-Commerce","vi":"Bán lẻ & Thương mại điện tử"},
-  "tagline":{"en":"Anti-DDoS & CDN, Web Application Firewall, sovereign VCLOUD, Data Loss Prevention and AI Legal & Compliance for always-on selling.","vi":"Chống DDoS & CDN, tường lửa ứng dụng web, VCLOUD chủ quyền, chống thất thoát dữ liệu và AI Legal & Compliance để bán hàng không gián đoạn."},
-  "bundle":["anti-ddos-cdn","web-waf","email-security","dlp","ai-legal"],
-  "regulations":["Decree 13","PCI DSS","Law on Cybersecurity","Law on Consumer Protection"],
-  "challengesIntro":{"en":"Retail revenue now concentrates into a few high-stakes moments: flash sales, double-date campaigns and holiday peaks. In those hours a slow page, a failed checkout or a leaked customer list turns directly into lost revenue and lost trust, while attackers and bots target exactly the same moments.","vi":"Doanh thu bán lẻ ngày càng dồn vào vài thời điểm quyết định: flash sale, các đợt khuyến mãi ngày đôi và mùa lễ. Chỉ cần trang web chậm, thanh toán lỗi hoặc danh sách khách hàng bị lộ trong những giờ đó là mất doanh thu và niềm tin ngay lập tức, trong khi tin tặc và bot cũng nhắm đúng vào các thời điểm này."},
-  "chapters":[
-    {"id":"peak-ddos","persona":{"en":"CTO / Head of E-Commerce Platform","vi":"CTO / Giám đốc nền tảng thương mại điện tử"},
-     "challenge":{"title":{"en":"Peak-Sale Traffic and DDoS Attacks","vi":"Lưu lượng đỉnh điểm và tấn công DDoS ngày sale"},
-       "body":{"en":"At midnight on a flash-sale day, traffic spikes tenfold. It is hard to tell real shoppers from a DDoS attack aimed at taking you offline while a competitor's campaign runs. Every minute of downtime is lost orders and wasted ad spend.","vi":"Đúng 0 giờ ngày flash sale, lưu lượng tăng vọt gấp nhiều lần. Rất khó phân biệt khách mua thật với một đợt DDoS nhằm đánh sập hệ thống đúng lúc đối thủ chạy chiến dịch. Mỗi phút gián đoạn là đơn hàng mất đi và ngân sách quảng cáo đổ bỏ."}},
-     "solutions":["anti-ddos-cdn"],
-     "response":{"title":{"en":"Absorb the attack, keep selling","vi":"Hấp thụ tấn công, bán hàng không ngừng"},
-       "body":{"en":"Anti-DDoS filtering and a CDN sit in front of your storefront, scrubbing malicious traffic and serving images and static content closer to shoppers so the origin stays free for orders.","vi":"Lớp chống DDoS và CDN đặt trước website bán hàng, lọc lưu lượng độc hại và phân phối hình ảnh, nội dung tĩnh gần người mua hơn, để máy chủ gốc dành sức cho việc xử lý đơn hàng."},
-       "points":[{"en":"Scrubs attack traffic before it reaches your origin","vi":"Lọc lưu lượng tấn công trước khi tới máy chủ gốc"},{"en":"CDN offloads images and static content at peak","vi":"CDN gánh hình ảnh và nội dung tĩnh lúc cao điểm"},{"en":"Stays up while real shoppers keep checking out","vi":"Hệ thống vẫn chạy khi khách thật tiếp tục thanh toán"}]}},
-    {"id":"bots-ato","persona":{"en":"Head of Digital & Customer Experience","vi":"Giám đốc Số & Trải nghiệm khách hàng"},
-     "challenge":{"title":{"en":"Bots, Account Takeover and Promotion Abuse","vi":"Bot, chiếm tài khoản và lạm dụng khuyến mãi"},
-       "body":{"en":"Credential-stuffing bots take over loyalty accounts and drain points, while scripts grab limited stock and vouchers before real customers can. Marketing budget leaks away and loyal shoppers complain.","vi":"Bot dò mật khẩu chiếm tài khoản thành viên và rút điểm thưởng, trong khi script vét sạch hàng giới hạn và voucher trước khi khách thật kịp mua. Ngân sách marketing thất thoát, khách hàng thân thiết phàn nàn."}},
-     "solutions":["web-waf"],
-     "response":{"title":{"en":"Stop automated abuse at the edge","vi":"Chặn lạm dụng tự động ngay từ lớp ngoài cùng"},
-       "body":{"en":"A web application firewall inspects requests to login, cart and promotion endpoints, blocking injection attacks and abusive automation while letting genuine customers through.","vi":"Tường lửa ứng dụng web kiểm tra yêu cầu vào các điểm đăng nhập, giỏ hàng và khuyến mãi, chặn tấn công injection và tự động hóa lạm dụng nhưng vẫn cho khách thật đi qua."},
-       "points":[{"en":"Protects login, cart and voucher endpoints","vi":"Bảo vệ đăng nhập, giỏ hàng và voucher"},{"en":"Blocks common web attacks such as SQL injection and XSS","vi":"Chặn tấn công web phổ biến như SQL injection, XSS"},{"en":"Rules tuned per campaign without code changes","vi":"Điều chỉnh luật theo từng chiến dịch, không sửa code"}]}},
-    {"id":"customer-data","persona":{"en":"Chief Compliance Officer / DPO","vi":"Giám đốc Tuân thủ / Cán bộ bảo vệ dữ liệu cá nhân"},
-     "challenge":{"title":{"en":"Customer Data and Decree 13 Exposure","vi":"Dữ liệu khách hàng và rủi ro theo Nghị định 13"},
-       "body":{"en":"Retailers hold phone numbers, addresses, purchase history and loyalty data across CRM, marketing agencies and store staff. Customer lists exported to personal email or USB are a common leak path, and Decree 13 puts the responsibility on you.","vi":"Doanh nghiệp bán lẻ nắm số điện thoại, địa chỉ, lịch sử mua hàng và dữ liệu thành viên rải khắp CRM, đối tác marketing và nhân viên cửa hàng. Danh sách khách hàng xuất ra email cá nhân hay USB là đường rò rỉ rất phổ biến, và Nghị định 13 đặt trách nhiệm lên doanh nghiệp."}},
-     "solutions":["dlp"],
-     "response":{"title":{"en":"Know where customer data goes","vi":"Biết dữ liệu khách hàng đang đi đâu"},
-       "body":{"en":"360-degree monitoring across chat apps, personal webmail and USB drives automatically detects customer records leaving the company, helping prevent insider leaks and supporting Decree 13 compliance.","vi":"Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB tự động nhận diện hồ sơ khách hàng bị đưa ra ngoài, giúp ngăn rò rỉ nội bộ và hỗ trợ tuân thủ Nghị định 13."},
-       "points":[{"en":"Covers chat, webmail and USB","vi":"Bao phủ chat, webmail và USB"},{"en":"Auto-detects customer and loyalty records","vi":"Tự nhận diện dữ liệu khách hàng và thành viên"},{"en":"Evidence ready for audits","vi":"Bằng chứng sẵn sàng cho kiểm toán"}]}},
-    {"id":"payment-cloud","persona":{"en":"CFO / CIO","vi":"Giám đốc Tài chính / Giám đốc CNTT"},
-     "challenge":{"title":{"en":"Payment Data, PCI DSS and Fragile Hosting","vi":"Dữ liệu thanh toán, PCI DSS và hạ tầng thiếu vững chắc"},
-       "body":{"en":"Card and payment data raises PCI DSS obligations, and phishing mail aimed at finance and procurement teams is a standard route to fraudulent supplier payments. Hosting that cannot scale or keep data in-country adds cost and audit risk.","vi":"Dữ liệu thẻ và thanh toán kéo theo nghĩa vụ PCI DSS, còn email phishing nhắm vào kế toán, mua hàng là đường quen thuộc dẫn tới chuyển tiền nhầm cho nhà cung cấp giả mạo. Hạ tầng không co giãn được hoặc không giữ dữ liệu trong nước làm tăng chi phí và rủi ro kiểm toán."}},
-     "solutions":["email-security"],
-     "response":{"title":{"en":"Sovereign cloud with a protected inbox","vi":"Đám mây chủ quyền cùng hộp thư được bảo vệ"},
-       "body":{"en":"VCLOUD hosts commerce workloads with data kept inside Vietnam, and advanced email defense filters phishing, spoofed supplier invoices and ransomware before they reach your teams.","vi":"VCLOUD lưu trữ hệ thống thương mại với dữ liệu nằm tại Việt Nam, còn bảo vệ email nâng cao lọc phishing, hóa đơn nhà cung cấp giả mạo và ransomware trước khi tới nhân viên."},
-       "points":[{"en":"Sovereign hosting inside Vietnam","vi":"Lưu trữ chủ quyền ngay tại Việt Nam"},{"en":"Filters fake supplier and payment requests","vi":"Lọc yêu cầu thanh toán, nhà cung cấp giả"},{"en":"Stops ransomware at the mail gateway","vi":"Ngăn ransomware ngay tại cổng email"}]}},
-    {"id":"contracts","persona":{"en":"Head of Legal & Procurement","vi":"Trưởng bộ phận Pháp chế & Mua hàng"},
-     "challenge":{"title":{"en":"Supplier, Landlord and Platform Contracts at Scale","vi":"Hợp đồng nhà cung cấp, mặt bằng và sàn ở quy mô lớn"},
-       "body":{"en":"A retail group manages hundreds of supplier, lease, marketplace and franchise contracts, plus changing rules on consumer protection and personal data. Manual review slows new store openings and vendor onboarding.","vi":"Một tập đoàn bán lẻ phải quản lý hàng trăm hợp đồng nhà cung cấp, thuê mặt bằng, sàn thương mại điện tử và nhượng quyền, cùng các quy định về bảo vệ người tiêu dùng và dữ liệu cá nhân luôn thay đổi. Rà soát thủ công làm chậm việc mở cửa hàng mới và đưa nhà cung cấp vào hệ thống."}},
-     "solutions":["ai-legal"],
-     "response":{"title":{"en":"Review contracts in minutes, not days","vi":"Rà soát hợp đồng trong vài phút thay vì vài ngày"},
-       "body":{"en":"An AI legal assistant automates contract review and flags risky clauses, with an on-premise option so commercial terms and supplier pricing never leave your walls.","vi":"Trợ lý AI pháp lý tự động rà soát hợp đồng và đánh dấu điều khoản rủi ro, có tùy chọn on-premise để điều khoản thương mại và giá nhà cung cấp không rời khỏi hệ thống của bạn."},
-       "points":[{"en":"Automated clause review","vi":"Tự động rà soát điều khoản"},{"en":"On-premise option for total privacy","vi":"Tùy chọn on-premise bảo mật tuyệt đối"},{"en":"Frees legal teams for high-value work","vi":"Giải phóng đội pháp chế cho việc giá trị cao"}]}}
-  ],
-  "outcomes":[
-    {"title":{"en":"Sell Without Interruption","vi":"Bán hàng không gián đoạn"},"body":{"en":"Keep the storefront and checkout available during the campaigns that matter most, protected from DDoS and automated abuse.","vi":"Giữ website và thanh toán luôn sẵn sàng trong những chiến dịch quan trọng nhất, được bảo vệ khỏi DDoS và lạm dụng tự động."}},
-    {"title":{"en":"Protect Customer Trust and Compliance","vi":"Bảo vệ niềm tin khách hàng và tuân thủ"},"body":{"en":"Safeguard customer and payment data across email, users and infrastructure, and be ready for Decree 13 and PCI DSS expectations.","vi":"Bảo vệ dữ liệu khách hàng và thanh toán trên email, người dùng và hạ tầng, sẵn sàng cho yêu cầu của Nghị định 13 và PCI DSS."}},
-    {"title":{"en":"Lower Risk and Operating Cost","vi":"Giảm rủi ro và chi phí vận hành"},"body":{"en":"One local partner for cloud, edge protection, data and legal automation reduces vendor sprawl, manual work and incident-response effort.","vi":"Một đối tác trong nước cho đám mây, bảo vệ lớp ngoài, dữ liệu và tự động hóa pháp chế giúp giảm số nhà cung cấp, công việc thủ công và nỗ lực ứng phó sự cố."}}
-  ],
-  "faq":[
-    {"q":{"en":"Do we need to move our e-commerce platform to protect it from DDoS?","vi":"Chúng tôi có cần chuyển hệ thống thương mại điện tử sang nơi khác để chống DDoS không?"},
-     "a":{"en":"Not necessarily. Anti-DDoS and CDN protection sits in front of your existing site, wherever it is hosted. VCLOUD is available if you also want sovereign hosting inside Vietnam.","vi":"Không nhất thiết. Lớp chống DDoS và CDN đặt phía trước website hiện có, dù đang lưu trữ ở đâu. VCLOUD là lựa chọn bổ sung nếu bạn muốn lưu trữ chủ quyền tại Việt Nam."}},
-    {"q":{"en":"Does this help with PCI DSS?","vi":"Giải pháp có hỗ trợ PCI DSS không?"},
-     "a":{"en":"A web application firewall, data monitoring and secure hosting support several PCI DSS control areas. Certification itself depends on your whole payment environment and assessor, so we scope it with you.","vi":"Tường lửa ứng dụng web, giám sát dữ liệu và hạ tầng an toàn hỗ trợ nhiều nhóm kiểm soát của PCI DSS. Việc đạt chứng nhận phụ thuộc toàn bộ môi trường thanh toán và đơn vị đánh giá, nên chúng tôi cùng bạn xác định phạm vi."}},
-    {"q":{"en":"How do we handle customer data under Decree 13?","vi":"Làm thế nào để xử lý dữ liệu khách hàng theo Nghị định 13?"},
-     "a":{"en":"Data Loss Prevention discovers and monitors customer records leaving through chat, webmail and USB, and VCLOUD keeps data inside Vietnam, giving you evidence for audits and incident response.","vi":"Giải pháp chống thất thoát dữ liệu phát hiện và giám sát hồ sơ khách hàng đi ra qua chat, webmail, USB, còn VCLOUD giữ dữ liệu tại Việt Nam, giúp bạn có bằng chứng cho kiểm toán và ứng phó sự cố."}}
-  ],
-  "newSolutions":[
-    {"id":"anti-ddos-cdn","icon":"zap","name":"Anti-DDoS & CDN",
-     "tagline":{"en":"Stay online at peak traffic","vi":"Luôn trực tuyến khi lưu lượng đỉnh điểm"},
-     "description":{"en":"Anti-DDoS filtering and content delivery network that absorb attack traffic and speed up content delivery, keeping storefronts and checkout available during flash sales and campaigns.","vi":"Lớp lọc chống DDoS và mạng phân phối nội dung (CDN) hấp thụ lưu lượng tấn công và tăng tốc phân phối nội dung, giữ website bán hàng và thanh toán sẵn sàng trong flash sale và các chiến dịch."}},
-    {"id":"web-waf","icon":"shield","name":"Web Application Firewall",
-     "tagline":{"en":"Protect login, cart and checkout","vi":"Bảo vệ đăng nhập, giỏ hàng và thanh toán"},
-     "description":{"en":"A web application firewall that blocks injection attacks and abusive automation against login, cart and promotion endpoints, supporting PCI DSS web-application controls.","vi":"Tường lửa ứng dụng web chặn tấn công injection và tự động hóa lạm dụng nhắm vào các điểm đăng nhập, giỏ hàng, khuyến mãi, hỗ trợ các kiểm soát ứng dụng web của PCI DSS."}}
-  ],
-  "sources":["Decree 13/2023/ND-CP on personal data protection","PCI Security Standards Council, PCI DSS","Law on Cybersecurity 2018 (24/2018/QH14)","vnetwork.vn (not reachable from this environment; product names to be confirmed)"]
+ "id": "retail",
+ "order": 4,
+ "icon": "shopping-bag",
+ "name": {
+  "en": "Retail & E-Commerce",
+  "vi": "Bán lẻ & Thương mại điện tử"
+ },
+ "title": {
+  "en": "Retail & E-Commerce",
+  "vi": "Bán lẻ & Thương mại điện tử"
+ },
+ "tagline": {
+  "en": "Anti-DDoS & CDN, Web Application Firewall, sovereign VCLOUD, Data Loss Prevention and AI Legal & Compliance for always-on selling.",
+  "vi": "Chống DDoS & CDN, tường lửa ứng dụng web, VCLOUD chủ quyền, chống thất thoát dữ liệu và AI Legal & Compliance để bán hàng không gián đoạn."
+ },
+ "bundle": [
+  "anti-ddos-cdn",
+  "web-waf",
+  "email-security",
+  "dlp",
+  "ai-legal"
+ ],
+ "regulations": [
+  "Decree 13",
+  "PCI DSS",
+  "Law on Cybersecurity",
+  "Law on Consumer Protection"
+ ],
+ "challengesIntro": {
+  "en": "Retail revenue now concentrates into a few high-stakes moments: flash sales, double-date campaigns and holiday peaks. In those hours a slow page, a failed checkout or a leaked customer list turns directly into lost revenue and lost trust, while attackers and bots target exactly the same moments.",
+  "vi": "Doanh thu bán lẻ ngày càng dồn vào vài thời điểm quyết định: flash sale, các đợt khuyến mãi ngày đôi và mùa lễ. Chỉ cần trang web chậm, thanh toán lỗi hoặc danh sách khách hàng bị lộ trong những giờ đó là mất doanh thu và niềm tin ngay lập tức, trong khi tin tặc và bot cũng nhắm đúng vào các thời điểm này."
+ },
+ "chapters": [
+  {
+   "id": "peak-ddos",
+   "persona": {
+    "en": "CTO / Head of E-Commerce Platform",
+    "vi": "CTO / Giám đốc nền tảng thương mại điện tử"
+   },
+   "challenge": {
+    "title": {
+     "en": "Peak-Sale Traffic and DDoS Attacks",
+     "vi": "Lưu lượng đỉnh điểm và tấn công DDoS ngày sale"
+    },
+    "body": {
+     "en": "At midnight on a flash-sale day, traffic spikes tenfold. It is hard to tell real shoppers from a DDoS attack aimed at taking you offline while a competitor's campaign runs. Every minute of downtime is lost orders and wasted ad spend.",
+     "vi": "Đúng 0 giờ ngày flash sale, lưu lượng tăng vọt gấp nhiều lần. Rất khó phân biệt khách mua thật với một đợt DDoS nhằm đánh sập hệ thống đúng lúc đối thủ chạy chiến dịch. Mỗi phút gián đoạn là đơn hàng mất đi và ngân sách quảng cáo đổ bỏ."
+    }
+   },
+   "solutions": [
+    "anti-ddos-cdn"
+   ],
+   "response": {
+    "title": {
+     "en": "Absorb the attack, keep selling",
+     "vi": "Hấp thụ tấn công, bán hàng không ngừng"
+    },
+    "body": {
+     "en": "Anti-DDoS filtering and a CDN sit in front of your storefront, scrubbing malicious traffic and serving images and static content closer to shoppers so the origin stays free for orders.",
+     "vi": "Lớp chống DDoS và CDN đặt trước website bán hàng, lọc lưu lượng độc hại và phân phối hình ảnh, nội dung tĩnh gần người mua hơn, để máy chủ gốc dành sức cho việc xử lý đơn hàng."
+    },
+    "points": [
+     {
+      "en": "Scrubs attack traffic before it reaches your origin",
+      "vi": "Lọc lưu lượng tấn công trước khi tới máy chủ gốc"
+     },
+     {
+      "en": "CDN offloads images and static content at peak",
+      "vi": "CDN gánh hình ảnh và nội dung tĩnh lúc cao điểm"
+     },
+     {
+      "en": "Stays up while real shoppers keep checking out",
+      "vi": "Hệ thống vẫn chạy khi khách thật tiếp tục thanh toán"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "00:00, flash-sale night. Traffic jumps tenfold and nobody can tell shoppers from an attack while the checkout slows to a crawl.",
+    "vi": "0 giờ đêm flash sale. Lưu lượng tăng vọt và không ai phân biệt được khách mua với đợt tấn công, trong khi trang thanh toán chậm dần."
+   },
+   "scene": {
+    "kind": "wave",
+    "capacity": {
+     "en": "Checkout",
+     "vi": "Thanh toán"
+    },
+    "down": {
+     "en": "Checkout down",
+     "vi": "Thanh toán lỗi"
+    },
+    "edge": {
+     "en": "Edge nodes shield your storefront",
+     "vi": "Điểm biên che chắn website bán hàng"
+    },
+    "before": {
+     "en": "Overloaded",
+     "vi": "Quá tải"
+    },
+    "after": {
+     "en": "Selling",
+     "vi": "Vẫn bán hàng"
+    }
+   }
+  },
+  {
+   "id": "bots-ato",
+   "persona": {
+    "en": "Head of Digital & Customer Experience",
+    "vi": "Giám đốc Số & Trải nghiệm khách hàng"
+   },
+   "challenge": {
+    "title": {
+     "en": "Bots, Account Takeover and Promotion Abuse",
+     "vi": "Bot, chiếm tài khoản và lạm dụng khuyến mãi"
+    },
+    "body": {
+     "en": "Credential-stuffing bots take over loyalty accounts and drain points, while scripts grab limited stock and vouchers before real customers can. Marketing budget leaks away and loyal shoppers complain.",
+     "vi": "Bot dò mật khẩu chiếm tài khoản thành viên và rút điểm thưởng, trong khi script vét sạch hàng giới hạn và voucher trước khi khách thật kịp mua. Ngân sách marketing thất thoát, khách hàng thân thiết phàn nàn."
+    }
+   },
+   "solutions": [
+    "web-waf"
+   ],
+   "response": {
+    "title": {
+     "en": "Stop automated abuse at the edge",
+     "vi": "Chặn lạm dụng tự động ngay từ lớp ngoài cùng"
+    },
+    "body": {
+     "en": "A web application firewall inspects requests to login, cart and promotion endpoints, blocking injection attacks and abusive automation while letting genuine customers through.",
+     "vi": "Tường lửa ứng dụng web kiểm tra yêu cầu vào các điểm đăng nhập, giỏ hàng và khuyến mãi, chặn tấn công injection và tự động hóa lạm dụng nhưng vẫn cho khách thật đi qua."
+    },
+    "points": [
+     {
+      "en": "Protects login, cart and voucher endpoints",
+      "vi": "Bảo vệ đăng nhập, giỏ hàng và voucher"
+     },
+     {
+      "en": "Blocks common web attacks such as SQL injection and XSS",
+      "vi": "Chặn tấn công web phổ biến như SQL injection, XSS"
+     },
+     {
+      "en": "Rules tuned per campaign without code changes",
+      "vi": "Điều chỉnh luật theo từng chiến dịch, không sửa code"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Tuesday, 12:00. A limited voucher drop goes live and scripts empty the stock while loyal members find their points gone.",
+    "vi": "Thứ Ba, 12:00. Đợt voucher giới hạn vừa mở, script vét sạch hàng còn khách thân thiết thì phát hiện điểm thưởng đã bị rút."
+   },
+   "scene": {
+    "kind": "gate",
+    "dest": {
+     "en": "Login, cart & vouchers",
+     "vi": "Đăng nhập & giỏ hàng"
+    },
+    "src": {
+     "en": "Web & app requests",
+     "vi": "Yêu cầu web & app"
+    },
+    "bad": [
+     {
+      "en": "Credential-stuffing bot",
+      "vi": "Bot dò mật khẩu"
+     },
+     {
+      "en": "Voucher grab script",
+      "vi": "Script vét voucher"
+     },
+     {
+      "en": "Points-drain login",
+      "vi": "Đăng nhập rút điểm"
+     }
+    ],
+    "good": [
+     {
+      "en": "Member login",
+      "vi": "Thành viên đăng nhập"
+     },
+     {
+      "en": "Add to cart",
+      "vi": "Thêm vào giỏ hàng"
+     },
+     {
+      "en": "Voucher redeem",
+      "vi": "Dùng voucher"
+     }
+    ],
+    "before": {
+     "en": "Exposed",
+     "vi": "Phơi nhiễm"
+    },
+    "after": {
+     "en": "Protected",
+     "vi": "Được bảo vệ"
+    }
+   }
+  },
+  {
+   "id": "customer-data",
+   "persona": {
+    "en": "Chief Compliance Officer / DPO",
+    "vi": "Giám đốc Tuân thủ / Cán bộ bảo vệ dữ liệu cá nhân"
+   },
+   "challenge": {
+    "title": {
+     "en": "Customer Data and Decree 13 Exposure",
+     "vi": "Dữ liệu khách hàng và rủi ro theo Nghị định 13"
+    },
+    "body": {
+     "en": "Retailers hold phone numbers, addresses, purchase history and loyalty data across CRM, marketing agencies and store staff. Customer lists exported to personal email or USB are a common leak path, and Decree 13 puts the responsibility on you.",
+     "vi": "Doanh nghiệp bán lẻ nắm số điện thoại, địa chỉ, lịch sử mua hàng và dữ liệu thành viên rải khắp CRM, đối tác marketing và nhân viên cửa hàng. Danh sách khách hàng xuất ra email cá nhân hay USB là đường rò rỉ rất phổ biến, và Nghị định 13 đặt trách nhiệm lên doanh nghiệp."
+    }
+   },
+   "solutions": [
+    "dlp"
+   ],
+   "response": {
+    "title": {
+     "en": "Know where customer data goes",
+     "vi": "Biết dữ liệu khách hàng đang đi đâu"
+    },
+    "body": {
+     "en": "360-degree monitoring across chat apps, personal webmail and USB drives automatically detects customer records leaving the company, helping prevent insider leaks and supporting Decree 13 compliance.",
+     "vi": "Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB tự động nhận diện hồ sơ khách hàng bị đưa ra ngoài, giúp ngăn rò rỉ nội bộ và hỗ trợ tuân thủ Nghị định 13."
+    },
+    "points": [
+     {
+      "en": "Covers chat, webmail and USB",
+      "vi": "Bao phủ chat, webmail và USB"
+     },
+     {
+      "en": "Auto-detects customer and loyalty records",
+      "vi": "Tự nhận diện dữ liệu khách hàng và thành viên"
+     },
+     {
+      "en": "Evidence ready for audits",
+      "vi": "Bằng chứng sẵn sàng cho kiểm toán"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Friday, 17:40. A store manager exports the loyalty member list to a personal mailbox to work on it over the weekend.",
+    "vi": "Chiều thứ Sáu, 17:40. Một quản lý cửa hàng xuất danh sách hội viên sang hộp thư cá nhân để làm việc cuối tuần."
+   },
+   "scene": {
+    "kind": "perimeter",
+    "asset": {
+     "en": "Loyalty member list",
+     "vi": "Danh sách hội viên"
+    },
+    "channels": [
+     {
+      "en": "Chat apps",
+      "vi": "Ứng dụng chat",
+      "icon": "message-circle"
+     },
+     {
+      "en": "Personal webmail",
+      "vi": "Webmail cá nhân",
+      "icon": "mail"
+     },
+     {
+      "en": "USB drive",
+      "vi": "Ổ USB",
+      "icon": "hard-drive"
+     }
+    ],
+    "before": {
+     "en": "Leaking",
+     "vi": "Đang rò rỉ"
+    },
+    "after": {
+     "en": "Contained",
+     "vi": "Đã ngăn chặn"
+    }
+   }
+  },
+  {
+   "id": "payment-cloud",
+   "persona": {
+    "en": "CFO / CIO",
+    "vi": "Giám đốc Tài chính / Giám đốc CNTT"
+   },
+   "challenge": {
+    "title": {
+     "en": "Payment Data, PCI DSS and Fragile Hosting",
+     "vi": "Dữ liệu thanh toán, PCI DSS và hạ tầng thiếu vững chắc"
+    },
+    "body": {
+     "en": "Card and payment data raises PCI DSS obligations, and phishing mail aimed at finance and procurement teams is a standard route to fraudulent supplier payments. Hosting that cannot scale or keep data in-country adds cost and audit risk.",
+     "vi": "Dữ liệu thẻ và thanh toán kéo theo nghĩa vụ PCI DSS, còn email phishing nhắm vào kế toán, mua hàng là đường quen thuộc dẫn tới chuyển tiền nhầm cho nhà cung cấp giả mạo. Hạ tầng không co giãn được hoặc không giữ dữ liệu trong nước làm tăng chi phí và rủi ro kiểm toán."
+    }
+   },
+   "solutions": [
+    "email-security"
+   ],
+   "response": {
+    "title": {
+     "en": "Sovereign cloud with a protected inbox",
+     "vi": "Đám mây chủ quyền cùng hộp thư được bảo vệ"
+    },
+    "body": {
+     "en": "VCLOUD hosts commerce workloads with data kept inside Vietnam, and advanced email defense filters phishing, spoofed supplier invoices and ransomware before they reach your teams.",
+     "vi": "VCLOUD lưu trữ hệ thống thương mại với dữ liệu nằm tại Việt Nam, còn bảo vệ email nâng cao lọc phishing, hóa đơn nhà cung cấp giả mạo và ransomware trước khi tới nhân viên."
+    },
+    "points": [
+     {
+      "en": "Sovereign hosting inside Vietnam",
+      "vi": "Lưu trữ chủ quyền ngay tại Việt Nam"
+     },
+     {
+      "en": "Filters fake supplier and payment requests",
+      "vi": "Lọc yêu cầu thanh toán, nhà cung cấp giả"
+     },
+     {
+      "en": "Stops ransomware at the mail gateway",
+      "vi": "Ngăn ransomware ngay tại cổng email"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Month-end, 16:20. An email from a familiar supplier asks accounts payable to pay an invoice into a new bank account before the audit.",
+    "vi": "Cuối tháng, 16:20. Email từ một nhà cung cấp quen thuộc nhờ kế toán thanh toán hoá đơn vào tài khoản mới trước kỳ kiểm toán."
+   },
+   "scene": {
+    "kind": "gate",
+    "dest": {
+     "en": "Finance & AP inbox",
+     "vi": "Hộp thư kế toán"
+    },
+    "src": {
+     "en": "Incoming email",
+     "vi": "Email gửi đến"
+    },
+    "bad": [
+     {
+      "en": "Fake supplier invoice",
+      "vi": "Hoá đơn NCC giả mạo"
+     },
+     {
+      "en": "New bank account",
+      "vi": "Đổi tài khoản nhận tiền"
+     },
+     {
+      "en": "Ransomware attachment",
+      "vi": "Tệp đính kèm ransomware"
+     }
+    ],
+    "good": [
+     {
+      "en": "Supplier statement",
+      "vi": "Đối chiếu công nợ NCC"
+     },
+     {
+      "en": "Purchase order",
+      "vi": "Đơn đặt hàng"
+     },
+     {
+      "en": "Auditor request",
+      "vi": "Thư từ kiểm toán"
+     }
+    ],
+    "before": {
+     "en": "Exposed",
+     "vi": "Phơi nhiễm"
+    },
+    "after": {
+     "en": "Protected",
+     "vi": "Được bảo vệ"
+    }
+   }
+  },
+  {
+   "id": "contracts",
+   "persona": {
+    "en": "Head of Legal & Procurement",
+    "vi": "Trưởng bộ phận Pháp chế & Mua hàng"
+   },
+   "challenge": {
+    "title": {
+     "en": "Supplier, Landlord and Platform Contracts at Scale",
+     "vi": "Hợp đồng nhà cung cấp, mặt bằng và sàn ở quy mô lớn"
+    },
+    "body": {
+     "en": "A retail group manages hundreds of supplier, lease, marketplace and franchise contracts, plus changing rules on consumer protection and personal data. Manual review slows new store openings and vendor onboarding.",
+     "vi": "Một tập đoàn bán lẻ phải quản lý hàng trăm hợp đồng nhà cung cấp, thuê mặt bằng, sàn thương mại điện tử và nhượng quyền, cùng các quy định về bảo vệ người tiêu dùng và dữ liệu cá nhân luôn thay đổi. Rà soát thủ công làm chậm việc mở cửa hàng mới và đưa nhà cung cấp vào hệ thống."
+    }
+   },
+   "solutions": [
+    "ai-legal"
+   ],
+   "response": {
+    "title": {
+     "en": "Review contracts in minutes, not days",
+     "vi": "Rà soát hợp đồng trong vài phút thay vì vài ngày"
+    },
+    "body": {
+     "en": "An AI legal assistant automates contract review and flags risky clauses, with an on-premise option so commercial terms and supplier pricing never leave your walls.",
+     "vi": "Trợ lý AI pháp lý tự động rà soát hợp đồng và đánh dấu điều khoản rủi ro, có tùy chọn on-premise để điều khoản thương mại và giá nhà cung cấp không rời khỏi hệ thống của bạn."
+    },
+    "points": [
+     {
+      "en": "Automated clause review",
+      "vi": "Tự động rà soát điều khoản"
+     },
+     {
+      "en": "On-premise option for total privacy",
+      "vi": "Tùy chọn on-premise bảo mật tuyệt đối"
+     },
+     {
+      "en": "Frees legal teams for high-value work",
+      "vi": "Giải phóng đội pháp chế cho việc giá trị cao"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Wednesday, 09:00. A lease for a new store and a stack of supplier contracts wait for legal review while the opening date is fixed.",
+    "vi": "Sáng thứ Tư, 9:00. Hợp đồng thuê mặt bằng cho cửa hàng mới và một chồng hợp đồng nhà cung cấp chờ pháp chế rà soát, trong khi ngày khai trương đã chốt."
+   },
+   "scene": {
+    "kind": "scan",
+    "doc": {
+     "en": "Store lease",
+     "vi": "Hợp đồng thuê mặt bằng"
+    },
+    "flags": [
+     {
+      "en": "Exclusivity clause",
+      "vi": "Cam kết độc quyền"
+     },
+     {
+      "en": "Auto-renewal",
+      "vi": "Tự động gia hạn"
+     },
+     {
+      "en": "Penalty terms",
+      "vi": "Điều khoản phạt"
+     }
+    ],
+    "timeBefore": {
+     "en": "Days",
+     "vi": "Nhiều ngày"
+    },
+    "timeAfter": {
+     "en": "Minutes",
+     "vi": "Vài phút"
+    },
+    "perDoc": {
+     "en": "per contract review",
+     "vi": "mỗi lần rà soát"
+    },
+    "before": {
+     "en": "Manual",
+     "vi": "Thủ công"
+    },
+    "after": {
+     "en": "Automated",
+     "vi": "Tự động"
+    }
+   }
+  }
+ ],
+ "outcomes": [
+  {
+   "title": {
+    "en": "Sell Without Interruption",
+    "vi": "Bán hàng không gián đoạn"
+   },
+   "body": {
+    "en": "Keep the storefront and checkout available during the campaigns that matter most, protected from DDoS and automated abuse.",
+    "vi": "Giữ website và thanh toán luôn sẵn sàng trong những chiến dịch quan trọng nhất, được bảo vệ khỏi DDoS và lạm dụng tự động."
+   }
+  },
+  {
+   "title": {
+    "en": "Protect Customer Trust and Compliance",
+    "vi": "Bảo vệ niềm tin khách hàng và tuân thủ"
+   },
+   "body": {
+    "en": "Safeguard customer and payment data across email, users and infrastructure, and be ready for Decree 13 and PCI DSS expectations.",
+    "vi": "Bảo vệ dữ liệu khách hàng và thanh toán trên email, người dùng và hạ tầng, sẵn sàng cho yêu cầu của Nghị định 13 và PCI DSS."
+   }
+  },
+  {
+   "title": {
+    "en": "Lower Risk and Operating Cost",
+    "vi": "Giảm rủi ro và chi phí vận hành"
+   },
+   "body": {
+    "en": "One local partner for cloud, edge protection, data and legal automation reduces vendor sprawl, manual work and incident-response effort.",
+    "vi": "Một đối tác trong nước cho đám mây, bảo vệ lớp ngoài, dữ liệu và tự động hóa pháp chế giúp giảm số nhà cung cấp, công việc thủ công và nỗ lực ứng phó sự cố."
+   }
+  }
+ ],
+ "faq": [
+  {
+   "q": {
+    "en": "Do we need to move our e-commerce platform to protect it from DDoS?",
+    "vi": "Chúng tôi có cần chuyển hệ thống thương mại điện tử sang nơi khác để chống DDoS không?"
+   },
+   "a": {
+    "en": "Not necessarily. Anti-DDoS and CDN protection sits in front of your existing site, wherever it is hosted. VCLOUD is available if you also want sovereign hosting inside Vietnam.",
+    "vi": "Không nhất thiết. Lớp chống DDoS và CDN đặt phía trước website hiện có, dù đang lưu trữ ở đâu. VCLOUD là lựa chọn bổ sung nếu bạn muốn lưu trữ chủ quyền tại Việt Nam."
+   }
+  },
+  {
+   "q": {
+    "en": "Does this help with PCI DSS?",
+    "vi": "Giải pháp có hỗ trợ PCI DSS không?"
+   },
+   "a": {
+    "en": "A web application firewall, data monitoring and secure hosting support several PCI DSS control areas. Certification itself depends on your whole payment environment and assessor, so we scope it with you.",
+    "vi": "Tường lửa ứng dụng web, giám sát dữ liệu và hạ tầng an toàn hỗ trợ nhiều nhóm kiểm soát của PCI DSS. Việc đạt chứng nhận phụ thuộc toàn bộ môi trường thanh toán và đơn vị đánh giá, nên chúng tôi cùng bạn xác định phạm vi."
+   }
+  },
+  {
+   "q": {
+    "en": "How do we handle customer data under Decree 13?",
+    "vi": "Làm thế nào để xử lý dữ liệu khách hàng theo Nghị định 13?"
+   },
+   "a": {
+    "en": "Data Loss Prevention discovers and monitors customer records leaving through chat, webmail and USB, and VCLOUD keeps data inside Vietnam, giving you evidence for audits and incident response.",
+    "vi": "Giải pháp chống thất thoát dữ liệu phát hiện và giám sát hồ sơ khách hàng đi ra qua chat, webmail, USB, còn VCLOUD giữ dữ liệu tại Việt Nam, giúp bạn có bằng chứng cho kiểm toán và ứng phó sự cố."
+   }
+  }
+ ],
+ "newSolutions": [
+  {
+   "id": "anti-ddos-cdn",
+   "icon": "zap",
+   "name": "Anti-DDoS & CDN",
+   "tagline": {
+    "en": "Stay online at peak traffic",
+    "vi": "Luôn trực tuyến khi lưu lượng đỉnh điểm"
+   },
+   "description": {
+    "en": "Anti-DDoS filtering and content delivery network that absorb attack traffic and speed up content delivery, keeping storefronts and checkout available during flash sales and campaigns.",
+    "vi": "Lớp lọc chống DDoS và mạng phân phối nội dung (CDN) hấp thụ lưu lượng tấn công và tăng tốc phân phối nội dung, giữ website bán hàng và thanh toán sẵn sàng trong flash sale và các chiến dịch."
+   }
+  },
+  {
+   "id": "web-waf",
+   "icon": "shield",
+   "name": "Web Application Firewall",
+   "tagline": {
+    "en": "Protect login, cart and checkout",
+    "vi": "Bảo vệ đăng nhập, giỏ hàng và thanh toán"
+   },
+   "description": {
+    "en": "A web application firewall that blocks injection attacks and abusive automation against login, cart and promotion endpoints, supporting PCI DSS web-application controls.",
+    "vi": "Tường lửa ứng dụng web chặn tấn công injection và tự động hóa lạm dụng nhắm vào các điểm đăng nhập, giỏ hàng, khuyến mãi, hỗ trợ các kiểm soát ứng dụng web của PCI DSS."
+   }
+  }
+ ],
+ "sources": [
+  "Decree 13/2023/ND-CP on personal data protection",
+  "PCI Security Standards Council, PCI DSS",
+  "Law on Cybersecurity 2018 (24/2018/QH14)",
+  "vnetwork.vn (not reachable from this environment; product names to be confirmed)"
+ ]
 }

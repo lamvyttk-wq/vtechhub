@@ -14,13 +14,17 @@ node build-artifact.mjs                      # -> dist/vtechhub.html, one self-c
 ```
 Deploys as-is to GitHub Pages / any static host.
 
-## How the story works (industry.html)
-Hero → "what worries you most?" picker (jumps straight to the matching chapter) → 5 pinned chapters where the
-**challenge card dims and the matching answer card resolves as you scroll** → bundle → outcomes → FAQ → PoC → contact.
-Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI toggle persists. Single white theme.
+## How the story works
+Hero ("which one sounds like you?" persona match, jumps straight to that chapter) -> why now -> 5 pinned chapters -> resolved
+bundle -> outcomes -> FAQ -> PoC -> contact. In every chapter the left column reads **challenge -> the moment -> answer** in one
+place (the text crossfades), while the right column plays a **scroll-scrubbed scene**: the problem happens, the solution steps in,
+the problem is stopped (`js/scenes.js`: gate, mask, perimeter, scan, wave). The contact form always knows which chapter sent the
+visitor ("You were reading..."), and a floating "Talk to an expert" button follows the visitor until the contact section.
+Header: a mega-menu grouped by industry; hovering an industry shows its packaged solutions. Solution pages loop the same scene.
+Mobile and `prefers-reduced-motion` get a non-pinned layout (reduced motion shows every scene in its resolved state). EN/VI toggle persists.
 
 ## Editing content (no code)
-- `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md`.
+- `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md` (incl. `scenario` + `scene` per chapter).
 - `data/solutions.json` — shared product catalog (industries may add `newSolutions`).
 - `data/ui.json` — all interface strings (EN/VI).
 - `js/config.js` — phone, email, Zalo, offices, and **`leadEndpoint`** (form POST target; `null` = log only).
@@ -33,4 +37,7 @@ Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI tog
   - Regulation citations (Decree 13/2023, Law on Data 2024, Cybersecurity Law, Decree 85/2016, TCVN 11930...) need a legal check of article numbers and currency.
   - `95%` / `42%` appear only in BFSI/AI Legal (from the mockup); no other metric or customer claim exists.
   - Regulation chips are English-only strings.
+- `scenario` lines and scene labels in the 7 non-BFSI industries are illustrative drafts written for this build (no figures). Chapters whose
+  first solution does not match their theme reuse that solution's scene on purpose: review compliance/sovereignty chapters
+  (government `compliance`, healthcare `sovereignty`, education `budget-sovereignty`, logistics `uptime`, manufacturing `audit`).
 - Confirm the Zalo link and the `Terms`/`Privacy` URLs.

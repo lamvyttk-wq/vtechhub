@@ -1,154 +1,548 @@
 {
-  "id": "education", "order": 8, "icon": "graduation-cap",
-  "name": {"en": "Education", "vi": "Giáo dục"},
-  "title": {"en": "Education: Universities, K-12 Groups and E-learning", "vi": "Giáo dục: Đại học, Hệ thống phổ thông và Đào tạo trực tuyến"},
-  "tagline": {"en": "Sovereign VCLOUD hosting, email defense, Data Loss Prevention and Database Security for campuses that cannot afford downtime or a student-data leak.", "vi": "Hạ tầng VCLOUD chủ quyền, bảo mật email, chống thất thoát dữ liệu và bảo mật cơ sở dữ liệu cho các cơ sở đào tạo không thể gián đoạn hay lộ dữ liệu người học."},
-  "bundle": ["email-security", "dlp", "database-security"],
-  "regulations": ["Decree 13", "Law on Cybersecurity", "MOET"],
-  "challengesIntro": {
-    "en": "Schools and universities now run admissions, teaching, exams and finance on digital platforms, while holding the personal data of large numbers of students, many of them minors. Demand arrives in sharp peaks, budgets are tight and IT teams are small, yet an outage during enrollment or exams, or a leak of student records, becomes a public issue within hours.",
-    "vi": "Trường học và đại học nay vận hành tuyển sinh, giảng dạy, thi cử và tài chính trên nền tảng số, đồng thời nắm giữ dữ liệu cá nhân của rất nhiều người học, trong đó có trẻ vị thành niên. Nhu cầu dồn thành các đợt cao điểm, ngân sách hạn chế, đội IT mỏng; nhưng chỉ cần hệ thống sập đúng mùa tuyển sinh, mùa thi hoặc lộ hồ sơ người học là sự việc trở thành chuyện công chúng chỉ sau vài giờ."
-  },
-  "chapters": [
-    {
-      "id": "peak-availability",
-      "persona": {"en": "CIO / Head of IT", "vi": "Giám đốc CNTT"},
-      "challenge": {
-        "title": {"en": "Enrollment and Exam Peaks Hit the LMS Hardest", "vi": "Cao điểm tuyển sinh và thi cử đè nặng lên LMS"},
-        "body": {
-          "en": "Application deadlines, course registration and online exams send traffic from a quiet baseline to a spike within hours. An on-premise server room sized for the average day slows down or fails exactly when thousands of students and parents are watching.",
-          "vi": "Hạn nộp hồ sơ, đăng ký học phần và thi trực tuyến khiến lưu lượng tăng vọt trong vài giờ so với ngày thường. Phòng máy chủ tại chỗ được thiết kế cho ngày bình thường sẽ chậm hoặc sập đúng lúc hàng nghìn sinh viên và phụ huynh đang theo dõi."
-        }
-      },
-      "solutions": ["email-security"],
-      "response": {
-        "title": {"en": "Run critical academic systems on VCLOUD", "vi": "Đưa hệ thống học vụ trọng yếu lên VCLOUD"},
-        "body": {
-          "en": "Hosting the admissions portal, LMS and registration systems on VCLOUD, a secure cloud inside Vietnam, replaces a fixed server room with infrastructure you can plan around peak periods, while data stays in the country.",
-          "vi": "Đặt cổng tuyển sinh, LMS và hệ thống đăng ký học phần trên VCLOUD, đám mây bảo mật đặt tại Việt Nam, thay cho phòng máy cố định bằng hạ tầng có thể hoạch định theo mùa cao điểm, trong khi dữ liệu vẫn ở trong nước."
-        },
-        "points": [
-          {"en": "Hosting inside Vietnam for academic and student systems", "vi": "Lưu trữ tại Việt Nam cho hệ thống học vụ và dữ liệu người học"},
-          {"en": "Capacity planned around enrollment and exam calendars", "vi": "Năng lực hạ tầng hoạch định theo lịch tuyển sinh, thi cử"},
-          {"en": "Less on-premise hardware to buy and maintain", "vi": "Giảm phần cứng tại chỗ phải mua sắm và bảo trì"}
-        ]
-      }
+ "id": "education",
+ "order": 8,
+ "icon": "graduation-cap",
+ "name": {
+  "en": "Education",
+  "vi": "Giáo dục"
+ },
+ "title": {
+  "en": "Education: Universities, K-12 Groups and E-learning",
+  "vi": "Giáo dục: Đại học, Hệ thống phổ thông và Đào tạo trực tuyến"
+ },
+ "tagline": {
+  "en": "Sovereign VCLOUD hosting, email defense, Data Loss Prevention and Database Security for campuses that cannot afford downtime or a student-data leak.",
+  "vi": "Hạ tầng VCLOUD chủ quyền, bảo mật email, chống thất thoát dữ liệu và bảo mật cơ sở dữ liệu cho các cơ sở đào tạo không thể gián đoạn hay lộ dữ liệu người học."
+ },
+ "bundle": [
+  "email-security",
+  "dlp",
+  "database-security"
+ ],
+ "regulations": [
+  "Decree 13",
+  "Law on Cybersecurity",
+  "MOET"
+ ],
+ "challengesIntro": {
+  "en": "Schools and universities now run admissions, teaching, exams and finance on digital platforms, while holding the personal data of large numbers of students, many of them minors. Demand arrives in sharp peaks, budgets are tight and IT teams are small, yet an outage during enrollment or exams, or a leak of student records, becomes a public issue within hours.",
+  "vi": "Trường học và đại học nay vận hành tuyển sinh, giảng dạy, thi cử và tài chính trên nền tảng số, đồng thời nắm giữ dữ liệu cá nhân của rất nhiều người học, trong đó có trẻ vị thành niên. Nhu cầu dồn thành các đợt cao điểm, ngân sách hạn chế, đội IT mỏng; nhưng chỉ cần hệ thống sập đúng mùa tuyển sinh, mùa thi hoặc lộ hồ sơ người học là sự việc trở thành chuyện công chúng chỉ sau vài giờ."
+ },
+ "chapters": [
+  {
+   "id": "peak-availability",
+   "persona": {
+    "en": "CIO / Head of IT",
+    "vi": "Giám đốc CNTT"
+   },
+   "challenge": {
+    "title": {
+     "en": "Enrollment and Exam Peaks Hit the LMS Hardest",
+     "vi": "Cao điểm tuyển sinh và thi cử đè nặng lên LMS"
     },
-    {
-      "id": "phishing",
-      "persona": {"en": "Head of Information Security", "vi": "Giám đốc An ninh thông tin"},
-      "challenge": {
-        "title": {"en": "Phishing Aimed at Staff and Students", "vi": "Phishing nhắm vào cán bộ, giảng viên và sinh viên"},
-        "body": {
-          "en": "Campus email is open, widely known and used by tens of thousands of people with uneven security awareness. Fake scholarship notices, tuition payment requests and spoofed messages from the president or finance office are an easy way to steal accounts and reach internal systems.",
-          "vi": "Email của trường là kênh mở, nhiều người biết và có hàng chục nghìn người dùng với mức nhận thức an toàn không đồng đều. Thông báo học bổng giả, yêu cầu đóng học phí giả hay thư mạo danh hiệu trưởng, phòng tài chính là cách dễ dàng để chiếm tài khoản và đi sâu vào hệ thống nội bộ."
-        }
-      },
-      "solutions": ["email-security"],
-      "response": {
-        "title": {"en": "Filter the threat before it reaches the inbox", "vi": "Lọc mối đe dọa trước khi tới hộp thư"},
-        "body": {
-          "en": "Advanced email defense stops phishing, executive spoofing and ransomware at the gateway, so protection does not depend on every student and lecturer spotting the trap.",
-          "vi": "Bảo vệ email nâng cao chặn phishing, giả mạo lãnh đạo và ransomware ngay tại cổng, để an toàn không phụ thuộc vào việc mọi sinh viên, giảng viên đều tự nhận ra bẫy."
-        },
-        "points": [
-          {"en": "Blocks phishing and impersonation of leadership", "vi": "Chặn phishing và giả mạo lãnh đạo nhà trường"},
-          {"en": "Stops ransomware at the mail gateway", "vi": "Ngăn ransomware ngay tại cổng email"},
-          {"en": "Hosted on sovereign cloud in Vietnam", "vi": "Triển khai trên đám mây chủ quyền tại Việt Nam"}
-        ]
-      }
-    },
-    {
-      "id": "student-data",
-      "persona": {"en": "Data Protection Officer / Registrar", "vi": "Cán bộ bảo vệ dữ liệu / Trưởng phòng Đào tạo"},
-      "challenge": {
-        "title": {"en": "Student and Minors' Data Under Decree 13", "vi": "Dữ liệu người học và trẻ em theo Nghị định 13"},
-        "body": {
-          "en": "Enrollment files, ID numbers, grades, health notes and family details sit in spreadsheets, chat groups and personal mailboxes across many departments. Decree 13 sets stricter handling for children's data, so one forwarded file can become a compliance incident.",
-          "vi": "Hồ sơ nhập học, số định danh, điểm số, thông tin sức khỏe và hoàn cảnh gia đình nằm rải rác trong bảng tính, nhóm chat và hộp thư cá nhân ở nhiều phòng ban. Nghị định 13 đặt ra yêu cầu chặt chẽ hơn với dữ liệu của trẻ em, nên chỉ một tệp bị chuyển tiếp cũng có thể thành sự cố tuân thủ."
-        }
-      },
-      "solutions": ["dlp"],
-      "response": {
-        "title": {"en": "Know where student data goes, and stop it leaving", "vi": "Biết dữ liệu người học đi đâu và chặn khi bị đưa ra ngoài"},
-        "body": {
-          "en": "360-degree monitoring across chat apps, personal webmail and USB drives automatically detects sensitive records, helping stop leaks and supporting Decree 13 compliance.",
-          "vi": "Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB tự động nhận diện hồ sơ nhạy cảm, giúp ngăn rò rỉ và hỗ trợ tuân thủ Nghị định 13."
-        },
-        "points": [
-          {"en": "Covers chat, webmail and USB channels", "vi": "Bao phủ kênh chat, webmail và USB"},
-          {"en": "Auto-detects personal and student records", "vi": "Tự nhận diện hồ sơ cá nhân và hồ sơ người học"},
-          {"en": "Evidence ready for audits and incident reviews", "vi": "Bằng chứng sẵn sàng cho kiểm toán và rà soát sự cố"}
-        ]
-      }
-    },
-    {
-      "id": "records-research",
-      "persona": {"en": "Vice President for Research / Head of Student Information Systems", "vi": "Phó hiệu trưởng phụ trách nghiên cứu / Trưởng bộ phận hệ thống thông tin sinh viên"},
-      "challenge": {
-        "title": {"en": "Grades, Records and Research IP in Too Many Hands", "vi": "Điểm số, hồ sơ và tài sản trí tuệ nghiên cứu qua quá nhiều tay"},
-        "body": {
-          "en": "Student information and research databases are touched by administrators, developers, outsourced vendors and visiting researchers. Without query-level control, altered grades or copied research data may go unnoticed until a complaint or a dispute surfaces.",
-          "vi": "Cơ sở dữ liệu sinh viên và dữ liệu nghiên cứu được quản trị viên, lập trình viên, nhà thầu ngoài và nhà nghiên cứu khách truy cập. Thiếu kiểm soát ở mức truy vấn, điểm bị sửa hay dữ liệu nghiên cứu bị sao chép có thể không ai biết cho đến khi có khiếu nại hoặc tranh chấp."
-        }
-      },
-      "solutions": ["database-security", "dlp"],
-      "response": {
-        "title": {"en": "Control who touches the record, and mask what they see", "vi": "Kiểm soát ai chạm vào dữ liệu và che những gì họ nhìn thấy"},
-        "body": {
-          "en": "Query-level access control and real-time masking limit privileged and vendor access to student and research databases, while data loss prevention watches for copies leaving through everyday channels.",
-          "vi": "Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực giới hạn quyền của quản trị viên và nhà thầu trên CSDL sinh viên, nghiên cứu; chống thất thoát dữ liệu theo dõi các bản sao bị đưa ra qua kênh thường ngày."
-        },
-        "points": [
-          {"en": "Restricts and audits privileged and vendor access", "vi": "Hạn chế và kiểm toán quyền đặc quyền, quyền nhà thầu"},
-          {"en": "Masks sensitive fields from unauthorized admins", "vi": "Che trường nhạy cảm với quản trị viên không có quyền"},
-          {"en": "Flags research files copied out via chat, webmail or USB", "vi": "Cảnh báo tệp nghiên cứu bị sao chép qua chat, webmail, USB"}
-        ]
-      }
-    },
-    {
-      "id": "budget-sovereignty",
-      "persona": {"en": "CFO / Vice President of Finance", "vi": "Giám đốc Tài chính / Phó hiệu trưởng phụ trách tài chính"},
-      "challenge": {
-        "title": {"en": "Tight Budgets and the Question of Where Data Lives", "vi": "Ngân sách eo hẹp và câu hỏi dữ liệu đặt ở đâu"},
-        "body": {
-          "en": "Tuition-funded budgets leave little room for separate security tools or for rebuilding a data center. At the same time the board asks where student data is stored and who can reach it, and a patchwork of vendors makes that hard to answer.",
-          "vi": "Ngân sách chủ yếu từ học phí khó có dư địa cho từng công cụ an ninh riêng lẻ hay xây lại trung tâm dữ liệu. Trong khi đó hội đồng trường hỏi dữ liệu người học lưu ở đâu, ai truy cập được, và một mớ nhà cung cấp rời rạc khiến câu trả lời khó thống nhất."
-        }
-      },
-      "solutions": ["email-security", "dlp", "database-security"],
-      "response": {
-        "title": {"en": "One integrated, sovereign stack instead of scattered tools", "vi": "Một bộ giải pháp tích hợp, chủ quyền thay vì công cụ rời rạc"},
-        "body": {
-          "en": "VCLOUD hosting in Vietnam combined with email, data and database protection from one alliance gives finance a single partner and cost line, and gives the board a clear answer on data location.",
-          "vi": "Hạ tầng VCLOUD tại Việt Nam kết hợp bảo vệ email, dữ liệu và cơ sở dữ liệu từ cùng một liên minh giúp khối tài chính làm việc với một đầu mối, một khoản chi, và giúp hội đồng trường có câu trả lời rõ ràng về nơi lưu trữ dữ liệu."
-        },
-        "points": [
-          {"en": "Operating-cost model instead of heavy upfront hardware", "vi": "Mô hình chi phí vận hành thay vì đầu tư phần cứng lớn ban đầu"},
-          {"en": "Data kept inside Vietnam", "vi": "Dữ liệu được giữ tại Việt Nam"},
-          {"en": "One accountable partner across the stack", "vi": "Một đối tác chịu trách nhiệm xuyên suốt"}
-        ]
-      }
+    "body": {
+     "en": "Application deadlines, course registration and online exams send traffic from a quiet baseline to a spike within hours. An on-premise server room sized for the average day slows down or fails exactly when thousands of students and parents are watching.",
+     "vi": "Hạn nộp hồ sơ, đăng ký học phần và thi trực tuyến khiến lưu lượng tăng vọt trong vài giờ so với ngày thường. Phòng máy chủ tại chỗ được thiết kế cho ngày bình thường sẽ chậm hoặc sập đúng lúc hàng nghìn sinh viên và phụ huynh đang theo dõi."
     }
-  ],
-  "outcomes": [
-    {"title": {"en": "Keep Learning Running", "vi": "Giữ việc dạy và học không gián đoạn"}, "body": {"en": "Run admissions, LMS and exam systems on infrastructure planned for peak periods, so critical dates are not lost to downtime.", "vi": "Vận hành tuyển sinh, LMS và thi cử trên hạ tầng được hoạch định cho mùa cao điểm, để những mốc thời gian quan trọng không bị mất vì gián đoạn."}},
-    {"title": {"en": "Protect Students and Meet Decree 13", "vi": "Bảo vệ người học và đáp ứng Nghị định 13"}, "body": {"en": "Reduce the risk of phishing, leaks and unauthorized access to student and minors' data, with audit evidence when regulators or parents ask.", "vi": "Giảm rủi ro phishing, rò rỉ và truy cập trái phép vào dữ liệu người học, trẻ em, kèm bằng chứng kiểm toán khi cơ quan quản lý hoặc phụ huynh yêu cầu."}},
-    {"title": {"en": "Spend Smarter, Keep Data Sovereign", "vi": "Chi tiêu hiệu quả, giữ chủ quyền dữ liệu"}, "body": {"en": "Replace scattered tools and server rooms with one integrated stack hosted in Vietnam, easier to budget and to explain to the board.", "vi": "Thay các công cụ rời rạc và phòng máy chủ bằng một bộ giải pháp tích hợp đặt tại Việt Nam, dễ lập ngân sách và dễ giải trình với hội đồng trường."}}
-  ],
-  "faq": [
-    {"q": {"en": "Why host the LMS and admissions portal on a Vietnam-based cloud?", "vi": "Vì sao nên đặt LMS và cổng tuyển sinh trên đám mây tại Việt Nam?"},
-     "a": {"en": "VCLOUD keeps student data inside Vietnam and lets you plan capacity around enrollment and exam peaks instead of sizing a server room for them. Specific capacity and SLA terms are agreed per project with the V-Tech Hub team.", "vi": "VCLOUD giữ dữ liệu người học trong nước và cho phép hoạch định năng lực theo đợt tuyển sinh, thi cử thay vì thiết kế phòng máy cho đúng đỉnh tải. Năng lực và cam kết dịch vụ cụ thể được thống nhất theo từng dự án cùng đội ngũ V-Tech Hub."}},
-    {"q": {"en": "How does the stack help with children's data under Decree 13?", "vi": "Bộ giải pháp hỗ trợ thế nào với dữ liệu trẻ em theo Nghị định 13?"},
-     "a": {"en": "Data Loss Prevention detects sensitive student records across chat, webmail and USB, and Database Security controls and masks access to records at the source. Together they provide visibility and audit evidence; legal obligations such as consent remain the institution's responsibility.", "vi": "Giải pháp chống thất thoát dữ liệu nhận diện hồ sơ nhạy cảm trên chat, webmail, USB, còn bảo mật cơ sở dữ liệu kiểm soát và che giấu truy cập ngay tại nguồn. Cùng nhau chúng tạo khả năng quan sát và bằng chứng kiểm toán; các nghĩa vụ pháp lý như sự đồng ý của chủ thể dữ liệu vẫn thuộc trách nhiệm của nhà trường."}},
-    {"q": {"en": "Can a school start small given limited budget?", "vi": "Trường có ngân sách hạn chế có thể bắt đầu nhỏ không?"},
-     "a": {"en": "Yes. Many institutions begin with email defense and VCLOUD hosting for the most exposed systems, then add data and database protection in phases. Scope and pricing are assessed with the V-Tech Hub team.", "vi": "Có. Nhiều đơn vị bắt đầu từ bảo vệ email và VCLOUD cho các hệ thống dễ bị tấn công nhất, sau đó bổ sung bảo vệ dữ liệu và cơ sở dữ liệu theo từng giai đoạn. Phạm vi và chi phí được đánh giá cùng đội ngũ V-Tech Hub."}}
-  ],
-  "newSolutions": [],
-  "sources": [
-    "Decree 13/2023/ND-CP on personal data protection (Government of Vietnam; children's data provisions)",
-    "Law on Cybersecurity 2018 and Decree 53/2022/ND-CP (data localization)",
-    "data/solutions.json (V-Tech Hub solution registry)",
-    "Web research not performed; relied on well-known public regulatory facts"
-  ]
+   },
+   "solutions": [
+    "email-security"
+   ],
+   "response": {
+    "title": {
+     "en": "Run critical academic systems on VCLOUD",
+     "vi": "Đưa hệ thống học vụ trọng yếu lên VCLOUD"
+    },
+    "body": {
+     "en": "Hosting the admissions portal, LMS and registration systems on VCLOUD, a secure cloud inside Vietnam, replaces a fixed server room with infrastructure you can plan around peak periods, while data stays in the country.",
+     "vi": "Đặt cổng tuyển sinh, LMS và hệ thống đăng ký học phần trên VCLOUD, đám mây bảo mật đặt tại Việt Nam, thay cho phòng máy cố định bằng hạ tầng có thể hoạch định theo mùa cao điểm, trong khi dữ liệu vẫn ở trong nước."
+    },
+    "points": [
+     {
+      "en": "Hosting inside Vietnam for academic and student systems",
+      "vi": "Lưu trữ tại Việt Nam cho hệ thống học vụ và dữ liệu người học"
+     },
+     {
+      "en": "Capacity planned around enrollment and exam calendars",
+      "vi": "Năng lực hạ tầng hoạch định theo lịch tuyển sinh, thi cử"
+     },
+     {
+      "en": "Less on-premise hardware to buy and maintain",
+      "vi": "Giảm phần cứng tại chỗ phải mua sắm và bảo trì"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Registration day, 07:59. Thousands of students and parents open the portal at the same minute, and the on-premise server room starts to crawl.",
+    "vi": "Ngày đăng ký học phần, 7:59. Hàng nghìn sinh viên và phụ huynh cùng mở cổng đăng ký trong một phút, và phòng máy chủ tại trường bắt đầu chậm dần."
+   },
+   "scene": {
+    "kind": "wave",
+    "capacity": {
+     "en": "Capacity",
+     "vi": "Công suất"
+    },
+    "down": {
+     "en": "Portal down",
+     "vi": "Cổng đăng ký lỗi"
+    },
+    "edge": {
+     "en": "Capacity planned around exam calendars",
+     "vi": "Hạ tầng co giãn theo mùa tuyển sinh"
+    },
+    "before": {
+     "en": "Overloaded",
+     "vi": "Quá tải"
+    },
+    "after": {
+     "en": "Online",
+     "vi": "Ổn định"
+    }
+   }
+  },
+  {
+   "id": "phishing",
+   "persona": {
+    "en": "Head of Information Security",
+    "vi": "Giám đốc An ninh thông tin"
+   },
+   "challenge": {
+    "title": {
+     "en": "Phishing Aimed at Staff and Students",
+     "vi": "Phishing nhắm vào cán bộ, giảng viên và sinh viên"
+    },
+    "body": {
+     "en": "Campus email is open, widely known and used by tens of thousands of people with uneven security awareness. Fake scholarship notices, tuition payment requests and spoofed messages from the president or finance office are an easy way to steal accounts and reach internal systems.",
+     "vi": "Email của trường là kênh mở, nhiều người biết và có hàng chục nghìn người dùng với mức nhận thức an toàn không đồng đều. Thông báo học bổng giả, yêu cầu đóng học phí giả hay thư mạo danh hiệu trưởng, phòng tài chính là cách dễ dàng để chiếm tài khoản và đi sâu vào hệ thống nội bộ."
+    }
+   },
+   "solutions": [
+    "email-security"
+   ],
+   "response": {
+    "title": {
+     "en": "Filter the threat before it reaches the inbox",
+     "vi": "Lọc mối đe dọa trước khi tới hộp thư"
+    },
+    "body": {
+     "en": "Advanced email defense stops phishing, executive spoofing and ransomware at the gateway, so protection does not depend on every student and lecturer spotting the trap.",
+     "vi": "Bảo vệ email nâng cao chặn phishing, giả mạo lãnh đạo và ransomware ngay tại cổng, để an toàn không phụ thuộc vào việc mọi sinh viên, giảng viên đều tự nhận ra bẫy."
+    },
+    "points": [
+     {
+      "en": "Blocks phishing and impersonation of leadership",
+      "vi": "Chặn phishing và giả mạo lãnh đạo nhà trường"
+     },
+     {
+      "en": "Stops ransomware at the mail gateway",
+      "vi": "Ngăn ransomware ngay tại cổng email"
+     },
+     {
+      "en": "Hosted on sovereign cloud in Vietnam",
+      "vi": "Triển khai trên đám mây chủ quyền tại Việt Nam"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Monday, 09:05. A message that looks like it comes from the president's office tells lecturers and students to confirm their accounts for a scholarship.",
+    "vi": "Sáng thứ Hai, 9:05. Một thư có vẻ gửi từ văn phòng hiệu trưởng yêu cầu giảng viên và sinh viên xác nhận tài khoản để nhận học bổng."
+   },
+   "scene": {
+    "kind": "gate",
+    "dest": {
+     "en": "Staff & student inbox",
+     "vi": "Hộp thư toàn trường"
+    },
+    "src": {
+     "en": "Incoming email",
+     "vi": "Thư đến"
+    },
+    "bad": [
+     {
+      "en": "Fake scholarship notice",
+      "vi": "Thông báo học bổng giả"
+     },
+     {
+      "en": "Tuition payment scam",
+      "vi": "Lừa đảo đóng học phí"
+     },
+     {
+      "en": "Spoofed president email",
+      "vi": "Giả mạo hiệu trưởng"
+     }
+    ],
+    "good": [
+     {
+      "en": "Class schedule",
+      "vi": "Lịch học lớp"
+     },
+     {
+      "en": "Grade notification",
+      "vi": "Thông báo điểm"
+     },
+     {
+      "en": "Faculty circular",
+      "vi": "Công văn của khoa"
+     }
+    ],
+    "before": {
+     "en": "Exposed",
+     "vi": "Rủi ro cao"
+    },
+    "after": {
+     "en": "Protected",
+     "vi": "Được bảo vệ"
+    }
+   }
+  },
+  {
+   "id": "student-data",
+   "persona": {
+    "en": "Data Protection Officer / Registrar",
+    "vi": "Cán bộ bảo vệ dữ liệu / Trưởng phòng Đào tạo"
+   },
+   "challenge": {
+    "title": {
+     "en": "Student and Minors' Data Under Decree 13",
+     "vi": "Dữ liệu người học và trẻ em theo Nghị định 13"
+    },
+    "body": {
+     "en": "Enrollment files, ID numbers, grades, health notes and family details sit in spreadsheets, chat groups and personal mailboxes across many departments. Decree 13 sets stricter handling for children's data, so one forwarded file can become a compliance incident.",
+     "vi": "Hồ sơ nhập học, số định danh, điểm số, thông tin sức khỏe và hoàn cảnh gia đình nằm rải rác trong bảng tính, nhóm chat và hộp thư cá nhân ở nhiều phòng ban. Nghị định 13 đặt ra yêu cầu chặt chẽ hơn với dữ liệu của trẻ em, nên chỉ một tệp bị chuyển tiếp cũng có thể thành sự cố tuân thủ."
+    }
+   },
+   "solutions": [
+    "dlp"
+   ],
+   "response": {
+    "title": {
+     "en": "Know where student data goes, and stop it leaving",
+     "vi": "Biết dữ liệu người học đi đâu và chặn khi bị đưa ra ngoài"
+    },
+    "body": {
+     "en": "360-degree monitoring across chat apps, personal webmail and USB drives automatically detects sensitive records, helping stop leaks and supporting Decree 13 compliance.",
+     "vi": "Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB tự động nhận diện hồ sơ nhạy cảm, giúp ngăn rò rỉ và hỗ trợ tuân thủ Nghị định 13."
+    },
+    "points": [
+     {
+      "en": "Covers chat, webmail and USB channels",
+      "vi": "Bao phủ kênh chat, webmail và USB"
+     },
+     {
+      "en": "Auto-detects personal and student records",
+      "vi": "Tự nhận diện hồ sơ cá nhân và hồ sơ người học"
+     },
+     {
+      "en": "Evidence ready for audits and incident reviews",
+      "vi": "Bằng chứng sẵn sàng cho kiểm toán và rà soát sự cố"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Friday, 16:30. A staff member forwards an enrollment spreadsheet with students' ID numbers and family details to a class chat group.",
+    "vi": "Chiều thứ Sáu, 16:30. Một cán bộ chuyển bảng tuyển sinh có số CCCD và thông tin gia đình của học sinh vào nhóm chat lớp."
+   },
+   "scene": {
+    "kind": "perimeter",
+    "asset": {
+     "en": "Student records",
+     "vi": "Hồ sơ người học"
+    },
+    "channels": [
+     {
+      "en": "Class chat group",
+      "vi": "Nhóm chat lớp",
+      "icon": "message-circle"
+     },
+     {
+      "en": "Personal mailbox",
+      "vi": "Hộp thư cá nhân",
+      "icon": "mail"
+     },
+     {
+      "en": "USB drive",
+      "vi": "Ổ USB",
+      "icon": "hard-drive"
+     }
+    ],
+    "before": {
+     "en": "Leaking",
+     "vi": "Đang rò rỉ"
+    },
+    "after": {
+     "en": "Contained",
+     "vi": "Đã ngăn chặn"
+    }
+   }
+  },
+  {
+   "id": "records-research",
+   "persona": {
+    "en": "Vice President for Research / Head of Student Information Systems",
+    "vi": "Phó hiệu trưởng phụ trách nghiên cứu / Trưởng bộ phận hệ thống thông tin sinh viên"
+   },
+   "challenge": {
+    "title": {
+     "en": "Grades, Records and Research IP in Too Many Hands",
+     "vi": "Điểm số, hồ sơ và tài sản trí tuệ nghiên cứu qua quá nhiều tay"
+    },
+    "body": {
+     "en": "Student information and research databases are touched by administrators, developers, outsourced vendors and visiting researchers. Without query-level control, altered grades or copied research data may go unnoticed until a complaint or a dispute surfaces.",
+     "vi": "Cơ sở dữ liệu sinh viên và dữ liệu nghiên cứu được quản trị viên, lập trình viên, nhà thầu ngoài và nhà nghiên cứu khách truy cập. Thiếu kiểm soát ở mức truy vấn, điểm bị sửa hay dữ liệu nghiên cứu bị sao chép có thể không ai biết cho đến khi có khiếu nại hoặc tranh chấp."
+    }
+   },
+   "solutions": [
+    "database-security",
+    "dlp"
+   ],
+   "response": {
+    "title": {
+     "en": "Control who touches the record, and mask what they see",
+     "vi": "Kiểm soát ai chạm vào dữ liệu và che những gì họ nhìn thấy"
+    },
+    "body": {
+     "en": "Query-level access control and real-time masking limit privileged and vendor access to student and research databases, while data loss prevention watches for copies leaving through everyday channels.",
+     "vi": "Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực giới hạn quyền của quản trị viên và nhà thầu trên CSDL sinh viên, nghiên cứu; chống thất thoát dữ liệu theo dõi các bản sao bị đưa ra qua kênh thường ngày."
+    },
+    "points": [
+     {
+      "en": "Restricts and audits privileged and vendor access",
+      "vi": "Hạn chế và kiểm toán quyền đặc quyền, quyền nhà thầu"
+     },
+     {
+      "en": "Masks sensitive fields from unauthorized admins",
+      "vi": "Che trường nhạy cảm với quản trị viên không có quyền"
+     },
+     {
+      "en": "Flags research files copied out via chat, webmail or USB",
+      "vi": "Cảnh báo tệp nghiên cứu bị sao chép qua chat, webmail, USB"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "End of semester, 23:40. An outsourced vendor account opens the grades database, and no one on campus can say what it changed.",
+    "vi": "Cuối học kỳ, 23:40. Một tài khoản nhà cung cấp thuê ngoài mở cơ sở dữ liệu điểm, và không ai trong trường biết nó đã sửa gì."
+   },
+   "scene": {
+    "kind": "mask",
+    "table": {
+     "en": "Student records · grades",
+     "vi": "Hồ sơ sinh viên · điểm"
+    },
+    "actor": {
+     "en": "Outsourced vendor",
+     "vi": "Nhà cung cấp ngoài"
+    },
+    "rows": [
+     {
+      "k": {
+       "en": "Student",
+       "vi": "Sinh viên"
+      },
+      "v": "Sample Student A"
+     },
+     {
+      "k": {
+       "en": "Student ID",
+       "vi": "Mã sinh viên"
+      },
+      "v": "SV-000123",
+      "s": 1
+     },
+     {
+      "k": {
+       "en": "Grade",
+       "vi": "Điểm"
+      },
+      "v": "8.5",
+      "s": 1
+     },
+     {
+      "k": {
+       "en": "Guardian phone",
+       "vi": "SĐT phụ huynh"
+      },
+      "v": "09xx xxx xxx",
+      "s": 1
+     }
+    ],
+    "before": {
+     "en": "Unwatched",
+     "vi": "Không kiểm soát"
+    },
+    "after": {
+     "en": "Controlled",
+     "vi": "Được kiểm soát"
+    }
+   }
+  },
+  {
+   "id": "budget-sovereignty",
+   "persona": {
+    "en": "CFO / Vice President of Finance",
+    "vi": "Giám đốc Tài chính / Phó hiệu trưởng phụ trách tài chính"
+   },
+   "challenge": {
+    "title": {
+     "en": "Tight Budgets and the Question of Where Data Lives",
+     "vi": "Ngân sách eo hẹp và câu hỏi dữ liệu đặt ở đâu"
+    },
+    "body": {
+     "en": "Tuition-funded budgets leave little room for separate security tools or for rebuilding a data center. At the same time the board asks where student data is stored and who can reach it, and a patchwork of vendors makes that hard to answer.",
+     "vi": "Ngân sách chủ yếu từ học phí khó có dư địa cho từng công cụ an ninh riêng lẻ hay xây lại trung tâm dữ liệu. Trong khi đó hội đồng trường hỏi dữ liệu người học lưu ở đâu, ai truy cập được, và một mớ nhà cung cấp rời rạc khiến câu trả lời khó thống nhất."
+    }
+   },
+   "solutions": [
+    "email-security",
+    "dlp",
+    "database-security"
+   ],
+   "response": {
+    "title": {
+     "en": "One integrated, sovereign stack instead of scattered tools",
+     "vi": "Một bộ giải pháp tích hợp, chủ quyền thay vì công cụ rời rạc"
+    },
+    "body": {
+     "en": "VCLOUD hosting in Vietnam combined with email, data and database protection from one alliance gives finance a single partner and cost line, and gives the board a clear answer on data location.",
+     "vi": "Hạ tầng VCLOUD tại Việt Nam kết hợp bảo vệ email, dữ liệu và cơ sở dữ liệu từ cùng một liên minh giúp khối tài chính làm việc với một đầu mối, một khoản chi, và giúp hội đồng trường có câu trả lời rõ ràng về nơi lưu trữ dữ liệu."
+    },
+    "points": [
+     {
+      "en": "Operating-cost model instead of heavy upfront hardware",
+      "vi": "Mô hình chi phí vận hành thay vì đầu tư phần cứng lớn ban đầu"
+     },
+     {
+      "en": "Data kept inside Vietnam",
+      "vi": "Dữ liệu được giữ tại Việt Nam"
+     },
+     {
+      "en": "One accountable partner across the stack",
+      "vi": "Một đối tác chịu trách nhiệm xuyên suốt"
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Budget meeting, Thursday. The board asks where student data is stored and who can reach it, and finance has no single answer.",
+    "vi": "Họp ngân sách chiều thứ Năm. Hội đồng trường hỏi dữ liệu sinh viên được lưu ở đâu và ai truy cập được, còn phòng tài chính chưa có một câu trả lời thống nhất."
+   },
+   "scene": {
+    "kind": "gate",
+    "dest": {
+     "en": "Student data, Vietnam",
+     "vi": "Dữ liệu SV trong nước"
+    },
+    "src": {
+     "en": "Access requests",
+     "vi": "Yêu cầu truy cập"
+    },
+    "bad": [
+     {
+      "en": "Unvetted vendor access",
+      "vi": "Bên thứ ba chưa duyệt"
+     },
+     {
+      "en": "Copy to offshore host",
+      "vi": "Sao chép ra nước ngoài"
+     },
+     {
+      "en": "Shadow IT mailbox",
+      "vi": "Hộp thư tự lập ngoài IT"
+     }
+    ],
+    "good": [
+     {
+      "en": "Registrar lookup",
+      "vi": "Phòng đào tạo tra cứu"
+     },
+     {
+      "en": "Board data review",
+      "vi": "Hội đồng trường rà soát"
+     },
+     {
+      "en": "Approved vendor",
+      "vi": "Nhà cung cấp đã duyệt"
+     }
+    ],
+    "before": {
+     "en": "Unclear",
+     "vi": "Mơ hồ"
+    },
+    "after": {
+     "en": "Clear",
+     "vi": "Rõ ràng"
+    }
+   }
+  }
+ ],
+ "outcomes": [
+  {
+   "title": {
+    "en": "Keep Learning Running",
+    "vi": "Giữ việc dạy và học không gián đoạn"
+   },
+   "body": {
+    "en": "Run admissions, LMS and exam systems on infrastructure planned for peak periods, so critical dates are not lost to downtime.",
+    "vi": "Vận hành tuyển sinh, LMS và thi cử trên hạ tầng được hoạch định cho mùa cao điểm, để những mốc thời gian quan trọng không bị mất vì gián đoạn."
+   }
+  },
+  {
+   "title": {
+    "en": "Protect Students and Meet Decree 13",
+    "vi": "Bảo vệ người học và đáp ứng Nghị định 13"
+   },
+   "body": {
+    "en": "Reduce the risk of phishing, leaks and unauthorized access to student and minors' data, with audit evidence when regulators or parents ask.",
+    "vi": "Giảm rủi ro phishing, rò rỉ và truy cập trái phép vào dữ liệu người học, trẻ em, kèm bằng chứng kiểm toán khi cơ quan quản lý hoặc phụ huynh yêu cầu."
+   }
+  },
+  {
+   "title": {
+    "en": "Spend Smarter, Keep Data Sovereign",
+    "vi": "Chi tiêu hiệu quả, giữ chủ quyền dữ liệu"
+   },
+   "body": {
+    "en": "Replace scattered tools and server rooms with one integrated stack hosted in Vietnam, easier to budget and to explain to the board.",
+    "vi": "Thay các công cụ rời rạc và phòng máy chủ bằng một bộ giải pháp tích hợp đặt tại Việt Nam, dễ lập ngân sách và dễ giải trình với hội đồng trường."
+   }
+  }
+ ],
+ "faq": [
+  {
+   "q": {
+    "en": "Why host the LMS and admissions portal on a Vietnam-based cloud?",
+    "vi": "Vì sao nên đặt LMS và cổng tuyển sinh trên đám mây tại Việt Nam?"
+   },
+   "a": {
+    "en": "VCLOUD keeps student data inside Vietnam and lets you plan capacity around enrollment and exam peaks instead of sizing a server room for them. Specific capacity and SLA terms are agreed per project with the V-Tech Hub team.",
+    "vi": "VCLOUD giữ dữ liệu người học trong nước và cho phép hoạch định năng lực theo đợt tuyển sinh, thi cử thay vì thiết kế phòng máy cho đúng đỉnh tải. Năng lực và cam kết dịch vụ cụ thể được thống nhất theo từng dự án cùng đội ngũ V-Tech Hub."
+   }
+  },
+  {
+   "q": {
+    "en": "How does the stack help with children's data under Decree 13?",
+    "vi": "Bộ giải pháp hỗ trợ thế nào với dữ liệu trẻ em theo Nghị định 13?"
+   },
+   "a": {
+    "en": "Data Loss Prevention detects sensitive student records across chat, webmail and USB, and Database Security controls and masks access to records at the source. Together they provide visibility and audit evidence; legal obligations such as consent remain the institution's responsibility.",
+    "vi": "Giải pháp chống thất thoát dữ liệu nhận diện hồ sơ nhạy cảm trên chat, webmail, USB, còn bảo mật cơ sở dữ liệu kiểm soát và che giấu truy cập ngay tại nguồn. Cùng nhau chúng tạo khả năng quan sát và bằng chứng kiểm toán; các nghĩa vụ pháp lý như sự đồng ý của chủ thể dữ liệu vẫn thuộc trách nhiệm của nhà trường."
+   }
+  },
+  {
+   "q": {
+    "en": "Can a school start small given limited budget?",
+    "vi": "Trường có ngân sách hạn chế có thể bắt đầu nhỏ không?"
+   },
+   "a": {
+    "en": "Yes. Many institutions begin with email defense and VCLOUD hosting for the most exposed systems, then add data and database protection in phases. Scope and pricing are assessed with the V-Tech Hub team.",
+    "vi": "Có. Nhiều đơn vị bắt đầu từ bảo vệ email và VCLOUD cho các hệ thống dễ bị tấn công nhất, sau đó bổ sung bảo vệ dữ liệu và cơ sở dữ liệu theo từng giai đoạn. Phạm vi và chi phí được đánh giá cùng đội ngũ V-Tech Hub."
+   }
+  }
+ ],
+ "newSolutions": [],
+ "sources": [
+  "Decree 13/2023/ND-CP on personal data protection (Government of Vietnam; children's data provisions)",
+  "Law on Cybersecurity 2018 and Decree 53/2022/ND-CP (data localization)",
+  "data/solutions.json (V-Tech Hub solution registry)",
+  "Web research not performed; relied on well-known public regulatory facts"
+ ]
 }

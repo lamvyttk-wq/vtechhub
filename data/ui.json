@@ -31,6 +31,38 @@
   "menu": {
    "en": "Menu",
    "vi": "Menu"
+  },
+  "byIndustry": {
+   "en": "Solutions by industry",
+   "vi": "Giải pháp theo ngành"
+  },
+  "readStory": {
+   "en": "Read the story",
+   "vi": "Xem câu chuyện"
+  },
+  "bundle": {
+   "en": "Packaged for this industry",
+   "vi": "Đóng gói cho ngành này"
+  },
+  "catalog": {
+   "en": "All solutions",
+   "vi": "Tất cả giải pháp"
+  },
+  "how": {
+   "en": "How it works",
+   "vi": "Cách hoạt động"
+  },
+  "pickIndustry": {
+   "en": "Choose your industry",
+   "vi": "Chọn ngành của bạn"
+  },
+  "chapters": {
+   "en": "chapters",
+   "vi": "chương"
+  },
+  "close": {
+   "en": "Close",
+   "vi": "Đóng"
   }
  },
  "home": {
@@ -129,6 +161,18 @@
   "indLead": {
    "en": "Eight sectors. Each one opens as a story.",
    "vi": "Tám lĩnh vực. Mỗi lĩnh vực mở ra như một câu chuyện."
+  },
+  "chapters": {
+   "en": "chapters",
+   "vi": "chương"
+  },
+  "demoKicker": {
+   "en": "A story in one glance",
+   "vi": "Một câu chuyện trong một cái nhìn"
+  },
+  "sectorsHint": {
+   "en": "Hover or tap a sector",
+   "vi": "Chạm hoặc rê chuột vào một ngành"
   }
  },
  "ind": {
@@ -174,7 +218,7 @@
   },
   "felt": {
    "en": "Felt by",
-   "vi": "Người cảm nhận"
+   "vi": "Nỗi lo của"
   },
   "solvedBy": {
    "en": "Solved by",
@@ -231,6 +275,46 @@
   "coversLabel": {
    "en": "Answers chapters",
    "vi": "Giải quyết chương"
+  },
+  "match": {
+   "en": "Which one sounds like you?",
+   "vi": "Bạn thấy mình ở tình huống nào?"
+  },
+  "matchSub": {
+   "en": "Pick the closest to your week. We jump straight to that chapter of the story.",
+   "vi": "Chọn tình huống gần nhất với tuần làm việc của bạn. Chúng tôi đưa bạn thẳng đến chương đó."
+  },
+  "moment": {
+   "en": "The moment",
+   "vi": "Khoảnh khắc"
+  },
+  "illustrative": {
+   "en": "Illustrative scenario",
+   "vi": "Tình huống minh hoạ"
+  },
+  "resolved": {
+   "en": "Your journey, resolved",
+   "vi": "Hành trình của bạn, đã được giải quyết"
+  },
+  "resolvedP": {
+   "en": "Every challenge you recognised is answered by one integrated package. These are the building blocks.",
+   "vi": "Mỗi thách thức bạn vừa nhận ra đều được giải quyết bằng một gói tích hợp. Đây là các khối giải pháp."
+  },
+  "whyNow": {
+   "en": "Why now",
+   "vi": "Vì sao là bây giờ"
+  },
+  "begin": {
+   "en": "Begin the story",
+   "vi": "Bắt đầu câu chuyện"
+  },
+  "yourPick": {
+   "en": "Your pick",
+   "vi": "Lựa chọn của bạn"
+  },
+  "chOf": {
+   "en": "Chapter",
+   "vi": "Chương"
   }
  },
  "sol": {
@@ -367,6 +451,22 @@
   "thanksDemoT": {
    "en": "Request captured in this preview.",
    "vi": "Yêu cầu đã được ghi nhận trong bản xem trước."
+  },
+  "float": {
+   "en": "Talk to an expert",
+   "vi": "Trao đổi với chuyên gia"
+  },
+  "context": {
+   "en": "You were reading",
+   "vi": "Bạn đang xem"
+  },
+  "line": {
+   "en": "Call, chat or write. We reply within one business day.",
+   "vi": "Gọi, nhắn hoặc viết cho chúng tôi. Phản hồi trong một ngày làm việc."
+  },
+  "offices": {
+   "en": "Offices",
+   "vi": "Văn phòng"
   }
  },
  "foot": {
@@ -385,6 +485,214 @@
   "rights": {
    "en": "All rights reserved.",
    "vi": "Bảo lưu mọi quyền."
+  }
+ },
+ "scenes": {
+  "label": {
+   "en": "Illustrative scene — how the solution works",
+   "vi": "Minh hoạ — cách giải pháp vận hành"
+  },
+  "alt": {
+   "en": "Animated diagram: the threat gets through, the solution steps in, the threat is stopped.",
+   "vi": "Sơ đồ động: mối đe doạ lọt vào, giải pháp can thiệp, mối đe doạ bị chặn."
+  },
+  "gate": {
+   "dest": {
+    "en": "Protected inbox",
+    "vi": "Hộp thư được bảo vệ"
+   },
+   "bad": [
+    {
+     "en": "Phishing link",
+     "vi": "Liên kết lừa đảo"
+    },
+    {
+     "en": "Spoofed sender",
+     "vi": "Người gửi giả mạo"
+    },
+    {
+     "en": "Malicious attachment",
+     "vi": "Tệp đính kèm độc hại"
+    }
+   ],
+   "good": [
+    {
+     "en": "Customer reply",
+     "vi": "Phản hồi khách hàng"
+    },
+    {
+     "en": "Partner invoice",
+     "vi": "Hoá đơn đối tác"
+    },
+    {
+     "en": "Internal memo",
+     "vi": "Thư nội bộ"
+    }
+   ],
+   "before": {
+    "en": "Exposed",
+    "vi": "Bị phơi nhiễm"
+   },
+   "after": {
+    "en": "Protected",
+    "vi": "Được bảo vệ"
+   },
+   "src": {
+    "en": "Incoming traffic",
+    "vi": "Luồng đến"
+   }
+  },
+  "mask": {
+   "table": {
+    "en": "Customer records",
+    "vi": "Hồ sơ khách hàng"
+   },
+   "actor": {
+    "en": "Privileged admin",
+    "vi": "Quản trị đặc quyền"
+   },
+   "query": {
+    "en": "SELECT *",
+    "vi": "SELECT *"
+   },
+   "approved": {
+    "en": "Approved · masked",
+    "vi": "Đã duyệt · đã che"
+   },
+   "rows": [
+    {
+     "k": {
+      "en": "Customer",
+      "vi": "Khách hàng"
+     },
+     "v": "Tran Minh Khoa"
+    },
+    {
+     "k": {
+      "en": "Account",
+      "vi": "Tài khoản"
+     },
+     "v": "9021 4477 1208",
+     "s": 1
+    },
+    {
+     "k": {
+      "en": "Balance",
+      "vi": "Số dư"
+     },
+     "v": "8,420,000 ₫",
+     "s": 1
+    },
+    {
+     "k": {
+      "en": "ID number",
+      "vi": "Số CCCD"
+     },
+     "v": "001 234 567 890",
+     "s": 1
+    }
+   ],
+   "before": {
+    "en": "Unwatched",
+    "vi": "Không kiểm soát"
+   },
+   "after": {
+    "en": "Controlled",
+    "vi": "Được kiểm soát"
+   }
+  },
+  "perimeter": {
+   "asset": {
+    "en": "Customer records",
+    "vi": "Hồ sơ khách hàng"
+   },
+   "channels": [
+    {
+     "en": "Chat apps",
+     "vi": "Ứng dụng chat",
+     "icon": "message-circle"
+    },
+    {
+     "en": "Personal webmail",
+     "vi": "Webmail cá nhân",
+     "icon": "mail"
+    },
+    {
+     "en": "USB drive",
+     "vi": "Ổ USB",
+     "icon": "hard-drive"
+    }
+   ],
+   "before": {
+    "en": "Leaking",
+    "vi": "Đang rò rỉ"
+   },
+   "after": {
+    "en": "Contained",
+    "vi": "Được ngăn chặn"
+   }
+  },
+  "scan": {
+   "doc": {
+    "en": "Loan agreement",
+    "vi": "Hợp đồng tín dụng"
+   },
+   "flags": [
+    {
+     "en": "Missing clause",
+     "vi": "Thiếu điều khoản"
+    },
+    {
+     "en": "Rate mismatch",
+     "vi": "Lệch lãi suất"
+    },
+    {
+     "en": "Rule conflict",
+     "vi": "Xung đột quy định"
+    }
+   ],
+   "timeBefore": {
+    "en": "Days",
+    "vi": "Nhiều ngày"
+   },
+   "timeAfter": {
+    "en": "Minutes",
+    "vi": "Vài phút"
+   },
+   "perDoc": {
+    "en": "per contract review",
+    "vi": "mỗi lần rà soát"
+   },
+   "before": {
+    "en": "Manual",
+    "vi": "Thủ công"
+   },
+   "after": {
+    "en": "Automated",
+    "vi": "Tự động"
+   }
+  },
+  "wave": {
+   "capacity": {
+    "en": "Capacity",
+    "vi": "Công suất"
+   },
+   "down": {
+    "en": "Service down",
+    "vi": "Gián đoạn"
+   },
+   "edge": {
+    "en": "Edge nodes, close to your users",
+    "vi": "Điểm biên, gần người dùng của bạn"
+   },
+   "before": {
+    "en": "Overloaded",
+    "vi": "Quá tải"
+   },
+   "after": {
+    "en": "Online",
+    "vi": "Ổn định"
+   }
   }
  }
 }
