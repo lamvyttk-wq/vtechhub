@@ -1,51 +1,390 @@
 {
- "nav":{"solutions":{"en":"Solutions","vi":"Giải pháp"},"industry":{"en":"Industry","vi":"Ngành"},"meet":{"en":"Meet V-Tech Hub","vi":"Về V-Tech Hub"},
-  "request":{"en":"Request Consultation","vi":"Đăng ký tư vấn"},"about":{"en":"About Us","vi":"Về chúng tôi"},"expert":{"en":"Expert","vi":"Chuyên gia"},
-  "allSolutions":{"en":"Integrated solution catalog","vi":"Danh mục giải pháp tích hợp"},"menu":{"en":"Menu","vi":"Menu"}},
- "home":{
-  "heroA":{"en":"The Tech Alliance Driving","vi":"Liên minh công nghệ dẫn dắt"},"heroB":{"en":"Vertical Solutions","vi":"Giải pháp theo ngành"},
-  "heroP":{"en":"V-TECH HUB leads a premier technology alliance, delivering packaged, vertical-tailored solutions to solve complex challenges and accelerate digital transformation for enterprises.","vi":"V-TECH HUB dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đo ni đóng giày theo ngành để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số doanh nghiệp."},
-  "explore":{"en":"Explore Industry Solutions","vi":"Khám phá giải pháp theo ngành"},
-  "indKicker":{"en":"Choose your industry","vi":"Chọn ngành của bạn"},"indTitle":{"en":"Your challenge, told as a story","vi":"Thách thức của bạn, kể thành câu chuyện"},
-  "indP":{"en":"Pick your sector. We walk you from the real-world problem to the packaged solution in under two minutes.","vi":"Chọn lĩnh vực của bạn. Chúng tôi dẫn bạn từ vấn đề thực tế đến gói giải pháp trong chưa đầy hai phút."},
-  "solKicker":{"en":"The portfolio","vi":"Danh mục giải pháp"},"solTitle":{"en":"Building blocks, packaged by industry","vi":"Các khối giải pháp, đóng gói theo ngành"},
-  "stories":{"en":"stories","vi":"câu chuyện"},"read":{"en":"Read the story","vi":"Xem câu chuyện"},
-  "stepsKicker":{"en":"How it works","vi":"Cách hoạt động"},
-  "steps":[{"t":{"en":"Recognise the problem","vi":"Nhận ra vấn đề"},"d":{"en":"Each story opens with a real situation your peers face.","vi":"Mỗi câu chuyện mở đầu bằng tình huống thật mà đồng nghiệp của bạn gặp phải."}},
-           {"t":{"en":"See the answer","vi":"Thấy lời giải"},"d":{"en":"The challenge transforms into the matching solution as you scroll.","vi":"Thách thức biến đổi thành giải pháp tương ứng khi bạn cuộn."}},
-           {"t":{"en":"Prove it","vi":"Chứng minh"},"d":{"en":"Validate in a dedicated PoC environment within 14 business days.","vi":"Kiểm chứng trong môi trường PoC riêng trong vòng 14 ngày làm việc."}}]
+ "nav": {
+  "solutions": {
+   "en": "Solutions",
+   "vi": "Giải pháp"
+  },
+  "industry": {
+   "en": "Industry",
+   "vi": "Ngành"
+  },
+  "meet": {
+   "en": "Meet V-Tech Hub",
+   "vi": "Về V-Tech Hub"
+  },
+  "request": {
+   "en": "Request Consultation",
+   "vi": "Đăng ký tư vấn"
+  },
+  "about": {
+   "en": "About Us",
+   "vi": "Về chúng tôi"
+  },
+  "expert": {
+   "en": "Expert",
+   "vi": "Chuyên gia"
+  },
+  "allSolutions": {
+   "en": "Integrated solution catalog",
+   "vi": "Danh mục giải pháp tích hợp"
+  },
+  "menu": {
+   "en": "Menu",
+   "vi": "Menu"
+  }
  },
- "ind":{
-  "back":{"en":"Back","vi":"Quay lại"},"crumbIndustry":{"en":"Industry Solutions","vi":"Giải pháp theo ngành"},
-  "talk":{"en":"Talk to an expert","vi":"Trao đổi với chuyên gia"},"scroll":{"en":"Scroll to begin the story","vi":"Cuộn để bắt đầu câu chuyện"},
-  "otherIndustries":{"en":"Other industries","vi":"Ngành khác"},
-  "pick":{"en":"What worries you most? Jump straight to it","vi":"Điều gì khiến bạn lo nhất? Nhảy thẳng tới đó"},
-  "chKicker":{"en":"Key challenges","vi":"Thách thức chính"},
-  "chapter":{"en":"Chapter","vi":"Chương"},"challenge":{"en":"The challenge","vi":"Thách thức"},"answer":{"en":"The answer","vi":"Lời giải"},
-  "felt":{"en":"Felt by","vi":"Người cảm nhận"},"solvedBy":{"en":"Solved by","vi":"Giải quyết bởi"},
-  "bundleKicker":{"en":"Integrated solution package","vi":"Gói giải pháp tích hợp"},"bundleTitle":{"en":"One package. Every challenge covered.","vi":"Một gói. Phủ mọi thách thức."},
-  "covers":{"en":"Covers","vi":"Xử lý"},"learn":{"en":"Learn more","vi":"Tìm hiểu thêm"},
-  "whyKicker":{"en":"Why choose V-Tech Hub","vi":"Vì sao chọn V-Tech Hub"},
-  "faqKicker":{"en":"Frequently asked questions","vi":"Câu hỏi thường gặp"},
-  "pocKicker":{"en":"Proof of concept","vi":"Thử nghiệm PoC"},"pocTitle":{"en":"Need a dedicated PoC test environment?","vi":"Cần môi trường PoC riêng để kiểm chứng?"},
-  "pocP":{"en":"V-TECH HUB technical architects can deploy a custom Proof-of-Concept environment, load test, and security audit for your enterprise within 14 business days.","vi":"Kiến trúc sư V-TECH HUB có thể triển khai môi trường PoC riêng, kiểm thử tải và đánh giá an ninh cho doanh nghiệp của bạn trong vòng 14 ngày làm việc."},
-  "pocBtn":{"en":"Request PoC Sandbox","vi":"Yêu cầu môi trường PoC"},
-  "notFound":{"en":"Industry not found","vi":"Không tìm thấy ngành"}
+ "home": {
+  "heroA": {
+   "en": "The Tech Alliance Driving",
+   "vi": "Liên minh công nghệ dẫn dắt"
+  },
+  "heroB": {
+   "en": "Vertical Solutions",
+   "vi": "Giải pháp theo ngành"
+  },
+  "heroP": {
+   "en": "V-TECH HUB leads a premier technology alliance, delivering packaged, vertical-tailored solutions to solve complex challenges and accelerate digital transformation for enterprises.",
+   "vi": "V-TECH HUB dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đo ni đóng giày theo ngành để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số doanh nghiệp."
+  },
+  "explore": {
+   "en": "Explore Industry Solutions",
+   "vi": "Khám phá giải pháp theo ngành"
+  },
+  "indKicker": {
+   "en": "Choose your industry",
+   "vi": "Chọn ngành của bạn"
+  },
+  "indTitle": {
+   "en": "Your challenge, told as a story",
+   "vi": "Thách thức của bạn, kể thành câu chuyện"
+  },
+  "indP": {
+   "en": "Pick your sector. We walk you from the real-world problem to the packaged solution in under two minutes.",
+   "vi": "Chọn lĩnh vực của bạn. Chúng tôi dẫn bạn từ vấn đề thực tế đến gói giải pháp trong chưa đầy hai phút."
+  },
+  "solKicker": {
+   "en": "The portfolio",
+   "vi": "Danh mục giải pháp"
+  },
+  "solTitle": {
+   "en": "Building blocks, packaged by industry",
+   "vi": "Các khối giải pháp, đóng gói theo ngành"
+  },
+  "stories": {
+   "en": "stories",
+   "vi": "câu chuyện"
+  },
+  "read": {
+   "en": "Read the story",
+   "vi": "Xem câu chuyện"
+  },
+  "stepsKicker": {
+   "en": "How it works",
+   "vi": "Cách hoạt động"
+  },
+  "steps": [
+   {
+    "t": {
+     "en": "Recognise the problem",
+     "vi": "Nhận ra vấn đề"
+    },
+    "d": {
+     "en": "Each story opens with a real situation your peers face.",
+     "vi": "Mỗi câu chuyện mở đầu bằng tình huống thật mà đồng nghiệp của bạn gặp phải."
+    }
+   },
+   {
+    "t": {
+     "en": "See the answer",
+     "vi": "Thấy lời giải"
+    },
+    "d": {
+     "en": "The challenge transforms into the matching solution as you scroll.",
+     "vi": "Thách thức biến đổi thành giải pháp tương ứng khi bạn cuộn."
+    }
+   },
+   {
+    "t": {
+     "en": "Prove it",
+     "vi": "Chứng minh"
+    },
+    "d": {
+     "en": "Validate in a dedicated PoC environment within 14 business days.",
+     "vi": "Kiểm chứng trong môi trường PoC riêng trong vòng 14 ngày làm việc."
+    }
+   }
+  ],
+  "eyebrow": {
+   "en": "A VNETWORK technology alliance",
+   "vi": "Liên minh công nghệ của VNETWORK"
+  },
+  "previewKicker": {
+   "en": "One story, two sides",
+   "vi": "Một câu chuyện, hai mặt"
+  },
+  "previewP": {
+   "en": "Every page pairs a real challenge with the solution that answers it.",
+   "vi": "Mỗi trang ghép một thách thức thực tế với giải pháp tương ứng."
+  },
+  "indLead": {
+   "en": "Eight sectors. Each one opens as a story.",
+   "vi": "Tám lĩnh vực. Mỗi lĩnh vực mở ra như một câu chuyện."
+  }
  },
- "sol":{"kicker":{"en":"Solution","vi":"Giải pháp"},"where":{"en":"Where it makes the difference","vi":"Nơi giải pháp tạo khác biệt"},"inStory":{"en":"in the story of","vi":"trong câu chuyện của"},"part":{"en":"Part of","vi":"Thuộc"},"notFound":{"en":"Solution not found","vi":"Không tìm thấy giải pháp"}},
- "cta":{
-  "kicker":{"en":"Get in touch","vi":"Liên hệ"},"title":{"en":"Ready to Scale on Vietnam's Most Trusted Tech Hub?","vi":"Sẵn sàng phát triển cùng Tech Hub đáng tin cậy nhất Việt Nam?"},
-  "p":{"en":"Tell us your situation. A V-TECH HUB expert replies within one business day, or reach us instantly.","vi":"Hãy cho chúng tôi biết tình huống của bạn. Chuyên gia V-TECH HUB phản hồi trong một ngày làm việc, hoặc liên hệ ngay lập tức."},
-  "tabBook":{"en":"Book a consultation","vi":"Đặt lịch tư vấn"},"tabBrief":{"en":"Get the solution brief","vi":"Nhận tài liệu giải pháp"},
-  "name":{"en":"Full name","vi":"Họ và tên"},"company":{"en":"Company","vi":"Công ty"},"email":{"en":"Work email","vi":"Email công việc"},"phone":{"en":"Phone / Zalo","vi":"Điện thoại / Zalo"},
-  "industry":{"en":"Industry","vi":"Ngành"},"need":{"en":"What would you like to solve?","vi":"Bạn muốn giải quyết vấn đề gì?"},
-  "sendBook":{"en":"Request consultation","vi":"Gửi yêu cầu tư vấn"},"sendBrief":{"en":"Send me the brief","vi":"Gửi tài liệu cho tôi"},
-  "consent":{"en":"I agree to be contacted about V-TECH HUB solutions.","vi":"Tôi đồng ý được liên hệ về các giải pháp của V-TECH HUB."},
-  "required":{"en":"Please complete this field","vi":"Vui lòng điền thông tin này"},"badEmail":{"en":"Enter a valid email","vi":"Nhập email hợp lệ"},
-  "thanksT":{"en":"Thank you, we have your request.","vi":"Cảm ơn bạn, chúng tôi đã nhận yêu cầu."},"thanksP":{"en":"A V-TECH HUB expert will contact you within one business day.","vi":"Chuyên gia V-TECH HUB sẽ liên hệ với bạn trong vòng một ngày làm việc."},
-  "errorT":{"en":"Something went wrong. Please call or email us instead.","vi":"Có lỗi xảy ra. Vui lòng gọi điện hoặc gửi email cho chúng tôi."},
-  "call":{"en":"Call us","vi":"Gọi cho chúng tôi"},"zalo":{"en":"Chat on Zalo","vi":"Chat Zalo"},"mail":{"en":"Email sales","vi":"Email bộ phận kinh doanh"},
-  "select":{"en":"Select…","vi":"Chọn…"},"other":{"en":"Other","vi":"Khác"}
+ "ind": {
+  "back": {
+   "en": "Back",
+   "vi": "Quay lại"
+  },
+  "crumbIndustry": {
+   "en": "Industry Solutions",
+   "vi": "Giải pháp theo ngành"
+  },
+  "talk": {
+   "en": "Talk to an expert",
+   "vi": "Trao đổi với chuyên gia"
+  },
+  "scroll": {
+   "en": "Scroll to begin the story",
+   "vi": "Cuộn để bắt đầu câu chuyện"
+  },
+  "otherIndustries": {
+   "en": "Other industries",
+   "vi": "Ngành khác"
+  },
+  "pick": {
+   "en": "What worries you most? Jump straight to it",
+   "vi": "Điều gì khiến bạn lo nhất? Nhảy thẳng tới đó"
+  },
+  "chKicker": {
+   "en": "Key challenges",
+   "vi": "Thách thức chính"
+  },
+  "chapter": {
+   "en": "Chapter",
+   "vi": "Chương"
+  },
+  "challenge": {
+   "en": "The challenge",
+   "vi": "Thách thức"
+  },
+  "answer": {
+   "en": "The answer",
+   "vi": "Lời giải"
+  },
+  "felt": {
+   "en": "Felt by",
+   "vi": "Người cảm nhận"
+  },
+  "solvedBy": {
+   "en": "Solved by",
+   "vi": "Giải quyết bởi"
+  },
+  "bundleKicker": {
+   "en": "Integrated solution package",
+   "vi": "Gói giải pháp tích hợp"
+  },
+  "bundleTitle": {
+   "en": "One package. Every challenge covered.",
+   "vi": "Một gói. Phủ mọi thách thức."
+  },
+  "covers": {
+   "en": "Covers",
+   "vi": "Xử lý"
+  },
+  "learn": {
+   "en": "Learn more",
+   "vi": "Tìm hiểu thêm"
+  },
+  "whyKicker": {
+   "en": "Why choose V-Tech Hub",
+   "vi": "Vì sao chọn V-Tech Hub"
+  },
+  "faqKicker": {
+   "en": "Frequently asked questions",
+   "vi": "Câu hỏi thường gặp"
+  },
+  "pocKicker": {
+   "en": "Proof of concept",
+   "vi": "Thử nghiệm PoC"
+  },
+  "pocTitle": {
+   "en": "Need a dedicated PoC test environment?",
+   "vi": "Cần môi trường PoC riêng để kiểm chứng?"
+  },
+  "pocP": {
+   "en": "V-TECH HUB technical architects can deploy a custom Proof-of-Concept environment, load test, and security audit for your enterprise within 14 business days.",
+   "vi": "Kiến trúc sư V-TECH HUB có thể triển khai môi trường PoC riêng, kiểm thử tải và đánh giá an ninh cho doanh nghiệp của bạn trong vòng 14 ngày làm việc."
+  },
+  "pocBtn": {
+   "en": "Request PoC Sandbox",
+   "vi": "Yêu cầu môi trường PoC"
+  },
+  "notFound": {
+   "en": "Industry not found",
+   "vi": "Không tìm thấy ngành"
+  },
+  "of": {
+   "en": "of",
+   "vi": "trên"
+  },
+  "coversLabel": {
+   "en": "Answers chapters",
+   "vi": "Giải quyết chương"
+  }
  },
- "foot":{"powered":{"en":"Powered by","vi":"Vận hành bởi"},"terms":{"en":"Terms of Service","vi":"Điều khoản dịch vụ"},"privacy":{"en":"Privacy Policy","vi":"Chính sách bảo mật"},"rights":{"en":"All rights reserved.","vi":"Bảo lưu mọi quyền."}}
+ "sol": {
+  "kicker": {
+   "en": "Solution",
+   "vi": "Giải pháp"
+  },
+  "where": {
+   "en": "Where it makes the difference",
+   "vi": "Nơi giải pháp tạo khác biệt"
+  },
+  "inStory": {
+   "en": "in the story of",
+   "vi": "trong câu chuyện của"
+  },
+  "part": {
+   "en": "Part of",
+   "vi": "Thuộc"
+  },
+  "notFound": {
+   "en": "Solution not found",
+   "vi": "Không tìm thấy giải pháp"
+  }
+ },
+ "cta": {
+  "kicker": {
+   "en": "Get in touch",
+   "vi": "Liên hệ"
+  },
+  "title": {
+   "en": "Ready to Scale on Vietnam's Most Trusted Tech Hub?",
+   "vi": "Sẵn sàng phát triển cùng Tech Hub đáng tin cậy nhất Việt Nam?"
+  },
+  "p": {
+   "en": "Tell us your situation. A V-TECH HUB expert replies within one business day, or reach us instantly.",
+   "vi": "Hãy cho chúng tôi biết tình huống của bạn. Chuyên gia V-TECH HUB phản hồi trong một ngày làm việc, hoặc liên hệ ngay lập tức."
+  },
+  "tabBook": {
+   "en": "Book a consultation",
+   "vi": "Đặt lịch tư vấn"
+  },
+  "tabBrief": {
+   "en": "Get the solution brief",
+   "vi": "Nhận tài liệu giải pháp"
+  },
+  "name": {
+   "en": "Full name",
+   "vi": "Họ và tên"
+  },
+  "company": {
+   "en": "Company",
+   "vi": "Công ty"
+  },
+  "email": {
+   "en": "Work email",
+   "vi": "Email công việc"
+  },
+  "phone": {
+   "en": "Phone / Zalo",
+   "vi": "Điện thoại / Zalo"
+  },
+  "industry": {
+   "en": "Industry",
+   "vi": "Ngành"
+  },
+  "need": {
+   "en": "What would you like to solve?",
+   "vi": "Bạn muốn giải quyết vấn đề gì?"
+  },
+  "sendBook": {
+   "en": "Request consultation",
+   "vi": "Gửi yêu cầu tư vấn"
+  },
+  "sendBrief": {
+   "en": "Send me the brief",
+   "vi": "Gửi tài liệu cho tôi"
+  },
+  "consent": {
+   "en": "I agree to be contacted about V-TECH HUB solutions.",
+   "vi": "Tôi đồng ý được liên hệ về các giải pháp của V-TECH HUB."
+  },
+  "required": {
+   "en": "Please complete this field",
+   "vi": "Vui lòng điền thông tin này"
+  },
+  "badEmail": {
+   "en": "Enter a valid email",
+   "vi": "Nhập email hợp lệ"
+  },
+  "thanksT": {
+   "en": "Thank you, we have your request.",
+   "vi": "Cảm ơn bạn, chúng tôi đã nhận yêu cầu."
+  },
+  "thanksP": {
+   "en": "A V-TECH HUB expert will contact you within one business day.",
+   "vi": "Chuyên gia V-TECH HUB sẽ liên hệ với bạn trong vòng một ngày làm việc."
+  },
+  "errorT": {
+   "en": "Something went wrong. Please call or email us instead.",
+   "vi": "Có lỗi xảy ra. Vui lòng gọi điện hoặc gửi email cho chúng tôi."
+  },
+  "call": {
+   "en": "Call us",
+   "vi": "Gọi cho chúng tôi"
+  },
+  "zalo": {
+   "en": "Chat on Zalo",
+   "vi": "Chat Zalo"
+  },
+  "mail": {
+   "en": "Email sales",
+   "vi": "Email bộ phận kinh doanh"
+  },
+  "select": {
+   "en": "Select…",
+   "vi": "Chọn…"
+  },
+  "other": {
+   "en": "Other",
+   "vi": "Khác"
+  },
+  "demo": {
+   "en": "Preview form: requests are not transmitted yet. Please call or email to reach the team.",
+   "vi": "Biểu mẫu xem trước: yêu cầu chưa được gửi đi. Vui lòng gọi điện hoặc email để liên hệ."
+  },
+  "copy": {
+   "en": "Copy",
+   "vi": "Sao chép"
+  },
+  "copied": {
+   "en": "Copied",
+   "vi": "Đã chép"
+  },
+  "thanksDemoT": {
+   "en": "Request captured in this preview.",
+   "vi": "Yêu cầu đã được ghi nhận trong bản xem trước."
+  }
+ },
+ "foot": {
+  "powered": {
+   "en": "Powered by",
+   "vi": "Vận hành bởi"
+  },
+  "terms": {
+   "en": "Terms of Service",
+   "vi": "Điều khoản dịch vụ"
+  },
+  "privacy": {
+   "en": "Privacy Policy",
+   "vi": "Chính sách bảo mật"
+  },
+  "rights": {
+   "en": "All rights reserved.",
+   "vi": "Bảo lưu mọi quyền."
+  }
+ }
 }

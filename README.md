@@ -1,22 +1,23 @@
 # V-TECH HUB — Industry Story Landing Pages
 
-Scroll-driven landing pages (light luxury + glass, Vnetwork red) that walk an enterprise buyer from
+Scroll-driven landing pages (white luxury, frosted glass, brand red as a thin accent) that walk an enterprise buyer from
 **real industry pain → matching packaged solution → proof (PoC) → contact**.
 
-No build step. Plain HTML/CSS/ES modules + GSAP/ScrollTrigger + Lenis + Lucide (vendored in `assets/vendor`).
+No build step. Plain HTML/CSS/ES modules + GSAP/ScrollTrigger + Lenis (vendored in `assets/vendor`); icons are inline SVG (`js/icons.js`).
 
 ```bash
 python3 -m http.server 8765      # JSON is fetched, so serve over HTTP (not file://)
-# http://localhost:8765/                      home + industry picker
-# http://localhost:8765/industry.html?i=bfsi  story page (bfsi, government, healthcare, retail, manufacturing, logistics, media, education)
-# http://localhost:8765/solution.html?s=dlp   product page, links back to the stories it appears in
+# http://localhost:8765/                     home + industry index (single page, hash routes)
+# http://localhost:8765/#industry-bfsi       story page (bfsi, government, healthcare, retail, manufacturing, logistics, media, education)
+# http://localhost:8765/#solution-dlp        product page, links back to the stories it appears in
+node build-artifact.mjs                      # -> dist/vtechhub.html, one self-contained file (css/js/data inlined)
 ```
-Deploys as-is to GitHub Pages / any static host. `?lang=vi` preselects Vietnamese.
+Deploys as-is to GitHub Pages / any static host.
 
 ## How the story works (industry.html)
 Hero → "what worries you most?" picker (jumps straight to the matching chapter) → 5 pinned chapters where the
 **challenge card dims and the matching answer card resolves as you scroll** → bundle → outcomes → FAQ → PoC → contact.
-Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI toggle and light/dark theme persist.
+Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI toggle persists. Single white theme.
 
 ## Editing content (no code)
 - `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md`.
