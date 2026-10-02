@@ -1,4 +1,4 @@
-// V-TECH HUB landing engine. No build step: ES modules + GSAP/ScrollTrigger + Lenis.
+// V-TECH FOUNDRY landing engine. No build step: ES modules + GSAP/ScrollTrigger + Lenis.
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
@@ -93,7 +93,7 @@ function header() {
       <div class="m-sols">${i.bundle.map((s) => link(`solution-${s}`, `${ic(sol(s).icon)}<span>${esc(sol(s).name)}<small>${esc(t(sol(s).tagline))}</small></span>`)).join('')}</div></div>`).join('');
   const catalog = [...state.solutions.values()].map((s) => link(`solution-${s.id}`, `${ic(s.icon)} ${esc(s.name)}`)).join('');
   return `<header class="hdr" id="hdr"><div class="wrap">
-    ${link('home', '<b>V-TECH</b><span>HUB</span>', 'logo', 'aria-label="V-TECH HUB"')}
+    ${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo', 'aria-label="V-TECH FOUNDRY"')}
     <nav class="nav" id="nav" aria-label="Primary">
       <div class="dd mega-dd"><button class="nav-btn ${state.route.page === 'solution' || cur ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.solutions')} ${ic('chevron-down')}</button>
         <div class="panel mega"><div class="m-left"><span class="eyebrow">${u('nav.byIndustry')}</span>${left}</div><div class="m-right">${panes}</div>
@@ -158,7 +158,7 @@ const floatCta = () => `<a class="fab btn btn-red" id="fab" href="#contact" data
 function footer() {
   return `<footer class="foot"><div class="wrap">
     <div class="cols">
-      <div>${link('home', '<b>V-TECH</b><span>HUB</span>', 'logo')}<p style="margin-top:1.2rem">${u('foot.powered')} <a href="${CONFIG.website}" target="_blank" rel="noopener"><b>VNETWORK</b></a></p></div>
+      <div>${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo')}<p style="margin-top:1.2rem">${u('foot.powered')} <a href="${CONFIG.website}" target="_blank" rel="noopener"><b>VNETWORK</b></a></p></div>
       <div class="list"><a href="tel:${CONFIG.phone}">${esc(CONFIG.phoneDisplay)}</a><a href="mailto:${CONFIG.email}">${esc(CONFIG.email)}</a><a href="${CONFIG.website}" target="_blank" rel="noopener">vnetwork.vn</a></div>
       <div class="list">${CONFIG.offices.map((o) => `<p>${esc(o)}</p>`).join('')}</div>
     </div>
@@ -255,7 +255,7 @@ function industryPage() {
   return `
   <section class="hero ind-hero"><div class="wrap"><div class="grid">
     <div>
-      <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / ${link('home', u('ind.crumbIndustry'), '', 'data-after="#industries"')} / <span>${esc(t(d.name))}</span></div>
+      <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'), '', 'data-after="#industries"')} / <span>${esc(t(d.name))}</span></div>
       <h1 class="display">${words(t(d.title))}</h1>
       <p class="lede hero-in" style="animation-delay:.5s">${esc(t(d.tagline))}</p>
       <div class="chips hero-in" style="animation-delay:.56s">${chips}</div>
@@ -288,7 +288,7 @@ function solutionPage() {
   return `
   <section class="hero ind-hero"><div class="wrap"><div class="grid">
     <div>
-      <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
+      <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
       <h1 class="display">${words(s.name)}</h1><p class="lede hero-in" style="animation-delay:.5s">${esc(t(s.description))}</p>
       <div class="actions hero-in" style="margin-top:2rem;animation-delay:.6s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
     <figure class="frame loop glass hero-in" style="animation-delay:.4s" data-kind="${kind}">${sceneFor(kind, {}, s.name)}<figcaption><i></i>${u('scenes.label')}</figcaption></figure>
@@ -296,7 +296,7 @@ function solutionPage() {
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>
   ${contact()}`;
 }
-const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '← V-TECH HUB', 'red')}</p></div></section>`;
+const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '← V-TECH FOUNDRY', 'red')}</p></div></section>`;
 
 /* ---------------------------------------------------------------- behaviour */
 function bindChrome() {
@@ -674,7 +674,7 @@ function render() {
   const { page, id } = state.route;
   const d = page === 'industry' ? industryOf(id) : null;
   const s = page === 'solution' ? state.solutions.get(id) : null;
-  document.title = d ? `${t(d.name)} | V-TECH HUB` : s ? `${s.name} | V-TECH HUB` : 'V-TECH HUB';
+  document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>${header()}<main>${body}</main>${footer()}${floatCta()}`;
   bindChrome(); bindForm(); apUI();

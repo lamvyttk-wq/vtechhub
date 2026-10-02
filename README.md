@@ -1,4 +1,4 @@
-# V-TECH HUB — Industry Story Landing Pages
+# V-TECH FOUNDRY — Industry Story Landing Pages
 
 Scroll-driven landing pages (white luxury, frosted glass, brand red as a thin accent) that walk an enterprise buyer from
 **real industry pain → matching packaged solution → proof (PoC) → contact**.

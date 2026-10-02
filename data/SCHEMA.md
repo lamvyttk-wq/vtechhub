@@ -39,7 +39,7 @@ All user-facing strings are bilingual objects: `{ "en": "...", "vi": "..." }`.
     }
   ],
 
-  "outcomes": [ { "title": {..}, "body": {..} } ],   // exactly 3 "why choose V-Tech Hub"
+  "outcomes": [ { "title": {..}, "body": {..} } ],   // exactly 3 "why choose V-Tech Foundry"
   "faq": [ { "q": {..}, "a": {..} } ],               // 3-4 items
   "regulations": ["Decree 13", "PCI DSS"],           // optional chips shown in hero
   "newSolutions": [ /* solution objects (see below) only for ids NOT in data/solutions.json */ ],
@@ -55,8 +55,8 @@ All user-facing strings are bilingual objects: `{ "en": "...", "vi": "..." }`.
 
 ## Rules
 - Do NOT invent product metrics, certifications, customers or percentages. Use a number only if
-  it comes from the V-Tech Hub / VNETWORK material or a cited public source; otherwise omit `metric`/`stat`.
-- Prefer existing solution ids; add `newSolutions` only for products VNETWORK / V-Tech Hub really sells.
+  it comes from the V-Tech Foundry / VNETWORK material or a cited public source; otherwise omit `metric`/`stat`.
+- Prefer existing solution ids; add `newSolutions` only for products VNETWORK / V-Tech Foundry really sells.
 - Vietnamese copy must be natural business Vietnamese (not literal translation); cite Vietnamese regulation by its real name.
 - Tone: enterprise decision-maker (CIO/CTO/CFO): outcome and risk first, no jargon dumps.
 

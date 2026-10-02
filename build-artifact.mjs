@@ -14,7 +14,7 @@ const libs = local
   ? ['gsap.min.js', 'ScrollTrigger.min.js', 'lenis.min.js'].map((f) => `<script>${read('assets/vendor/' + f)}</script>`).join('\n')
   : ['gsap@3.12.5/dist/gsap.min.js', 'gsap@3.12.5/dist/ScrollTrigger.min.js', 'lenis@1.1.18/dist/lenis.min.js'].map((p) => `<script src="https://cdn.jsdelivr.net/npm/${p}"></script>`).join('\n');
 const html = `<meta charset="utf-8">
-<title>V-TECH HUB</title>
+<title>V-TECH FOUNDRY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">

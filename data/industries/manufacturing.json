@@ -532,8 +532,8 @@
     "vi": "Chúng tôi có phải thay ERP hoặc MES hiện có không?"
    },
    "a": {
-    "en": "No. Database security and data monitoring sit around your existing systems. Scope and integration are assessed with the V-Tech Hub team for each plant.",
-    "vi": "Không. Bảo mật cơ sở dữ liệu và giám sát dữ liệu được đặt quanh hệ thống hiện có. Phạm vi và cách tích hợp được đánh giá cùng đội ngũ V-Tech Hub cho từng nhà máy."
+    "en": "No. Database security and data monitoring sit around your existing systems. Scope and integration are assessed with the V-Tech Foundry team for each plant.",
+    "vi": "Không. Bảo mật cơ sở dữ liệu và giám sát dữ liệu được đặt quanh hệ thống hiện có. Phạm vi và cách tích hợp được đánh giá cùng đội ngũ V-Tech Foundry cho từng nhà máy."
    }
   },
   {
@@ -559,6 +559,6 @@
  ],
  "newSolutions": [],
  "sources": [
-  "Web access to vnetwork.vn was blocked; copy is based on existing V-Tech Hub solution registry and BFSI example. Regulation references: Law on Cybersecurity 2018, Decree 13/2023/ND-CP."
+  "Web access to vnetwork.vn was blocked; copy is based on existing V-Tech Foundry solution registry and BFSI example. Regulation references: Law on Cybersecurity 2018, Decree 13/2023/ND-CP."
  ]
 }

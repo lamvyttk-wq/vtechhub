@@ -9,8 +9,8 @@
    "vi": "Ngành"
   },
   "meet": {
-   "en": "Meet V-Tech Hub",
-   "vi": "Về V-Tech Hub"
+   "en": "Meet V-Tech Foundry",
+   "vi": "Về V-Tech Foundry"
   },
   "request": {
    "en": "Request Consultation",
@@ -75,8 +75,8 @@
    "vi": "Giải pháp theo ngành"
   },
   "heroP": {
-   "en": "V-TECH HUB leads a premier technology alliance, delivering packaged, vertical-tailored solutions to solve complex challenges and accelerate digital transformation for enterprises.",
-   "vi": "V-TECH HUB dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đo ni đóng giày theo ngành để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số doanh nghiệp."
+   "en": "V-TECH FOUNDRY leads a premier technology alliance, delivering packaged, vertical-tailored solutions to solve complex challenges and accelerate digital transformation for enterprises.",
+   "vi": "V-TECH FOUNDRY dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đo ni đóng giày theo ngành để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số doanh nghiệp."
   },
   "explore": {
    "en": "Explore Industry Solutions",
@@ -241,8 +241,8 @@
    "vi": "Tìm hiểu thêm"
   },
   "whyKicker": {
-   "en": "Why choose V-Tech Hub",
-   "vi": "Vì sao chọn V-Tech Hub"
+   "en": "Why choose V-Tech Foundry",
+   "vi": "Vì sao chọn V-Tech Foundry"
   },
   "faqKicker": {
    "en": "Frequently asked questions",
@@ -257,8 +257,8 @@
    "vi": "Cần môi trường PoC riêng để kiểm chứng?"
   },
   "pocP": {
-   "en": "V-TECH HUB technical architects can deploy a custom Proof-of-Concept environment, load test, and security audit for your enterprise within 14 business days.",
-   "vi": "Kiến trúc sư V-TECH HUB có thể triển khai môi trường PoC riêng, kiểm thử tải và đánh giá an ninh cho doanh nghiệp của bạn trong vòng 14 ngày làm việc."
+   "en": "V-TECH FOUNDRY technical architects can deploy a custom Proof-of-Concept environment, load test, and security audit for your enterprise within 14 business days.",
+   "vi": "Kiến trúc sư V-TECH FOUNDRY có thể triển khai môi trường PoC riêng, kiểm thử tải và đánh giá an ninh cho doanh nghiệp của bạn trong vòng 14 ngày làm việc."
   },
   "pocBtn": {
    "en": "Request PoC Sandbox",
@@ -345,12 +345,12 @@
    "vi": "Liên hệ"
   },
   "title": {
-   "en": "Ready to Scale on Vietnam's Most Trusted Tech Hub?",
-   "vi": "Sẵn sàng phát triển cùng Tech Hub đáng tin cậy nhất Việt Nam?"
+   "en": "Ready to Scale on Vietnam's Most Trusted Tech Foundry?",
+   "vi": "Sẵn sàng phát triển cùng Tech Foundry đáng tin cậy nhất Việt Nam?"
   },
   "p": {
-   "en": "Tell us your situation. A V-TECH HUB expert replies within one business day, or reach us instantly.",
-   "vi": "Hãy cho chúng tôi biết tình huống của bạn. Chuyên gia V-TECH HUB phản hồi trong một ngày làm việc, hoặc liên hệ ngay lập tức."
+   "en": "Tell us your situation. A V-TECH FOUNDRY expert replies within one business day, or reach us instantly.",
+   "vi": "Hãy cho chúng tôi biết tình huống của bạn. Chuyên gia V-TECH FOUNDRY phản hồi trong một ngày làm việc, hoặc liên hệ ngay lập tức."
   },
   "tabBook": {
    "en": "Book a consultation",
@@ -393,8 +393,8 @@
    "vi": "Gửi tài liệu cho tôi"
   },
   "consent": {
-   "en": "I agree to be contacted about V-TECH HUB solutions.",
-   "vi": "Tôi đồng ý được liên hệ về các giải pháp của V-TECH HUB."
+   "en": "I agree to be contacted about V-TECH FOUNDRY solutions.",
+   "vi": "Tôi đồng ý được liên hệ về các giải pháp của V-TECH FOUNDRY."
   },
   "required": {
    "en": "Please complete this field",
@@ -409,8 +409,8 @@
    "vi": "Cảm ơn bạn, chúng tôi đã nhận yêu cầu."
   },
   "thanksP": {
-   "en": "A V-TECH HUB expert will contact you within one business day.",
-   "vi": "Chuyên gia V-TECH HUB sẽ liên hệ với bạn trong vòng một ngày làm việc."
+   "en": "A V-TECH FOUNDRY expert will contact you within one business day.",
+   "vi": "Chuyên gia V-TECH FOUNDRY sẽ liên hệ với bạn trong vòng một ngày làm việc."
   },
   "errorT": {
    "en": "Something went wrong. Please call or email us instead.",

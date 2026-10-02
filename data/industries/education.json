@@ -513,8 +513,8 @@
     "vi": "Vì sao nên đặt LMS và cổng tuyển sinh trên đám mây tại Việt Nam?"
    },
    "a": {
-    "en": "VCLOUD keeps student data inside Vietnam and lets you plan capacity around enrollment and exam peaks instead of sizing a server room for them. Specific capacity and SLA terms are agreed per project with the V-Tech Hub team.",
-    "vi": "VCLOUD giữ dữ liệu người học trong nước và cho phép hoạch định năng lực theo đợt tuyển sinh, thi cử thay vì thiết kế phòng máy cho đúng đỉnh tải. Năng lực và cam kết dịch vụ cụ thể được thống nhất theo từng dự án cùng đội ngũ V-Tech Hub."
+    "en": "VCLOUD keeps student data inside Vietnam and lets you plan capacity around enrollment and exam peaks instead of sizing a server room for them. Specific capacity and SLA terms are agreed per project with the V-Tech Foundry team.",
+    "vi": "VCLOUD giữ dữ liệu người học trong nước và cho phép hoạch định năng lực theo đợt tuyển sinh, thi cử thay vì thiết kế phòng máy cho đúng đỉnh tải. Năng lực và cam kết dịch vụ cụ thể được thống nhất theo từng dự án cùng đội ngũ V-Tech Foundry."
    }
   },
   {
@@ -533,8 +533,8 @@
     "vi": "Trường có ngân sách hạn chế có thể bắt đầu nhỏ không?"
    },
    "a": {
-    "en": "Yes. Many institutions begin with email defense and VCLOUD hosting for the most exposed systems, then add data and database protection in phases. Scope and pricing are assessed with the V-Tech Hub team.",
-    "vi": "Có. Nhiều đơn vị bắt đầu từ bảo vệ email và VCLOUD cho các hệ thống dễ bị tấn công nhất, sau đó bổ sung bảo vệ dữ liệu và cơ sở dữ liệu theo từng giai đoạn. Phạm vi và chi phí được đánh giá cùng đội ngũ V-Tech Hub."
+    "en": "Yes. Many institutions begin with email defense and VCLOUD hosting for the most exposed systems, then add data and database protection in phases. Scope and pricing are assessed with the V-Tech Foundry team.",
+    "vi": "Có. Nhiều đơn vị bắt đầu từ bảo vệ email và VCLOUD cho các hệ thống dễ bị tấn công nhất, sau đó bổ sung bảo vệ dữ liệu và cơ sở dữ liệu theo từng giai đoạn. Phạm vi và chi phí được đánh giá cùng đội ngũ V-Tech Foundry."
    }
   }
  ],
@@ -542,7 +542,7 @@
  "sources": [
   "Decree 13/2023/ND-CP on personal data protection (Government of Vietnam; children's data provisions)",
   "Law on Cybersecurity 2018 and Decree 53/2022/ND-CP (data localization)",
-  "data/solutions.json (V-Tech Hub solution registry)",
+  "data/solutions.json (V-Tech Foundry solution registry)",
   "Web research not performed; relied on well-known public regulatory facts"
  ]
 }

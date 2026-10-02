@@ -1,4 +1,4 @@
-// V-TECH HUB scene engine: five scroll-scrubbed explainers that turn a pain into its answer without words.
+// V-TECH FOUNDRY scene engine: five scroll-scrubbed explainers that turn a pain into its answer without words.
 // Every scene is DRAWN IN ITS RESOLVED STATE (so no-JS / reduced-motion visitors see the happy ending), and
 // sceneTimeline() returns a 10-unit GSAP timeline: 0-3.6 the problem, 3.6-5.4 the turn, 5.4-10 resolved.
 import { ICONS } from './icons.js';

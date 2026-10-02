@@ -151,8 +151,8 @@
      "vi": "Vận hành hệ thống lõi trên đám mây chủ quyền, giữ cửa vào sạch"
     },
     "body": {
-     "en": "VCLOUD hosts business-critical applications inside Vietnam, while email defense closes the most common route for ransomware into your sites. Sizing and service levels are agreed with your V-Tech Hub team.",
-     "vi": "VCLOUD lưu trữ các ứng dụng trọng yếu ngay tại Việt Nam, còn bảo vệ email chặn đường xâm nhập phổ biến nhất của ransomware vào các điểm của bạn. Quy mô và mức dịch vụ được thống nhất cùng đội ngũ V-Tech Hub."
+     "en": "VCLOUD hosts business-critical applications inside Vietnam, while email defense closes the most common route for ransomware into your sites. Sizing and service levels are agreed with your V-Tech Foundry team.",
+     "vi": "VCLOUD lưu trữ các ứng dụng trọng yếu ngay tại Việt Nam, còn bảo vệ email chặn đường xâm nhập phổ biến nhất của ransomware vào các điểm của bạn. Quy mô và mức dịch vụ được thống nhất cùng đội ngũ V-Tech Foundry."
     },
     "points": [
      {
@@ -402,8 +402,8 @@
      "vi": "Rà soát vòng đầu nhanh hơn, con người vẫn quyết định"
     },
     "body": {
-     "en": "A specialized AI assistant reviews contracts and regulatory documents to flag clauses and gaps for your legal team, with an on-premise option so commercial documents stay in your environment. Scope for logistics and customs content is confirmed with V-Tech Hub during assessment.",
-     "vi": "Trợ lý AI chuyên biệt rà soát hợp đồng và văn bản quy định, đánh dấu điều khoản và điểm thiếu cho đội pháp chế, có tùy chọn on-premise để tài liệu thương mại nằm trong môi trường của bạn. Phạm vi áp dụng cho nội dung logistics và hải quan được xác nhận cùng V-Tech Hub khi khảo sát."
+     "en": "A specialized AI assistant reviews contracts and regulatory documents to flag clauses and gaps for your legal team, with an on-premise option so commercial documents stay in your environment. Scope for logistics and customs content is confirmed with V-Tech Foundry during assessment.",
+     "vi": "Trợ lý AI chuyên biệt rà soát hợp đồng và văn bản quy định, đánh dấu điều khoản và điểm thiếu cho đội pháp chế, có tùy chọn on-premise để tài liệu thương mại nằm trong môi trường của bạn. Phạm vi áp dụng cho nội dung logistics và hải quan được xác nhận cùng V-Tech Foundry khi khảo sát."
     },
     "points": [
      {
@@ -536,14 +536,14 @@
     "vi": "Trợ lý AI Legal có xử lý chứng từ hải quan không?"
    },
    "a": {
-    "en": "It is built for contract and regulatory document review. Coverage of customs and freight document types is scoped with V-Tech Hub in a pilot, and an on-premise option keeps documents private.",
-    "vi": "Giải pháp được xây dựng cho rà soát hợp đồng và văn bản quy định. Phạm vi với các loại chứng từ hải quan và vận tải được xác định cùng V-Tech Hub trong giai đoạn thử nghiệm, và tùy chọn on-premise giữ tài liệu riêng tư."
+    "en": "It is built for contract and regulatory document review. Coverage of customs and freight document types is scoped with V-Tech Foundry in a pilot, and an on-premise option keeps documents private.",
+    "vi": "Giải pháp được xây dựng cho rà soát hợp đồng và văn bản quy định. Phạm vi với các loại chứng từ hải quan và vận tải được xác định cùng V-Tech Foundry trong giai đoạn thử nghiệm, và tùy chọn on-premise giữ tài liệu riêng tư."
    }
   }
  ],
  "newSolutions": [],
  "sources": [
-  "data/solutions.json (V-Tech Hub solution registry)",
+  "data/solutions.json (V-Tech Foundry solution registry)",
   "data/industries/bfsi.json (structure reference)",
   "Web research not performed; regulations cited by public name: Decree 13/2023/ND-CP, Law on Cybersecurity 2018, Law on Data 2024, Customs Law 54/2014/QH13"
  ]
