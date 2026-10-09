@@ -34,3 +34,16 @@ Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI tog
   - `95%` / `42%` appear only in BFSI/AI Legal (from the mockup); no other metric or customer claim exists.
   - Regulation chips are English-only strings.
 - Confirm the Zalo link and the `Terms`/`Privacy` URLs.
+
+## React artifact build (V-TECH FOUNDRY)
+`react/VTechFoundry.jsx` is one self-contained React component (Tailwind core classes + `lucide-react`, no scroll or autoplay motion;
+EN/VI driven by one dictionary). It is generated, so edit the sources and rebuild:
+- `react/template.jsx`: component code and UI strings (`[en, vi]` pairs)
+- `react/overlay.mjs`: hand-authored content (industry stories, images, AI Agent SuperSales, experts, alliance signing photo)
+- `data/*.json`: industries, chapters, solutions (shared with the vanilla site)
+```bash
+npm install
+node build-react.mjs   # -> react/VTechFoundry.jsx and dist/vtechfoundry-react.html
+```
+Photos load from Unsplash with an illustrated fallback if a URL is blocked or fails. The signing photo tries
+`/images/vpbank-vnetwork-signing.jpg` first. Ms. Hau's profile is `profile: null` in `react/overlay.mjs`: paste her existing role, bio and photo there.
