@@ -1,0 +1,57 @@
+[
+ {
+  "id": "nguyen-duc-anh",
+  "name": {
+   "en": "Nguyen Duc Anh",
+   "vi": "Nguyen Duc Anh"
+  },
+  "honorific": {
+   "en": "Mr.",
+   "vi": "Ông"
+  },
+  "role": {
+   "en": "Founder & CEO, DatumBridge",
+   "vi": "Nhà sáng lập & CEO, DatumBridge"
+  },
+  "photo": "assets/img/nguyen-duc-anh.jpg",
+  "bio": {
+   "en": "Mr Duc Anh has 16+ years of experience in technology, product development, and digital transformation. He leads product vision and…",
+   "vi": "Ông Duc Anh có hơn 16 năm kinh nghiệm trong lĩnh vực công nghệ, phát triển sản phẩm và chuyển đổi số. Ông dẫn dắt tầm nhìn sản phẩm và…"
+  },
+  "bioTruncated": true
+ },
+ {
+  "id": "ms-hau",
+  "name": {
+   "en": "Ms. Hau",
+   "vi": "Bà Hau"
+  },
+  "pending": true
+ },
+ {
+  "id": "hoang-tuan-anh",
+  "name": {
+   "en": "Hoang Tuan Anh",
+   "vi": "Hoàng Tuấn Anh"
+  },
+  "honorific": {
+   "en": "Mr.",
+   "vi": "Ông"
+  },
+  "role": {
+   "en": "Country Director – SearchInform",
+   "vi": "Giám đốc quốc gia – SearchInform"
+  },
+  "focus": {
+   "en": "Data Loss Prevention (DLP) & Insider Risk Management",
+   "vi": "Chống rò rỉ dữ liệu (DLP) & Quản trị rủi ro nội bộ"
+  },
+  "solutions": [
+   "dlp"
+  ],
+  "bio": {
+   "en": "With over 15 years of experience in technology, telecommunications, and data security at leading corporations in Vietnam, he specializes in business development and building enterprise partnerships, and leads the expansion of Data Loss Prevention (DLP) and Insider Risk Management solutions in the country.",
+   "vi": "Chuyên gia với hơn 15 năm kinh nghiệm trong lĩnh vực công nghệ, viễn thông và bảo mật dữ liệu tại các tập đoàn hàng đầu Việt Nam, chuyên về phát triển kinh doanh và xây dựng quan hệ đối tác với doanh nghiệp. Ông dẫn dắt việc mở rộng các giải pháp chống rò rỉ dữ liệu (DLP) và quản trị rủi ro nội bộ tại Việt Nam."
+  }
+ }
+]

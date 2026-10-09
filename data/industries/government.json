@@ -11,14 +11,13 @@
   "vi": "Chính phủ & Khu vực công"
  },
  "tagline": {
-  "en": "Sovereign VCLOUD & Email Security, Data Loss Prevention, Database Security and AI Legal & Compliance for agencies serving citizens.",
-  "vi": "VCLOUD & Email Security chủ quyền, Chống thất thoát dữ liệu, Bảo mật cơ sở dữ liệu và AI Legal & Compliance cho cơ quan nhà nước phục vụ người dân."
+  "en": "Sovereign VCLOUD & Email Security, Data Loss Prevention and Database Security for agencies serving citizens.",
+  "vi": "VCLOUD & Email Security chủ quyền, Chống thất thoát dữ liệu và Bảo mật cơ sở dữ liệu cho cơ quan nhà nước phục vụ người dân."
  },
  "bundle": [
   "email-security",
   "dlp",
-  "database-security",
-  "ai-legal"
+  "database-security"
  ],
  "regulations": [
   "Law on Cybersecurity",
@@ -410,95 +409,6 @@
      "vi": "Đủ hồ sơ"
     }
    }
-  },
-  {
-   "id": "legal-ops",
-   "persona": {
-    "en": "Head of Legal & Administrative Affairs",
-    "vi": "Trưởng phòng Pháp chế & Hành chính"
-   },
-   "challenge": {
-    "title": {
-     "en": "Legal documents multiplying faster than teams can read them",
-     "vi": "Văn bản pháp luật tăng nhanh hơn khả năng đọc của đội ngũ"
-    },
-    "body": {
-     "en": "Decrees, circulars and internal procedures change constantly. Reviewing drafts, contracts and administrative decisions by hand is slow, and sending them to public AI tools risks exposing non-public information.",
-     "vi": "Nghị định, thông tư và quy trình nội bộ thay đổi liên tục. Rà soát dự thảo, hợp đồng và quyết định hành chính thủ công rất chậm, còn đưa tài liệu lên công cụ AI công cộng có nguy cơ lộ thông tin không công khai."
-    }
-   },
-   "solutions": [
-    "ai-legal"
-   ],
-   "response": {
-    "title": {
-     "en": "A legal assistant that stays inside your walls",
-     "vi": "Trợ lý pháp lý chạy trong hệ thống của bạn"
-    },
-    "body": {
-     "en": "The AI Legal assistant supports document and contract review against regulation, with an on-premise option so sensitive documents never leave the agency.",
-     "vi": "Trợ lý AI Legal hỗ trợ rà soát văn bản, hợp đồng theo quy định hiện hành, có tùy chọn on-premise để tài liệu nhạy cảm không rời khỏi cơ quan."
-    },
-    "points": [
-     {
-      "en": "Speeds up routine review",
-      "vi": "Rút ngắn rà soát thường nhật"
-     },
-     {
-      "en": "On-premise option for privacy",
-      "vi": "Tùy chọn on-premise bảo mật dữ liệu"
-     },
-     {
-      "en": "Frees staff for judgement work",
-      "vi": "Giải phóng cán bộ cho công việc cần phán đoán"
-     }
-    ]
-   },
-   "scenario": {
-    "en": "Tuesday, 09:00. A draft decree and three amended circulars land on the desk of the legal office, and the leadership wants comments by the end of the day.",
-    "vi": "Sáng thứ Ba, 9:00. Một dự thảo nghị định và ba thông tư sửa đổi cùng đổ về phòng pháp chế, còn lãnh đạo cần ý kiến trước cuối ngày."
-   },
-   "scene": {
-    "kind": "scan",
-    "doc": {
-     "en": "Draft decree",
-     "vi": "Dự thảo nghị định"
-    },
-    "flags": [
-     {
-      "en": "Outdated citation",
-      "vi": "Viện dẫn lỗi thời"
-     },
-     {
-      "en": "Article conflict",
-      "vi": "Trái quy định"
-     },
-     {
-      "en": "Missing authority",
-      "vi": "Thiếu thẩm quyền"
-     }
-    ],
-    "timeBefore": {
-     "en": "Days",
-     "vi": "Nhiều ngày"
-    },
-    "timeAfter": {
-     "en": "Minutes",
-     "vi": "Vài phút"
-    },
-    "perDoc": {
-     "en": "per draft review",
-     "vi": "mỗi dự thảo"
-    },
-    "before": {
-     "en": "Manual",
-     "vi": "Thủ công"
-    },
-    "after": {
-     "en": "Automated",
-     "vi": "Tự động"
-    }
-   }
   }
  ],
  "outcomes": [
@@ -540,8 +450,8 @@
     "vi": "Dữ liệu có được lưu tại Việt Nam không?"
    },
    "a": {
-    "en": "VCLOUD is hosted on infrastructure in Vietnam, and AI Legal offers an on-premise option. Confirm the exact deployment against your system's security level with the V-Tech Foundry team.",
-    "vi": "VCLOUD đặt trên hạ tầng tại Việt Nam, AI Legal có tùy chọn on-premise. Vui lòng xác nhận phương án triển khai cụ thể theo cấp độ an toàn hệ thống của đơn vị cùng đội ngũ V-Tech Foundry."
+    "en": "VCLOUD is hosted on infrastructure in Vietnam. Confirm the exact deployment against your system's security level with the V-Tech Foundry team.",
+    "vi": "VCLOUD đặt trên hạ tầng tại Việt Nam. Vui lòng xác nhận phương án triển khai cụ thể theo cấp độ an toàn hệ thống của đơn vị cùng đội ngũ V-Tech Foundry."
    }
   },
   {
@@ -560,8 +470,8 @@
     "vi": "Có thể triển khai theo từng giai đoạn không?"
    },
    "a": {
-    "en": "Yes. Many agencies start with email protection or data-loss prevention and add database security and AI Legal as budgets and priorities allow.",
-    "vi": "Có. Nhiều cơ quan bắt đầu từ bảo vệ email hoặc chống thất thoát dữ liệu rồi bổ sung bảo mật cơ sở dữ liệu và AI Legal theo ngân sách và mức ưu tiên."
+    "en": "Yes. Many agencies start with email protection or data-loss prevention and add database security as budgets and priorities allow.",
+    "vi": "Có. Nhiều cơ quan bắt đầu từ bảo vệ email hoặc chống thất thoát dữ liệu rồi bổ sung bảo mật cơ sở dữ liệu theo ngân sách và mức ưu tiên."
    }
   }
  ],

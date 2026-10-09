@@ -11,14 +11,14 @@
   "vi": "Ngân hàng, Dịch vụ Tài chính & Bảo hiểm"
  },
  "tagline": {
-  "en": "VCLOUD & Email Security, AI Legal & Compliance, Data Loss Prevention and Core Banking Database Security.",
-  "vi": "VCLOUD & Email Security, AI Legal & Compliance, Chống thất thoát dữ liệu và Bảo mật cơ sở dữ liệu Core Banking."
+  "en": "VCLOUD & Email Security, AI Agent SuperSales & Assistant, Data Loss Prevention and Core Banking Database Security.",
+  "vi": "VCLOUD & Email Security, AI Agent SuperSales & Assistant, Chống thất thoát dữ liệu và Bảo mật cơ sở dữ liệu Core Banking."
  },
  "bundle": [
   "email-security",
   "database-security",
   "dlp",
-  "ai-legal"
+  "ai-agent"
  ],
  "regulations": [
   "Decree 13",
@@ -319,50 +319,204 @@
      "vi": "Rà soát pháp lý và tuân thủ chậm"
     },
     "body": {
-     "en": "Loan agreements, insurance contracts and regulatory documents need detailed manual review. This slows approvals, delays customer service, and makes it harder for legal and compliance teams to keep up with changing regulations.",
-     "vi": "Hợp đồng tín dụng, hợp đồng bảo hiểm và văn bản quy định cần rà soát thủ công chi tiết. Điều này làm chậm phê duyệt, trì hoãn phục vụ khách hàng và khiến đội pháp chế khó theo kịp quy định thay đổi."
+     "en": "Complex internal procedures covering legal, tax and compliance are spread across many documents, and regulations keep changing. Looking them up by hand slows approvals, delays customer service and makes it harder for legal and compliance teams to keep up.",
+     "vi": "Các quy trình nội bộ phức tạp về pháp chế, thuế và tuân thủ nằm rải rác trong nhiều tài liệu, trong khi quy định liên tục thay đổi. Tra cứu thủ công làm chậm phê duyệt, trì hoãn phục vụ khách hàng và khiến đội pháp chế, tuân thủ khó theo kịp."
     }
    },
    "solutions": [
-    "ai-legal"
+    "ai-agent"
    ],
    "response": {
     "title": {
-     "en": "Review in minutes, not days",
-     "vi": "Rà soát trong vài phút thay vì vài ngày"
+     "en": "Internal procedures answered in seconds",
+     "vi": "Quy trình nội bộ có câu trả lời trong vài giây"
     },
     "body": {
-     "en": "An AI assistant trained on State Bank of Vietnam regulations automates loan and contract review, with an on-premise option so sensitive documents never leave your walls.",
-     "vi": "Trợ lý AI huấn luyện trên quy định của Ngân hàng Nhà nước tự động rà soát hợp đồng tín dụng, có tùy chọn on-premise để tài liệu nhạy cảm không rời khỏi hệ thống của bạn."
+     "en": "AI Agent Assistant lets staff search complex internal procedures (legal, tax, compliance) in plain language, so legal and credit teams stop re-reading the same documents.",
+     "vi": "AI Agent Assistant giúp nhân viên tra cứu các quy trình nội bộ phức tạp (pháp chế, thuế, tuân thủ) bằng ngôn ngữ tự nhiên, để đội pháp chế và tín dụng không phải đọc lại cùng một tài liệu."
     },
     "points": [
      {
-      "en": "Trained on SBV regulations",
-      "vi": "Huấn luyện trên quy định NHNN"
+      "en": "Search internal legal, tax and compliance procedures",
+      "vi": "Tra cứu quy trình pháp chế, thuế, tuân thủ nội bộ"
      },
      {
-      "en": "On-premise option for total privacy",
-      "vi": "Tùy chọn on-premise bảo mật tuyệt đối"
+      "en": "Built for internal staff",
+      "vi": "Dành riêng cho nhân viên nội bộ"
      },
      {
-      "en": "Frees legal teams for high-value work",
-      "vi": "Giải phóng đội pháp chế cho việc giá trị cao"
+      "en": "Answers in under 5 seconds",
+      "vi": "Phản hồi dưới 5 giây"
      }
-    ],
-    "metric": {
-     "value": "95%",
-     "label": {
-      "en": "accuracy on SBV regulation",
-      "vi": "độ chính xác theo quy định NHNN"
-     }
-    }
+    ]
    },
    "scenario": {
-    "en": "A stack of loan contracts is waiting for review, and the deadline is tomorrow.",
-    "vi": "Một chồng hợp đồng tín dụng đang chờ rà soát, và hạn chót là ngày mai."
+    "en": "Month-end, 16:40. A credit officer needs the current tax and legal procedure for a loan file, and the policy is spread across five documents.",
+    "vi": "Cuối tháng, 16:40. Một cán bộ tín dụng cần quy trình thuế và pháp lý hiện hành cho một hồ sơ vay, nhưng chính sách nằm rải rác trong năm tài liệu."
    },
    "scene": {
-    "kind": "scan"
+    "kind": "chat",
+    "src": {
+     "en": "Staff questions",
+     "vi": "Câu hỏi của nhân viên"
+    },
+    "ask": [
+     {
+      "en": "Which tax rule applies?",
+      "vi": "Quy định thuế nào?"
+     },
+     {
+      "en": "Latest loan policy?",
+      "vi": "Chính sách vay mới?"
+     },
+     {
+      "en": "Compliance checklist?",
+      "vi": "Checklist tuân thủ?"
+     }
+    ],
+    "reply": [
+     {
+      "en": "Procedure found",
+      "vi": "Đã tìm quy trình"
+     },
+     {
+      "en": "Policy summarised",
+      "vi": "Đã tóm tắt chính sách"
+     },
+     {
+      "en": "Checklist ready",
+      "vi": "Checklist sẵn sàng"
+     }
+    ],
+    "lead": {
+     "en": "Staff helped",
+     "vi": "Đã hỗ trợ nhân viên"
+    }
+   }
+  },
+  {
+   "id": "sales",
+   "persona": {
+    "en": "Head of Digital Banking & Customer Experience",
+    "vi": "Giám đốc Ngân hàng số & Trải nghiệm khách hàng"
+   },
+   "challenge": {
+    "title": {
+     "en": "Customers waiting, leads lost across channels",
+     "vi": "Khách hàng chờ lâu, khách tiềm năng thất thoát trên các kênh"
+    },
+    "body": {
+     "en": "Customers ask about accounts, cards and loans on the web, Zalo, Messenger and social platforms at all hours. Slow or inconsistent replies push them to competitors, and promising leads are never captured or qualified.",
+     "vi": "Khách hàng hỏi về tài khoản, thẻ và khoản vay trên web, Zalo, Messenger và mạng xã hội vào mọi khung giờ. Phản hồi chậm hoặc thiếu nhất quán khiến họ rời sang đối thủ, còn khách hàng tiềm năng không được thu thập và phân loại."
+    }
+   },
+   "solutions": [
+    "ai-agent"
+   ],
+   "response": {
+    "title": {
+     "en": "Answer instantly, capture every lead",
+     "vi": "Trả lời tức thì, không bỏ sót khách tiềm năng"
+    },
+    "body": {
+     "en": "AI Agent SuperSales & AI Agent Assistant is a comprehensive enterprise AI solution designed to automate omnichannel customer consultation, care, and sales operations.",
+     "vi": "AI Agent SuperSales & AI Agent Assistant là giải pháp AI toàn diện, hỗ trợ tự động hóa tư vấn, chăm sóc khách hàng và bán hàng đa kênh."
+    },
+    "points": [
+     {
+      "en": "Instant answers to every question",
+      "vi": "Phản hồi tức thì mọi thắc mắc"
+     },
+     {
+      "en": "Smart suggestions from behavior and needs",
+      "vi": "Đề xuất sản phẩm theo hành vi và nhu cầu"
+     },
+     {
+      "en": "Automatic lead collection and qualification",
+      "vi": "Tự động thu thập và phân loại khách tiềm năng"
+     },
+     {
+      "en": "Automated sales: upsell, cross-sell, closing",
+      "vi": "Tự động tư vấn bán hàng: upsell, cross-sell, chốt sales"
+     }
+    ],
+    "metrics": [
+     {
+      "value": {
+       "en": "10M+",
+       "vi": "10 triệu+"
+      },
+      "label": {
+       "en": "customers reached",
+       "vi": "khách hàng tiếp cận"
+      }
+     },
+     {
+      "value": {
+       "en": "< 5s",
+       "vi": "< 5 giây"
+      },
+      "label": {
+       "en": "to process a request",
+       "vi": "để xử lý một yêu cầu"
+      }
+     },
+     {
+      "value": {
+       "en": "30%",
+       "vi": "30%"
+      },
+      "label": {
+       "en": "lead capture rate (~2,000+ a month)",
+       "vi": "tỷ lệ thu lead (~2.000+ mỗi tháng)"
+      }
+     },
+     {
+      "value": {
+       "en": "4.7/5",
+       "vi": "4.7/5"
+      },
+      "label": {
+       "en": "satisfaction, 24/7 support",
+       "vi": "mức hài lòng, hỗ trợ 24/7"
+      }
+     }
+    ]
+   },
+   "scenario": {
+    "en": "Saturday, 21:40. A customer asks about a loan on Zalo while the branch is closed, and nobody is there to answer.",
+    "vi": "Tối thứ Bảy, 21:40. Một khách hàng hỏi về khoản vay trên Zalo khi chi nhánh đã đóng cửa, và không ai trả lời."
+   },
+   "scene": {
+    "kind": "chat",
+    "ask": [
+     {
+      "en": "Open an account online?",
+      "vi": "Mở tài khoản online?"
+     },
+     {
+      "en": "What is the card fee?",
+      "vi": "Phí thẻ bao nhiêu?"
+     },
+     {
+      "en": "Which loan suits me?",
+      "vi": "Khoản vay nào hợp?"
+     }
+    ],
+    "reply": [
+     {
+      "en": "Steps sent in seconds",
+      "vi": "Đã gửi các bước"
+     },
+     {
+      "en": "Fee table shared",
+      "vi": "Đã gửi biểu phí"
+     },
+     {
+      "en": "Loan options matched",
+      "vi": "Gợi ý khoản vay"
+     }
+    ]
    }
   }
  ],
@@ -393,8 +547,8 @@
     "vi": "Tối ưu vận hành & chi phí"
    },
    "body": {
-    "en": "Automate security controls, data monitoring and document review to reduce manual work, incident-response cost and IT effort.",
-    "vi": "Tự động hóa kiểm soát an ninh, giám sát dữ liệu và rà soát tài liệu để giảm công việc thủ công, chi phí ứng phó sự cố và tải cho IT."
+    "en": "Automate security controls and data monitoring, and let AI answer customer and staff questions around the clock, reducing manual work, incident-response cost and IT effort.",
+    "vi": "Tự động hóa kiểm soát an ninh và giám sát dữ liệu, để AI trả lời câu hỏi của khách hàng và nhân viên suốt 24/7, giảm công việc thủ công, chi phí ứng phó sự cố và tải cho IT."
    }
   }
  ],
@@ -411,12 +565,12 @@
   },
   {
    "q": {
-    "en": "How does the AI Legal solution reduce compliance processing times?",
-    "vi": "Giải pháp AI Legal rút ngắn thời gian xử lý tuân thủ như thế nào?"
+    "en": "How does AI Agent SuperSales & Assistant work across channels?",
+    "vi": "AI Agent SuperSales & Assistant hoạt động như thế nào trên nhiều kênh?"
    },
    "a": {
-    "en": "It reviews loan agreements and contracts automatically against State Bank of Vietnam regulations, cutting routine review workload by 42%. An on-premise option keeps all data private.",
-    "vi": "Giải pháp tự động rà soát hợp đồng tín dụng theo quy định của Ngân hàng Nhà nước, giảm 42% khối lượng rà soát thường nhật. Tùy chọn on-premise giữ toàn bộ dữ liệu riêng tư."
+    "en": "It answers customer questions instantly on web, Zalo, Messenger, iOS and Android, suggests products from behaviour and needs, collects and qualifies leads, and helps staff look up internal procedures. Reported results include request processing under 5 seconds and a 4.7/5 satisfaction score.",
+    "vi": "Giải pháp trả lời tức thì câu hỏi của khách hàng trên web, Zalo, Messenger, iOS và Android, đề xuất sản phẩm theo hành vi và nhu cầu, thu thập và phân loại khách hàng tiềm năng, đồng thời hỗ trợ nhân viên tra cứu quy trình nội bộ. Kết quả ghi nhận gồm tốc độ xử lý yêu cầu dưới 5 giây và chỉ số hài lòng 4.7/5."
    }
   }
  ],

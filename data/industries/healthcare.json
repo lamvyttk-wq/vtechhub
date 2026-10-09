@@ -11,14 +11,13 @@
   "vi": "Y tế: Bệnh viện, Phòng khám, Dược phẩm & Bảo hiểm sức khỏe"
  },
  "tagline": {
-  "en": "VCLOUD & Email Security, Database Security, Data Loss Prevention and AI Legal & Compliance to protect patient records and keep care running.",
-  "vi": "VCLOUD & Email Security, Bảo mật cơ sở dữ liệu, Chống thất thoát dữ liệu và AI Legal & Compliance để bảo vệ hồ sơ bệnh nhân và giữ vận hành khám chữa bệnh liên tục."
+  "en": "VCLOUD & Email Security, Database Security and Data Loss Prevention to protect patient records and keep care running.",
+  "vi": "VCLOUD & Email Security, Bảo mật cơ sở dữ liệu và Chống thất thoát dữ liệu để bảo vệ hồ sơ bệnh nhân và giữ vận hành khám chữa bệnh liên tục."
  },
  "bundle": [
   "email-security",
   "database-security",
-  "dlp",
-  "ai-legal"
+  "dlp"
  ],
  "regulations": [
   "Decree 13/2023",
@@ -307,95 +306,6 @@
    }
   },
   {
-   "id": "insurance-docs",
-   "persona": {
-    "en": "Head of Health Insurance Claims / Legal",
-    "vi": "Trưởng bộ phận giám định bảo hiểm / Pháp chế"
-   },
-   "challenge": {
-    "title": {
-     "en": "Claims and Contracts Reviewed by Hand",
-     "vi": "Hợp đồng và hồ sơ bồi thường rà soát thủ công"
-    },
-    "body": {
-     "en": "Insurance contracts, supplier agreements and consent forms must be read line by line against changing health, data and insurance rules. The backlog slows reimbursement and puts pressure on a small legal team.",
-     "vi": "Hợp đồng bảo hiểm, hợp đồng nhà cung cấp và mẫu đồng ý xử lý dữ liệu phải đọc từng điều khoản theo quy định y tế, dữ liệu và bảo hiểm luôn thay đổi. Tồn đọng làm chậm chi trả và tạo áp lực lên đội pháp chế vốn mỏng."
-    }
-   },
-   "solutions": [
-    "ai-legal"
-   ],
-   "response": {
-    "title": {
-     "en": "Review faster without moving documents out",
-     "vi": "Rà soát nhanh hơn mà không đưa tài liệu ra ngoài"
-    },
-    "body": {
-     "en": "An AI assistant for contract and regulation review, with an on-premise option so sensitive documents stay inside your own environment. Regulatory coverage for health rules should be scoped with V-Tech Foundry during assessment.",
-     "vi": "Trợ lý AI rà soát hợp đồng và quy định, có tùy chọn on-premise để tài liệu nhạy cảm nằm trong hệ thống của bạn. Phạm vi quy định ngành y tế cần được xác nhận cùng V-Tech Foundry khi khảo sát."
-    },
-    "points": [
-     {
-      "en": "Automated contract and clause review",
-      "vi": "Tự động rà soát hợp đồng và điều khoản"
-     },
-     {
-      "en": "On-premise option for total privacy",
-      "vi": "Tùy chọn on-premise bảo mật tuyệt đối"
-     },
-     {
-      "en": "Frees legal staff for complex cases",
-      "vi": "Giải phóng pháp chế cho ca phức tạp"
-     }
-    ]
-   },
-   "scenario": {
-    "en": "Tuesday, 09:15. A pile of insurance contracts and consent forms waits on one legal desk while reimbursements queue behind it.",
-    "vi": "9:15 sáng thứ Ba. Một chồng hợp đồng bảo hiểm và mẫu đồng ý nằm chờ trên bàn pháp chế, còn các khoản chi trả xếp hàng phía sau."
-   },
-   "scene": {
-    "kind": "scan",
-    "doc": {
-     "en": "Insurance contract",
-     "vi": "Hợp đồng bảo hiểm"
-    },
-    "flags": [
-     {
-      "en": "Missing consent",
-      "vi": "Thiếu đồng ý"
-     },
-     {
-      "en": "Coverage gap",
-      "vi": "Hở phạm vi chi trả"
-     },
-     {
-      "en": "Rule conflict",
-      "vi": "Xung đột quy định"
-     }
-    ],
-    "timeBefore": {
-     "en": "Days",
-     "vi": "Nhiều ngày"
-    },
-    "timeAfter": {
-     "en": "Minutes",
-     "vi": "Vài phút"
-    },
-    "perDoc": {
-     "en": "per claims file",
-     "vi": "mỗi hồ sơ bồi thường"
-    },
-    "before": {
-     "en": "Manual",
-     "vi": "Thủ công"
-    },
-    "after": {
-     "en": "Automated",
-     "vi": "Tự động"
-    }
-   }
-  },
-  {
    "id": "sovereignty",
    "persona": {
     "en": "CFO / Board Sponsor",
@@ -552,8 +462,8 @@
     "vi": "Dữ liệu bệnh nhân có thể nằm hoàn toàn tại Việt Nam không?"
    },
    "a": {
-    "en": "VCLOUD is hosted in Vietnam, and the AI Legal assistant offers an on-premise option for documents that must not leave your network.",
-    "vi": "VCLOUD đặt tại Việt Nam, và trợ lý AI Legal có tùy chọn on-premise cho tài liệu không được rời khỏi mạng nội bộ."
+    "en": "VCLOUD is hosted in Vietnam, and DLP helps control how patient data moves out of your network.",
+    "vi": "VCLOUD đặt tại Việt Nam, và DLP giúp kiểm soát việc dữ liệu bệnh nhân rời khỏi mạng nội bộ."
    }
   },
   {

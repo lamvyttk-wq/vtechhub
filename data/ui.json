@@ -315,6 +315,10 @@
   "chOf": {
    "en": "Chapter",
    "vi": "Chương"
+  },
+  "vendorNote": {
+   "en": "Results reported for AI Agent SuperSales & Assistant.",
+   "vi": "Kết quả ghi nhận của AI Agent SuperSales & Assistant."
   }
  },
  "sol": {
@@ -337,6 +341,22 @@
   "notFound": {
    "en": "Solution not found",
    "vi": "Không tìm thấy giải pháp"
+  },
+  "capabilities": {
+   "en": "What it does",
+   "vi": "Khả năng chính"
+  },
+  "results": {
+   "en": "Reported results",
+   "vi": "Kết quả nổi bật"
+  },
+  "serves": {
+   "en": "Built for",
+   "vi": "Dành cho"
+  },
+  "vendorNote": {
+   "en": "Results reported for AI Agent SuperSales & Assistant.",
+   "vi": "Kết quả ghi nhận của AI Agent SuperSales & Assistant."
   }
  },
  "cta": {
@@ -693,6 +713,60 @@
     "en": "Online",
     "vi": "Ổn định"
    }
+  },
+  "chat": {
+   "src": {
+    "en": "Customers on every channel",
+    "vi": "Khách hàng trên mọi kênh"
+   },
+   "ask": [
+    {
+     "en": "Is this product available?",
+     "vi": "Sản phẩm còn không?"
+    },
+    {
+     "en": "What does it cost?",
+     "vi": "Giá bao nhiêu?"
+    },
+    {
+     "en": "How do I get started?",
+     "vi": "Bắt đầu thế nào?"
+    }
+   ],
+   "reply": [
+    {
+     "en": "Answered in seconds",
+     "vi": "Trả lời trong vài giây"
+    },
+    {
+     "en": "Best offer suggested",
+     "vi": "Gợi ý ưu đãi phù hợp"
+    },
+    {
+     "en": "Steps sent",
+     "vi": "Đã gửi hướng dẫn"
+    }
+   ],
+   "agent": {
+    "en": "AI Agent",
+    "vi": "AI Agent"
+   },
+   "speed": {
+    "en": "< 5 s",
+    "vi": "< 5 giây"
+   },
+   "lead": {
+    "en": "Lead captured",
+    "vi": "Đã thu lead"
+   },
+   "before": {
+    "en": "Waiting",
+    "vi": "Chờ phản hồi"
+   },
+   "after": {
+    "en": "Instant",
+    "vi": "Tức thì"
+   }
   }
  },
  "qv": {
@@ -715,6 +789,44 @@
   "close": {
    "en": "Close",
    "vi": "Đóng"
+  }
+ },
+ "exp": {
+  "title": {
+   "en": "Experts & Advisory Board",
+   "vi": "Chuyên gia & Hội đồng cố vấn"
+  },
+  "sub": {
+   "en": "Organizational framework and expert leadership structure steering the V-Tech Foundry technology alliance.",
+   "vi": "Cơ cấu tổ chức và đội ngũ chuyên gia dẫn dắt liên minh công nghệ V-Tech Foundry."
+  },
+  "home": {
+   "en": "Home",
+   "vi": "Trang chủ"
+  },
+  "meet": {
+   "en": "Meet V-Tech Foundry",
+   "vi": "Về V-Tech Foundry"
+  },
+  "about": {
+   "en": "About Us",
+   "vi": "Về chúng tôi"
+  },
+  "expert": {
+   "en": "Expert",
+   "vi": "Chuyên gia"
+  },
+  "pending": {
+   "en": "Profile details coming soon.",
+   "vi": "Thông tin hồ sơ sẽ sớm được cập nhật."
+  },
+  "focus": {
+   "en": "Focus",
+   "vi": "Lĩnh vực"
+  },
+  "solution": {
+   "en": "Related solution",
+   "vi": "Giải pháp liên quan"
   }
  }
 }

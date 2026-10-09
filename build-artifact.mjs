@@ -6,7 +6,9 @@ const local = process.argv.includes('--local');
 const read = (p) => fs.readFileSync(p, 'utf8');
 const strip = (src) => src.replace(/^import .*$/gm, '').replace(/^export /gm, '');
 const industries = fs.readdirSync('data/industries').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(read('data/industries/' + f)));
-const data = { ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
+const mime = (f) => (f.endsWith('.svg') ? 'image/svg+xml' : f.endsWith('.png') ? 'image/png' : 'image/jpeg');
+const experts = JSON.parse(read('data/experts.json')).map((e) => (e.photo && !e.photo.startsWith('data:') ? { ...e, photo: `data:${mime(e.photo)};base64,${fs.readFileSync(e.photo).toString('base64')}` } : e));
+const data = { experts, ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
 const lite = (src) => src.replace(/^\s*\/\/.*$/gm, '').replace(/\n{2,}/g, '\n');                       // drop whole-line // comments and blank runs (never touches strings/URLs)
 const css = read('css/styles.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^[ \t]+/gm, '').replace(/\n{2,}/g, '\n');
 const js = [read('js/config.js'), read('js/icons.js'), read('js/scenes.js'), read('js/app.js')].map(strip).map(lite).join('\n');

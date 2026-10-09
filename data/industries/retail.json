@@ -11,15 +11,15 @@
   "vi": "Bán lẻ & Thương mại điện tử"
  },
  "tagline": {
-  "en": "Anti-DDoS & CDN, Web Application Firewall, sovereign VCLOUD, Data Loss Prevention and AI Legal & Compliance for always-on selling.",
-  "vi": "Chống DDoS & CDN, tường lửa ứng dụng web, VCLOUD chủ quyền, chống thất thoát dữ liệu và AI Legal & Compliance để bán hàng không gián đoạn."
+  "en": "Anti-DDoS & CDN, Web Application Firewall, sovereign VCLOUD, Data Loss Prevention and AI Agent SuperSales & Assistant for always-on selling.",
+  "vi": "Chống DDoS & CDN, tường lửa ứng dụng web, VCLOUD chủ quyền, chống thất thoát dữ liệu và AI Agent SuperSales & Assistant để bán hàng không gián đoạn."
  },
  "bundle": [
   "anti-ddos-cdn",
   "web-waf",
   "email-security",
   "dlp",
-  "ai-legal"
+  "ai-agent"
  ],
  "regulations": [
   "Decree 13",
@@ -374,92 +374,132 @@
    }
   },
   {
-   "id": "contracts",
+   "id": "sales",
    "persona": {
-    "en": "Head of Legal & Procurement",
-    "vi": "Trưởng bộ phận Pháp chế & Mua hàng"
+    "en": "Head of E-commerce & Customer Experience",
+    "vi": "Giám đốc Thương mại điện tử & Trải nghiệm khách hàng"
    },
    "challenge": {
     "title": {
-     "en": "Supplier, Landlord and Platform Contracts at Scale",
-     "vi": "Hợp đồng nhà cung cấp, mặt bằng và sàn ở quy mô lớn"
+     "en": "Shoppers expect answers in seconds, on every channel",
+     "vi": "Người mua cần câu trả lời trong vài giây, trên mọi kênh"
     },
     "body": {
-     "en": "A retail group manages hundreds of supplier, lease, marketplace and franchise contracts, plus changing rules on consumer protection and personal data. Manual review slows new store openings and vendor onboarding.",
-     "vi": "Một tập đoàn bán lẻ phải quản lý hàng trăm hợp đồng nhà cung cấp, thuê mặt bằng, sàn thương mại điện tử và nhượng quyền, cùng các quy định về bảo vệ người tiêu dùng và dữ liệu cá nhân luôn thay đổi. Rà soát thủ công làm chậm việc mở cửa hàng mới và đưa nhà cung cấp vào hệ thống."
+     "en": "Questions arrive on the website, Zalo, Messenger, TikTok and Facebook all day, and spike during campaigns. Slow replies cost orders, and promising leads are never followed up.",
+     "vi": "Câu hỏi đến từ website, Zalo, Messenger, TikTok và Facebook cả ngày, tăng vọt trong các đợt khuyến mãi. Trả lời chậm làm mất đơn hàng, còn khách hàng tiềm năng không được chăm sóc tiếp."
     }
    },
    "solutions": [
-    "ai-legal"
+    "ai-agent"
    ],
    "response": {
     "title": {
-     "en": "Review contracts in minutes, not days",
-     "vi": "Rà soát hợp đồng trong vài phút thay vì vài ngày"
+     "en": "Sell and support around the clock",
+     "vi": "Tư vấn và bán hàng suốt 24/7"
     },
     "body": {
-     "en": "An AI legal assistant automates contract review and flags risky clauses, with an on-premise option so commercial terms and supplier pricing never leave your walls.",
-     "vi": "Trợ lý AI pháp lý tự động rà soát hợp đồng và đánh dấu điều khoản rủi ro, có tùy chọn on-premise để điều khoản thương mại và giá nhà cung cấp không rời khỏi hệ thống của bạn."
+     "en": "AI Agent SuperSales & AI Agent Assistant is a comprehensive enterprise AI solution designed to automate omnichannel customer consultation, care, and sales operations.",
+     "vi": "AI Agent SuperSales & AI Agent Assistant là giải pháp AI toàn diện, hỗ trợ tự động hóa tư vấn, chăm sóc khách hàng và bán hàng đa kênh."
     },
     "points": [
      {
-      "en": "Automated clause review",
-      "vi": "Tự động rà soát điều khoản"
+      "en": "Instant answers to every question",
+      "vi": "Phản hồi tức thì mọi thắc mắc"
      },
      {
-      "en": "On-premise option for total privacy",
-      "vi": "Tùy chọn on-premise bảo mật tuyệt đối"
+      "en": "Smart suggestions from behavior and needs",
+      "vi": "Đề xuất sản phẩm theo hành vi và nhu cầu"
      },
      {
-      "en": "Frees legal teams for high-value work",
-      "vi": "Giải phóng đội pháp chế cho việc giá trị cao"
+      "en": "Automatic lead collection and qualification",
+      "vi": "Tự động thu thập và phân loại khách tiềm năng"
+     },
+     {
+      "en": "Automated sales: upsell, cross-sell, closing",
+      "vi": "Tự động tư vấn bán hàng: upsell, cross-sell, chốt sales"
+     }
+    ],
+    "metrics": [
+     {
+      "value": {
+       "en": "10M+",
+       "vi": "10 triệu+"
+      },
+      "label": {
+       "en": "customers reached",
+       "vi": "khách hàng tiếp cận"
+      }
+     },
+     {
+      "value": {
+       "en": "< 5s",
+       "vi": "< 5 giây"
+      },
+      "label": {
+       "en": "to process a request",
+       "vi": "để xử lý một yêu cầu"
+      }
+     },
+     {
+      "value": {
+       "en": "30%",
+       "vi": "30%"
+      },
+      "label": {
+       "en": "lead capture rate (~2,000+ a month)",
+       "vi": "tỷ lệ thu lead (~2.000+ mỗi tháng)"
+      }
+     },
+     {
+      "value": {
+       "en": "4.7/5",
+       "vi": "4.7/5"
+      },
+      "label": {
+       "en": "satisfaction, 24/7 support",
+       "vi": "mức hài lòng, hỗ trợ 24/7"
+      }
      }
     ]
    },
    "scenario": {
-    "en": "Wednesday, 09:00. A lease for a new store and a stack of supplier contracts wait for legal review while the opening date is fixed.",
-    "vi": "Sáng thứ Tư, 9:00. Hợp đồng thuê mặt bằng cho cửa hàng mới và một chồng hợp đồng nhà cung cấp chờ pháp chế rà soát, trong khi ngày khai trương đã chốt."
+    "en": "Flash-sale night, 20:15. Shoppers on TikTok and Facebook ask about stock and delivery faster than the team can type.",
+    "vi": "Đêm flash sale, 20:15. Người mua trên TikTok và Facebook hỏi về tồn kho và giao hàng nhanh hơn tốc độ gõ của đội ngũ."
    },
    "scene": {
-    "kind": "scan",
-    "doc": {
-     "en": "Store lease",
-     "vi": "Hợp đồng thuê mặt bằng"
+    "kind": "chat",
+    "src": {
+     "en": "Shoppers on every channel",
+     "vi": "Người mua trên mọi kênh"
     },
-    "flags": [
+    "ask": [
      {
-      "en": "Exclusivity clause",
-      "vi": "Cam kết độc quyền"
+      "en": "Is size M in stock?",
+      "vi": "Còn size M không?"
      },
      {
-      "en": "Auto-renewal",
-      "vi": "Tự động gia hạn"
+      "en": "Delivery to Da Nang?",
+      "vi": "Giao đi Đà Nẵng?"
      },
      {
-      "en": "Penalty terms",
-      "vi": "Điều khoản phạt"
+      "en": "Any voucher today?",
+      "vi": "Hôm nay có voucher?"
      }
     ],
-    "timeBefore": {
-     "en": "Days",
-     "vi": "Nhiều ngày"
-    },
-    "timeAfter": {
-     "en": "Minutes",
-     "vi": "Vài phút"
-    },
-    "perDoc": {
-     "en": "per contract review",
-     "vi": "mỗi lần rà soát"
-    },
-    "before": {
-     "en": "Manual",
-     "vi": "Thủ công"
-    },
-    "after": {
-     "en": "Automated",
-     "vi": "Tự động"
-    }
+    "reply": [
+     {
+      "en": "Stock checked",
+      "vi": "Đã kiểm tra kho"
+     },
+     {
+      "en": "Delivery options sent",
+      "vi": "Đã gửi phương án giao"
+     },
+     {
+      "en": "Best voucher applied",
+      "vi": "Áp voucher tốt nhất"
+     }
+    ]
    }
   }
  ],
@@ -490,8 +530,8 @@
     "vi": "Giảm rủi ro và chi phí vận hành"
    },
    "body": {
-    "en": "One local partner for cloud, edge protection, data and legal automation reduces vendor sprawl, manual work and incident-response effort.",
-    "vi": "Một đối tác trong nước cho đám mây, bảo vệ lớp ngoài, dữ liệu và tự động hóa pháp chế giúp giảm số nhà cung cấp, công việc thủ công và nỗ lực ứng phó sự cố."
+    "en": "One local partner for cloud, edge protection, data protection and AI sales automation reduces vendor sprawl, manual work and incident-response effort.",
+    "vi": "Một đối tác trong nước cho đám mây, bảo vệ biên, bảo vệ dữ liệu và tự động hóa bán hàng bằng AI giúp giảm số nhà cung cấp, công việc thủ công và công sức xử lý sự cố."
    }
   }
  ],

@@ -52,7 +52,9 @@ Mobile and `prefers-reduced-motion` get a non-pinned layout (reduced motion show
   Vnetwork.vn could not be reached during research, so nothing below is verified against the product catalog:
   - Products `cdn`, `anti-ddos-waf` (media) and `anti-ddos-cdn`, `web-waf` (retail) are assumed; confirm names/scope and merge the duplicates.
   - Regulation citations (Decree 13/2023, Law on Data 2024, Cybersecurity Law, Decree 85/2016, TCVN 11930...) need a legal check of article numbers and currency.
-  - `95%` / `42%` appear only in BFSI/AI Legal (from the mockup); no other metric or customer claim exists.
+  - The only figures on the site are the AI Agent SuperSales & Assistant results (10M+, <5s, 30%, 2,000+, 4.7/5), supplied by the product team; no other metric or customer claim exists.
+  - AI Agent SuperSales & Assistant replaced AI Legal & Compliance. It is mapped to BFSI and Retail & E-Commerce only (its tags); the government, healthcare, logistics and media stories no longer include an AI solution.
+  - Experts: Nguyen Duc Anh's bio is truncated (from the screenshot) and Ms. Hau has no profile data yet. Fill both in `data/experts.json`.
   - Regulation chips are English-only strings.
 - `scenario` lines and scene labels in the 7 non-BFSI industries are illustrative drafts written for this build (no figures). Chapters whose
   first solution does not match their theme reuse that solution's scene on purpose: review compliance/sovereignty chapters

@@ -12,7 +12,7 @@ const scIcon = (name, x, y, size, cls = '') =>
 
 export const SCENE_KINDS = {
   'email-security': 'gate', 'web-waf': 'gate', 'database-security': 'mask', dlp: 'perimeter',
-  'ai-legal': 'scan', 'anti-ddos-waf': 'wave', 'anti-ddos-cdn': 'wave', cdn: 'wave'
+  'ai-agent': 'chat', 'anti-ddos-waf': 'wave', 'anti-ddos-cdn': 'wave', cdn: 'wave'
 };
 export const sceneKindOf = (chapter) => chapter.scene?.kind || SCENE_KINDS[chapter.solutions?.[0]] || 'gate';
 
@@ -268,7 +268,47 @@ function waveTL(svg, T) {
    .fromTo(q('.ripple'), { scale: 1, opacity: .7, transformOrigin: '50% 50%' }, { scale: 3, opacity: 0, duration: 1.1, stagger: .12, repeat: 3, repeatDelay: .25, ease: 'power1.out' }, 5.2);
 }
 
-const BUILD = { gate: [gateSVG, gateTL], mask: [maskSVG, maskTL], perimeter: [perimeterSVG, perimeterTL], scan: [scanSVG, scanTL], wave: [waveSVG, waveTL] };
+/* ----------------------------------------------------------------- chat: questions pile up unanswered, an AI agent answers instantly and captures the lead */
+function chatSVG(d, tr) {
+  const ys = [104, 174, 244], ask = d.ask.slice(0, 3), rep = d.reply.slice(0, 3);
+  const pill = (kind, label, x, y, extra = '') => {
+    const w = Math.min(194, 40 + scw(label, 6.3));
+    return `<g class="gp ${kind} ${extra}" transform="translate(${x} ${y})"><rect width="${w}" height="34" rx="17"/><circle cx="16" cy="17" r="4"/><text x="28" y="21.5">${scx(label)}</text></g>`;
+  };
+  const asks = ys.map((y, i) => pill('ok', tr(ask[i]), 36, y, 'ca')).join('');
+  const reps = ys.map((y, i) => pill('ok', tr(rep[i]), 420, y, 'cr')).join('');
+  const cl = ys.map((y) => `<path class="cl" pathLength="1" stroke-dasharray="1" d="M244 ${y + 17} L286 220" fill="none" stroke="rgba(11,16,32,.3)" stroke-width="1.4"/>`).join('');
+  const cr = ys.map((y) => `<path class="cl2" d="M354 220 L${414} ${y + 17}" fill="none" stroke="${GOLD}" stroke-opacity=".6" stroke-dasharray="3 5"/>`).join('');
+  const wt = ys.map((y) => `<g class="wt" transform="translate(262 ${y + 17})" opacity="0">${scIcon('clock', 0, 0, 16, 'sc-red')}</g>`).join('');
+  return `${status(d, tr)}
+    <text class="sc-lbl muted" x="36" y="78">${scx(tr(d.src).toUpperCase())}</text>
+    ${cl}${cr}${asks}${wt}${reps}
+    <g class="ag" transform="translate(320 220)"><circle class="ag-glow" r="46" fill="${GOLD}" opacity=".16"/><circle r="34" fill="#fff" stroke="${GOLD}" stroke-width="1.6"/>${scIcon('bot', 0, 0, 26, 'sc-ink')}<text class="sc-cap" y="62" text-anchor="middle">${scx(tr(d.agent))}</text></g>
+    <g class="spd" transform="translate(320 166)"><rect x="-44" y="-12" width="88" height="24" rx="12" fill="#fff" stroke="${GOLD}" stroke-opacity=".8"/><text class="sc-lbl" text-anchor="middle" y="4" fill="${INK}">${scx(tr(d.speed))}</text></g>
+    <g class="ld" transform="translate(420 330)"><rect width="196" height="42" rx="12" fill="#fff" stroke="rgba(11,16,32,.2)"/>${scIcon('users', 22, 21, 16, 'sc-red')}<text class="sc-lbl" x="40" y="25" fill="${INK}">${scx(tr(d.lead))}</text></g>`;
+}
+function chatTL(svg, T) {
+  const q = (x) => svg.querySelectorAll(x);
+  q('.ca').forEach((el, i) => {
+    T.fromTo(el, { x: -220, opacity: 0 }, { x: 36, opacity: 1, duration: 1.1, ease: 'power2.out' }, .2 + i * .45)
+     .fromTo(el.querySelector('rect'), { stroke: RED, fill: 'rgba(227,30,36,.07)' }, { stroke: 'rgba(11,16,32,.22)', fill: '#fff', duration: .5 }, 4.7 + i * .2)
+     .fromTo(el.querySelector('circle'), { fill: RED }, { fill: '#636b80', duration: .5 }, 4.7 + i * .2)
+     .fromTo(el.querySelector('text'), { fill: '#8e1216' }, { fill: INK, duration: .5 }, 4.7 + i * .2);
+  });
+  T.fromTo(q('.wt'), { opacity: 0, scale: 0, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: .35, stagger: .3, ease: 'back.out(2)' }, 1.6)
+   .to(q('.wt'), { opacity: 0, scale: 0, duration: .3, stagger: .1 }, 4.4)
+   .fromTo(q('.ag'), { opacity: 0, scale: .4, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: .8, ease: 'back.out(1.6)' }, 3.7)
+   .fromTo(q('.cl'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .5, stagger: .12 }, 4.0)
+   .fromTo(q('.cl2'), { opacity: 0 }, { opacity: 1, duration: .4, stagger: .12 }, 4.5)
+   .fromTo(q('.cr'), { x: 384, opacity: 0 }, { x: 420, opacity: 1, duration: .6, stagger: .3, ease: 'power3.out' }, 4.7)
+   .fromTo(q('.spd'), { opacity: 0, y: 176 }, { opacity: 1, y: 166, duration: .5 }, 4.3)
+   .fromTo(q('.ld'), { opacity: 0, scale: .6, transformOrigin: '0% 50%' }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(2)' }, 6.1)
+   .fromTo(q('.st-b'), { opacity: 0 }, { opacity: 1, duration: .4 }, .8).to(q('.st-b'), { opacity: 0, duration: .3 }, 3.7)
+   .fromTo(q('.st-a'), { opacity: 0 }, { opacity: 1, duration: .5 }, 4.9)
+   .fromTo(q('.ag-glow'), { opacity: .1 }, { opacity: .34, duration: .8, yoyo: true, repeat: 4, ease: 'sine.inOut' }, 5.2);
+}
+
+const BUILD = { gate: [gateSVG, gateTL], mask: [maskSVG, maskTL], perimeter: [perimeterSVG, perimeterTL], scan: [scanSVG, scanTL], wave: [waveSVG, waveTL], chat: [chatSVG, chatTL] };
 
 // d = merged scene data (ui defaults + chapter overrides), tr = translator, name = solution shown on the shield
 export function sceneSVG(kind, d, tr, name = '') {

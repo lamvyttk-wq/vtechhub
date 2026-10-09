@@ -11,14 +11,13 @@
   "vi": "Logistics: Giao nhận, Kho vận, Chặng cuối & Cảng"
  },
  "tagline": {
-  "en": "VCLOUD & Email Security, Database Security, Data Loss Prevention and AI Legal & Compliance for supply chains that cannot stop moving.",
-  "vi": "VCLOUD & Email Security, Bảo mật cơ sở dữ liệu, Chống thất thoát dữ liệu và AI Legal & Compliance cho chuỗi cung ứng không được phép dừng."
+  "en": "VCLOUD & Email Security, Database Security and Data Loss Prevention for supply chains that cannot stop moving.",
+  "vi": "VCLOUD & Email Security, Bảo mật cơ sở dữ liệu và Chống thất thoát dữ liệu cho chuỗi cung ứng không được phép dừng."
  },
  "bundle": [
   "email-security",
   "database-security",
-  "dlp",
-  "ai-legal"
+  "dlp"
  ],
  "regulations": [
   "Decree 13",
@@ -376,95 +375,6 @@
      "vi": "Đã ngăn chặn"
     }
    }
-  },
-  {
-   "id": "contracts",
-   "persona": {
-    "en": "Head of Legal / Customs & Documentation",
-    "vi": "Trưởng bộ phận Pháp chế / Chứng từ & Hải quan"
-   },
-   "challenge": {
-    "title": {
-     "en": "Contracts and Customs Documents Reviewed by Hand",
-     "vi": "Hợp đồng và chứng từ hải quan rà soát thủ công"
-    },
-    "body": {
-     "en": "Freight contracts, carrier and warehouse agreements, bills of lading and customs declarations all need careful checking for liability clauses, terms and inconsistencies. Manual review slows quoting and clearance, and errors can mean penalties or disputes.",
-     "vi": "Hợp đồng vận chuyển, hợp đồng với hãng tàu và kho, vận đơn và tờ khai hải quan đều cần kiểm tra kỹ điều khoản trách nhiệm, điều kiện và điểm không nhất quán. Rà soát thủ công làm chậm báo giá và thông quan, còn sai sót có thể dẫn tới phạt hoặc tranh chấp."
-    }
-   },
-   "solutions": [
-    "ai-legal"
-   ],
-   "response": {
-    "title": {
-     "en": "Faster first-pass review, with people in control",
-     "vi": "Rà soát vòng đầu nhanh hơn, con người vẫn quyết định"
-    },
-    "body": {
-     "en": "A specialized AI assistant reviews contracts and regulatory documents to flag clauses and gaps for your legal team, with an on-premise option so commercial documents stay in your environment. Scope for logistics and customs content is confirmed with V-Tech Foundry during assessment.",
-     "vi": "Trợ lý AI chuyên biệt rà soát hợp đồng và văn bản quy định, đánh dấu điều khoản và điểm thiếu cho đội pháp chế, có tùy chọn on-premise để tài liệu thương mại nằm trong môi trường của bạn. Phạm vi áp dụng cho nội dung logistics và hải quan được xác nhận cùng V-Tech Foundry khi khảo sát."
-    },
-    "points": [
-     {
-      "en": "Automates routine contract review",
-      "vi": "Tự động hóa rà soát hợp đồng thường nhật"
-     },
-     {
-      "en": "On-premise option for total privacy",
-      "vi": "Tùy chọn on-premise bảo mật tuyệt đối"
-     },
-     {
-      "en": "Frees legal and documentation staff for exceptions",
-      "vi": "Giải phóng pháp chế và chứng từ cho các trường hợp ngoại lệ"
-     }
-    ]
-   },
-   "scenario": {
-    "en": "Thursday, 16:30. A rate quote and a customs declaration both wait on the legal desk, and the cargo is already at the port.",
-    "vi": "Chiều thứ Năm, 16:30. Một bản báo giá và một tờ khai hải quan cùng chờ phòng pháp chế duyệt, trong khi hàng đã nằm tại cảng."
-   },
-   "scene": {
-    "kind": "scan",
-    "doc": {
-     "en": "Freight contract",
-     "vi": "Hợp đồng vận chuyển"
-    },
-    "flags": [
-     {
-      "en": "Liability gap",
-      "vi": "Trách nhiệm mơ hồ"
-     },
-     {
-      "en": "Term conflict",
-      "vi": "Xung đột điều khoản"
-     },
-     {
-      "en": "Penalty clause",
-      "vi": "Điều khoản phạt"
-     }
-    ],
-    "timeBefore": {
-     "en": "Days",
-     "vi": "Nhiều ngày"
-    },
-    "timeAfter": {
-     "en": "Minutes",
-     "vi": "Vài phút"
-    },
-    "perDoc": {
-     "en": "per first-pass review",
-     "vi": "mỗi lượt rà soát đầu"
-    },
-    "before": {
-     "en": "Manual",
-     "vi": "Thủ công"
-    },
-    "after": {
-     "en": "Automated",
-     "vi": "Tự động"
-    }
-   }
   }
  ],
  "outcomes": [
@@ -490,12 +400,12 @@
   },
   {
    "title": {
-    "en": "Cut Manual Document Work",
-    "vi": "Giảm công việc chứng từ thủ công"
+    "en": "One Local Partner",
+    "vi": "Một đối tác trong nước"
    },
    "body": {
-    "en": "Automate first-pass contract and document review so legal and operations teams spend time on exceptions, not routine checking.",
-    "vi": "Tự động hóa rà soát hợp đồng và chứng từ vòng đầu để đội pháp chế và vận hành tập trung vào ngoại lệ thay vì kiểm tra lặp lại."
+    "en": "One integrated package from a local partner reduces vendor sprawl, manual work and incident-response effort.",
+    "vi": "Một gói tích hợp từ đối tác trong nước giúp giảm số nhà cung cấp, công việc thủ công và công sức xử lý sự cố."
    }
   }
  ],
@@ -528,16 +438,6 @@
    "a": {
     "en": "Database Security applies query-level access control, approval for sensitive changes and real-time masking, while DLP monitors chat, webmail and USB for customer and personal data leaving the company.",
     "vi": "Bảo mật cơ sở dữ liệu áp dụng kiểm soát mức truy vấn, phê duyệt thay đổi nhạy cảm và che giấu thời gian thực, còn DLP giám sát chat, webmail, USB để phát hiện dữ liệu khách hàng và cá nhân bị đưa ra ngoài."
-   }
-  },
-  {
-   "q": {
-    "en": "Does the AI Legal assistant handle customs documents?",
-    "vi": "Trợ lý AI Legal có xử lý chứng từ hải quan không?"
-   },
-   "a": {
-    "en": "It is built for contract and regulatory document review. Coverage of customs and freight document types is scoped with V-Tech Foundry in a pilot, and an on-premise option keeps documents private.",
-    "vi": "Giải pháp được xây dựng cho rà soát hợp đồng và văn bản quy định. Phạm vi với các loại chứng từ hải quan và vận tải được xác định cùng V-Tech Foundry trong giai đoạn thử nghiệm, và tùy chọn on-premise giữ tài liệu riêng tư."
    }
   }
  ],

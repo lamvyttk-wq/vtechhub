@@ -14,7 +14,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 const state = {
   lang: store.get('vth-lang') || 'en',
-  route: parseRoute(), ui: null, solutions: new Map(), industries: [], ctx: null
+  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: [], ctx: null
 };
 const t = (o) => (typeof o === 'string' ? o : (o && (o[state.lang] ?? o.en)) ?? '');
 const ui = (path) => path.split('.').reduce((o, k) => o?.[k], state.ui);
@@ -26,12 +26,14 @@ const view = { max: 0, contactTop: Infinity, bundleTop: 0, chs: [], sts: [], sto
 let mm = null;
 
 /* ---------------------------------------------------------------- routing */
-function parseRoute() {
-  const h = (location.hash || '').replace(/^#/, '');
+function routeOf(hash) {
+  const h = String(hash || '').replace(/^#/, '');
   const m = h.match(/^(industry|solution)-([\w-]+)$/);
-  return m ? { page: m[1], id: m[2] } : { page: 'home', id: '' };
+  if (m) return { page: m[1], id: m[2] };
+  return h === 'experts' ? { page: 'experts', id: '' } : { page: 'home', id: '' };
 }
-const hashOf = (r) => (r.page === 'home' ? 'home' : `${r.page}-${r.id}`);
+function parseRoute() { return routeOf(location.hash); }
+const hashOf = (r) => (r.page === 'home' ? 'home' : r.page === 'experts' ? 'experts' : `${r.page}-${r.id}`);
 function swapPage(after) {
   teardownMotion(); render();
   window.scrollTo(0, 0);
@@ -39,9 +41,7 @@ function swapPage(after) {
   if (after) setTimeout(() => scrollToEl($(after)), 420);
 }
 function go(hash, after) {
-  const h = hash.replace(/^#/, '');
-  const m = h.match(/^(industry|solution)-([\w-]+)$/);
-  state.route = m ? { page: m[1], id: m[2] } : { page: 'home', id: '' };
+  state.route = routeOf(hash);
   try { history.replaceState(null, '', '#' + hashOf(state.route)); } catch { /* sandboxed frame */ }
   if (!motionOK) return swapPage(after);
   document.body.classList.add('leaving');           // frosted fade-out, then the new page rises in
@@ -57,10 +57,11 @@ async function loadData() {
   let raw = window.__DATA__;
   if (!raw) {
     const j = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
-    const [uiData, solutions, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
-    raw = { ui: uiData, solutions, industries: inds.filter(Boolean) };
+    const [uiData, solutions, experts, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
+    raw = { ui: uiData, solutions, experts, industries: inds.filter(Boolean) };
   }
   state.ui = raw.ui;
+  state.experts = raw.experts || [];
   state.industries = [...raw.industries].sort((a, b) => a.order - b.order);
   raw.solutions.forEach((s) => state.solutions.set(s.id, s));
   state.industries.forEach((i) => (i.newSolutions || []).forEach((s) => { if (!state.solutions.has(s.id)) state.solutions.set(s.id, s); }));
@@ -96,9 +97,9 @@ function header() {
         <div class="panel mega"><div class="m-left"><span class="eyebrow">${u('nav.byIndustry')}</span>${left}</div><div class="m-right">${panes}</div>
         <div class="m-foot"><span class="eyebrow">${u('nav.catalog')}</span><div>${catalog}</div></div></div></div>
       <a class="nav-btn plain" href="#home" data-go="home" data-after="#how">${u('nav.how')}</a>
-      <div class="dd"><button class="nav-btn" aria-expanded="false" aria-haspopup="true">${u('nav.meet')} ${ic('chevron-down')}</button>
+      <div class="dd"><button class="nav-btn ${state.route.page === 'experts' ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.meet')} ${ic('chevron-down')}</button>
         <div class="panel"><a href="${CONFIG.website}" target="_blank" rel="noopener">${ic('building')}<span>${u('nav.about')}</span></a>
-        <a href="#contact" data-scroll="#contact">${ic('users')}<span>${u('nav.expert')}</span></a></div></div>
+        ${link('experts', `${ic('users')}<span>${u('nav.expert')}</span>`)}</div></div>
     </nav>
     <div class="tools">
       <div class="lang" role="group" aria-label="Language"><button data-lang="en" class="${state.lang === 'en' ? 'on' : ''}">EN</button><span>|</span><button data-lang="vi" class="${state.lang === 'vi' ? 'on' : ''}">VI</button></div>
@@ -155,7 +156,7 @@ function footer() {
   return `<footer class="foot"><div class="wrap">
     <div class="cols">
       <div>${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo')}<p style="margin-top:1.2rem">${u('foot.powered')} <a href="${CONFIG.website}" target="_blank" rel="noopener"><b>VNETWORK</b></a></p></div>
-      <div class="list"><a href="tel:${CONFIG.phone}">${esc(CONFIG.phoneDisplay)}</a><a href="mailto:${CONFIG.email}">${esc(CONFIG.email)}</a><a href="${CONFIG.website}" target="_blank" rel="noopener">vnetwork.vn</a></div>
+      <div class="list">${link('experts', u('exp.expert'))}<a href="tel:${CONFIG.phone}">${esc(CONFIG.phoneDisplay)}</a><a href="mailto:${CONFIG.email}">${esc(CONFIG.email)}</a><a href="${CONFIG.website}" target="_blank" rel="noopener">vnetwork.vn</a></div>
       <div class="list">${CONFIG.offices.map((o) => `<p>${esc(o)}</p>`).join('')}</div>
     </div>
     <div class="fine"><span>© 2013 VNETWORK JSC. ${u('foot.rights')}</span><span><a href="${CONFIG.website}" target="_blank" rel="noopener">${u('foot.terms')}</a> · <a href="${CONFIG.website}" target="_blank" rel="noopener">${u('foot.privacy')}</a></span></div>
@@ -219,7 +220,9 @@ function industryPage() {
     const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('');
     const pts = (c.response.points || []).map((p) => `<li class="pt">${ic('check')}<span>${esc(t(p))}</span></li>`).join('');
     const stat = c.challenge.stat ? `<div class="stat"><strong>${esc(c.challenge.stat.value)}</strong><span>${esc(t(c.challenge.stat.label))}</span></div>` : '';
-    const m = c.response.metric ? `<div class="metric"><strong data-count="${esc(c.response.metric.value)}">${esc(c.response.metric.value)}</strong><span>${esc(t(c.response.metric.label))}</span></div>` : '';
+    const ml = c.response.metrics || (c.response.metric ? [c.response.metric] : []);
+    const one = (x) => `<div class="metric"><strong ${/^\d/.test(t(x.value)) ? `data-count="${esc(t(x.value))}"` : ''}>${esc(t(x.value))}</strong><span>${esc(t(x.label))}</span></div>`;
+    const m = ml.length > 1 ? `<div class="metrics">${ml.map(one).join('')}</div><p class="vnote">${u('ind.vendorNote')}</p>` : ml.length ? one(ml[0]) : '';
     const scn = c.scenario ? `<p class="scn"><span>${u('ind.moment')}</span>${esc(t(c.scenario))}</p>` : '';
     const kind = sceneKindOf(c);
     return `<section class="chapter" id="ch-${k}" data-title="${esc(t(c.challenge.title))}" data-sols="${esc(c.solutions.map((s) => sol(s).name).join(' + '))}"><div class="wrap"><div class="stage">
@@ -279,15 +282,45 @@ function solutionPage() {
   const kind = SCENE_KINDS[id] || 'gate';
   const uses = state.industries.flatMap((i) => i.chapters.filter((c) => c.solutions.includes(id)).map((c) => ({ i, c })));
   const tiles = uses.map(({ i, c }) => link(`industry-${i.id}`, `${ic(i.icon, 'lead')}<span class="chip">${esc(t(i.name))}</span><h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.response.title))}</p><div class="foot"><span>${u('home.read')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
+  const serves = [...new Map(uses.map(({ i }) => [i.id, i])).values()];
+  const tags = (s.tags || []).map((x) => `<span class="chip hashtag">${esc(x)}</span>`).join('');
+  const servesRow = serves.length ? `<div class="serves"><span class="eyebrow">${u('sol.serves')}</span>${serves.map((i) => link(`industry-${i.id}`, `${ic(i.icon)} ${esc(t(i.name))}`, 'chip')).join('')}</div>` : '';
+  const caps = (s.capabilities || []).map((c) => `<div class="cap glass rv">${ic(c.icon || 'check', 'lead')}<h3>${esc(t(c.title))}</h3><p>${esc(t(c.body))}</p></div>`).join('');
+  const kpis = (s.results || []).map((r) => `<div class="kpi rv"><strong>${esc(t(r.value))}</strong><span>${esc(t(r.label))}</span></div>`).join('');
   return `
   <section class="hero ind-hero"><div class="wrap"><div class="grid">
     <div>
       <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
-      <h1 class="display">${words(s.name)}</h1><p class="lede hero-in" style="animation-delay:.5s">${esc(t(s.description))}</p>
+      <h1 class="display">${words(s.name)}</h1>${tags ? `<div class="chips hero-in" style="animation-delay:.45s">${tags}</div>` : ''}<p class="lede hero-in" style="animation-delay:.5s">${esc(t(s.description))}</p>
+      ${servesRow}
       <div class="actions hero-in" style="margin-top:2rem;animation-delay:.6s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
     <figure class="frame loop glass hero-in" style="animation-delay:.4s" data-kind="${kind}">${sceneFor(kind, {}, s.name)}<figcaption><i></i>${u('scenes.label')}</figcaption></figure>
   </div></div></section>
+  ${caps ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.capabilities')}</span></div><div class="caps">${caps}</div></div></section>` : ''}
+  ${kpis ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.results')}</span></div><div class="kpis">${kpis}</div><p class="vnote rv">${u('sol.vendorNote')}</p></div></section>` : ''}
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>
+  ${contact()}`;
+}
+
+/* ---- Experts & Advisory Board (Meet V-Tech Foundry > Expert) */
+function expertCard(e) {
+  const name = esc(t(e.name));
+  const photo = e.photo ? `<img class="xav" src="${esc(e.photo)}" alt="${name}" width="104" height="104" loading="lazy" decoding="async">` : `<span class="xav ph" aria-hidden="true">${ic('user-round')}</span>`;
+  const sols = (e.solutions || []).map((x) => link(`solution-${x}`, `${ic(sol(x).icon)} ${esc(sol(x).name)}`, 'chip')).join('');
+  return `<article class="xcard glass rv"><div class="xph">${photo}</div><div class="xbody">
+    <h3>${name}</h3>${e.role ? `<p class="xrole">${esc(t(e.role))}</p>` : ''}
+    ${e.focus ? `<p class="xfocus"><span>${u('exp.focus')}</span>${esc(t(e.focus))}</p>` : ''}
+    <p class="xbio ${e.bio ? '' : 'pending'}">${esc(e.bio ? t(e.bio) : u('exp.pending'))}</p>
+    ${sols ? `<div class="xsols">${sols}</div>` : ''}</div></article>`;
+}
+function expertsPage() {
+  return `
+  <section class="hero ind-hero exp-hero"><div class="wrap">
+    <div class="exp-top"><div class="crumbs hero-in" style="margin:0">${link('home', u('exp.home'))} / <span>${u('exp.meet')}</span> / <b class="red">${u('exp.expert')}</b></div>
+      <div class="seg hero-in" role="navigation"><a href="${CONFIG.website}" target="_blank" rel="noopener">${u('exp.about')}</a><span class="on" aria-current="page">${u('exp.expert')}</span></div></div>
+    <h1 class="display">${words(u('exp.title'))}</h1>
+    <p class="lede hero-in" style="animation-delay:.5s">${u('exp.sub')}</p></div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap"><div class="experts">${state.experts.map(expertCard).join('')}</div></div></section>
   ${contact()}`;
 }
 const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '← V-TECH FOUNDRY', 'red')}</p></div></section>`;
@@ -482,11 +515,14 @@ function bindForm() {
 
 /* ---------------------------------------------------------------- motion */
 function countUp(el, tl, at) {
-  const m = String(el.dataset.count).match(/^([^\d]*)([\d.,]+)(.*)$/);
+  const m = String(el.dataset.count).match(/^([^\d]*)(\d[\d.,]*)(.*)$/);
   if (!m) return;
-  const target = parseFloat(m[2].replace(',', '.')); const dec = (m[2].split(/[.,]/)[1] || '').length;
-  const o = { v: 0 }; el.textContent = m[1] + (0).toFixed(dec) + m[3];
-  tl.to(o, { v: target, duration: .9, ease: 'power1.out', onUpdate: () => { el.textContent = m[1] + o.v.toFixed(dec) + m[3]; } }, at);
+  const grp = /^\d{1,3}([.,]\d{3})+$/.test(m[2]) ? m[2].match(/[.,]/)[0] : null;          // "2,000+" / "2.000+": thousands separator, not a decimal
+  const dec = grp ? 0 : (m[2].split(/[.,]/)[1] || '').length;
+  const target = grp ? parseInt(m[2].replace(/[.,]/g, ''), 10) : parseFloat(m[2].replace(',', '.'));
+  const fmt = (v) => (grp ? Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, grp) : v.toFixed(dec));
+  const o = { v: 0 }; el.textContent = m[1] + fmt(0) + m[3];
+  tl.to(o, { v: target, duration: .9, ease: 'power1.out', onUpdate: () => { el.textContent = m[1] + fmt(o.v) + m[3]; } }, at);
 }
 
 function initMotion() {
@@ -515,7 +551,7 @@ function initMotion() {
     chapters.forEach((ch, k) => {
       const pain = $('.pain', ch), ans = $('.ans', ch), num_ = $('.numeral', ch), meta = $('.meta', ch), frame = $('.frame', ch);
       const items = $$('.solchips > a, .ans h3, .ans > p, .pt, .metric', ans);
-      const counter = $('[data-count]', ch);
+      const counters = $$('[data-count]', ch);
       const svg = $('svg.scene', frame), kind = frame.dataset.kind;
       const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' },
         scrollTrigger: { id: `ch${k}`, trigger: ch, start: 'top top+=70', end: '+=220%', pin: true, scrub: .5, anticipatePin: 1 } });
@@ -527,7 +563,7 @@ function initMotion() {
         .to(pain, { autoAlpha: 0, y: -24, duration: 1 }, 3.7)
         .fromTo(ans, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 1 }, 4.2)
         .fromTo(items, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .5, stagger: .14 }, 5);
-      if (counter) countUp(counter, tl, 6.2);
+      counters.forEach((cn) => countUp(cn, tl, 6.2));
       gsap.set(ans, { autoAlpha: 0 });
     });
     return () => story.classList.remove('pinned');
@@ -536,13 +572,13 @@ function initMotion() {
   // mobile / tablet: no pinning. Pain, then the scene scrubbed by scroll, then the answer.
   mm.add('(max-width: 960px) and (prefers-reduced-motion: no-preference)', () => {
     chapters.forEach((ch) => {
-      const counter = $('[data-count]', ch), frame = $('.frame', ch), svg = $('svg.scene', frame);
+      const counters = $$('[data-count]', ch), frame = $('.frame', ch), svg = $('svg.scene', frame);
       const play = gsap.timeline({ paused: true }).add(sceneTimeline(svg, frame.dataset.kind), 0).timeScale(2.4);   // ~4s, then holds on the resolved state
       ScrollTrigger.create({ trigger: frame, start: 'top 78%', end: 'bottom 15%', onEnter: () => play.restart(), onEnterBack: () => play.restart(), onLeave: () => play.pause(), onLeaveBack: () => play.pause(0) });
       gsap.from($('.pain', ch), { opacity: 0, y: 30, duration: .9, scrollTrigger: { trigger: ch, start: 'top 85%', once: true } });
       const tl = gsap.timeline({ scrollTrigger: { trigger: $('.ans', ch), start: 'top 85%', once: true } });
       tl.from($('.ans', ch), { opacity: 0, y: 28, duration: .7, ease: 'power3.out' });
-      if (counter) countUp(counter, tl, '>-.3');
+      counters.forEach((cn) => countUp(cn, tl, '>-.3'));
     });
   });
 }
@@ -642,8 +678,8 @@ function render() {
   const { page, id } = state.route;
   const d = page === 'industry' ? industryOf(id) : null;
   const s = page === 'solution' ? state.solutions.get(id) : null;
-  document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
-  const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
+  document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : page === 'experts' ? `${u('exp.title')} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
+  const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : page === 'experts' ? expertsPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>${header()}<main>${body}</main>${footer()}${floatCta()}`;
   document.documentElement.classList.toggle('rv-on', motionOK && 'IntersectionObserver' in window);   // armed before paint so nothing flashes
   bindChrome(); bindForm();

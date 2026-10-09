@@ -11,15 +11,14 @@
   "vi": "Truyền thông & Nội dung số: Báo điện tử, Streaming, Xuất bản và Game"
  },
  "tagline": {
-  "en": "CDN and Anti-DDoS/WAF for live events, Email Security on VCLOUD, Data Loss Prevention for content and subscriber data, and AI Legal for contract review.",
-  "vi": "CDN và Anti-DDoS/WAF cho sự kiện trực tiếp, Email Security trên VCLOUD, Chống thất thoát dữ liệu cho nội dung và dữ liệu thuê bao, cùng AI Legal rà soát hợp đồng."
+  "en": "CDN and Anti-DDoS/WAF for live events, Email Security on VCLOUD, and Data Loss Prevention for content and subscriber data.",
+  "vi": "CDN và Anti-DDoS/WAF cho sự kiện trực tiếp, Email Security trên VCLOUD, cùng Chống thất thoát dữ liệu cho nội dung và dữ liệu thuê bao."
  },
  "bundle": [
   "cdn",
   "anti-ddos-waf",
   "email-security",
-  "dlp",
-  "ai-legal"
+  "dlp"
  ],
  "regulations": [
   "Decree 13",
@@ -350,93 +349,58 @@
    }
   },
   {
-   "id": "data-legal",
+   "id": "subscriber-data",
    "persona": {
-    "en": "CFO / Head of Legal & Data Protection",
-    "vi": "Giám đốc Tài chính / Trưởng bộ phận Pháp chế & Bảo vệ dữ liệu"
+    "en": "CFO / Head of Data Protection",
+    "vi": "Giám đốc Tài chính / Trưởng bộ phận Bảo vệ dữ liệu"
    },
    "challenge": {
     "title": {
-     "en": "Subscriber Data and Copyright Contract Load",
-     "vi": "Dữ liệu thuê bao và khối lượng hợp đồng bản quyền"
+     "en": "Subscriber Data Under Decree 13",
+     "vi": "Dữ liệu thuê bao theo Nghị định 13"
     },
     "body": {
-     "en": "Subscriptions, payments and viewing habits make subscriber data subject to Decree 13, while licensing, talent and distribution contracts pile up for legal to review. Slow reviews delay deals, and a data incident hurts trust and finances.",
-     "vi": "Đăng ký, thanh toán và thói quen xem khiến dữ liệu thuê bao thuộc phạm vi Nghị định 13, trong khi hợp đồng bản quyền, nghệ sĩ và phát hành dồn về pháp chế. Rà soát chậm làm trễ thương vụ, còn sự cố dữ liệu ảnh hưởng đến niềm tin và tài chính."
+     "en": "Subscriptions, payments and viewing habits make subscriber data subject to Decree 13. Exports for reports and partners are easy to copy out, and a data incident hurts trust and finances.",
+     "vi": "Đăng ký, thanh toán và thói quen xem khiến dữ liệu thuê bao thuộc phạm vi Nghị định 13. Các bản xuất cho báo cáo và đối tác dễ bị sao chép ra ngoài, còn sự cố dữ liệu ảnh hưởng đến niềm tin và tài chính."
     }
    },
    "solutions": [
-    "ai-legal",
     "dlp",
     "email-security"
    ],
    "response": {
     "title": {
-     "en": "Faster contract review, safer subscriber data",
-     "vi": "Rà soát hợp đồng nhanh hơn, dữ liệu thuê bao an toàn hơn"
+     "en": "Keep subscriber data under control, inside Vietnam",
+     "vi": "Kiểm soát dữ liệu thuê bao, ngay tại Việt Nam"
     },
     "body": {
-     "en": "An AI assistant supports first-pass contract review with an on-premise option, while DLP and sovereign VCLOUD hosting help keep subscriber data under control inside Vietnam.",
-     "vi": "Trợ lý AI hỗ trợ rà soát hợp đồng bước đầu, có tùy chọn on-premise; DLP và lưu trữ chủ quyền trên VCLOUD giúp kiểm soát dữ liệu thuê bao ngay tại Việt Nam."
+     "en": "DLP shows how subscriber data moves and stops it leaving through chat, webmail and USB, while sovereign VCLOUD hosting keeps it inside Vietnam.",
+     "vi": "DLP cho thấy dữ liệu thuê bao di chuyển ra sao và ngăn rò rỉ qua chat, webmail, USB, trong khi lưu trữ chủ quyền trên VCLOUD giữ dữ liệu ngay tại Việt Nam."
     },
     "points": [
      {
-      "en": "AI-assisted first-pass contract review",
-      "vi": "AI hỗ trợ rà soát hợp đồng bước đầu"
+      "en": "Detects subscriber records leaving by chat, webmail or USB",
+      "vi": "Phát hiện hồ sơ thuê bao rời đi qua chat, webmail, USB"
      },
      {
-      "en": "On-premise option keeps documents private",
-      "vi": "Tùy chọn on-premise giữ tài liệu riêng tư"
+      "en": "Sovereign hosting inside Vietnam",
+      "vi": "Lưu trữ chủ quyền tại Việt Nam"
      },
      {
-      "en": "Detects subscriber records leaving the company",
-      "vi": "Phát hiện hồ sơ thuê bao rời khỏi doanh nghiệp"
+      "en": "Evidence for Decree 13 readiness",
+      "vi": "Bằng chứng cho việc chuẩn bị Nghị định 13"
      }
     ]
    },
    "scenario": {
-    "en": "Quarter-end week. A pile of licensing and talent contracts waits for legal sign-off, and a distribution deal is stalled behind it.",
-    "vi": "Tuần cuối quý. Một chồng hợp đồng bản quyền và nghệ sĩ đang chờ pháp chế ký duyệt, và một thương vụ phát hành bị kẹt phía sau."
+    "en": "Quarter-end week. Finance exports a subscriber and payment list for a report, and the file leaves on a personal drive.",
+    "vi": "Tuần cuối quý. Bộ phận tài chính xuất danh sách thuê bao và thanh toán để làm báo cáo, và tệp bị chép ra ổ cá nhân."
    },
    "scene": {
-    "kind": "scan",
-    "doc": {
-     "en": "Licensing contract",
-     "vi": "Hợp đồng bản quyền"
-    },
-    "flags": [
-     {
-      "en": "Exclusivity term",
-      "vi": "Thời hạn độc quyền"
-     },
-     {
-      "en": "Territory gap",
-      "vi": "Sót lãnh thổ"
-     },
-     {
-      "en": "Rights expiry",
-      "vi": "Hết hạn bản quyền"
-     }
-    ],
-    "timeBefore": {
-     "en": "Days",
-     "vi": "Nhiều ngày"
-    },
-    "timeAfter": {
-     "en": "Minutes",
-     "vi": "Vài phút"
-    },
-    "perDoc": {
-     "en": "per licence review",
-     "vi": "mỗi hợp đồng"
-    },
-    "before": {
-     "en": "Manual",
-     "vi": "Thủ công"
-    },
-    "after": {
-     "en": "Automated",
-     "vi": "Tự động"
+    "kind": "perimeter",
+    "asset": {
+     "en": "Subscriber data",
+     "vi": "Dữ liệu thuê bao"
     }
    }
   }
@@ -464,12 +428,12 @@
   },
   {
    "title": {
-    "en": "Compliance and Efficiency",
-    "vi": "Tuân thủ và hiệu quả vận hành"
+    "en": "Compliance Readiness",
+    "vi": "Sẵn sàng tuân thủ"
    },
    "body": {
-    "en": "Keep subscriber data in Vietnam on VCLOUD, support Decree 13 readiness and free legal teams from routine contract review.",
-    "vi": "Lưu trữ dữ liệu thuê bao tại Việt Nam trên VCLOUD, hỗ trợ chuẩn bị tuân thủ Nghị định 13 và giải phóng pháp chế khỏi rà soát hợp đồng thường nhật."
+    "en": "Keep subscriber data in Vietnam on VCLOUD and support Decree 13 readiness with controlled data movement.",
+    "vi": "Lưu trữ dữ liệu thuê bao tại Việt Nam trên VCLOUD và hỗ trợ chuẩn bị Nghị định 13 nhờ kiểm soát luồng dữ liệu."
    }
   }
  ],

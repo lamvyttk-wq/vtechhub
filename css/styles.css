@@ -441,6 +441,71 @@ body.leaving main, body.leaving footer.foot { opacity: 0; }
 .qv-dots button::after { content: ""; position: absolute; left: 3px; right: 3px; top: 50%; height: 4px; margin-top: -2px; border-radius: 4px; background: var(--hair); transition: background .25s, transform .25s var(--ease); }
 .qv-dots button.on::after { background: var(--red); transform: scaleX(1.15); }
 
+/* ---------- multi-metric block (chapters) ---------- */
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem 1rem; padding-top: .9rem; border-top: 1px solid var(--hair); }
+.metrics .metric { border: 0; padding: 0; display: grid; gap: .15rem; align-content: start; }
+.metrics .metric strong { font-size: clamp(1.35rem, 2.1vw, 1.8rem); letter-spacing: -.02em; white-space: nowrap; }
+.metrics .metric span { font-size: .74rem; max-width: none; line-height: 1.4; }
+.vnote { font-size: .76rem; color: var(--ink-3); margin-top: -.3rem; }
+
+/* ---------- solution page: capabilities, results, built-for ---------- */
+.hashtag { font-weight: 600; color: var(--red-ink); background: var(--red-wash); border-color: rgba(227,30,36,.2); }
+.serves { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: 1.4rem; }
+.serves .eyebrow { margin-right: .4rem; }
+.caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+@media (min-width: 961px) {
+  .caps { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .caps > .cap { grid-column: span 2; }
+  .caps > .cap:nth-child(4):nth-last-child(2), .caps > .cap:nth-child(5):nth-last-child(1) { grid-column: span 3; }
+}
+@media (max-width: 600px) { .caps { grid-template-columns: minmax(0, 1fr); } }
+.cap { padding: 1.5rem; display: grid; gap: .6rem; align-content: start; }
+.cap .ic.lead { width: 1.5rem; height: 1.5rem; color: var(--red); }
+.cap h3 { font: 700 1.1rem/1.35 var(--display); letter-spacing: -.01em; }
+.cap p { color: var(--ink-2); font-size: .92rem; line-height: 1.65; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.4rem 2.2rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.kpi { display: grid; gap: .35rem; align-content: start; }
+.kpi strong { font: 800 clamp(2rem, 3.6vw, 3.1rem)/1.1 var(--display); letter-spacing: -.03em; background: linear-gradient(100deg, var(--red), var(--red-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: .88rem; color: var(--ink-2); line-height: 1.5; }
+.kpis + .vnote { margin-top: 1.2rem; }
+
+/* ---------- experts & advisory board ---------- */
+.exp-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.seg { display: inline-flex; gap: 2px; padding: 4px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 14px; }
+.seg a, .seg span { padding: .6rem 1.1rem; border-radius: 10px; font: 700 .9rem/1.2 var(--sans); color: var(--ink-2); min-height: 40px; display: inline-flex; align-items: center; }
+.seg a:hover { color: var(--ink); }
+.seg .on { background: #fff; color: var(--red); box-shadow: var(--shadow-1); }
+.exp-hero .display { max-width: 22ch; }
+.experts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.4rem; align-items: stretch; }
+.xcard { padding: 0; overflow: hidden; display: grid; grid-template-rows: auto minmax(0, 1fr); transition: transform .3s var(--ease), box-shadow .3s; }
+.xph { height: 190px; display: grid; place-items: center; border-bottom: 1px solid var(--hair-2); background: radial-gradient(circle, rgba(11,16,32,.16) 1px, transparent 1.6px) 0 0 / 18px 18px, var(--bg-2); }
+.xav { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: var(--shadow-1); background: #fff; }
+.xav.ph { display: grid; place-items: center; color: var(--ink-3); }
+.xav.ph .ic { width: 2.6rem; height: 2.6rem; }
+.xbody { padding: 1.4rem 1.5rem 1.6rem; display: grid; gap: .55rem; align-content: start; min-width: 0; }
+.xbody h3 { font: 800 1.3rem/1.3 var(--display); letter-spacing: -.015em; overflow-wrap: anywhere; }
+.xrole { color: var(--red-ink); font: 700 .92rem/1.4 var(--sans); overflow-wrap: anywhere; }
+.xfocus { font-size: .86rem; color: var(--ink-2); line-height: 1.5; }
+.xfocus span { display: block; font: 700 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .15rem; }
+.xbio { color: var(--ink-2); font-size: .94rem; line-height: 1.7; overflow-wrap: anywhere; }
+.xbio.pending { color: var(--ink-3); }
+.xsols { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .3rem; }
+@media (hover: hover) { .xcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); } }
+
+/* short laptop screens: keep the whole answer inside the pinned viewport */
+@media (min-width: 961px) and (max-height: 900px) {
+  .chapter { padding: 5.4rem 0 1.6rem; }
+  .pain, .ans { gap: .8rem; }
+  .points { gap: .45rem; }
+  .points li { padding-bottom: .45rem; font-size: .92rem; }
+  .ans h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); }
+  .metrics { padding-top: .7rem; }
+}
+@media (min-width: 961px) and (max-height: 760px) {
+  .ans > p:not(.vnote) { display: none; }
+  .scn { padding: .6rem .9rem; }
+}
+
 /* ---------- lite mode (auto-enabled on slow devices): stops decorative motion ---------- */
 html.lite .ambient i, html.lite .marq-t, html.lite .demo .was, html.lite .demo .now, html.lite .demo .sol, html.lite .demo .rule i { animation: none; }
 html.lite .demo .now, html.lite .demo .sol { opacity: 1; }
@@ -477,6 +542,7 @@ html.lite .demo .now, html.lite .demo .sol { opacity: 1; }
   .fab { padding: 1rem; border-radius: 16px; }
   .qv-slide { grid-template-columns: minmax(0, 1fr); }
   .qv-pic { order: -1; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .qv-card { max-height: 100%; }
   .m-sols { grid-template-columns: 1fr; }
 }
