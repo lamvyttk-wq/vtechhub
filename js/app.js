@@ -1,4 +1,4 @@
-// V-TECH FOUNDRY landing engine. No build step: ES modules + GSAP/ScrollTrigger + Lenis.
+// V-TECH FOUNDRY landing engine. No build step: ES modules; GSAP/ScrollTrigger drive the pinned story only. Scrolling is native (no scroll hijacking).
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
@@ -22,11 +22,8 @@ const u = (path) => t(ui(path));
 const ic = (name, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.box}</svg>`;
 const motionOK = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasGsap = () => typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-let lenis = null;
 const view = { max: 0, contactTop: Infinity, bundleTop: 0, chs: [], sts: [], storyTop: 0, storyH: 0 };   // layout read once per refresh, never per scroll frame
-const ap = { on: false, pending: false, speed: 1, y: 0, last: 0, tok: 0 };                                              // story auto-play
 let mm = null;
-let tickerFn = null;
 
 /* ---------------------------------------------------------------- routing */
 function parseRoute() {
@@ -37,7 +34,7 @@ function parseRoute() {
 const hashOf = (r) => (r.page === 'home' ? 'home' : `${r.page}-${r.id}`);
 function swapPage(after) {
   teardownMotion(); render();
-  window.scrollTo(0, 0); lenis?.scrollTo(0, { immediate: true, force: true });
+  window.scrollTo(0, 0);
   document.body.classList.remove('leaving');
   if (after) setTimeout(() => scrollToEl($(after)), 420);
 }
@@ -116,7 +113,7 @@ const copyRow = (icon, label, value, href) => `<div class="row"><span class="ri"
 
 function contact(preset = '') {
   const opts = state.industries.map((i) => `<option value="${i.id}" ${i.id === preset ? 'selected' : ''}>${esc(t(i.name))}</option>`).join('');
-  return `<section class="contact" id="contact"><div class="wrap"><div class="contact-box glass spot rv" id="cbox">
+  return `<section class="contact" id="contact"><div class="wrap"><div class="contact-box glass rv" id="cbox">
     <div>
       <span class="eyebrow">${u('cta.kicker')}</span>
       <h2 class="h2">${u('cta.title')}</h2>
@@ -151,8 +148,7 @@ function ctxHTML() {
   const c = state.ctx; if (!c) return '';
   return `<span class="eyebrow">${u('cta.context')}</span><b>${u('ind.chOf')} ${num(c.k + 1)} · ${esc(c.title)}</b><i>${esc(c.sols)}</i>`;
 }
-const canAuto = () => motionOK && hasGsap();
-const autoControls = () => (canAuto() ? `<span class="apbox"><button class="ap" id="ap" type="button" aria-pressed="false" title="${esc(u('ap.hint'))}">${ic('play')}<span>${u('ap.play')}</span></button><button class="apspeed" id="apspeed" type="button" aria-label="${esc(u('ap.speed'))}">1\u00d7</button></span>` : '');
+const qvButton = () => `<button class="qvbtn" type="button" data-qv aria-haspopup="dialog">${ic('layers')}<span>${u('qv.open')}</span></button>`;
 const floatCta = () => `<a class="fab btn btn-red" id="fab" href="#contact" data-scroll="#contact">${ic('phone')}<span>${u('cta.float')}</span></a>`;
 
 function footer() {
@@ -169,15 +165,13 @@ function footer() {
 /* ---------------------------------------------------------------- pages */
 function homePage() {
   const first = state.industries[0];
-  const sectors = state.industries.map((i, k) => `<a class="sector glass ${k === 0 ? 'on' : ''}" href="#industry-${i.id}" data-go="industry-${i.id}" data-sector>
-      <span class="s-vert"><b>${num(k + 1)}</b><span>${esc(t(i.name))}</span></span>
-      <span class="s-body"><span class="s-top">${ic(i.icon, 'lead')}<b>${num(k + 1)}</b></span>
-        <h3>${esc(t(i.name))}</h3><p>${esc(t(i.tagline))}</p>
-        <span class="solchips plain">${i.bundle.slice(0, 4).map((s) => `<em>${ic(sol(s).icon)} ${esc(sol(s).name)}</em>`).join('')}</span>
-        <span class="s-go">${i.chapters.length} ${u('home.chapters')} · ${u('home.read')} ${ic('arrow-right')}</span></span></a>`).join('');
+  const sectorList = state.industries.map((i, k) => `<a class="sector ${k === 0 ? 'on' : ''}" href="#industry-${i.id}" data-go="industry-${i.id}" data-sector><span class="s-no">${num(k + 1)}</span><span class="s-nm">${esc(t(i.name))}</span>${ic('arrow-right')}</a>`).join('');
+  const sectorPanes = state.industries.map((i, k) => `<div class="s-pane ${k === 0 ? 'on' : ''}">${ic(i.icon, 'lead')}<h3>${esc(t(i.name))}</h3><p>${esc(t(i.tagline))}</p>
+      <span class="solchips plain">${i.bundle.slice(0, 4).map((x) => `<em>${ic(sol(x).icon)} ${esc(sol(x).name)}</em>`).join('')}</span>
+      ${link(`industry-${i.id}`, `${i.chapters.length} ${u('home.chapters')} \u00b7 ${u('home.read')} ${ic('arrow-right')}`, 's-go')}</div>`).join('');
   const steps = ui('home.steps').map((s, k) => `<div class="col rv"><span class="n">${num(k + 1)}</span><h3>${t(s.t)}</h3><p>${t(s.d)}</p></div>`).join('');
   const tiles = [...state.solutions.values()].map((s) => link(`solution-${s.id}`,
-    `${ic(s.icon, 'lead')}<h3>${esc(s.name)}</h3><p>${esc(t(s.tagline))}</p><div class="foot"><span>${u('ind.learn')}</span>${ic('arrow-up-right')}</div>`, 'tile glass spot rv')).join('');
+    `${ic(s.icon, 'lead')}<h3>${esc(s.name)}</h3><p>${esc(t(s.tagline))}</p><div class="foot"><span>${u('ind.learn')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
   const names = state.industries.map((i) => esc(t(i.name))).join(' <i>✦</i> ');
   const hA = u('home.heroA'), hB = u('home.heroB');
   return `
@@ -190,7 +184,7 @@ function homePage() {
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('nav.request')}</a></div>
     </div>
     <aside class="preview hero-in" style="animation-delay:.4s" aria-label="${u('home.demoKicker')}">
-      <div class="glass spot demo card-a" id="demo" data-i="0">
+      <div class="glass demo card-a" id="demo" data-i="0">
         <div class="lbl"><span class="eyebrow d-ind">${esc(t(first.name))}</span><span class="chip">${u('home.demoKicker')}</span></div>
         <p class="was">${esc(t(first.chapters[0].challenge.title))}</p>
         <div class="rule">${ic('arrow-down')}<i></i></div>
@@ -204,7 +198,7 @@ function homePage() {
   <div class="marq" aria-hidden="true"><div class="marq-t"><span>${names} <i>✦</i> </span><span>${names} <i>✦</i> </span></div></div>
   <section class="sec" id="industries"><div class="wrap">
     <div class="sec-head"><span class="eyebrow rv">${u('home.indKicker')}</span><h2 class="h2 rv">${u('home.indLead')}</h2><p class="lede rv">${u('home.indP')}</p></div>
-    <div class="sectors rv" id="sectors">${sectors}</div><p class="hint rv">${u('home.sectorsHint')}</p></div></section>
+    <div class="sectors rv" id="sectors"><div class="sec-list">${sectorList}</div><div class="sec-detail">${sectorPanes}</div></div><p class="hint rv">${u('home.sectorsHint')}</p></div></section>
   <section class="sec" id="how" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span></div><div class="cols3 steps">${steps}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.solKicker')}</span><h2 class="h2 rv">${u('home.solTitle')}</h2></div><div class="tiles">${tiles}</div></div></section>
   ${contact()}`;
@@ -247,7 +241,7 @@ function industryPage() {
     const covers = d.chapters.map((c, k) => (c.solutions.includes(s) ? num(k + 1) : '')).filter(Boolean).join(' · ');
     const x = sol(s);
     return link(`solution-${s}`, `${ic(x.icon, 'lead')}<h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
-      <div class="foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span>${ic('arrow-up-right')}</div>`, 'tile glass spot rv');
+      <div class="foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span>${ic('arrow-up-right')}</div>`, 'tile glass rv');
   }).join('');
   const outcomes = d.outcomes.map((o, k) => `<div class="col rv"><span class="n">${num(k + 1)}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
   const faq = d.faq.map((f) => `<details class="rv"><summary>${esc(t(f.q))}${ic('plus')}</summary><div class="a">${esc(t(f.a))}</div></details>`).join('');
@@ -260,20 +254,20 @@ function industryPage() {
       <p class="lede hero-in" style="animation-delay:.5s">${esc(t(d.tagline))}</p>
       <div class="chips hero-in" style="animation-delay:.56s">${chips}</div>
       <div class="actions hero-in" style="animation-delay:.62s"><a class="btn btn-red" href="#story" data-scroll="#story">${u('ind.begin')} ${ic('arrow-down')}</a>
-        ${canAuto() ? `<button class="btn btn-line" type="button" data-autoplay>${ic('play')} ${u('ap.watch')}</button>` : ''}
+        <button class="btn btn-line" type="button" data-qv aria-haspopup="dialog">${ic('layers')} ${u('qv.open')}</button>
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div>
     </div>
-    <aside class="match glass spot hero-in" style="animation-delay:.45s"><span class="eyebrow">${u('ind.match')}</span><p>${u('ind.matchSub')}</p><div class="m-list">${match}</div></aside>
+    <aside class="match glass hero-in" style="animation-delay:.45s"><span class="eyebrow">${u('ind.match')}</span><p>${u('ind.matchSub')}</p><div class="m-list">${match}</div></aside>
   </div>
     <nav class="switcher hero-in" style="animation-delay:.7s" aria-label="${u('ind.otherIndustries')}">${sw}</nav></div></section>
   <section class="intro" id="intro"><div class="wrap"><span class="eyebrow rv">${u('ind.whyNow')}</span><p class="statement rv">${esc(t(d.challengesIntro))}</p></div></section>
   <div class="story" id="story">
-    <div class="story-bar"><div class="wrap"><span class="now" id="now">${u('ind.chapter')} 01 ${u('ind.of')} ${num(n)}</span><span class="name" id="nowname">${esc(t(d.chapters[0].challenge.title))}</span>${autoControls()}<div class="ticks">${ticks}</div></div><div class="progress"><i id="prog"></i></div></div>
+    <div class="story-bar"><div class="wrap"><span class="now" id="now">${u('ind.chapter')} 01 ${u('ind.of')} ${num(n)}</span><span class="name" id="nowname">${esc(t(d.chapters[0].challenge.title))}</span>${qvButton()}<div class="ticks">${ticks}</div></div><div class="progress"><i id="prog"></i></div></div>
     ${chapters}</div>
   <section class="sec resolved" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.resolved')}</h2><p class="lede rv">${u('ind.resolvedP')}</p></div><div class="tiles">${bundle}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span></div><div class="cols3">${outcomes}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass spot rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
+  <section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
   ${contact(id)}`;
 }
@@ -284,7 +278,7 @@ function solutionPage() {
   if (!s) return notFound(u('sol.notFound'));
   const kind = SCENE_KINDS[id] || 'gate';
   const uses = state.industries.flatMap((i) => i.chapters.filter((c) => c.solutions.includes(id)).map((c) => ({ i, c })));
-  const tiles = uses.map(({ i, c }) => link(`industry-${i.id}`, `${ic(i.icon, 'lead')}<span class="chip">${esc(t(i.name))}</span><h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.response.title))}</p><div class="foot"><span>${u('home.read')}</span>${ic('arrow-up-right')}</div>`, 'tile glass spot rv')).join('');
+  const tiles = uses.map(({ i, c }) => link(`industry-${i.id}`, `${ic(i.icon, 'lead')}<span class="chip">${esc(t(i.name))}</span><h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.response.title))}</p><div class="foot"><span>${u('home.read')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
   return `
   <section class="hero ind-hero"><div class="wrap"><div class="grid">
     <div>
@@ -316,7 +310,7 @@ function bindChrome() {
   };
   addEventListener('scroll', onScroll, { passive: true });
   state.offScroll = () => removeEventListener('scroll', onScroll);
-  measure(); onScroll();
+  onScroll();                       // layout is measured after the first paint (see render), never in the critical path
 
   const dds = $$('.dd');
   const closeAll = () => dds.forEach((d) => { d.classList.remove('open'); $('.nav-btn', d).setAttribute('aria-expanded', 'false'); });
@@ -335,24 +329,17 @@ function bindChrome() {
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
   state.closeAll = closeAll;
 
-  // sector explorer (home): hover/focus expands; on touch the first tap expands, the second opens. It also plays itself until the visitor takes over.
+  // sector explorer (home): hovering / focusing a sector shows its detail (cross-fade). On touch laptops the first tap previews, the second opens; phones just navigate.
   const secs = $$('[data-sector]');
   if (secs.length) {
-    let idx = 0, hold = false, seen = true;
-    const setOn = (k) => { idx = k; secs.forEach((x, j) => x.classList.toggle('on', j === k)); };
+    const panes = $$('.s-pane');
+    const setOn = (k) => { secs.forEach((x, j) => x.classList.toggle('on', j === k)); panes.forEach((x, j) => x.classList.toggle('on', j === k)); };
     secs.forEach((el, k) => {
       el.addEventListener('mouseenter', () => setOn(k)); el.addEventListener('focus', () => setOn(k));
-      el.addEventListener('click', (e) => { if (matchMedia('(hover:none)').matches && !el.classList.contains('on')) { e.preventDefault(); e.stopPropagation(); setOn(k); } });
+      el.addEventListener('click', (e) => { if (matchMedia('(hover:none) and (min-width:961px)').matches && !el.classList.contains('on')) { e.preventDefault(); e.stopPropagation(); setOn(k); } });
     });
-    const box = $('#sectors');
-    ['pointerenter', 'focusin'].forEach((ev) => box.addEventListener(ev, () => { hold = true; }));
-    ['pointerleave', 'focusout'].forEach((ev) => box.addEventListener(ev, () => { hold = false; }));
-    if (motionOK && 'IntersectionObserver' in window && matchMedia('(min-width: 961px)').matches) {
-      new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe(box);
-      state.timer = setInterval(() => { if (!hold && seen && !document.hidden) setOn((idx + 1) % secs.length); }, 4200);
-    }
   }
-  // hero demo: the pain blurs away and the answer resolves; swap the copy each time the CSS loop restarts
+  // hero demo: the pain fades back and the answer rises in; swap the copy each time the CSS loop restarts
   const demo = $('#demo');
   if (demo) {
     $('.was', demo).addEventListener('animationiteration', () => {
@@ -362,16 +349,9 @@ function bindChrome() {
       $('.now', demo).textContent = t(c.response.title); $('.d-sol', demo).innerHTML = demoChips(c);
     });
   }
-  // magnetic primary buttons
-  if (matchMedia('(hover:hover)').matches && motionOK) {
-    $$('.btn-red').forEach((b) => {
-      b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); b.style.setProperty('--tx', `${((e.clientX - r.left - r.width / 2) * .16).toFixed(1)}px`); b.style.setProperty('--ty', `${((e.clientY - r.top - r.height / 2) * .26).toFixed(1)}px`); });
-      b.addEventListener('pointerleave', () => { b.style.removeProperty('--tx'); b.style.removeProperty('--ty'); });
-    });
-  }
   bindStory();
 }
-// one delegated handler for the whole document (links, smooth scroll, copy buttons, dismissals, glass spotlight)
+// one delegated handler for the whole document (links, smooth scroll, copy buttons, dismissals)
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.dd')) state.closeAll?.();
   const nav = e.target.closest('[data-go]');
@@ -387,9 +367,8 @@ document.addEventListener('click', (e) => {
     if (a.dataset.prefill === 'poc') { const nn = $('#f-need'); if (nn && !nn.value) nn.value = 'PoC sandbox'; }
     scrollToEl(target); return;
   }
-  if (e.target.closest('[data-autoplay]')) { apStart(); return; }
-  if (e.target.closest('#ap')) { ap.on ? apStop() : apStart(); return; }
-  if (e.target.closest('#apspeed')) { const sp = [1, 1.5, 2]; ap.speed = sp[(sp.indexOf(ap.speed) + 1) % sp.length]; apUI(); return; }
+  if (e.target.closest('[data-qv]')) { qvOpen(); return; }
+  if (e.target.closest('[data-qv-close]')) { qvClose(); return; }
   const cp = e.target.closest('[data-copy]');
   if (cp) {
     const done = () => { const s = $('span', cp); s.textContent = u('cta.copied'); setTimeout(() => { s.textContent = u('cta.copy'); }, 1400); };
@@ -398,22 +377,10 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') state.closeAll?.(); });
-let spotEv = null;
-document.addEventListener('pointermove', (e) => {
-  if (e.pointerType === 'touch') return;
-  const first = !spotEv; spotEv = e;
-  if (first) requestAnimationFrame(() => {
-    const ev = spotEv; spotEv = null;
-    const g = ev.target.closest?.('.spot'); if (!g) return;
-    const r = g.getBoundingClientRect(); g.style.setProperty('--mx', `${ev.clientX - r.left}px`); g.style.setProperty('--my', `${ev.clientY - r.top}px`);
-  });
-}, { passive: true });
-
 function scrollToEl(el, offset) {
   if (!el) return;
-  const off = offset ?? -(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) - 24;
-  if (lenis) lenis.scrollTo(el, { offset: off, duration: 1.4 });
-  else el.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', block: 'start' });
+  const off = offset ?? -(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72) - 24;
+  window.scrollTo({ top: el.getBoundingClientRect().top + scrollY + off, behavior: motionOK ? 'smooth' : 'auto' });
 }
 
 /* chapter bookkeeping (works with or without GSAP): active chapter, progress bar, contact context, jump buttons */
@@ -451,75 +418,10 @@ function bindStory() {
   $$('[data-goto]').forEach((b) => b.addEventListener('click', () => {
     const k = +b.dataset.goto, ch = $$('.chapter')[k]; if (!ch) return;
     const st = hasGsap() ? ScrollTrigger.getById(`ch${k}`) : null;
-    if (st) { if (lenis) lenis.scrollTo(st.start + 4, { duration: 1.6 }); else window.scrollTo({ top: st.start + 4, behavior: 'smooth' }); }
+    if (st) window.scrollTo({ top: st.start + 4, behavior: motionOK ? 'smooth' : 'auto' });
     else scrollToEl(ch);
   }));
 }
-
-/* ---------------------------------------------------------------- auto-play: the story plays itself
-   A linear scroll drive over the same pinned timelines, slower where there is something to read and quicker through the turn.
-   Any wheel / touch / key / click takes over instantly; it never fights the visitor. */
-function apRange() {
-  const n = view.sts.length;
-  const startY = n ? view.sts[0].start : view.storyTop - 90;
-  const endY = (view.bundleTop || view.storyTop + view.storyH) - 110;
-  return { startY, endY };
-}
-function apSpeed(y) {
-  if (!view.sts.length) return innerHeight * .14;                         // stacked layout (mobile): steady reading pace
-  const base = innerHeight * .21;
-  for (const st of view.sts) {
-    if (y < st.start || y > st.end) continue;
-    const p = (y - st.start) / (st.end - st.start);
-    return base * (p < .1 ? 1.5 : p < .36 ? .75 : p < .5 ? 1.25 : p < .92 ? .7 : 1.6);
-  }
-  return base * 1.7;                                                       // travelling between chapters
-}
-function apScroll(y) { if (lenis) lenis.scrollTo(y, { immediate: true, force: true }); else window.scrollTo(0, y); }
-function apTick() {
-  const now = performance.now(), dt = Math.min(.05, (now - ap.last) / 1000); ap.last = now;
-  if (Math.abs(scrollY - ap.y) > 80) return apStop();                      // something else moved the page
-  ap.y += apSpeed(ap.y) * ap.speed * dt;
-  if (ap.y >= apRange().endY) return apStop(true);
-  apScroll(ap.y);
-}
-function apUI() {
-  const b = $('#ap'), done = ap.done && !ap.on;
-  document.documentElement.classList.toggle('autoplaying', ap.on);
-  if (b) {
-    b.setAttribute('aria-pressed', String(ap.on));
-    b.innerHTML = `${ic(ap.on ? 'pause' : done ? 'rotate-ccw' : 'play')}<span>${u(ap.on ? 'ap.pause' : done ? 'ap.replay' : 'ap.play')}</span>`;
-  }
-  const sp = $('#apspeed'); if (sp) sp.textContent = `${ap.speed}\u00d7`;
-}
-function apStart() {
-  if (ap.on || !view.chs.length || !canAuto()) return;
-  const { startY, endY } = apRange(), tok = ++ap.tok;
-  const begin = () => {
-    if (tok !== ap.tok) return;
-    ap.pending = false; ap.y = scrollY; ap.last = performance.now(); ap.on = true; ap.done = false;
-    gsap.ticker.add(apTick); apUI();
-  };
-  if (scrollY < startY - 40 || scrollY > endY - 200) {                     // start (or restart) from chapter one
-    ap.done = false; ap.pending = true;
-    const to = startY + 2;
-    if (lenis) lenis.scrollTo(to, { duration: 1.6, onComplete: begin }); else { window.scrollTo({ top: to, behavior: 'smooth' }); setTimeout(begin, 1100); }
-  } else begin();
-}
-function apStop(finished = false) {
-  ap.tok++; ap.pending = false;
-  if (ap.on) gsap.ticker.remove(apTick);
-  ap.on = false;
-  if (finished) { ap.done = true; const f = $('#fab'); if (f) { f.classList.add('nudge'); setTimeout(() => f.classList.remove('nudge'), 4200); } }
-  apUI();
-}
-['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => addEventListener(ev, (e) => {
-  if (!ap.on && !ap.pending) return;
-  if (e.target.closest?.('#ap, #apspeed, [data-autoplay]')) return;
-  if (ev === 'keydown' && !['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(e.key)) return;
-  apStop();
-}, { passive: true, capture: true }));
-document.addEventListener('visibilitychange', () => { if (document.hidden && ap.on) apStop(); });
 
 /* adaptive quality: if the device can't hold ~30fps while the visitor scrolls, drop to "lite" (no backdrop blur / text blur) and remember it */
 const setLite = (on, persist) => { document.documentElement.classList.toggle('lite', on); if (persist) store.set('vth-lite', on ? '1' : '0'); };
@@ -579,15 +481,6 @@ function bindForm() {
 }
 
 /* ---------------------------------------------------------------- motion */
-function initLenis() {
-  if (lenis || !motionOK || typeof window.Lenis === 'undefined') return;
-  lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
-  lenis.on('scroll', ScrollTrigger.update);
-  tickerFn = (time) => lenis.raf(time * 1000);
-  gsap.ticker.add(tickerFn);
-  gsap.ticker.lagSmoothing(0);
-}
-
 function countUp(el, tl, at) {
   const m = String(el.dataset.count).match(/^([^\d]*)([\d.,]+)(.*)$/);
   if (!m) return;
@@ -600,16 +493,10 @@ function initMotion() {
   if (!hasGsap() || !motionOK) return;
   gsap.registerPlugin(ScrollTrigger);
   if (!state.refreshBound) { ScrollTrigger.addEventListener('refresh', measure); state.refreshBound = true; }
-  initLenis();
+  ScrollTrigger.config({ ignoreMobileResize: true });     // phone address bars must not trigger re-layout of the pins
   mm = gsap.matchMedia();
 
   mm.add('(prefers-reduced-motion: no-preference)', () => {
-    ScrollTrigger.batch('.rv', { start: 'top 96%', once: true,
-      onEnter: (els) => gsap.fromTo(els, { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', stagger: .09, overwrite: true, clearProps: 'transform,opacity' }) });
-    gsap.to('.ambient i:nth-child(1)', { yPercent: 28, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
-    gsap.to('.ambient i:nth-child(2)', { yPercent: -32, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
-    // how-it-works: the numbers light up in sequence
-    $$('.steps .col').forEach((c) => gsap.fromTo($('.n', c), { color: '#c9ccd6' }, { color: '#e31e24', duration: .5, scrollTrigger: { trigger: c, start: 'top 80%', toggleActions: 'play none none reverse' } }));
     // solution page: the scene loops, only while it is on screen
     $$('.frame.loop').forEach((fr) => {
       const svg = $('svg.scene', fr); if (!svg) return;
@@ -631,14 +518,14 @@ function initMotion() {
       const counter = $('[data-count]', ch);
       const svg = $('svg.scene', frame), kind = frame.dataset.kind;
       const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' },
-        scrollTrigger: { id: `ch${k}`, trigger: ch, start: 'top top+=70', end: '+=260%', pin: true, scrub: .6, anticipatePin: 1 } });
+        scrollTrigger: { id: `ch${k}`, trigger: ch, start: 'top top+=70', end: '+=220%', pin: true, scrub: .5, anticipatePin: 1 } });
       tl.fromTo(num_, { opacity: 0, xPercent: -6 }, { opacity: 1, xPercent: 0, duration: 1 }, 0)
         .fromTo(meta, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .8 }, 0)
         .fromTo(frame, { opacity: 0, y: 56, scale: .965 }, { opacity: 1, y: 0, scale: 1, duration: 1.3 }, .1)
-        .fromTo(pain, { autoAlpha: 0, y: 40, filter: 'blur(10px)' }, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 1 }, .3)
+        .fromTo(pain, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 1 }, .3)
         .add(sceneTimeline(svg, kind), 0)
-        .to(pain, { autoAlpha: 0, y: -34, filter: 'blur(12px)', duration: 1 }, 3.7)
-        .fromTo(ans, { autoAlpha: 0, y: 40, filter: 'blur(12px)' }, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 1 }, 4.2)
+        .to(pain, { autoAlpha: 0, y: -24, duration: 1 }, 3.7)
+        .fromTo(ans, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 1 }, 4.2)
         .fromTo(items, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .5, stagger: .14 }, 5);
       if (counter) countUp(counter, tl, 6.2);
       gsap.set(ans, { autoAlpha: 0 });
@@ -654,15 +541,96 @@ function initMotion() {
       ScrollTrigger.create({ trigger: frame, start: 'top 78%', end: 'bottom 15%', onEnter: () => play.restart(), onEnterBack: () => play.restart(), onLeave: () => play.pause(), onLeaveBack: () => play.pause(0) });
       gsap.from($('.pain', ch), { opacity: 0, y: 30, duration: .9, scrollTrigger: { trigger: ch, start: 'top 85%', once: true } });
       const tl = gsap.timeline({ scrollTrigger: { trigger: $('.ans', ch), start: 'top 85%', once: true } });
-      tl.from($('.ans', ch), { opacity: 0, y: 40, filter: 'blur(10px)', duration: .9 });
+      tl.from($('.ans', ch), { opacity: 0, y: 28, duration: .7, ease: 'power3.out' });
       if (counter) countUp(counter, tl, '>-.3');
     });
   });
 }
 
+/* scroll reveal: a light fade + rise (CSS transition), armed only when IntersectionObserver exists. Once shown, the class is dropped so hover states take over. */
+function initReveal() {
+  const els = $$('.rv'); if (!els.length || !document.documentElement.classList.contains('rv-on')) return;
+  const seen = new Map();
+  els.forEach((el) => { const n = seen.get(el.parentElement) || 0; seen.set(el.parentElement, n + 1); el.style.setProperty('--d', Math.min(n, 5)); });
+  state.rvio = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target; state.rvio.unobserve(el); el.classList.add('in');
+    setTimeout(() => el.classList.remove('rv', 'in'), 900 + (+el.style.getPropertyValue('--d') || 0) * 70);
+  }), { rootMargin: '0px 0px -6% 0px', threshold: .04 });
+  els.forEach((el) => state.rvio.observe(el));
+}
+
+/* ---------------------------------------------------------------- quick view: an explicit, opt-in carousel of the chapters.
+   Native scroll-snap does the swiping; Prev/Next, dots, arrow keys and Esc are there for everyone else. Nothing here moves on its own. */
+const qv = { el: null, i: 0, tl: null, prevFocus: null, onKey: null };
+function qvOpen() {
+  const d = industryOf(state.route.id); if (!d || qv.el) return;
+  const n = d.chapters.length;
+  const slides = d.chapters.map((c, k) => {
+    const kind = sceneKindOf(c);
+    const chips = c.solutions.map((x) => `<a href="#solution-${x}" data-go="solution-${x}">${ic(sol(x).icon)} ${esc(sol(x).name)}</a>`).join('');
+    const pts = (c.response.points || []).map((x) => `<li class="pt">${ic('check')}<span>${esc(t(x))}</span></li>`).join('');
+    const scn = c.scenario ? `<p class="scn"><span>${u('ind.moment')}</span>${esc(t(c.scenario))}</p>` : `<p>${esc(t(c.challenge.body))}</p>`;
+    return `<section class="qv-slide" data-k="${k}" aria-label="${num(k + 1)} / ${num(n)}">
+      <div class="qv-txt"><span class="who">${ic('user-round')}<span>${u('ind.felt')} <b>${esc(t(c.persona))}</b></span></span>
+        <h3>${esc(t(c.challenge.title))}</h3>${scn}
+        <span class="eyebrow qv-tag">${u('ind.answer')}</span><div class="solchips">${chips}</div>
+        <p class="ans-h">${esc(t(c.response.title))}</p><ul class="points">${pts}</ul></div>
+      <div class="qv-pic"><figure class="frame glass" data-kind="${kind}">${sceneFor(kind, c.scene, sol(c.solutions[0]).name)}<figcaption><i></i>${u('scenes.label')}</figcaption></figure></div></section>`;
+  }).join('');
+  const dots = d.chapters.map((c, k) => `<button type="button" data-qv-go="${k}" aria-label="${num(k + 1)}: ${esc(t(c.challenge.title))}"></button>`).join('');
+  const el = document.createElement('div');
+  el.className = 'qv'; el.id = 'qv'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); el.setAttribute('aria-label', u('qv.title'));
+  el.innerHTML = `<div class="qv-back" data-qv-close></div><div class="qv-card">
+    <div class="qv-top"><span class="eyebrow" id="qvcount"></span><button class="qv-x" type="button" data-qv-close aria-label="${esc(u('qv.close'))}">${ic('x')}</button></div>
+    <div class="qv-track" id="qvtrack">${slides}</div>
+    <div class="qv-nav"><button class="btn btn-line" type="button" id="qvprev">${ic('arrow-left')} ${u('qv.prev')}</button><div class="qv-dots">${dots}</div><button class="btn btn-red" type="button" id="qvnext">${u('qv.next')} ${ic('arrow-right')}</button></div></div>`;
+  document.body.appendChild(el);
+  qv.el = el; qv.i = -1; qv.prevFocus = document.activeElement;
+  document.documentElement.style.overflow = 'hidden';
+  fitScene($$('svg.scene', el));
+  const track = $('#qvtrack'), go = (k) => track.scrollTo({ left: Math.max(0, Math.min(n - 1, k)) * track.clientWidth, behavior: motionOK ? 'smooth' : 'auto' });
+  const show = (k) => {
+    if (k === qv.i) return; qv.i = k;
+    $('#qvcount').textContent = `${u('qv.title')} · ${num(k + 1)} ${u('ind.of')} ${num(n)}`;
+    $$('.qv-dots button', el).forEach((b, j) => b.classList.toggle('on', j === k));
+    $('#qvprev').disabled = k === 0; $('#qvnext').disabled = k === n - 1;
+    qv.tl?.kill(); qv.tl = null;
+    const svg = $('svg.scene', $$('.qv-slide', el)[k]);
+    if (svg && motionOK && hasGsap()) qv.tl = gsap.timeline().add(sceneTimeline(svg, svg.closest('.frame').dataset.kind), 0).timeScale(2);   // plays once when its slide appears
+  };
+  let raf = 0;
+  track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => show(Math.round(track.scrollLeft / track.clientWidth))); }, { passive: true });
+  el.addEventListener('click', (e) => { const b = e.target.closest('[data-qv-go]'); if (b) go(+b.dataset.qvGo); });
+  $('#qvprev').addEventListener('click', () => go(qv.i - 1));
+  $('#qvnext').addEventListener('click', () => go(qv.i + 1));
+  qv.onKey = (e) => {
+    if (e.key === 'Escape') qvClose();
+    else if (e.key === 'ArrowRight') go(qv.i + 1);
+    else if (e.key === 'ArrowLeft') go(qv.i - 1);
+    else if (e.key === 'Tab') {                                     // keep focus inside the dialog
+      const f = $$('button, a[href]', el).filter((x) => !x.disabled && x.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  };
+  document.addEventListener('keydown', qv.onKey);
+  const start = Math.max(0, state.ctx?.k || 0);                     // open on the chapter the visitor was reading
+  track.style.scrollSnapType = 'none'; track.scrollLeft = start * track.clientWidth; track.style.scrollSnapType = '';
+  show(start); $('.qv-x', el).focus();
+}
+function qvClose() {
+  if (!qv.el) return;
+  qv.tl?.kill(); qv.tl = null; document.removeEventListener('keydown', qv.onKey);
+  qv.el.remove(); qv.el = null; document.documentElement.style.overflow = '';
+  qv.prevFocus?.focus?.(); qv.prevFocus = null;
+}
+
+
 /* ---------------------------------------------------------------- lifecycle */
 function teardownMotion() {
-  apStop(); clearInterval(state.timer); state.io?.disconnect();
+  qvClose(); state.io?.disconnect(); state.rvio?.disconnect();
   state.offScroll?.(); state.offScroll = null;
   if (mm) { mm.revert(); mm = null; }
   if (hasGsap()) ScrollTrigger.getAll().forEach((s) => s.kill());
@@ -677,14 +645,16 @@ function render() {
   document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>${header()}<main>${body}</main>${footer()}${floatCta()}`;
-  bindChrome(); bindForm(); apUI();
+  document.documentElement.classList.toggle('rv-on', motionOK && 'IntersectionObserver' in window);   // armed before paint so nothing flashes
+  bindChrome(); bindForm();
   // everything heavy (pins, timelines, measuring) starts after the first paint, so the hero is never waiting on it
   const rid = state.rid = (state.rid || 0) + 1;
   requestAnimationFrame(() => setTimeout(() => {
     if (rid !== state.rid) return;
+    initReveal();
     initMotion();
     if (hasGsap() && motionOK) ScrollTrigger.refresh(); else measure();
-    if (state.restoreY != null) { const y = state.restoreY; state.restoreY = null; window.scrollTo(0, y); lenis?.scrollTo(y, { immediate: true, force: true }); }
+    if (state.restoreY != null) { const y = state.restoreY; state.restoreY = null; window.scrollTo(0, y); }
     // pause infinite CSS animations (marquee, hero demo, pulses) while they are offscreen
     if ('IntersectionObserver' in window) {
       state.io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('off', !e.isIntersecting)), { rootMargin: '80px' });

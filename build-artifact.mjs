@@ -11,13 +11,13 @@ const lite = (src) => src.replace(/^\s*\/\/.*$/gm, '').replace(/\n{2,}/g, '\n');
 const css = read('css/styles.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^[ \t]+/gm, '').replace(/\n{2,}/g, '\n');
 const js = [read('js/config.js'), read('js/icons.js'), read('js/scenes.js'), read('js/app.js')].map(strip).map(lite).join('\n');
 const libs = local
-  ? ['gsap.min.js', 'ScrollTrigger.min.js', 'lenis.min.js'].map((f) => `<script>${read('assets/vendor/' + f)}</script>`).join('\n')
-  : ['gsap@3.12.5/dist/gsap.min.js', 'gsap@3.12.5/dist/ScrollTrigger.min.js', 'lenis@1.1.18/dist/lenis.min.js'].map((p) => `<script src="https://cdn.jsdelivr.net/npm/${p}"></script>`).join('\n');
+  ? ['gsap.min.js', 'ScrollTrigger.min.js'].map((f) => `<script>${read('assets/vendor/' + f)}</script>`).join('\n')
+  : ['gsap@3.12.5/dist/gsap.min.js', 'gsap@3.12.5/dist/ScrollTrigger.min.js'].map((p) => `<script src="https://cdn.jsdelivr.net/npm/${p}"></script>`).join('\n');
 const html = `<meta charset="utf-8">
 <title>V-TECH FOUNDRY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500..800&family=Inter:wght@400..700&display=swap" rel="stylesheet">
 <style>
 ${css}
 </style>

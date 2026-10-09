@@ -171,8 +171,8 @@
    "vi": "Một câu chuyện trong một cái nhìn"
   },
   "sectorsHint": {
-   "en": "Hover or tap a sector",
-   "vi": "Chạm hoặc rê chuột vào một ngành"
+   "en": "Hover a sector to preview it, or select it to open the story",
+   "vi": "Rê chuột vào một ngành để xem trước, hoặc chọn để mở câu chuyện"
   }
  },
  "ind": {
@@ -695,30 +695,26 @@
    }
   }
  },
- "ap": {
-  "play": {
-   "en": "Auto-play",
-   "vi": "Tự động phát"
+ "qv": {
+  "open": {
+   "en": "Quick view",
+   "vi": "Xem nhanh"
   },
-  "pause": {
-   "en": "Pause",
-   "vi": "Tạm dừng"
+  "title": {
+   "en": "Quick view",
+   "vi": "Xem nhanh"
   },
-  "watch": {
-   "en": "Watch the story",
-   "vi": "Xem câu chuyện tự chạy"
+  "prev": {
+   "en": "Previous",
+   "vi": "Trước"
   },
-  "replay": {
-   "en": "Replay",
-   "vi": "Phát lại"
+  "next": {
+   "en": "Next",
+   "vi": "Tiếp"
   },
-  "speed": {
-   "en": "Playback speed",
-   "vi": "Tốc độ phát"
-  },
-  "hint": {
-   "en": "Scroll or tap anywhere to take over",
-   "vi": "Cuộn hoặc chạm để tự điều khiển"
+  "close": {
+   "en": "Close",
+   "vi": "Đóng"
   }
  }
 }

@@ -3,7 +3,7 @@
 Scroll-driven landing pages (white luxury, frosted glass, brand red as a thin accent) that walk an enterprise buyer from
 **real industry pain → matching packaged solution → proof (PoC) → contact**.
 
-No build step. Plain HTML/CSS/ES modules + GSAP/ScrollTrigger + Lenis (vendored in `assets/vendor`); icons are inline SVG (`js/icons.js`).
+No build step. Plain HTML/CSS/ES modules + GSAP/ScrollTrigger (vendored in `assets/vendor`); icons are inline SVG (`js/icons.js`).
 
 ```bash
 python3 -m http.server 8765      # JSON is fetched, so serve over HTTP (not file://)
@@ -23,20 +23,22 @@ visitor ("You were reading..."), and a floating "Talk to an expert" button follo
 Header: a mega-menu grouped by industry; hovering an industry shows its packaged solutions. Solution pages loop the same scene.
 Mobile and `prefers-reduced-motion` get a non-pinned layout (reduced motion shows every scene in its resolved state). EN/VI toggle persists.
 
-## Auto-play and performance
-- **Auto-play story**: "Watch the story" in the industry hero (or Auto-play in the story bar) scrolls the pinned chapters by itself, slower while
-  there is something to read, quicker through the turn, then glides to the bundle and nudges the "Talk to an expert" button. Speed 1x/1.5x/2x.
-  Any wheel, touch, key or click takes over instantly. On phones scenes auto-play when they come into view; on the home page the sector explorer
-  and the hero demo rotate on their own. All of it is off for `prefers-reduced-motion`.
-- **Why it is fast** (measured in a software-rendered browser, so read the ratios, not the numbers; scroll through chapters 1-2):
-  frame time 123 ms -> 19 ms, p95 183 ms -> 33 ms (home 146 -> 21 ms). The cost was painting: three `filter: blur(70px)` orbs (~90 ms/frame), backdrop blur on large
-  glass (~30 ms), a full-screen grain overlay (~13 ms). Orbs are now pre-softened radial gradients with scroll parallax only; glass blur is 18px;
-  grain is gone. Layout is read once per ScrollTrigger refresh (never per scroll frame); the spotlight is rAF-throttled; infinite CSS animations
-  pause offscreen; pins/timelines start after the first paint (first paint ~800 -> ~560 ms); SVG pills are measured in one batched pass.
-- **Adaptive lite mode**: if a device averages worse than ~28 ms/frame while the visitor scrolls (or Save-Data is on) the page switches to `html.lite`
-  (no backdrop/text blur) and remembers it (`vth-lite`). Clear that key to re-evaluate.
-- Debugging a regression: toggle effects with an injected style (`.ambient i{filter:none}`, `*{backdrop-filter:none}`) and watch frame times; do not add
-  `filter: blur()` to anything that moves or scrolls.
+## Design system, motion and performance
+- **Type**: Plus Jakarta Sans (headlines, 800) + Inter (reading, 400-700), both with native Vietnamese subsets. No serifs, no italics, no clipping masks on text,
+  headline line-height 1.12 so stacked diacritics never collide. Accent words use a red-to-coral gradient (`.display em`). Tokens live at the top of `css/styles.css`.
+- **Scroll is native**: no scroll hijacking (Lenis removed). The industry story is a pinned, scrubbed sequence that advances only as the visitor scrolls
+  (challenge -> scene plays -> answer). There is no auto-play and no forced scrolling.
+- **Quick view** (opt-in): "Quick view / Xem nhanh" opens a carousel of the chapters. Swiping is native `scroll-snap`; Prev/Next, dots, arrow keys and Esc also work; focus is trapped
+  and restored. Each slide's scene plays once when it appears. Nothing moves on its own.
+- **Micro-interactions** (transform/opacity only): 22px fade-rise on scroll (`.rv`, IntersectionObserver, class dropped after it plays so hover works), cards lift `translateY(-4px)`
+  with a soft shadow on hover (hover-capable devices only), buttons and cards scale to `.98` when pressed. No backdrop blur, no filter blur, nothing that reflows (the sector
+  explorer is a master list + cross-fading detail, not a resizing accordion).
+- **Mobile first**: verified with zero horizontal overflow at 300/320/360/390/414px in EN and VI; 44px touch targets; bottom-sheet quick view; phones get a non-pinned layout where
+  each scene plays once as it scrolls into view. `ScrollTrigger` ignores address-bar resizes.
+- **Reduced motion**: pins, reveals, word animation, marquee and scene timelines are all off; scenes show their resolved state.
+- **Performance** (software-rendered browser, so read the ratios): scrolling through chapters holds 60fps (p95 16.7ms; the build before the paint fixes averaged 123ms). Layout is measured after first
+  paint, never per scroll frame; infinite CSS animations pause offscreen; a frame-time governor switches to `html.lite` (decorative animation off) on slow devices and remembers it (`vth-lite`).
+- Debugging a regression: inject a style that disables one effect and watch frame times; do not add `filter: blur()` or `backdrop-filter` to anything that moves or scrolls.
 
 ## Editing content (no code)
 - `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md` (incl. `scenario` + `scene` per chapter).
