@@ -45,5 +45,5 @@ EN/VI driven by one dictionary). Layout: hero + industry switcher, featured AI A
 npm install
 node build-react.mjs   # -> react/VTechFoundry.jsx and dist/vtechfoundry-react.html
 ```
-Every image sits on an SVG circuit-pattern base and fades in only once the photo loads, so a blocked or failed URL never shows a broken icon or black void. The signing photo tries
+Every image sits on an SVG circuit-pattern base with a topic illustration for each sector (`SCENES` in `react/template.jsx`) and fades in only once the photo loads, so a blocked or failed URL never shows a broken icon or black void. The signing photo tries
 `/images/vpbank-vnetwork-signing.jpg` first. Ms. Hau's profile is `profile: null` in `react/overlay.mjs`: paste her existing role, bio and photo there.

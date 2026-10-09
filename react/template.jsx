@@ -29,8 +29,9 @@ const UI = {
   'nav.primary': ['Primary', 'Điều hướng chính'],
   'nav.lang': ['Language', 'Ngôn ngữ'],
   'hero.eyebrow': ['A VNETWORK technology alliance', 'Liên minh công nghệ của VNETWORK'],
-  'hero.title': ['Next-Gen Technology Alliance Delivering Mission-Critical Enterprise Solutions', 'Liên minh Công nghệ Tiên phong Kiến tạo Giải pháp Chuyên sâu cho Doanh nghiệp'],
-  'hero.sub': ['Packaged, industry-ready solutions from one alliance.', 'Giải pháp đóng gói theo ngành từ một liên minh.'],
+  'hero.t1': ['Enterprise tech,', 'Công nghệ doanh nghiệp,'],
+  'hero.t2': ['forged together.', 'cùng rèn nên.'],
+  'hero.sub': ['One alliance. Mission-critical solutions, packaged by industry.', 'Một liên minh. Giải pháp trọng yếu, đóng gói theo ngành.'],
   'hero.explore': ['Explore industries', 'Khám phá các ngành'],
   'ind.pick': ['Choose your sector', 'Chọn lĩnh vực của bạn'],
   'ind.glance': ['A story in one glance', 'Câu chuyện trong một cái nhìn'],
@@ -99,8 +100,86 @@ const wrap = 'mx-auto w-full max-w-6xl px-4 sm:px-6';
 const hairline = 'border-slate-200/80';
 
 /* ---------------------------------------------------------------- visuals */
+/* Topic-specific flat illustrations (inline SVG, so they render even where outside images are blocked). 240x160 viewBox. */
+const L = { stroke: '#475569', strokeWidth: 2, strokeLinejoin: 'round', strokeLinecap: 'round' };
+const RED = '#dc2626';
+const SCENES = {
+  manufacturing: (
+    <g {...L} fill="#fff">
+      <path d="M20 140V88l30 18V88l30 18V88l30 18V88l30 18v34z" />
+      <rect x="132" y="38" width="16" height="70" fill="#e2e8f0" /><rect x="154" y="54" width="14" height="54" fill="#e2e8f0" />
+      <path d="M132 50h16M154 66h14" stroke={RED} />
+      <circle cx="196" cy="104" r="20" fill="#e2e8f0" /><circle cx="196" cy="104" r="7" fill="#fff" />
+      <circle cx="196" cy="104" r="26" fill="none" strokeWidth="7" strokeDasharray="6 7.2" />
+      <path d="M8 150h224" /><circle cx="60" cy="150" r="3" fill={RED} stroke="none" /><circle cx="110" cy="150" r="3" fill={RED} stroke="none" />
+    </g>
+  ),
+  healthcare: (
+    <g {...L} fill="#fff">
+      <rect x="62" y="30" width="116" height="104" rx="4" fill="#fff" />
+      <rect x="108" y="44" width="24" height="24" fill="#fff" stroke={RED} /><path d="M120 49v14M113 56h14" stroke={RED} />
+      <path d="M78 82h20M110 82h20M142 82h20M78 104h20M142 104h20" /><rect x="108" y="98" width="24" height="36" fill="#e2e8f0" />
+      <path d="M8 148h58l10-18 14 32 12-24 8 10h124" stroke={RED} fill="none" />
+    </g>
+  ),
+  bfsi: (
+    <g {...L} fill="#fff">
+      <path d="M30 62L120 24l90 38z" fill="#e2e8f0" /><path d="M42 66h156" />
+      {[56, 84, 112, 140, 168].map((x) => <rect key={x} x={x} y="72" width="12" height="54" fill="#fff" />)}
+      <path d="M32 126h176M24 138h192M16 150h208" />
+      <circle cx="120" cy="46" r="6" fill="#fff" stroke={RED} />
+    </g>
+  ),
+  retail: (
+    <g {...L} fill="#fff">
+      <rect x="24" y="76" width="124" height="64" />
+      <path d="M18 76l10-30h112l10 30z" fill="#e2e8f0" /><path d="M46 46v30M70 46v30M94 46v30M118 46v30" stroke={RED} />
+      <rect x="38" y="96" width="44" height="32" fill="#e2e8f0" /><rect x="100" y="96" width="32" height="44" fill="#e2e8f0" />
+      <path d="M170 60h14l10 46h34l8-30h-46" fill="none" /><circle cx="200" cy="120" r="5" fill={RED} stroke="none" /><circle cx="226" cy="120" r="5" fill={RED} stroke="none" />
+      <path d="M8 150h224" />
+    </g>
+  ),
+  government: (
+    <g {...L} fill="#fff">
+      <path d="M92 70a28 28 0 0 1 56 0z" fill="#e2e8f0" /><path d="M120 26v14" /><circle cx="120" cy="24" r="3" fill={RED} stroke="none" />
+      <path d="M34 78h172v10H34z" fill="#e2e8f0" />
+      {[52, 82, 112, 142, 172].map((x) => <rect key={x} x={x} y="90" width="12" height="40" />)}
+      <path d="M28 130h184M20 140h200M12 150h216" />
+    </g>
+  ),
+  logistics: (
+    <g {...L} fill="#fff">
+      <rect x="14" y="62" width="104" height="58" fill="#e2e8f0" /><path d="M118 80h30l16 20v20h-46z" />
+      <circle cx="44" cy="124" r="9" /><circle cx="140" cy="124" r="9" /><circle cx="44" cy="124" r="2.5" fill={RED} stroke="none" /><circle cx="140" cy="124" r="2.5" fill={RED} stroke="none" />
+      <rect x="176" y="96" width="50" height="26" /><rect x="176" y="68" width="50" height="26" fill="#e2e8f0" /><path d="M188 68v26M200 68v26M212 68v26M188 96v26M200 96v26M212 96v26" strokeWidth="1.2" />
+      <path d="M8 136h224" strokeDasharray="4 6" stroke={RED} />
+    </g>
+  ),
+  media: (
+    <g {...L} fill="#fff">
+      <rect x="28" y="30" width="148" height="92" rx="6" /><rect x="36" y="38" width="132" height="76" rx="2" fill="#e2e8f0" />
+      <path d="M92 60l30 16-30 16z" fill={RED} stroke={RED} /><path d="M102 122l-8 22h36l-8-22M84 144h52" />
+      <path d="M192 52a28 28 0 0 1 0 44M204 40a46 46 0 0 1 0 68" fill="none" /><circle cx="186" cy="74" r="4" fill={RED} stroke="none" />
+    </g>
+  ),
+  education: (
+    <g {...L} fill="#fff">
+      <path d="M120 28l78 30-78 30-78-30z" fill="#e2e8f0" /><path d="M76 74v28c0 10 20 18 44 18s44-8 44-18V74" />
+      <path d="M198 58v32" stroke={RED} /><circle cx="198" cy="94" r="4" fill={RED} stroke="none" />
+      <path d="M40 148h160M52 148v-16h136v16" />
+    </g>
+  ),
+  alliance: (
+    <g {...L} fill="#fff">
+      <path d="M22 60l40-18 40 18z" fill="#e2e8f0" />{[30, 46, 62, 78].map((x) => <rect key={x} x={x} y="66" width="8" height="42" />)}<path d="M20 108h84M14 118h96" />
+      <path d="M158 112h44a18 18 0 0 0 2-36 26 26 0 0 0-50 6 16 16 0 0 0 4 30z" fill="#e2e8f0" />
+      <path d="M108 92h46" strokeDasharray="4 5" stroke={RED} /><circle cx="131" cy="92" r="5" fill={RED} stroke="none" />
+    </g>
+  )
+};
+
 /* Always-present base layer: a slate gradient with a circuit-style SVG pattern, so a photo that is slow or blocked never leaves a void. */
-function TechArt({ icon, label }) {
+function TechArt({ scene, label }) {
   return (
     <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200" role={label ? 'img' : undefined} aria-label={label}>
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -110,14 +189,10 @@ function TechArt({ icon, label }) {
             <circle cx="20" cy="20" r="3" fill="none" stroke="#94a3b8" strokeWidth="1" />
           </pattern>
         </defs>
-        <rect width="400" height="300" fill="url(#vtf-circuit)" opacity="0.7" />
-        <path d="M40 240H140L170 210H260L290 240H360" fill="none" stroke="#94a3b8" strokeWidth="1.5" opacity="0.55" />
-        <path d="M40 70H110L140 100H230" fill="none" stroke="#94a3b8" strokeWidth="1.5" opacity="0.55" />
-        <circle cx="360" cy="240" r="4" fill="#dc2626" opacity="0.8" />
-        <circle cx="230" cy="100" r="4" fill="#dc2626" opacity="0.8" />
+        <rect width="400" height="300" fill="url(#vtf-circuit)" opacity="0.6" />
       </svg>
-      {icon && (
-        <div className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-800 shadow-sm ring-1 ring-slate-200 sm:right-5 sm:top-5 sm:h-14 sm:w-14"><Ic name={icon} className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.5} /></div>
+      {SCENES[scene] && (
+        <svg className="absolute bottom-14 right-4 top-4 h-[calc(100%-4.5rem)] w-3/5 sm:right-6 sm:w-1/2" viewBox="0 0 240 160" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">{SCENES[scene]}</svg>
       )}
     </div>
   );
@@ -125,7 +200,7 @@ function TechArt({ icon, label }) {
 
 /* Tries each URL in turn over the TechArt base. The photo fades in only once it has loaded; the scrim and white caption
    render through `children(loaded)` only then, so they never darken the fallback. */
-function Photo({ srcs, alt, icon, art, className = '', children }) {
+function Photo({ srcs, alt, scene, art, className = '', children }) {
   const list = srcs.filter(Boolean);
   const sig = list.join('|');
   const [i, setI] = useState(0);
@@ -133,7 +208,7 @@ function Photo({ srcs, alt, icon, art, className = '', children }) {
   useEffect(() => { setI(0); setLoaded(false); }, [sig]);
   return (
     <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
-      {art || <TechArt icon={icon} label={alt} />}
+      {art || <TechArt scene={scene} label={alt} />}
       {i < list.length && (
         <img key={list[i]} src={list[i]} alt={alt} loading="lazy" referrerPolicy="no-referrer" onLoad={() => setLoaded(true)}
           onError={() => { setLoaded(false); setI((n) => n + 1); }}
@@ -247,7 +322,7 @@ export default function VTechFoundry() {
           <div className={wrap}>
             <div className="max-w-4xl">
               <Kicker>{u('hero.eyebrow')}</Kicker>
-              <h1 className="vt-d mt-4 text-4xl tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">{u('hero.title')}</h1>
+              <h1 className="vt-d mt-4 text-5xl tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"><span className="block">{u('hero.t1')}</span><span className="block text-red-600">{u('hero.t2')}</span></h1>
               <p className="mt-5 text-lg text-slate-600 sm:text-xl">{u('hero.sub')}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <button type="button" onClick={() => goTo('industries')} className={`${pill} bg-slate-900 text-white hover:bg-slate-700`}>{u('hero.explore')}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>
@@ -273,7 +348,7 @@ export default function VTechFoundry() {
               </div>
 
               <Fade k={ind.id} className={`min-w-0 overflow-hidden rounded-2xl border ${hairline} bg-white lg:col-span-8`}>
-                <Photo srcs={[ind.image]} alt={tx(ind.name)} icon={ind.icon} className="h-48 sm:h-64">
+                <Photo srcs={[ind.image]} alt={tx(ind.name)} scene={ind.id} className="h-48 sm:h-64">
                   {(ok) => <span className={`absolute inset-x-5 bottom-4 text-lg font-bold sm:text-xl ${ok ? 'text-white' : 'text-slate-900'}`}>{tx(ind.name)}</span>}
                 </Photo>
                 <div className="divide-y divide-slate-200/80">
@@ -366,7 +441,7 @@ export default function VTechFoundry() {
         {/* ---- 3. Strategic alliance & proof ---- */}
         <section id="alliance" className={`border-t ${hairline} bg-white py-16 sm:py-24`}>
           <div className={wrap}>
-            <Photo srcs={DATA.signing.srcs} alt={u('ally.alt')} icon="landmark" className={`h-64 rounded-2xl border ${hairline} sm:h-96`}>
+            <Photo srcs={DATA.signing.srcs} alt={u('ally.alt')} scene="alliance" className={`h-64 rounded-2xl border ${hairline} sm:h-96`}>
               {(ok) => (
                 <div className={`absolute inset-x-5 bottom-5 sm:inset-x-8 sm:bottom-7 ${ok ? 'text-white' : 'text-slate-900'}`}>
                   <span className={`block text-xs font-bold uppercase tracking-widest ${ok ? 'text-white/80' : 'text-slate-500'}`}>{u('ally.kicker')}</span>
