@@ -25,17 +25,13 @@ const industries = rawInds.map((i) => {
   const bundle = [...i.bundle, ...(O.BUNDLE_ADD[i.id] || [])];
   bundle.forEach((id) => { if (!solutions.has(id)) throw new Error(`${i.id}: unknown solution ${id}`); });
   return {
-    id: i.id, icon: i.icon, name: O.NAME_OVERRIDE[i.id] || i.name, title: i.title, tagline: i.tagline, bundle,
-    image: O.IMAGES[i.id] || null,
-    regs: (i.regulations || []).map((r) => { if (!O.REG_VI[r]) throw new Error('no VI for regulation: ' + r); return { en: r, vi: O.REG_VI[r] }; }),
-    story: O.STORIES[i.id],
-    chapters: i.chapters.map((c) => ({ id: c.id, persona: c.persona, challenge: { title: c.challenge.title, body: c.challenge.body },
-      solutions: c.solutions, response: { title: c.response.title, body: c.response.body, points: c.response.points, ...(c.response.metric ? { metric: c.response.metric } : {}) } })),
-    outcomes: i.outcomes, faq: i.faq
+    id: i.id, icon: i.icon, name: O.NAME_OVERRIDE[i.id] || i.name, bundle, image: O.IMAGES[i.id] || null,
+    story: O.STORIES[i.id], outcomes: i.outcomes.map((o) => o.title)
   };
 });
 
-const DATA = { solutions: solList, industries, signing: O.SIGNING, experts: O.EXPERTS };
+const lean = (s) => (s.id === 'ai-agent' ? s : { id: s.id, icon: s.icon, layer: s.layer, name: s.name, tagline: s.tagline });
+const DATA = { solutions: solList.map(lean), industries, signing: O.SIGNING, experts: O.EXPERTS };
 const dataSrc = `const DATA = ${JSON.stringify(DATA, null, 1)};`;
 const jsx = read('react/template.jsx').replace('/*__DATA__*/', () => dataSrc);
 fs.writeFileSync('react/VTechFoundry.jsx', jsx);

@@ -2,10 +2,10 @@
 // Everything user-facing is { en, vi }. Do not invent metrics: only numbers supplied by the business appear here.
 
 export const IMAGES = {
-  manufacturing: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
-  healthcare: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-  bfsi: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-  retail: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80'
+  manufacturing: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+  healthcare: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80',
+  bfsi: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80',
+  retail: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80'
 };
 
 export const SIGNING = {
@@ -178,23 +178,23 @@ export const AI_AGENT = {
     { tag: '#nganhang', en: 'Banking', vi: 'Ngân hàng' },
     { tag: '#thuongmaidientu', en: 'E-Commerce', vi: 'Thương mại điện tử' }
   ],
-  tagline: { en: 'Omnichannel consulting, care and sales on autopilot', vi: 'Tư vấn, chăm sóc và bán hàng đa kênh tự động' },
+  tagline: { en: 'Omnichannel consulting, care and sales, automated', vi: 'Tư vấn, chăm sóc và bán hàng đa kênh, tự động hóa' },
   description: {
     en: 'AI Agent SuperSales & AI Agent Assistant is a comprehensive enterprise AI solution designed to automate omnichannel customer consultation, care, and sales operations.',
     vi: 'AI Agent SuperSales & AI Agent Assistant là giải pháp AI toàn diện, hỗ trợ tự động hóa tư vấn, chăm sóc khách hàng và bán hàng đa kênh.'
   },
-  pillars: [
-    { icon: 'zap', en: 'Instant response to all customer inquiries, enhancing user experience', vi: 'Phản hồi tức thì mọi thắc mắc, tăng trải nghiệm khách hàng' },
-    { icon: 'target', en: 'Smart product recommendations based on real-time behavior and personalized needs', vi: 'Đề xuất sản phẩm thông minh dựa trên hành vi và nhu cầu cá nhân hóa' },
-    { icon: 'filter', en: 'Automated lead collection, qualification, and segmentation', vi: 'Tự động thu thập và phân loại khách hàng tiềm năng' },
-    { icon: 'file-search', en: 'Search and retrieval for complex internal procedures (legal, tax, compliance...) tailored for employees', vi: 'Hỗ trợ tra cứu quy trình nội bộ phức tạp: pháp chế, thuế... dành riêng cho nhân viên' },
-    { icon: 'megaphone', en: 'End-to-end sales automation: upselling, cross-selling, deal closing, and automated promotional post generation', vi: 'Tự động hóa tư vấn bán hàng: upsell, cross-sell, chốt sales, đăng bài quảng bá' }
+  features: [
+    { icon: 'zap', en: 'Omnichannel 24/7 care', vi: 'Chăm sóc đa kênh 24/7' },
+    { icon: 'target', en: 'Intelligent personalized recommendations', vi: 'Đề xuất cá nhân hóa thông minh' },
+    { icon: 'filter', en: 'Automated lead scoring', vi: 'Chấm điểm khách hàng tiềm năng tự động' },
+    { icon: 'file-search', en: 'Internal process search', vi: 'Tra cứu quy trình nội bộ' },
+    { icon: 'megaphone', en: 'Full-cycle sales conversion', vi: 'Chuyển đổi bán hàng trọn chu trình' }
   ],
   metrics: [
-    { icon: 'users', value: '10M+', en: 'Customers reached across TikTok, Facebook and omnichannel touchpoints', vi: 'Khách hàng được tiếp cận qua TikTok, Facebook và các điểm chạm đa kênh' },
-    { icon: 'gauge', value: '< 5s', en: 'Request processing time, accelerated', vi: 'Thời gian xử lý yêu cầu được rút ngắn' },
-    { icon: 'trending-up', value: '30%', en: 'Average lead capture rate (~2,000+ prospective leads per month)', vi: 'Tỷ lệ thu thập khách hàng tiềm năng trung bình (~2.000+ lead mỗi tháng)' },
-    { icon: 'star', value: '4.7 / 5', en: 'Customer rating, with 24/7 support on Web, Zalo, Messenger, iOS and Android', vi: 'Điểm đánh giá, hỗ trợ 24/7 trên Web, Zalo, Messenger, iOS và Android' }
+    { value: '< 5s', en: 'Processing latency', vi: 'Độ trễ xử lý' },
+    { value: '30%', en: 'Lead capture rate', vi: 'Tỷ lệ thu thập khách hàng tiềm năng', sub: { en: '2,000+ leads per month', vi: '2.000+ lead mỗi tháng' } },
+    { value: '10M+', en: 'Omnichannel reach', vi: 'Phạm vi tiếp cận đa kênh', sub: { en: 'TikTok, Facebook and more', vi: 'TikTok, Facebook và các kênh khác' } },
+    { value: '4.7 / 5', en: 'Customer satisfaction', vi: 'Mức độ hài lòng của khách hàng', sub: { en: '24/7 on Web, Zalo, Messenger, iOS, Android', vi: '24/7 trên Web, Zalo, Messenger, iOS, Android' } }
   ]
 };
 
@@ -202,7 +202,8 @@ export const AI_AGENT = {
 // so `profile` is null and the card renders a visible "to be added" note instead of invented text.
 export const EXPERTS = [
   {
-    id: 'duc-anh', initials: 'DA', photo: null,
+    id: 'duc-anh', initials: 'DA', photo: null, years: '16+',
+    summary: { en: 'Technology, product development and AI-driven digital transformation.', vi: 'Công nghệ, phát triển sản phẩm và chuyển đổi số bằng AI.' },
     name: { en: 'Mr. Nguyen Duc Anh', vi: 'Ông Nguyễn Đức Anh' },
     role: { en: 'Founder & CEO, DatumBridge', vi: 'Nhà sáng lập & CEO, DatumBridge' },
     domain: null,
@@ -212,7 +213,8 @@ export const EXPERTS = [
     }
   },
   {
-    id: 'tuan-anh', initials: 'TA', photo: null,
+    id: 'tuan-anh', initials: 'TA', photo: null, years: '15+',
+    summary: { en: 'Technology, telecoms and data security; leads DLP and Insider Risk Management in Vietnam.', vi: 'Công nghệ, viễn thông và bảo mật dữ liệu; dẫn dắt DLP và quản trị rủi ro nội bộ tại Việt Nam.' },
     name: { en: 'Mr. Hoang Tuan Anh', vi: 'Ông Hoàng Tuấn Anh' },
     role: { en: 'Country Director – SearchInform', vi: 'Giám đốc quốc gia – SearchInform' },
     domain: { en: 'Data Loss Prevention (DLP) & Insider Risk Management', vi: 'Chống rò rỉ dữ liệu (DLP) & Quản trị rủi ro nội bộ' },
@@ -222,7 +224,7 @@ export const EXPERTS = [
     }
   },
   {
-    id: 'hau', initials: 'H', photo: null,
+    id: 'hau', initials: 'H', photo: null, years: null, summary: null,
     name: { en: 'Ms. Hau', vi: 'Chị Hậu' },
     profile: null,
     role: null, domain: null, bio: null
