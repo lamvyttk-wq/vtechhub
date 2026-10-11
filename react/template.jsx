@@ -100,121 +100,24 @@ const wrap = 'mx-auto w-full max-w-6xl px-4 sm:px-6';
 const hairline = 'border-slate-200/80';
 
 /* ---------------------------------------------------------------- visuals */
-/* Topic-specific flat illustrations (inline SVG, so they render even where outside images are blocked). 240x160 viewBox. */
-const L = { stroke: '#475569', strokeWidth: 2, strokeLinejoin: 'round', strokeLinecap: 'round' };
-const RED = '#dc2626';
-const SCENES = {
-  manufacturing: (
-    <g {...L} fill="#fff">
-      <path d="M20 140V88l30 18V88l30 18V88l30 18V88l30 18v34z" />
-      <rect x="132" y="38" width="16" height="70" fill="#e2e8f0" /><rect x="154" y="54" width="14" height="54" fill="#e2e8f0" />
-      <path d="M132 50h16M154 66h14" stroke={RED} />
-      <circle cx="196" cy="104" r="20" fill="#e2e8f0" /><circle cx="196" cy="104" r="7" fill="#fff" />
-      <circle cx="196" cy="104" r="26" fill="none" strokeWidth="7" strokeDasharray="6 7.2" />
-      <path d="M8 150h224" /><circle cx="60" cy="150" r="3" fill={RED} stroke="none" /><circle cx="110" cy="150" r="3" fill={RED} stroke="none" />
-    </g>
-  ),
-  healthcare: (
-    <g {...L} fill="#fff">
-      <rect x="62" y="30" width="116" height="104" rx="4" fill="#fff" />
-      <rect x="108" y="44" width="24" height="24" fill="#fff" stroke={RED} /><path d="M120 49v14M113 56h14" stroke={RED} />
-      <path d="M78 82h20M110 82h20M142 82h20M78 104h20M142 104h20" /><rect x="108" y="98" width="24" height="36" fill="#e2e8f0" />
-      <path d="M8 148h58l10-18 14 32 12-24 8 10h124" stroke={RED} fill="none" />
-    </g>
-  ),
-  bfsi: (
-    <g {...L} fill="#fff">
-      <path d="M30 62L120 24l90 38z" fill="#e2e8f0" /><path d="M42 66h156" />
-      {[56, 84, 112, 140, 168].map((x) => <rect key={x} x={x} y="72" width="12" height="54" fill="#fff" />)}
-      <path d="M32 126h176M24 138h192M16 150h208" />
-      <circle cx="120" cy="46" r="6" fill="#fff" stroke={RED} />
-    </g>
-  ),
-  retail: (
-    <g {...L} fill="#fff">
-      <rect x="24" y="76" width="124" height="64" />
-      <path d="M18 76l10-30h112l10 30z" fill="#e2e8f0" /><path d="M46 46v30M70 46v30M94 46v30M118 46v30" stroke={RED} />
-      <rect x="38" y="96" width="44" height="32" fill="#e2e8f0" /><rect x="100" y="96" width="32" height="44" fill="#e2e8f0" />
-      <path d="M170 60h14l10 46h34l8-30h-46" fill="none" /><circle cx="200" cy="120" r="5" fill={RED} stroke="none" /><circle cx="226" cy="120" r="5" fill={RED} stroke="none" />
-      <path d="M8 150h224" />
-    </g>
-  ),
-  government: (
-    <g {...L} fill="#fff">
-      <path d="M92 70a28 28 0 0 1 56 0z" fill="#e2e8f0" /><path d="M120 26v14" /><circle cx="120" cy="24" r="3" fill={RED} stroke="none" />
-      <path d="M34 78h172v10H34z" fill="#e2e8f0" />
-      {[52, 82, 112, 142, 172].map((x) => <rect key={x} x={x} y="90" width="12" height="40" />)}
-      <path d="M28 130h184M20 140h200M12 150h216" />
-    </g>
-  ),
-  logistics: (
-    <g {...L} fill="#fff">
-      <rect x="14" y="62" width="104" height="58" fill="#e2e8f0" /><path d="M118 80h30l16 20v20h-46z" />
-      <circle cx="44" cy="124" r="9" /><circle cx="140" cy="124" r="9" /><circle cx="44" cy="124" r="2.5" fill={RED} stroke="none" /><circle cx="140" cy="124" r="2.5" fill={RED} stroke="none" />
-      <rect x="176" y="96" width="50" height="26" /><rect x="176" y="68" width="50" height="26" fill="#e2e8f0" /><path d="M188 68v26M200 68v26M212 68v26M188 96v26M200 96v26M212 96v26" strokeWidth="1.2" />
-      <path d="M8 136h224" strokeDasharray="4 6" stroke={RED} />
-    </g>
-  ),
-  media: (
-    <g {...L} fill="#fff">
-      <rect x="28" y="30" width="148" height="92" rx="6" /><rect x="36" y="38" width="132" height="76" rx="2" fill="#e2e8f0" />
-      <path d="M92 60l30 16-30 16z" fill={RED} stroke={RED} /><path d="M102 122l-8 22h36l-8-22M84 144h52" />
-      <path d="M192 52a28 28 0 0 1 0 44M204 40a46 46 0 0 1 0 68" fill="none" /><circle cx="186" cy="74" r="4" fill={RED} stroke="none" />
-    </g>
-  ),
-  education: (
-    <g {...L} fill="#fff">
-      <path d="M120 28l78 30-78 30-78-30z" fill="#e2e8f0" /><path d="M76 74v28c0 10 20 18 44 18s44-8 44-18V74" />
-      <path d="M198 58v32" stroke={RED} /><circle cx="198" cy="94" r="4" fill={RED} stroke="none" />
-      <path d="M40 148h160M52 148v-16h136v16" />
-    </g>
-  ),
-  alliance: (
-    <g {...L} fill="#fff">
-      <path d="M22 60l40-18 40 18z" fill="#e2e8f0" />{[30, 46, 62, 78].map((x) => <rect key={x} x={x} y="66" width="8" height="42" />)}<path d="M20 108h84M14 118h96" />
-      <path d="M158 112h44a18 18 0 0 0 2-36 26 26 0 0 0-50 6 16 16 0 0 0 4 30z" fill="#e2e8f0" />
-      <path d="M108 92h46" strokeDasharray="4 5" stroke={RED} /><circle cx="131" cy="92" r="5" fill={RED} stroke="none" />
-    </g>
-  )
-};
-
-/* Always-present base layer: a slate gradient with a circuit-style SVG pattern, so a photo that is slow or blocked never leaves a void. */
-function TechArt({ scene, label }) {
-  return (
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200" role={label ? 'img' : undefined} aria-label={label}>
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <pattern id="vtf-circuit" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M0 20H14M26 20H40M20 0V14M20 26V40" fill="none" stroke="#cbd5e1" strokeWidth="1" />
-            <circle cx="20" cy="20" r="3" fill="none" stroke="#94a3b8" strokeWidth="1" />
-          </pattern>
-        </defs>
-        <rect width="400" height="300" fill="url(#vtf-circuit)" opacity="0.6" />
-      </svg>
-      {SCENES[scene] && (
-        <svg className="absolute bottom-14 right-4 top-4 h-[calc(100%-4.5rem)] w-3/5 sm:right-6 sm:w-1/2" viewBox="0 0 240 160" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">{SCENES[scene]}</svg>
-      )}
-    </div>
-  );
-}
-
-/* Tries each URL in turn over the TechArt base. The photo fades in only once it has loaded; the scrim and white caption
-   render through `children(loaded)` only then, so they never darken the fallback. */
-function Photo({ srcs, alt, scene, art, className = '', children }) {
+/* Layers, bottom to top: the original sector banner (an embedded data-URI image, so it always renders), then the photo,
+   which fades in only once it has loaded. A blocked or failed photo URL therefore never shows a broken icon or a void.
+   The dark scrim and white caption appear only over a loaded photo; over the banner a light scrim keeps the caption readable. */
+function Photo({ srcs, alt, base, art, className = '', scrimFromSm = false, children }) {
   const list = srcs.filter(Boolean);
   const sig = list.join('|');
   const [i, setI] = useState(0);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => { setI(0); setLoaded(false); }, [sig]);
   return (
-    <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
-      {art || <TechArt scene={scene} label={alt} />}
+    <div className={`relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-200 ${className}`}>
+      {art || (base && <img src={base} alt={alt} className="absolute inset-0 h-full w-full object-cover" />)}
       {i < list.length && (
         <img key={list[i]} src={list[i]} alt={alt} loading="lazy" referrerPolicy="no-referrer" onLoad={() => setLoaded(true)}
           onError={() => { setLoaded(false); setI((n) => n + 1); }}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
       )}
-      {loaded && children && <span className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-900/70 to-transparent" />}
+      {children && <span className={`pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${scrimFromSm ? 'hidden sm:block' : ''} ${loaded ? 'from-slate-900/70' : 'from-white/90'} to-transparent`} />}
       {children && children(loaded)}
     </div>
   );
@@ -348,7 +251,7 @@ export default function VTechFoundry() {
               </div>
 
               <Fade k={ind.id} className={`min-w-0 overflow-hidden rounded-2xl border ${hairline} bg-white lg:col-span-8`}>
-                <Photo srcs={[ind.image]} alt={tx(ind.name)} scene={ind.id} className="h-48 sm:h-64">
+                <Photo srcs={[ind.image]} alt={tx(ind.name)} base={ind.banner} className="h-48 sm:h-64">
                   {(ok) => <span className={`absolute inset-x-5 bottom-4 text-lg font-bold sm:text-xl ${ok ? 'text-white' : 'text-slate-900'}`}>{tx(ind.name)}</span>}
                 </Photo>
                 <div className="divide-y divide-slate-200/80">
@@ -441,15 +344,20 @@ export default function VTechFoundry() {
         {/* ---- 3. Strategic alliance & proof ---- */}
         <section id="alliance" className={`border-t ${hairline} bg-white py-16 sm:py-24`}>
           <div className={wrap}>
-            <Photo srcs={DATA.signing.srcs} alt={u('ally.alt')} scene="alliance" className={`h-64 rounded-2xl border ${hairline} sm:h-96`}>
+            <Photo srcs={DATA.signing.srcs} alt={u('ally.alt')} base={DATA.signing.banner} className={`h-56 rounded-2xl border ${hairline} sm:h-96`} scrimFromSm>
               {(ok) => (
-                <div className={`absolute inset-x-5 bottom-5 sm:inset-x-8 sm:bottom-7 ${ok ? 'text-white' : 'text-slate-900'}`}>
+                <div className={`absolute inset-x-5 bottom-5 hidden sm:inset-x-8 sm:bottom-7 sm:block ${ok ? 'text-white' : 'text-slate-900'}`}>
                   <span className={`block text-xs font-bold uppercase tracking-widest ${ok ? 'text-white/80' : 'text-slate-500'}`}>{u('ally.kicker')}</span>
                   <span className="vt-d mt-1 block text-2xl tracking-tight sm:text-4xl">{u('ally.title')}</span>
                   <span className={`mt-2 block max-w-xl text-sm ${ok ? 'text-white/90' : 'text-slate-600'}`}>{u('ally.body')}</span>
                 </div>
               )}
             </Photo>
+            <div className="mt-5 sm:hidden">
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">{u('ally.kicker')}</p>
+              <p className="vt-d mt-1 text-2xl tracking-tight text-slate-900">{u('ally.title')}</p>
+              <p className="mt-2 text-sm text-slate-600">{u('ally.body')}</p>
+            </div>
             <p className="mt-12 text-xs font-bold uppercase tracking-widest text-slate-500">{u('ally.glance')}</p>
             <dl className={`mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border ${hairline} bg-slate-200/80 lg:grid-cols-4`}>
               {[

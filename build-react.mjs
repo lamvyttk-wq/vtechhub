@@ -5,10 +5,20 @@
 import fs from 'fs';
 import { build } from 'esbuild';
 import * as O from './react/overlay.mjs';
+import { banner, BANNER_IDS } from './react/banners.mjs';
 
 const read = (p) => fs.readFileSync(p, 'utf8');
 const rawInds = fs.readdirSync('data/industries').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(read('data/industries/' + f))).sort((a, b) => a.order - b.order);
 const rawSols = JSON.parse(read('data/solutions.json'));
+
+// Original sector banners: written as standalone SVG files and embedded as data URIs (they must render where outside hosts are blocked).
+fs.mkdirSync('react/banners', { recursive: true });
+const banners = {};
+for (const id of BANNER_IDS) {
+  const svg = banner(id);
+  fs.writeFileSync(`react/banners/${id}.svg`, svg);
+  banners[id] = 'data:image/svg+xml;base64,' + Buffer.from(svg).toString('base64');
+}
 
 const solutions = new Map();
 const addSol = (s) => solutions.set(s.id, { id: s.id, icon: s.icon, layer: O.LAYER[s.id], name: s.name, tagline: s.tagline, description: s.description });
@@ -25,13 +35,13 @@ const industries = rawInds.map((i) => {
   const bundle = [...i.bundle, ...(O.BUNDLE_ADD[i.id] || [])];
   bundle.forEach((id) => { if (!solutions.has(id)) throw new Error(`${i.id}: unknown solution ${id}`); });
   return {
-    id: i.id, icon: i.icon, name: O.NAME_OVERRIDE[i.id] || i.name, bundle, image: O.IMAGES[i.id] || null,
+    id: i.id, icon: i.icon, name: O.NAME_OVERRIDE[i.id] || i.name, bundle, image: O.IMAGES[i.id] || null, banner: banners[i.id] || null,
     story: O.STORIES[i.id], outcomes: i.outcomes.map((o) => o.title)
   };
 });
 
 const lean = (s) => (s.id === 'ai-agent' ? s : { id: s.id, icon: s.icon, layer: s.layer, name: s.name, tagline: s.tagline });
-const DATA = { solutions: solList.map(lean), industries, signing: O.SIGNING, experts: O.EXPERTS };
+const DATA = { solutions: solList.map(lean), industries, signing: { ...O.SIGNING, banner: banners.alliance }, experts: O.EXPERTS };
 const dataSrc = `const DATA = ${JSON.stringify(DATA, null, 1)};`;
 const jsx = read('react/template.jsx').replace('/*__DATA__*/', () => dataSrc);
 fs.writeFileSync('react/VTechFoundry.jsx', jsx);
