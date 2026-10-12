@@ -1512,5 +1512,270 @@
     }
    ]
   }
+ },
+ {
+  "id": "web-waf",
+  "icon": "shield",
+  "name": "Web/App/API Security",
+  "title": {
+   "en": "Web, App & API Security (WAAP)",
+   "vi": "Bảo mật Web, Ứng dụng & API (WAAP)"
+  },
+  "tagline": {
+   "en": "One shield for websites, apps and APIs",
+   "vi": "Một lớp bảo vệ cho website, ứng dụng và API"
+  },
+  "description": {
+   "en": "Web Application and API Protection that blocks web attacks, abusive bots and DDoS floods, and watches your APIs, with experts monitoring around the clock.",
+   "vi": "Giải pháp bảo vệ ứng dụng web và API, chặn tấn công web, bot lạm dụng và DDoS, đồng thời giám sát các API của bạn, với chuyên gia theo dõi suốt ngày đêm."
+  },
+  "detail": {
+   "lead": {
+    "en": "Stop attacks on websites, apps and APIs before they reach your servers.",
+    "vi": "Chặn tấn công vào website, ứng dụng và API trước khi chúng chạm tới máy chủ của bạn."
+   },
+   "stats": [
+    {
+     "value": "OWASP",
+     "label": {
+      "en": "Top 10 coverage in the rule set",
+      "vi": "bộ quy tắc bao phủ Top 10"
+     }
+    },
+    {
+     "value": "L3/4/7",
+     "label": {
+      "en": "multi-layer DDoS protection",
+      "vi": "chống DDoS nhiều lớp"
+     }
+    },
+    {
+     "value": "AI",
+     "label": {
+      "en": "WAF analysis of traffic in real time",
+      "vi": "WAF phân tích lưu lượng theo thời gian thực"
+     }
+    },
+    {
+     "value": "24/7",
+     "label": {
+      "en": "monitoring and incident response by a SOC",
+      "vi": "giám sát và ứng phó sự cố bởi SOC"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Web application firewall",
+     "vi": "Tường lửa ứng dụng web"
+    },
+    {
+     "en": "Bot management",
+     "vi": "Quản lý bot"
+    },
+    {
+     "en": "API protection",
+     "vi": "Bảo vệ API"
+    },
+    {
+     "en": "DDoS protection",
+     "vi": "Chống DDoS"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "What attackers go after first",
+    "vi": "Điều kẻ tấn công nhắm tới đầu tiên"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Injection and web-app exploits (OWASP Top 10)",
+      "vi": "Tấn công injection và khai thác lỗ hổng ứng dụng web (OWASP Top 10)"
+     },
+     "impact": {
+      "en": "A single exploited flaw can expose customer data or take a service over.",
+      "vi": "Chỉ một lỗ hổng bị khai thác cũng có thể làm lộ dữ liệu khách hàng hoặc bị chiếm quyền dịch vụ."
+     }
+    },
+    {
+     "title": {
+      "en": "Bots, scraping and account takeover",
+      "vi": "Bot, thu thập dữ liệu trái phép và chiếm đoạt tài khoản"
+     },
+     "impact": {
+      "en": "Credential stuffing and promotion abuse hurt customers and revenue.",
+      "vi": "Tấn công dò mật khẩu và lạm dụng khuyến mãi gây hại cho khách hàng và doanh thu."
+     }
+    },
+    {
+     "title": {
+      "en": "APIs nobody has fully mapped",
+      "vi": "API chưa được kiểm kê đầy đủ"
+     },
+     "impact": {
+      "en": "Unknown or unmanaged APIs become quiet routes for data to leave.",
+      "vi": "API không rõ hoặc không được quản lý trở thành lối âm thầm để dữ liệu bị lấy ra."
+     }
+    },
+    {
+     "title": {
+      "en": "DDoS floods at the network and application layers",
+      "vi": "Tấn công DDoS ở tầng mạng và tầng ứng dụng"
+     },
+     "impact": {
+      "en": "Sites and checkouts go offline at exactly the wrong moment.",
+      "vi": "Website và thanh toán ngừng hoạt động đúng vào thời điểm tệ nhất."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Key features",
+    "vi": "Tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the platform does",
+    "vi": "Nền tảng làm những gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "AI-assisted WAF",
+      "vi": "WAF hỗ trợ bởi AI"
+     },
+     "body": {
+      "en": "Identifies devices, checks tokens, spots unusual patterns and escalates challenges such as CAPTCHA or hidden verification.",
+      "vi": "Nhận diện thiết bị, xác thực token, phát hiện mẫu hành vi bất thường và nâng dần mức thử thách như CAPTCHA hoặc xác minh ẩn."
+     }
+    },
+    {
+     "title": {
+      "en": "OWASP-based rule set",
+      "vi": "Bộ quy tắc dựa trên OWASP"
+     },
+     "body": {
+      "en": "A large, maintained rule set covering the OWASP Top 10 web threats.",
+      "vi": "Bộ quy tắc lớn, được cập nhật, bao phủ các mối đe dọa web thuộc OWASP Top 10."
+     }
+    },
+    {
+     "title": {
+      "en": "Bot management",
+      "vi": "Quản lý bot"
+     },
+     "body": {
+      "en": "Separates real users from automated traffic and blocks abusive bots.",
+      "vi": "Tách người dùng thật khỏi lưu lượng tự động và chặn bot lạm dụng."
+     }
+    },
+    {
+     "title": {
+      "en": "API protection",
+      "vi": "Bảo vệ API"
+     },
+     "body": {
+      "en": "Discovers new APIs automatically, manages their lifecycle and inspects the content exchanged at each endpoint to prevent data loss.",
+      "vi": "Tự động phát hiện API mới, quản lý vòng đời và kiểm tra nội dung trao đổi ở từng điểm cuối để ngăn thất thoát dữ liệu."
+     }
+    },
+    {
+     "title": {
+      "en": "Multi-layer DDoS protection",
+      "vi": "Chống DDoS nhiều lớp"
+     },
+     "body": {
+      "en": "Continuous protection at layers 3, 4 and 7, combined with multi-CDN delivery.",
+      "vi": "Bảo vệ liên tục ở tầng 3, 4 và 7, kết hợp phân phối đa CDN."
+     }
+    },
+    {
+     "title": {
+      "en": "24/7 SOC monitoring",
+      "vi": "SOC giám sát 24/7"
+     },
+     "body": {
+      "en": "Security experts watch for attacks and help you respond to incidents.",
+      "vi": "Chuyên gia an ninh mạng theo dõi tấn công và hỗ trợ bạn ứng phó sự cố."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Retail & e-commerce",
+      "vi": "Bán lẻ & thương mại điện tử"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Protect login, cart and checkout, and stop promotion abuse.",
+      "vi": "Bảo vệ đăng nhập, giỏ hàng, thanh toán và chặn lạm dụng khuyến mãi."
+     }
+    },
+    {
+     "name": {
+      "en": "Banks & fintech",
+      "vi": "Ngân hàng & fintech"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Shield online banking and the APIs behind mobile apps.",
+      "vi": "Bảo vệ ngân hàng trực tuyến và các API phía sau ứng dụng di động."
+     }
+    },
+    {
+     "name": {
+      "en": "Media & online platforms",
+      "vi": "Truyền thông & nền tảng trực tuyến"
+     },
+     "icon": "clapperboard",
+     "industry": "media",
+     "body": {
+      "en": "Keep portals and live events up under attack.",
+      "vi": "Giữ cổng thông tin và sự kiện trực tiếp hoạt động khi bị tấn công."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Cơ quan nhà nước & khu vực công"
+     },
+     "icon": "building-2",
+     "industry": "government",
+     "body": {
+      "en": "Protect public service portals from defacement and floods.",
+      "vi": "Bảo vệ cổng dịch vụ công khỏi bị sửa đổi giao diện và bị tấn công làm nghẽn."
+     }
+    },
+    {
+     "name": {
+      "en": "Education",
+      "vi": "Giáo dục"
+     },
+     "icon": "graduation-cap",
+     "industry": "education",
+     "body": {
+      "en": "Keep admissions and learning portals available at peak periods.",
+      "vi": "Giữ cổng tuyển sinh và học tập hoạt động trong mùa cao điểm."
+     }
+    },
+    {
+     "name": {
+      "en": "SaaS & API-first companies",
+      "vi": "Công ty SaaS & ưu tiên API"
+     },
+     "icon": "zap",
+     "industry": null,
+     "body": {
+      "en": "Find and protect every API you expose.",
+      "vi": "Tìm ra và bảo vệ mọi API bạn mở ra bên ngoài."
+     }
+    }
+   ]
+  }
  }
 ]
