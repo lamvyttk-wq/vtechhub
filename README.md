@@ -52,4 +52,5 @@ sticky local nav -> hero + illustrated banner -> **Overview** (who we are for yo
   - Regulation citations (Decree 13/2023, Law on Data 2024, Cybersecurity Law, Decree 85/2016, TCVN 11930...) need a legal check of article numbers and currency.
   - `95%` / `42%` appear only in BFSI/AI Legal (from the mockup); no other metric or customer claim exists.
   - Regulation chips are English-only strings.
+- VCLOUD copy (summarised from vnetwork.vn/products/cloud-server via web search, since the page itself was not reachable): **verify before publishing**. VNETWORK pages disagree on uptime (99.9% / 99.99% / 99.997%), Tier level (III / III+ / IV), IOPS (53,000+ vs 800,000+) and whether ISO 27001 is a certification or alignment. The page shows 99.997% "as advertised" and says "Tier III"; IOPS and ISO are deliberately left out.
 - Confirm the Zalo link and the `Terms`/`Privacy` URLs.

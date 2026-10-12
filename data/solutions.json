@@ -1,7 +1,249 @@
 [
-  {"id":"vcloud","icon":"cloud","name":"VCLOUD",
-   "tagline":{"en":"Sovereign cloud inside Vietnam","vi":"Đám mây chủ quyền tại Việt Nam"},
-   "description":{"en":"Secure cloud hosting that keeps your data and business-critical applications inside Vietnam, on infrastructure you can plan around.","vi":"Hạ tầng đám mây bảo mật, giữ dữ liệu và các ứng dụng trọng yếu của bạn ngay tại Việt Nam, trên nền tảng bạn có thể chủ động lập kế hoạch."}},
+{
+ "id": "vcloud",
+ "icon": "cloud",
+ "name": "VCLOUD",
+ "tagline": {
+  "en": "Sovereign cloud, hosted in Vietnam",
+  "vi": "Đám mây chủ quyền đặt tại Việt Nam"
+ },
+ "description": {
+  "en": "VCLOUD is VNETWORK's cloud platform: public, private and hybrid cloud on one management system, hosted in Tier III data centers inside Vietnam, with built-in security and 24/7/365 support.",
+  "vi": "VCLOUD là nền tảng đám mây của VNETWORK: public, private và hybrid cloud trên một hệ thống quản trị, đặt tại các trung tâm dữ liệu Tier III trong nước, tích hợp bảo mật và hỗ trợ 24/7/365."
+ },
+ "detail": {
+  "lead": {
+   "en": "Cloud servers that scale on demand, keep your data in Vietnam and stay protected by default.",
+   "vi": "Máy chủ đám mây mở rộng theo nhu cầu, giữ dữ liệu của bạn tại Việt Nam và được bảo vệ sẵn từ đầu."
+  },
+  "stats": [
+   {
+    "value": "99.997%",
+    "label": {
+     "en": "uptime, as advertised by VNETWORK",
+     "vi": "thời gian hoạt động, theo công bố của VNETWORK"
+    }
+   },
+   {
+    "value": "10 Gbps",
+    "label": {
+     "en": "uplink on every package, unlimited data transfer",
+     "vi": "đường truyền mỗi gói, không giới hạn lưu lượng"
+    }
+   },
+   {
+    "value": "1–32",
+    "label": {
+     "en": "vCPU across the VNW1 to VNW11 packages",
+     "vi": "vCPU trong các gói VNW1 đến VNW11"
+    }
+   },
+   {
+    "value": "24/7/365",
+    "label": {
+     "en": "technical support",
+     "vi": "hỗ trợ kỹ thuật"
+    }
+   }
+  ],
+  "capabilities": [
+   {
+    "en": "Public, private and hybrid cloud",
+    "vi": "Public, private và hybrid cloud"
+   },
+   {
+    "en": "Instant CPU, RAM and storage scaling",
+    "vi": "Nâng cấp CPU, RAM và lưu trữ tức thì"
+   },
+   {
+    "en": "Load balancing and Kubernetes",
+    "vi": "Cân bằng tải và Kubernetes"
+   },
+   {
+    "en": "Scheduled backups and snapshots",
+    "vi": "Sao lưu định kỳ và snapshot"
+   }
+  ],
+  "pairs": [
+   {
+    "challenge": {
+     "title": {
+      "en": "Workloads outgrow a fixed server",
+      "vi": "Tải công việc vượt quá một máy chủ cố định"
+     },
+     "impact": {
+      "en": "Peaks slow services down, while idle capacity still costs money the rest of the year.",
+      "vi": "Giờ cao điểm làm dịch vụ chậm đi, còn phần dư thừa vẫn tốn chi phí trong phần còn lại của năm."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Scale on demand",
+      "vi": "Mở rộng theo nhu cầu"
+     },
+     "body": {
+      "en": "Add CPU, RAM and storage instantly, from a 1 vCPU entry package up to 32 vCPU, with a 10 Gbps uplink on every package.",
+      "vi": "Tăng CPU, RAM và lưu trữ tức thì, từ gói 1 vCPU lên đến 32 vCPU, đường truyền 10 Gbps cho mọi gói."
+     },
+     "metric": {
+      "value": "1–32",
+      "label": {
+       "en": "vCPU packages",
+       "vi": "vCPU mỗi gói"
+      }
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Data that has to stay in Vietnam",
+      "vi": "Dữ liệu bắt buộc phải ở lại Việt Nam"
+     },
+     "impact": {
+      "en": "Data stored abroad complicates Decree 13 compliance and audits.",
+      "vi": "Dữ liệu đặt ở nước ngoài làm phức tạp việc tuân thủ Nghị định 13 và kiểm toán."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Sovereign hosting",
+      "vi": "Lưu trữ chủ quyền"
+     },
+     "body": {
+      "en": "Infrastructure runs in Tier III data centers inside Vietnam, supporting data-residency requirements.",
+      "vi": "Hạ tầng vận hành tại các trung tâm dữ liệu Tier III trong nước, hỗ trợ yêu cầu lưu trữ dữ liệu tại Việt Nam."
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Servers exposed to the internet",
+      "vi": "Máy chủ phơi ra internet"
+     },
+     "impact": {
+      "en": "Open ports and shared credentials are the easiest way in for attackers.",
+      "vi": "Cổng mở và thông tin đăng nhập dùng chung là lối vào dễ nhất cho kẻ tấn công."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Security built in",
+      "vi": "Bảo mật tích hợp sẵn"
+     },
+     "body": {
+      "en": "Firewall and Security Groups, two-factor authentication and SSH key pairs protect every instance from the start.",
+      "vi": "Tường lửa và Security Group, xác thực hai yếu tố và khóa SSH bảo vệ mọi máy chủ ngay từ đầu."
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Downtime with nobody to call",
+      "vi": "Gián đoạn mà không có ai để gọi"
+     },
+     "impact": {
+      "en": "Every hour of outage costs revenue, and the fix waits on a ticket queue.",
+      "vi": "Mỗi giờ ngừng hoạt động đều mất doanh thu, còn việc khắc phục phải chờ hàng đợi hỗ trợ."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Resilience and 24/7 support",
+      "vi": "Ổn định và hỗ trợ 24/7"
+     },
+     "body": {
+      "en": "Load balancing, scheduled backups and snapshots, and an engineering team on call by hotline, Telegram, Zalo or email.",
+      "vi": "Cân bằng tải, sao lưu định kỳ và snapshot, cùng đội kỹ sư trực qua hotline, Telegram, Zalo hoặc email."
+     },
+     "metric": {
+      "value": "24/7/365",
+      "label": {
+       "en": "technical support",
+       "vi": "hỗ trợ kỹ thuật"
+      }
+     }
+    }
+   }
+  ],
+  "audiences": [
+   {
+    "name": {
+     "en": "SMEs & startups",
+     "vi": "Doanh nghiệp vừa và nhỏ & startup"
+    },
+    "icon": "zap",
+    "industry": null,
+    "body": {
+     "en": "Start small on an entry package and grow without migrating.",
+     "vi": "Bắt đầu với gói nhỏ và mở rộng dần mà không cần di chuyển hệ thống."
+    }
+   },
+   {
+    "name": {
+     "en": "Banks & financial institutions",
+     "vi": "Ngân hàng & tổ chức tài chính"
+    },
+    "icon": "landmark",
+    "industry": "bfsi",
+    "body": {
+     "en": "Keep core and customer systems on infrastructure inside Vietnam.",
+     "vi": "Đặt hệ thống lõi và dữ liệu khách hàng trên hạ tầng trong nước."
+    }
+   },
+   {
+    "name": {
+     "en": "Government & public sector",
+     "vi": "Cơ quan nhà nước & khu vực công"
+    },
+    "icon": "building-2",
+    "industry": "government",
+    "body": {
+     "en": "Host public services where data location is a hard requirement.",
+     "vi": "Triển khai dịch vụ công ở nơi vị trí dữ liệu là yêu cầu bắt buộc."
+    }
+   },
+   {
+    "name": {
+     "en": "Healthcare",
+     "vi": "Y tế"
+    },
+    "icon": "heart-pulse",
+    "industry": "healthcare",
+    "body": {
+     "en": "Run hospital and clinic systems with backups and 24/7 support.",
+     "vi": "Vận hành hệ thống bệnh viện, phòng khám với sao lưu và hỗ trợ 24/7."
+    }
+   },
+   {
+    "name": {
+     "en": "E-commerce & retail",
+     "vi": "Thương mại điện tử & bán lẻ"
+    },
+    "icon": "shopping-bag",
+    "industry": "retail",
+    "body": {
+     "en": "Add capacity for sale peaks, then scale back down.",
+     "vi": "Tăng tài nguyên cho đợt khuyến mãi cao điểm rồi giảm xuống lại."
+    }
+   },
+   {
+    "name": {
+     "en": "Media & gaming",
+     "vi": "Truyền thông & game"
+    },
+    "icon": "clapperboard",
+    "industry": "media",
+    "body": {
+     "en": "Serve streaming and game workloads on fast, scalable instances.",
+     "vi": "Phục vụ tải phát trực tuyến và game trên các máy chủ nhanh, dễ mở rộng."
+    }
+   }
+  ]
+ }
+},
   {"id":"email-security","icon":"mail-check","name":"Email Security",
    "tagline":{"en":"Stop phishing before the inbox","vi":"Chặn phishing trước khi vào hộp thư"},
    "description":{"en":"Advanced email defense that stops phishing, executive spoofing and ransomware before they reach employee inboxes.","vi":"Bảo vệ email nâng cao, chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."}},
