@@ -148,7 +148,7 @@ function photo(key, o = {}) {
   const srcs = im.src.map((x) => x.replace('{w}', o.w || 1200));
   return `<figure class="ph ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div>
     <img class="ph-img" src="${esc(srcs[0])}" data-srcs="${esc(srcs.slice(1).join('|'))}" alt="${esc(t(im.alt))}" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
-    <figcaption>${ic(im.icon)}<span>${esc(t(o.caption ?? im.caption))}</span></figcaption></figure>`;
+    ${o.nocap ? '' : `<figcaption>${ic(im.icon)}<span>${esc(t(o.caption ?? im.caption))}</span></figcaption>`}</figure>`;
 }
 const aura = (inner, cls = '') => `<div class="aura ${cls}">${inner}</div>`;
 function phLoaded(img) { img.closest('.ph')?.classList.add('ok'); }
@@ -180,8 +180,8 @@ function homePage() {
   const rows = state.industries.map((i) => link(`industry-${i.id}`,
     `${ic(i.icon, 'lead')}<h3>${esc(t(i.name))}</h3><p>${esc(t(i.tagline))}</p><span class="go">${ic('arrow-right')}</span>`, 'ix rv')).join('');
   const steps = ui('home.steps').map((s, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(s.t)}</h3><p>${t(s.d)}</p></div>`).join('');
-  const tiles = [...state.solutions.values()].map((s) => link(`solution-${s.id}`,
-    `${ic(s.icon, 'lead')}<h3>${esc(s.name)}</h3><p>${esc(t(s.tagline))}</p><div class="foot"><span>${u('ind.learn')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
+  const tiles = [...state.solutions.values()].map((s, k) => link(`solution-${s.id}`,
+    `<div class="tile-ph">${photo(state.images.bySolution?.[s.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[s.icon] || ICONS.box, `home${k}`, k, true) })}</div>${ic(s.icon, 'lead')}<h3>${esc(s.name)}</h3><p>${esc(t(s.tagline))}</p><div class="foot"><span>${u('ind.learn')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
   return `
   <section class="hero"><div class="wrap"><div class="grid">
     <div>
@@ -260,7 +260,8 @@ function industryPage() {
   const cards = d.bundle.map((s, k) => {
     const covers = d.chapters.map((c, j) => (c.solutions.includes(s) ? roman(j + 1) : '')).filter(Boolean).join(' · ');
     const x = sol(s);
-    return link(`solution-${s}`, `<div class="sc-img">${thumb(ICONS[x.icon] || ICONS.box, `${id}${k}`, k)}</div>
+    const th = thumb(ICONS[x.icon] || ICONS.box, `${id}${k}`, k);
+    return link(`solution-${s}`, `<div class="sc-img">${state.images.bySolution?.[s] ? photo(state.images.bySolution[s], { w: 700, ratio: '1', nocap: true, fb: th }) : th}</div>
       <div class="sc-body"><h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
         <div class="sc-foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span><span class="more"><i></i>${u('ind.learn')}</span></div></div>`, 'sc rv');
   }).join('');
