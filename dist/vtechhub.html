@@ -366,7 +366,7 @@ div.tile { cursor: default; }
 .flt { animation: floaty 7s ease-in-out infinite; }
 .flt.f2 { animation-delay: -2s; animation-duration: 8s; } .flt.f3 { animation-delay: -4s; } .flt.f4 { animation-delay: -1s; animation-duration: 9s; }
 @keyframes floaty { 50% { transform: translateY(-10px); } }
-.ov-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.ov-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 4.5vw, 4.5rem); align-items: center; }
 .ov-art { padding: 8px; }
 .ov-art .ph-fb .art, .hero-art .ph-fb .art { width: 100%; height: 100%; display: block; object-fit: cover; }
 .ov-copy { display: grid; gap: 1.2rem; }
@@ -441,6 +441,8 @@ div.tile { cursor: default; }
 .ov-line { font: 600 clamp(1.1rem, 1.7vw, 1.4rem)/1.5 var(--sans); letter-spacing: -.02em; max-width: 34ch; }
 .ov-line.sub { font-weight: 400; color: var(--ink-2); font-size: 1rem; margin-top: -.5rem; }
 .ov-copy .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .8rem; }
+.ov-copy .kpis > div { padding: .95rem 1.1rem; }
+.ov-copy .h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); }
 @media (max-width: 960px) {
   .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .al-card { position: relative; left: auto; bottom: auto; max-width: none; margin: -1.4rem 12px 0; z-index: 3; }
@@ -1074,7 +1076,7 @@ function industryPage() {
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
-    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1400, ratio: '4 / 3', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
+    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>
