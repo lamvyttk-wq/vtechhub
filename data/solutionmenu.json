@@ -24,7 +24,7 @@
             { "id": "email-security", "name": { "en": "Email Security", "vi": "Bảo mật Email" } },
             { "id": "dlp", "name": { "en": "Data Loss Prevention", "vi": "Chống thất thoát dữ liệu (DLP)" } },
             { "id": "database-security", "name": { "en": "Database Security", "vi": "Bảo mật cơ sở dữ liệu" } },
-            { "id": null, "name": { "en": "SOC", "vi": "SOC" } }
+            { "id": "soc", "name": { "en": "SOC", "vi": "SOC" } }
           ]
         }
       ]

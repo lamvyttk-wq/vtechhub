@@ -1050,5 +1050,250 @@
     }
    ]
   }
+ },
+ {
+  "id": "soc",
+  "icon": "shield-alert",
+  "name": "SOC",
+  "title": {
+   "en": "Security Operations Center (SOC)",
+   "vi": "Trung tâm giám sát an ninh mạng (SOC)"
+  },
+  "tagline": {
+   "en": "Round-the-clock security monitoring and response",
+   "vi": "Giám sát và ứng phó an ninh mạng suốt ngày đêm"
+  },
+  "description": {
+   "en": "A team of security experts watches your networks, servers, endpoints, databases, applications and websites around the clock, spots unusual activity early and helps you respond before damage spreads.",
+   "vi": "Đội ngũ chuyên gia an ninh mạng giám sát liên tục mạng, máy chủ, thiết bị đầu cuối, cơ sở dữ liệu, ứng dụng và website của bạn, phát hiện sớm hoạt động bất thường và hỗ trợ ứng phó trước khi thiệt hại lan rộng."
+  },
+  "detail": {
+   "lead": {
+    "en": "Experts on watch 24/7, so an intrusion does not wait for office hours.",
+    "vi": "Chuyên gia trực 24/7, để một cuộc xâm nhập không phải chờ đến giờ làm việc."
+   },
+   "stats": [
+    {
+     "value": "24/7",
+     "label": {
+      "en": "monitoring and incident response",
+      "vi": "giám sát và ứng phó sự cố"
+     }
+    },
+    {
+     "value": "6",
+     "label": {
+      "en": "areas watched: networks, servers, endpoints, databases, apps, websites",
+      "vi": "nhóm được giám sát: mạng, máy chủ, thiết bị đầu cuối, cơ sở dữ liệu, ứng dụng, website"
+     }
+    },
+    {
+     "value": "Real-time",
+     "label": {
+      "en": "detection of unusual activity",
+      "vi": "phát hiện hoạt động bất thường"
+     }
+    },
+    {
+     "value": "Global",
+     "label": {
+      "en": "expert team across Vietnam and other countries",
+      "vi": "đội ngũ chuyên gia tại Việt Nam và nhiều quốc gia"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "24/7 monitoring",
+     "vi": "Giám sát 24/7"
+    },
+    {
+     "en": "Threat analysis",
+     "vi": "Phân tích mối đe dọa"
+    },
+    {
+     "en": "Incident response",
+     "vi": "Ứng phó sự cố"
+    },
+    {
+     "en": "Works with DDoS and web protection",
+     "vi": "Phối hợp cùng chống DDoS và bảo vệ web"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "When nobody is watching the alerts",
+    "vi": "Khi không có ai theo dõi các cảnh báo"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Attacks happen at night, on weekends and on holidays",
+      "vi": "Tấn công xảy ra ban đêm, cuối tuần và ngày lễ"
+     },
+     "impact": {
+      "en": "An intrusion goes unnoticed for hours while the damage grows.",
+      "vi": "Cuộc xâm nhập không bị phát hiện trong nhiều giờ, thiệt hại lớn dần."
+     }
+    },
+    {
+     "title": {
+      "en": "Too many systems, too many alerts",
+      "vi": "Quá nhiều hệ thống, quá nhiều cảnh báo"
+     },
+     "impact": {
+      "en": "A small IT team cannot tell real threats from noise.",
+      "vi": "Đội CNTT nhỏ khó phân biệt mối đe dọa thật với cảnh báo nhiễu."
+     }
+    },
+    {
+     "title": {
+      "en": "No clear plan when an incident hits",
+      "vi": "Không có quy trình rõ ràng khi sự cố xảy ra"
+     },
+     "impact": {
+      "en": "Slow, improvised response means longer downtime and higher cost.",
+      "vi": "Ứng phó chậm, tùy tiện kéo dài thời gian gián đoạn và tăng chi phí."
+     }
+    },
+    {
+     "title": {
+      "en": "Building your own security team is slow and costly",
+      "vi": "Tự xây đội an ninh mạng vừa chậm vừa tốn kém"
+     },
+     "impact": {
+      "en": "Skilled analysts are hard to hire and keep.",
+      "vi": "Chuyên gia phân tích có kỹ năng khó tuyển và khó giữ chân."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Key features",
+    "vi": "Tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the SOC does",
+    "vi": "SOC làm những gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Continuous monitoring",
+      "vi": "Giám sát liên tục"
+     },
+     "body": {
+      "en": "Watches networks, servers, endpoints, databases, applications and websites in real time.",
+      "vi": "Theo dõi theo thời gian thực mạng, máy chủ, thiết bị đầu cuối, cơ sở dữ liệu, ứng dụng và website."
+     }
+    },
+    {
+     "title": {
+      "en": "Threat detection and analysis",
+      "vi": "Phát hiện và phân tích mối đe dọa"
+     },
+     "body": {
+      "en": "Experts review unusual activity that could signal an intrusion.",
+      "vi": "Chuyên gia xem xét các hoạt động bất thường có thể là dấu hiệu xâm nhập."
+     }
+    },
+    {
+     "title": {
+      "en": "Incident response",
+      "vi": "Ứng phó sự cố"
+     },
+     "body": {
+      "en": "Helps you manage and contain attacks to limit the damage.",
+      "vi": "Hỗ trợ quản lý và khoanh vùng cuộc tấn công để hạn chế thiệt hại."
+     }
+    },
+    {
+     "title": {
+      "en": "Paired with DDoS and web protection",
+      "vi": "Đi cùng chống DDoS và bảo vệ web"
+     },
+     "body": {
+      "en": "Works alongside the DDoS and website protection platform for continuous, real-time network monitoring.",
+      "vi": "Phối hợp với nền tảng chống DDoS và bảo vệ website để giám sát mạng liên tục, theo thời gian thực."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks & financial institutions",
+      "vi": "Ngân hàng & tổ chức tài chính"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Constant watch over core and customer-facing systems.",
+      "vi": "Theo dõi liên tục hệ thống lõi và hệ thống phục vụ khách hàng."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Cơ quan nhà nước & khu vực công"
+     },
+     "icon": "building-2",
+     "industry": "government",
+     "body": {
+      "en": "Monitoring for agencies that cannot afford silent breaches.",
+      "vi": "Giám sát cho các đơn vị không thể để lọt xâm nhập thầm lặng."
+     }
+    },
+    {
+     "name": {
+      "en": "Healthcare",
+      "vi": "Y tế"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Protect care systems that must stay online.",
+      "vi": "Bảo vệ các hệ thống chăm sóc người bệnh phải luôn hoạt động."
+     }
+    },
+    {
+     "name": {
+      "en": "E-commerce & retail",
+      "vi": "Thương mại điện tử & bán lẻ"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Catch attacks during sale peaks, when traffic is highest.",
+      "vi": "Phát hiện tấn công vào đợt khuyến mãi, lúc lưu lượng cao nhất."
+     }
+    },
+    {
+     "name": {
+      "en": "Media & online platforms",
+      "vi": "Truyền thông & nền tảng trực tuyến"
+     },
+     "icon": "clapperboard",
+     "industry": "media",
+     "body": {
+      "en": "Keep live events and portals protected and available.",
+      "vi": "Giữ các sự kiện trực tiếp và cổng thông tin an toàn, luôn sẵn sàng."
+     }
+    },
+    {
+     "name": {
+      "en": "Companies without a security team",
+      "vi": "Doanh nghiệp chưa có đội an ninh mạng"
+     },
+     "icon": "users",
+     "industry": null,
+     "body": {
+      "en": "Get expert coverage without hiring a full team.",
+      "vi": "Có chuyên gia trực mà không cần tuyển cả một đội."
+     }
+    }
+   ]
+  }
  }
 ]
