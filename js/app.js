@@ -1,4 +1,6 @@
-// V-TECH HUB landing engine. No build step: ES module + GSAP/ScrollTrigger + Lenis.
+// V-TECH HUB landing engine. No build step, no libraries: plain ES module.
+// Motion follows the Apple product-page model: native scrolling (no smooth-scroll hijack, no pinned/scrubbed scenes);
+// things reveal once, on a timer, when they enter the viewport; navigation is a sticky local nav, a carousel and click-driven controls.
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
@@ -20,10 +22,7 @@ const ui = (path) => path.split('.').reduce((o, k) => o?.[k], state.ui);
 const u = (path) => t(ui(path));
 const ic = (name, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.box}</svg>`;
 const motionOK = !matchMedia('(prefers-reduced-motion: reduce)').matches;
-const hasGsap = () => typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-let lenis = null;
-let mm = null;
-let tickerFn = null;
+let cleanups = [];
 
 /* ---------------------------------------------------------------- routing */
 function parseRoute() {
@@ -176,16 +175,17 @@ function industryPage() {
   const sw = state.industries.map((i) => link(`industry-${i.id}`, esc(t(i.name)), i.id === id ? 'on' : '')).join('');
   const n = d.chapters.length;
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
-  const ticks = d.chapters.map((c, k) => `<button data-goto="${k}" aria-label="${esc(t(c.challenge.title))}"></button>`).join('');
+  const lnav = [['intro', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.whyKicker'], ['faq', 'ind.lnFaq']]
+    .map(([id, key]) => `<a href="#${id}" data-scroll="#${id}" data-spy="${id}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
     const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('');
     const pts = (c.response.points || []).map((p) => `<li class="pt">${ic('check')}<span>${esc(t(p))}</span></li>`).join('');
     const stat = c.challenge.stat ? `<div class="stat"><strong>${esc(c.challenge.stat.value)}</strong><span>${esc(t(c.challenge.stat.label))}</span></div>` : '';
     const m = c.response.metric ? `<div class="metric"><strong data-count="${esc(c.response.metric.value)}">${esc(c.response.metric.value)}</strong><span>${esc(t(c.response.metric.label))}</span></div>` : '';
-    return `<section class="chapter" id="ch-${k}" data-title="${esc(t(c.challenge.title))}"><div class="wrap"><div class="stage">
+    return `<section class="chapter" id="ch-${k}"><div class="wrap"><div class="stage">
       <div class="numeral" aria-hidden="true">${roman(k + 1)}</div>
-      <article class="pain"><span class="tag">${u('ind.challenge')}</span>
+      <article class="pain"><span class="tag">${u('ind.challenge')} <i>${roman(k + 1)} / ${roman(n)}</i></span>
         <h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.challenge.body))}</p>${stat}
         <div class="persona">${ic('user-round')}<span>${u('ind.felt')} <b>${esc(t(c.persona))}</b></span></div></article>
       <div class="bridge" aria-hidden="true"></div>
@@ -200,12 +200,14 @@ function industryPage() {
     const covers = d.chapters.map((c, k) => (c.solutions.includes(s) ? roman(k + 1) : '')).filter(Boolean).join(' \u00b7 ');
     const x = sol(s);
     return link(`solution-${s}`, `${ic(x.icon, 'lead')}<h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
-      <div class="foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span>${ic('arrow-up-right')}</div>`, 'tile glass rv');
+      <div class="foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span>${ic('arrow-up-right')}</div>`, 'tile glass');
   }).join('');
   const outcomes = d.outcomes.map((o, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
   const faq = d.faq.map((f) => `<details class="rv"><summary>${esc(t(f.q))}${ic('plus')}</summary><div class="a">${esc(t(f.a))}</div></details>`).join('');
 
   return `
+  <nav class="lnav" id="lnav" aria-label="${esc(t(d.name))}"><div class="wrap"><span class="lnav-t">${esc(t(d.name))}</span><div class="lnav-l">${lnav}</div>
+    <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
   <section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(t(d.name))}</span></div>
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
@@ -218,11 +220,13 @@ function industryPage() {
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(t(d.name))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
   <div class="story" id="story">
-    <div class="story-bar"><div class="wrap"><span class="now" id="now">${u('ind.chapter')} 01 ${u('ind.of')} ${roman(n)}</span><span class="name" id="nowname">${esc(t(d.chapters[0].challenge.title))}</span><div class="ticks">${ticks}</div></div><div class="progress"><i id="prog"></i></div></div>
     ${chapters}</div>
-  <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div><div class="tiles">${bundle}</div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span></div><div class="cols3">${outcomes}</div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
+  <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div></div>
+    <div class="carousel rv" id="rail" aria-roledescription="carousel" aria-label="${u('ind.bundleKicker')}"><div class="rail" tabindex="0">${bundle}</div>
+      <div class="wrap rail-ctl"><div class="dots" aria-hidden="true">${d.bundle.map(() => '<i></i>').join('')}</div>
+        <div class="arrows"><button type="button" data-rail="-1" aria-label="${u('ind.prev')}">${ic('arrow-left')}</button><button type="button" data-rail="1" aria-label="${u('ind.next')}">${ic('arrow-right')}</button></div></div></div></section>
+  <section class="sec" id="why" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span></div><div class="cols3">${outcomes}</div></div></section>
+  <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
   ${contact(id)}`;
@@ -287,9 +291,9 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') state.clos
 
 function scrollToEl(el, offset) {
   if (!el) return;
-  const off = offset ?? -(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) - 24;
-  if (lenis) lenis.scrollTo(el, { offset: off, duration: 1.4 });
-  else el.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', block: 'start' });
+  const hdr = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78;
+  const off = offset ?? hdr + ($('#lnav') ? $('#lnav').offsetHeight : 0) + 16;
+  scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + scrollY - off), behavior: motionOK ? 'smooth' : 'auto' });
 }
 
 function bindForm() {
@@ -332,99 +336,114 @@ function bindForm() {
 }
 
 /* ---------------------------------------------------------------- motion */
-function initLenis() {
-  if (lenis || !motionOK || typeof window.Lenis === 'undefined') return;
-  lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
-  lenis.on('scroll', ScrollTrigger.update);
-  tickerFn = (time) => lenis.raf(time * 1000);
-  gsap.ticker.add(tickerFn);
-  gsap.ticker.lagSmoothing(0);
-}
-
-function countUp(el, tl, at) {
+// Everything here is time-based and fires once when an element enters the viewport (IntersectionObserver).
+// Nothing is tied to scroll position, nothing is pinned, and the browser's own scrolling is left alone.
+function countUp(el) {
   const m = String(el.dataset.count).match(/^([^\d]*)([\d.,]+)(.*)$/);
   if (!m) return;
   const target = parseFloat(m[2].replace(',', '.')); const dec = (m[2].split(/[.,]/)[1] || '').length;
-  const o = { v: 0 }; el.textContent = m[1] + (0).toFixed(dec) + m[3];
-  tl.to(o, { v: target, duration: .9, ease: 'power1.out', onUpdate: () => { el.textContent = m[1] + o.v.toFixed(dec) + m[3]; } }, at);
+  const t0 = performance.now(); const dur = 1100;
+  el.textContent = m[1] + (0).toFixed(dec) + m[3];
+  const tick = (now) => {
+    const k = Math.min(1, (now - t0) / dur);
+    el.textContent = m[1] + (target * (1 - Math.pow(1 - k, 3))).toFixed(dec) + m[3];
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
 }
 
-function initMotion() {
-  if (!hasGsap() || !motionOK) return;
-  gsap.registerPlugin(ScrollTrigger);
-  initLenis();
-  mm = gsap.matchMedia();
+function watch(els, opts, cb) {
+  if (!els.length) return;
+  const io = new IntersectionObserver((entries) => cb(entries.filter((e) => e.isIntersecting), io), opts);
+  els.forEach((e) => io.observe(e));
+  cleanups.push(() => io.disconnect());
+}
 
-  mm.add('(prefers-reduced-motion: no-preference)', () => {
-    ScrollTrigger.batch('.rv', { start: 'top 96%', once: true,
-      onEnter: (els) => gsap.fromTo(els, { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', stagger: .09, overwrite: true, clearProps: 'transform,opacity' }) });
-    gsap.to('.ambient i:nth-child(1)', { yPercent: 28, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
-    gsap.to('.ambient i:nth-child(2)', { yPercent: -32, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
-  });
+function initMotion(instant) {
+  const root = document.documentElement;
+  root.classList.toggle('motion', motionOK && !!window.IntersectionObserver);
+  if (!motionOK || !window.IntersectionObserver) return;
+  if (instant) { $$('.rv, .chapter').forEach((e) => e.classList.add('in')); $$('[data-count]').forEach((e) => { e.textContent = e.dataset.count; }); }
 
-  const story = $('#story');
-  if (!story) return;
-  const chapters = $$('.chapter', story);
-  const ticks = $$('.ticks button', story);
-  const setActive = (k) => {
-    $('#now').textContent = `${u('ind.chapter')} ${roman(k + 1)} ${u('ind.of')} ${roman(chapters.length)}`;
-    $('#nowname').textContent = chapters[k].dataset.title;
-    ticks.forEach((b, j) => { b.classList.toggle('on', j === k); b.classList.toggle('done', j < k); });
-  };
-  setActive(0);
-  $$('[data-goto]').forEach((b) => b.addEventListener('click', () => {
-    const ch = chapters[+b.dataset.goto]; const st = ch._st;
-    if (st) { if (lenis) lenis.scrollTo(st.start + 4, { duration: 1.6 }); else window.scrollTo({ top: st.start + 4, behavior: 'smooth' }); }
-    else scrollToEl(ch);
-  }));
-  ScrollTrigger.create({ trigger: story, start: 'top 70%', end: 'bottom bottom', scrub: true, onUpdate: (s) => { $('#prog').style.width = `${s.progress * 100}%`; } });
-
-  // desktop: the challenge blurs away while the answer comes into focus
-  mm.add('(min-width: 961px) and (prefers-reduced-motion: no-preference)', () => {
-    chapters.forEach((ch, k) => {
-      const pain = $('.pain', ch), ans = $('.ans', ch), inner = $('.ans-in', ch), bridge = $('.bridge', ch), num = $('.numeral', ch);
-      const items = $$('.solchips > a, .ans h3, .ans-in > p, .pt, .metric', ans);
-      const counter = $('[data-count]', ch);
-      const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' },
-        scrollTrigger: { trigger: ch, start: 'top top+=70', end: '+=170%', pin: true, scrub: .6, anticipatePin: 1,
-          onToggle: (s) => s.isActive && setActive(k), onRefresh: (s) => { ch._st = s; } } });
-      tl.fromTo(num, { opacity: 0, xPercent: -6 }, { opacity: 1, xPercent: 0, duration: 1 }, 0)
-        .fromTo(pain, { opacity: 0, y: 50, filter: 'blur(12px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, 0)
-        .fromTo(ans, { opacity: 0, y: 70, scale: .985 }, { opacity: .5, y: 20, scale: .99, duration: 1 }, .15)
-        .fromTo(inner, { filter: 'blur(14px)', opacity: .5 }, { filter: 'blur(9px)', opacity: .5, duration: 1 }, .15)
-        .to({}, { duration: .9 })
-        .fromTo(bridge, { scaleY: 0 }, { scaleY: 1, duration: .7 })
-        .to(pain, { opacity: .3, filter: 'blur(3px)', x: -12, duration: .9 }, '<')
-        .to(ans, { opacity: 1, y: 0, scale: 1, duration: .9 }, '<+.1')
-        .to(inner, { filter: 'blur(0px)', opacity: 1, duration: .9 }, '<')
-        .fromTo(items, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .5, stagger: .13 }, '-=.35');
-      if (counter) countUp(counter, tl, '-=.5');
-      tl.to({}, { duration: .5 });
+  // 1. generic reveal: fade + rise, a short stagger between siblings that arrive together
+  watch($$('.rv:not(.in)'), { rootMargin: '0px 0px -6% 0px', threshold: .08 }, (hits, io) => {
+    hits.forEach((e, i) => {
+      const el = e.target; const d = i * 90;
+      el.style.transitionDelay = `${d}ms`; el.classList.add('in'); io.unobserve(el);
+      setTimeout(() => { el.style.transitionDelay = ''; }, d + 1100);
     });
   });
+  // 2. story chapters: challenge appears, then the answer resolves (one timed sequence per chapter)
+  watch($$('.chapter:not(.in)'), { rootMargin: '0px 0px -18% 0px', threshold: .2 }, (hits, io) => {
+    hits.forEach((e) => {
+      e.target.classList.add('in'); io.unobserve(e.target);
+      const c = $('[data-count]', e.target); if (c) setTimeout(() => countUp(c), 1300);
+    });
+  });
+  $$('.chapter:not(.in) [data-count]').forEach((c) => { c.textContent = c.dataset.count.replace(/[\d.,]+/, '0'); });
+}
 
-  // mobile: no pinning, same idea in a lighter touch
-  mm.add('(max-width: 960px) and (prefers-reduced-motion: no-preference)', () => {
-    chapters.forEach((ch, k) => {
-      ScrollTrigger.create({ trigger: ch, start: 'top 55%', end: 'bottom 55%', onToggle: (s) => s.isActive && setActive(k) });
-      const counter = $('[data-count]', ch);
-      gsap.from($('.pain', ch), { opacity: 0, y: 30, duration: .9, scrollTrigger: { trigger: ch, start: 'top 85%', once: true } });
-      const tl = gsap.timeline({ scrollTrigger: { trigger: $('.ans', ch), start: 'top 85%', once: true } });
-      tl.from($('.bridge', ch), { scaleX: 0, duration: .6 })
-        .from($('.ans', ch), { opacity: 0, y: 40, duration: .8 }, '<.1')
-        .from($('.ans-in', ch), { filter: 'blur(10px)', duration: .8 }, '<');
-      if (counter) countUp(counter, tl, '>-.3');
+// sticky local nav (industry page): highlights the section on screen, like Apple's product sub-nav
+function initLocalNav() {
+  const links = $$('[data-spy]'); if (!links.length || !window.IntersectionObserver) return;
+  const map = new Map(links.map((a) => [a.dataset.spy, a]));
+  const on = (id) => links.forEach((a) => a.classList.toggle('on', a.dataset.spy === id));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) on(e.target.id); }), { rootMargin: '-35% 0px -60% 0px' });
+  map.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+  cleanups.push(() => io.disconnect());
+  const nav = $('#lnav'); const bar = () => nav.classList.toggle('stuck', nav.getBoundingClientRect().top <= (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) + 1);
+  addEventListener('scroll', bar, { passive: true }); bar();
+  cleanups.push(() => removeEventListener('scroll', bar));
+  // the chapter picker in the intro jumps straight to the matching chapter
+  $$('[data-goto]').forEach((b) => b.addEventListener('click', () => scrollToEl($(`#ch-${b.dataset.goto}`))));
+}
+
+// Apple-style "highlights" rail: native horizontal scroll-snap, plus arrows and progress dots
+function initRail() {
+  const rail = $('#rail .rail'); if (!rail) return;
+  const dots = $$('#rail .dots i'); const [prev, next] = $$('#rail [data-rail]');
+  const items = [...rail.children];
+  const sync = () => {
+    const max = rail.scrollWidth - rail.clientWidth;
+    let cur = 0, best = 1e9;
+    items.forEach((it, i) => { const d = Math.abs(it.offsetLeft - rail.offsetLeft - rail.scrollLeft - parseFloat(getComputedStyle(rail).paddingLeft)); if (d < best) { best = d; cur = i; } });
+    if (rail.scrollLeft >= max - 4) cur = items.length - 1;
+    dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+    prev.disabled = rail.scrollLeft <= 4; next.disabled = rail.scrollLeft >= max - 4;
+    $('#rail').classList.toggle('static', max <= 4);
+  };
+  const step = (dir) => rail.scrollBy({ left: dir * (items[0].offsetWidth + 20), behavior: motionOK ? 'smooth' : 'auto' });
+  prev.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
+  rail.addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync); cleanups.push(() => removeEventListener('resize', sync));
+  rail.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } });
+  sync();
+}
+
+// FAQ: height eases open/closed instead of snapping
+function initFaq() {
+  $$('.faq details').forEach((d) => {
+    const sum = $('summary', d); const body = $('.a', d);
+    sum.addEventListener('click', (e) => {
+      if (!motionOK || !d.animate) return;
+      e.preventDefault();
+      d.style.overflow = 'hidden';
+      const opening = !d.open;
+      const from = d.offsetHeight;
+      if (opening) d.open = true;
+      const to = opening ? sum.offsetHeight + body.offsetHeight : sum.offsetHeight;
+      const a = d.animate({ height: [`${from}px`, `${to}px`] }, { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      a.onfinish = () => { if (!opening) d.open = false; d.style.overflow = ''; };
     });
   });
 }
 
 /* ---------------------------------------------------------------- lifecycle */
 function teardownMotion() {
-  if (mm) { mm.revert(); mm = null; }
-  if (hasGsap()) ScrollTrigger.getAll().forEach((s) => s.kill());
+  cleanups.forEach((f) => f()); cleanups = [];
 }
 
-function render() {
+function render(instant = false) {
   document.documentElement.lang = state.lang;
   const { page, id } = state.route;
   const d = page === 'industry' ? industryOf(id) : null;
@@ -432,15 +451,14 @@ function render() {
   document.title = d ? `${t(d.name)} | V-TECH HUB` : s ? `${s.name} | V-TECH HUB` : 'V-TECH HUB';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
-  bindChrome(); bindForm();
-  initMotion();
-  if (hasGsap() && motionOK) ScrollTrigger.refresh();
+  bindChrome(); bindForm(); initLocalNav(); initRail(); initFaq();
+  initMotion(instant);
 }
 
 function setLang(l) {
   if (l === state.lang) return;
   state.lang = l; store.set('vth-lang', l);
-  const y = scrollY; teardownMotion(); render(); scrollTo(0, y);
+  const y = scrollY; teardownMotion(); render(true); scrollTo(0, y);
 }
 
 loadData().then(() => { render(); }).catch((e) => {

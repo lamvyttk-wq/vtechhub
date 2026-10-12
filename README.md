@@ -3,7 +3,7 @@
 Scroll-driven landing pages (white luxury, frosted glass, brand red as a thin accent) that walk an enterprise buyer from
 **real industry pain → matching packaged solution → proof (PoC) → contact**.
 
-No build step. Plain HTML/CSS/ES modules + GSAP/ScrollTrigger + Lenis (vendored in `assets/vendor`); icons are inline SVG (`js/icons.js`).
+No build step, no libraries. Plain HTML/CSS/ES modules; icons are inline SVG (`js/icons.js`).
 
 ```bash
 python3 -m http.server 8765      # JSON is fetched, so serve over HTTP (not file://)
@@ -14,10 +14,19 @@ node build-artifact.mjs                      # -> dist/vtechhub.html, one self-c
 ```
 Deploys as-is to GitHub Pages / any static host.
 
-## How the story works (industry.html)
-Hero → "what worries you most?" picker (jumps straight to the matching chapter) → 5 pinned chapters where the
-**challenge card dims and the matching answer card resolves as you scroll** → bundle → outcomes → FAQ → PoC → contact.
-Mobile and `prefers-reduced-motion` get a non-pinned, readable layout. EN/VI toggle persists. Single white theme.
+## Motion model (modelled on apple.com/macbook-pro)
+Native scrolling only: no smooth-scroll library, no pinned scenes, no scroll-scrubbed animation, no parallax.
+Instead (all in `js/app.js` + the motion block at the end of `css/styles.css`):
+- **Reveal once** — `.rv` elements fade/rise the first time they enter the viewport (IntersectionObserver, short stagger).
+- **Chapter sequence** — each story chapter plays a timed sequence on entry: challenge → bridge draws → answer resolves from blur → points → metric counts up.
+- **Sticky local nav** (industry pages) — Overview · Key challenges · Solutions · Why · FAQ, active section underlined, CTA on the right.
+- **Highlights rail** — the solution bundle is a native scroll-snap carousel with arrows and progress dots.
+- **FAQ** — accordion height eases open/closed.
+- `prefers-reduced-motion` disables all of it; content is fully readable without JS motion.
+
+## How the story reads (industry page)
+Hero → local nav → "what worries you most?" picker (jumps to the chapter) → 5 chapters, challenge left / answer right
+(stacked on mobile) → solution rail → outcomes → FAQ → PoC → contact. EN/VI toggle persists. Single white theme.
 
 ## Editing content (no code)
 - `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md`.

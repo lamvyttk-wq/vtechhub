@@ -145,9 +145,14 @@
    "vi": "Trao đổi với chuyên gia"
   },
   "scroll": {
-   "en": "Scroll to begin the story",
-   "vi": "Cuộn để bắt đầu câu chuyện"
+   "en": "See the challenges",
+   "vi": "Xem các thách thức"
   },
+  "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
+  "lnSolutions": { "en": "Solutions", "vi": "Giải pháp" },
+  "lnFaq": { "en": "FAQ", "vi": "Hỏi đáp" },
+  "prev": { "en": "Previous", "vi": "Trước" },
+  "next": { "en": "Next", "vi": "Tiếp" },
   "otherIndustries": {
    "en": "Other industries",
    "vi": "Ngành khác"
