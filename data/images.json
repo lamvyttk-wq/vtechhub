@@ -113,7 +113,8 @@
     "ai-legal": "training",
     "cdn": "cdn",
     "vcloud": "vcloud",
-    "ai-healthcare": "clinic"
+    "ai-healthcare": "clinic",
+    "web-waf": "waap"
   },
   "circuit": {
     "icon": "database",
@@ -373,6 +374,21 @@
     "caption": {
       "en": "EGPlatform: Email Gateway Platform",
       "vi": "EGPlatform: Nền tảng cổng email"
+    }
+  },
+  "waap": {
+    "icon": "shield",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/waap.webp"
+    ],
+    "alt": {
+      "en": "A shield protecting a web login, code, servers and cloud",
+      "vi": "Chiếc khiên bảo vệ trang đăng nhập, mã nguồn, máy chủ và đám mây"
+    },
+    "caption": {
+      "en": "One shield for web, apps and APIs",
+      "vi": "Một lớp bảo vệ cho web, ứng dụng và API"
     }
   }
 }
