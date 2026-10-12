@@ -39,7 +39,7 @@
           "items": [
             { "id": "ai-legal", "name": { "en": "AI Legal & Compliance", "vi": "AI Pháp chế & Tuân thủ" } },
             { "id": null, "name": { "en": "AI Agent", "vi": "AI Agent" } },
-            { "id": null, "name": { "en": "AI Healthcare & Health Insurance", "vi": "AI Y tế & Bảo hiểm sức khỏe" } },
+            { "id": "ai-healthcare", "name": { "en": "AI Healthcare & Health Insurance", "vi": "AI Y tế & Bảo hiểm sức khỏe" } },
             { "id": null, "name": { "en": "AI CRM", "vi": "AI CRM" } }
           ]
         }

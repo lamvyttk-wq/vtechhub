@@ -112,7 +112,8 @@
     "database-security": "circuit",
     "ai-legal": "training",
     "cdn": "cdn",
-    "vcloud": "vcloud"
+    "vcloud": "vcloud",
+    "ai-healthcare": "clinic"
   },
   "circuit": {
     "icon": "database",

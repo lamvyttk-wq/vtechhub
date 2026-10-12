@@ -781,6 +781,223 @@
   }
  },
  {
+  "id": "ai-healthcare",
+  "icon": "heart-pulse",
+  "name": "AI Healthcare & Health Insurance",
+  "tagline": {
+   "en": "Clinical decision support and insurance checks for hospitals",
+   "vi": "Hỗ trợ quyết định lâm sàng và kiểm tra bảo hiểm y tế cho bệnh viện"
+  },
+  "description": {
+   "en": "A health-insurance assistant powered by AI and built for hospitals. In live use at the Vietnam National Children's Hospital, it digitizes 55+ health regulations so staff get instant, cited compliance checks and fewer claim rejections.",
+   "vi": "Trợ lý bảo hiểm y tế dùng AI, xây dựng riêng cho bệnh viện. Đang vận hành thực tế tại Bệnh viện Nhi Trung ương, nền tảng số hóa hơn 55 văn bản quy định y tế để nhân viên y tế kiểm tra tuân thủ tức thì, có trích dẫn, và giảm số hồ sơ bị từ chối thanh toán."
+  },
+  "detail": {
+   "lead": {
+    "en": "Clinical decision support and health insurance verification for hospitals.",
+    "vi": "Hỗ trợ quyết định lâm sàng và xác minh bảo hiểm y tế cho bệnh viện."
+   },
+   "stats": [
+    {
+     "value": "55+",
+     "label": {
+      "en": "health regulations digitized",
+      "vi": "văn bản quy định y tế được số hóa"
+     }
+    },
+    {
+     "value": "<60s",
+     "label": {
+      "en": "to return coverage rate, conditions and forms",
+      "vi": "để trả về mức hưởng, điều kiện và biểu mẫu"
+     }
+    },
+    {
+     "value": "90%",
+     "label": {
+      "en": "of hospital patients in Vietnam involve health insurance",
+      "vi": "bệnh nhân tại bệnh viện ở Việt Nam có liên quan đến bảo hiểm y tế"
+     }
+    },
+    {
+     "value": "Live",
+     "label": {
+      "en": "in operation at the Vietnam National Children's Hospital",
+      "vi": "đang vận hành tại Bệnh viện Nhi Trung ương"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Cited answers",
+     "vi": "Câu trả lời có trích dẫn"
+    },
+    {
+     "en": "Insurance copilot for physicians",
+     "vi": "Trợ lý bảo hiểm cho bác sĩ"
+    },
+    {
+     "en": "Claim-rejection prevention",
+     "vi": "Phòng ngừa từ chối thanh toán"
+    },
+    {
+     "en": "Web, Zalo OA and HIS widget",
+     "vi": "Web, Zalo OA và widget trong HIS"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Mission-critical bottlenecks in hospital insurance work",
+    "vi": "Những điểm nghẽn then chốt trong công tác bảo hiểm y tế tại bệnh viện"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "90% of hospital patients involve health insurance, so every case needs a regulatory check",
+      "vi": "90% bệnh nhân ở bệnh viện có bảo hiểm y tế, nên mỗi ca đều phải đối chiếu quy định"
+     },
+     "impact": {
+      "en": "Doctors split time between examining patients and looking up the law, so waits grow and examinations get less efficient.",
+      "vi": "Bác sĩ phải chia thời gian giữa khám bệnh và tra cứu quy định, khiến thời gian chờ tăng và hiệu quả khám giảm."
+     }
+    },
+    {
+     "title": {
+      "en": "55+ legal documents (laws, decrees, circulars, guidelines) keep changing",
+      "vi": "Hơn 55 văn bản pháp lý (luật, nghị định, thông tư, hướng dẫn) liên tục thay đổi"
+     },
+     "impact": {
+      "en": "New guidance takes time to reach clinical departments, causing systemic prescription and administrative errors.",
+      "vi": "Hướng dẫn mới mất thời gian đến các khoa lâm sàng, gây sai sót kê đơn và hành chính mang tính hệ thống."
+     }
+    },
+    {
+     "title": {
+      "en": "Prescription errors lead to claim rejections and retroactive disallowances (xuất toán) by Social Security",
+      "vi": "Sai sót kê đơn dẫn đến từ chối thanh toán và xuất toán hồi tố từ cơ quan bảo hiểm xã hội"
+     },
+     "impact": {
+      "en": "Hospitals face billions of VND in clawbacks and coverage disputes with patients.",
+      "vi": "Bệnh viện đối mặt với hàng tỷ đồng bị truy thu và tranh chấp quyền lợi với bệnh nhân."
+     }
+    },
+    {
+     "title": {
+      "en": "Planning and Finance departments are overloaded by post-treatment claim audits",
+      "vi": "Phòng Kế hoạch và Tài chính quá tải vì rà soát hồ sơ sau điều trị"
+     },
+     "impact": {
+      "en": "Bottlenecks pull administrative and medical resources away from frontline care.",
+      "vi": "Điểm nghẽn kéo nguồn lực hành chính và y tế ra khỏi công việc tuyến đầu."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "Technical modules",
+    "vi": "Các mô-đun kỹ thuật"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Physician health insurance copilot",
+      "vi": "Trợ lý bảo hiểm y tế cho bác sĩ"
+     },
+     "body": {
+      "en": "The doctor enters a scenario (patient, disease code, insurance card) and AI returns the exact coverage rate, conditions and required forms in under 60 seconds.",
+      "vi": "Bác sĩ nhập tình huống (bệnh nhân, mã bệnh, thẻ bảo hiểm), AI trả về mức hưởng, điều kiện và biểu mẫu cần có trong chưa đầy 60 giây."
+     }
+    },
+    {
+     "title": {
+      "en": "Insurance scenario and compliance guidance",
+      "vi": "Hướng dẫn tình huống bảo hiểm và tuân thủ"
+     },
+     "body": {
+      "en": "Assesses complex billing scenarios and evaluates the impact of new circulars automatically, to prevent claim rejections.",
+      "vi": "Đánh giá các tình huống thanh toán phức tạp và tự động xét tác động khi có thông tư mới, nhằm ngăn việc bị từ chối thanh toán."
+     }
+    },
+    {
+     "title": {
+      "en": "Comprehensive legal repository",
+      "vi": "Kho văn bản pháp lý đầy đủ"
+     },
+     "body": {
+      "en": "A digitized library of 55+ health insurance regulations with validity filters, returning results with precise legal citations.",
+      "vi": "Thư viện số hóa hơn 55 quy định bảo hiểm y tế, có bộ lọc hiệu lực, trả kết quả kèm trích dẫn pháp lý chính xác."
+     }
+    },
+    {
+     "title": {
+      "en": "Flexible multi-channel deployment",
+      "vi": "Triển khai linh hoạt đa kênh"
+     },
+     "body": {
+      "en": "Works on web portals, Zalo OA and as an embedded copilot widget inside the hospital's HIS software.",
+      "vi": "Chạy trên cổng web, Zalo OA và dưới dạng widget trợ lý nhúng ngay trong phần mềm HIS của bệnh viện."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "National & general hospitals",
+      "vi": "Bệnh viện tuyến trung ương & đa khoa"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Support hundreds of doctors and nurses with instant insurance checks at prescription entry, as at the Vietnam National Children's Hospital.",
+      "vi": "Hỗ trợ hàng trăm bác sĩ, điều dưỡng kiểm tra bảo hiểm tức thì khi kê đơn, như tại Bệnh viện Nhi Trung ương."
+     }
+    },
+    {
+     "name": {
+      "en": "Private hospitals & clinics",
+      "vi": "Bệnh viện & phòng khám tư"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Cross-check national health insurance coverage rules instantly to keep billing compliant.",
+      "vi": "Đối chiếu tức thì quy định chi trả bảo hiểm y tế quốc gia để thanh toán đúng quy định."
+     }
+    },
+    {
+     "name": {
+      "en": "Hospital planning & finance",
+      "vi": "Kế hoạch & tài chính bệnh viện"
+     },
+     "icon": "building",
+     "industry": null,
+     "body": {
+      "en": "Audit proactively and stop claim rejections at the point of doctor order entry.",
+      "vi": "Rà soát chủ động và ngăn việc bị từ chối thanh toán ngay lúc bác sĩ nhập y lệnh."
+     }
+    },
+    {
+     "name": {
+      "en": "Frontline physicians & nurses",
+      "vi": "Bác sĩ & điều dưỡng tuyến đầu"
+     },
+     "icon": "users",
+     "industry": null,
+     "body": {
+      "en": "A reliable assistant for complex referral routes and correct-line admission coverage questions.",
+      "vi": "Trợ lý đáng tin cậy cho các câu hỏi về tuyến chuyển viện và quyền lợi khi nhập viện đúng tuyến."
+     }
+    }
+   ]
+  }
+ },
+ {
   "id": "dlp",
   "icon": "shield-check",
   "name": "Data Loss Prevention",
