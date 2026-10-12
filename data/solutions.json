@@ -1,504 +1,544 @@
 [
-{
- "id": "vcloud",
- "icon": "cloud",
- "name": "VCLOUD",
- "tagline": {
-  "en": "Sovereign cloud, hosted in Vietnam",
-  "vi": "Đám mây chủ quyền đặt tại Việt Nam"
- },
- "description": {
-  "en": "VCLOUD is VNETWORK's cloud platform: public, private and hybrid cloud on one management system, hosted in Tier III data centers inside Vietnam, with built-in security and 24/7/365 support.",
-  "vi": "VCLOUD là nền tảng đám mây của VNETWORK: public, private và hybrid cloud trên một hệ thống quản trị, đặt tại các trung tâm dữ liệu Tier III trong nước, tích hợp bảo mật và hỗ trợ 24/7/365."
- },
- "detail": {
-  "lead": {
-   "en": "Cloud servers that scale on demand, keep your data in Vietnam and stay protected by default.",
-   "vi": "Máy chủ đám mây mở rộng theo nhu cầu, giữ dữ liệu của bạn tại Việt Nam và được bảo vệ sẵn từ đầu."
+ {
+  "id": "vcloud",
+  "icon": "cloud",
+  "name": "VCLOUD",
+  "title": {
+   "en": "Public Cloud & Private Cloud",
+   "vi": "Public Cloud & Private Cloud"
   },
-  "stats": [
-   {
-    "value": "99.997%",
-    "label": {
-     "en": "uptime, as advertised by VNETWORK",
-     "vi": "thời gian hoạt động, theo công bố của VNETWORK"
-    }
-   },
-   {
-    "value": "10 Gbps",
-    "label": {
-     "en": "uplink on every package, unlimited data transfer",
-     "vi": "đường truyền mỗi gói, không giới hạn lưu lượng"
-    }
-   },
-   {
-    "value": "1–32",
-    "label": {
-     "en": "vCPU across the VNW1 to VNW11 packages",
-     "vi": "vCPU trong các gói VNW1 đến VNW11"
-    }
-   },
-   {
-    "value": "24/7/365",
-    "label": {
-     "en": "technical support",
-     "vi": "hỗ trợ kỹ thuật"
-    }
-   }
-  ],
-  "capabilities": [
-   {
-    "en": "Public, private and hybrid cloud",
-    "vi": "Public, private và hybrid cloud"
-   },
-   {
-    "en": "Instant CPU, RAM and storage scaling",
-    "vi": "Nâng cấp CPU, RAM và lưu trữ tức thì"
-   },
-   {
-    "en": "Load balancing and Kubernetes",
-    "vi": "Cân bằng tải và Kubernetes"
-   },
-   {
-    "en": "Scheduled backups and snapshots",
-    "vi": "Sao lưu định kỳ và snapshot"
-   }
-  ],
-  "pairs": [
-   {
-    "challenge": {
-     "title": {
-      "en": "Workloads outgrow a fixed server",
-      "vi": "Tải công việc vượt quá một máy chủ cố định"
-     },
-     "impact": {
-      "en": "Peaks slow services down, while idle capacity still costs money the rest of the year.",
-      "vi": "Giờ cao điểm làm dịch vụ chậm đi, còn phần dư thừa vẫn tốn chi phí trong phần còn lại của năm."
-     }
-    },
-    "module": {
-     "title": {
-      "en": "Scale on demand",
-      "vi": "Mở rộng theo nhu cầu"
-     },
-     "body": {
-      "en": "Add CPU, RAM and storage instantly, from a 1 vCPU entry package up to 32 vCPU, with a 10 Gbps uplink on every package.",
-      "vi": "Tăng CPU, RAM và lưu trữ tức thì, từ gói 1 vCPU lên đến 32 vCPU, đường truyền 10 Gbps cho mọi gói."
-     },
-     "metric": {
-      "value": "1–32",
-      "label": {
-       "en": "vCPU packages",
-       "vi": "vCPU mỗi gói"
-      }
-     }
-    }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Data that has to stay in Vietnam",
-      "vi": "Dữ liệu bắt buộc phải ở lại Việt Nam"
-     },
-     "impact": {
-      "en": "Data stored abroad complicates Decree 13 compliance and audits.",
-      "vi": "Dữ liệu đặt ở nước ngoài làm phức tạp việc tuân thủ Nghị định 13 và kiểm toán."
-     }
-    },
-    "module": {
-     "title": {
-      "en": "Sovereign hosting",
-      "vi": "Lưu trữ chủ quyền"
-     },
-     "body": {
-      "en": "Infrastructure runs in Tier III data centers inside Vietnam, supporting data-residency requirements.",
-      "vi": "Hạ tầng vận hành tại các trung tâm dữ liệu Tier III trong nước, hỗ trợ yêu cầu lưu trữ dữ liệu tại Việt Nam."
-     }
-    }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Servers exposed to the internet",
-      "vi": "Máy chủ phơi ra internet"
-     },
-     "impact": {
-      "en": "Open ports and shared credentials are the easiest way in for attackers.",
-      "vi": "Cổng mở và thông tin đăng nhập dùng chung là lối vào dễ nhất cho kẻ tấn công."
-     }
-    },
-    "module": {
-     "title": {
-      "en": "Security built in",
-      "vi": "Bảo mật tích hợp sẵn"
-     },
-     "body": {
-      "en": "Firewall and Security Groups, two-factor authentication and SSH key pairs protect every instance from the start.",
-      "vi": "Tường lửa và Security Group, xác thực hai yếu tố và khóa SSH bảo vệ mọi máy chủ ngay từ đầu."
-     }
-    }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Downtime with nobody to call",
-      "vi": "Gián đoạn mà không có ai để gọi"
-     },
-     "impact": {
-      "en": "Every hour of outage costs revenue, and the fix waits on a ticket queue.",
-      "vi": "Mỗi giờ ngừng hoạt động đều mất doanh thu, còn việc khắc phục phải chờ hàng đợi hỗ trợ."
-     }
-    },
-    "module": {
-     "title": {
-      "en": "Resilience and 24/7 support",
-      "vi": "Ổn định và hỗ trợ 24/7"
-     },
-     "body": {
-      "en": "Load balancing, scheduled backups and snapshots, and an engineering team on call by hotline, Telegram, Zalo or email.",
-      "vi": "Cân bằng tải, sao lưu định kỳ và snapshot, cùng đội kỹ sư trực qua hotline, Telegram, Zalo hoặc email."
-     },
-     "metric": {
-      "value": "24/7/365",
-      "label": {
-       "en": "technical support",
-       "vi": "hỗ trợ kỹ thuật"
-      }
-     }
-    }
-   }
-  ],
-  "audiences": [
-   {
-    "name": {
-     "en": "SMEs & startups",
-     "vi": "Doanh nghiệp vừa và nhỏ & startup"
-    },
-    "icon": "zap",
-    "industry": null,
-    "body": {
-     "en": "Start small on an entry package and grow without migrating.",
-     "vi": "Bắt đầu với gói nhỏ và mở rộng dần mà không cần di chuyển hệ thống."
-    }
-   },
-   {
-    "name": {
-     "en": "Banks & financial institutions",
-     "vi": "Ngân hàng & tổ chức tài chính"
-    },
-    "icon": "landmark",
-    "industry": "bfsi",
-    "body": {
-     "en": "Keep core and customer systems on infrastructure inside Vietnam.",
-     "vi": "Đặt hệ thống lõi và dữ liệu khách hàng trên hạ tầng trong nước."
-    }
-   },
-   {
-    "name": {
-     "en": "Government & public sector",
-     "vi": "Cơ quan nhà nước & khu vực công"
-    },
-    "icon": "building-2",
-    "industry": "government",
-    "body": {
-     "en": "Host public services where data location is a hard requirement.",
-     "vi": "Triển khai dịch vụ công ở nơi vị trí dữ liệu là yêu cầu bắt buộc."
-    }
-   },
-   {
-    "name": {
-     "en": "Healthcare",
-     "vi": "Y tế"
-    },
-    "icon": "heart-pulse",
-    "industry": "healthcare",
-    "body": {
-     "en": "Run hospital and clinic systems with backups and 24/7 support.",
-     "vi": "Vận hành hệ thống bệnh viện, phòng khám với sao lưu và hỗ trợ 24/7."
-    }
-   },
-   {
-    "name": {
-     "en": "E-commerce & retail",
-     "vi": "Thương mại điện tử & bán lẻ"
-    },
-    "icon": "shopping-bag",
-    "industry": "retail",
-    "body": {
-     "en": "Add capacity for sale peaks, then scale back down.",
-     "vi": "Tăng tài nguyên cho đợt khuyến mãi cao điểm rồi giảm xuống lại."
-    }
-   },
-   {
-    "name": {
-     "en": "Media & gaming",
-     "vi": "Truyền thông & game"
-    },
-    "icon": "clapperboard",
-    "industry": "media",
-    "body": {
-     "en": "Serve streaming and game workloads on fast, scalable instances.",
-     "vi": "Phục vụ tải phát trực tuyến và game trên các máy chủ nhanh, dễ mở rộng."
-    }
-   }
-  ]
- }
-},
-  {"id":"email-security","icon":"mail-check","name":"Email Security",
-   "tagline":{"en":"Stop phishing before the inbox","vi":"Chặn phishing trước khi vào hộp thư"},
-   "description":{"en":"Advanced email defense that stops phishing, executive spoofing and ransomware before they reach employee inboxes.","vi":"Bảo vệ email nâng cao, chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."}},
-  {"id":"ai-legal","icon":"scale","name":"AI Legal & Compliance",
-   "tagline":{"en":"AI assistant for contracts & regulation","vi":"Trợ lý AI cho hợp đồng & quy định"},
-   "description":{"en":"A specialized AI assistant trained on State Bank of Vietnam regulations with 95% accuracy. It automates loan and contract reviews to cut routine workload by 42%, with an on-premise option to ensure total data privacy.","vi":"Trợ lý AI chuyên biệt được huấn luyện trên quy định của Ngân hàng Nhà nước, độ chính xác 95%. Tự động rà soát hợp đồng tín dụng, giảm 42% khối lượng công việc thường nhật, có tùy chọn triển khai on-premise để đảm bảo riêng tư dữ liệu tuyệt đối."}},
-  {"id":"dlp","icon":"shield-check","name":"Data Loss Prevention",
-   "tagline":{"en":"360° insider & leak protection","vi":"Chống thất thoát dữ liệu 360°"},
-   "description":{"en":"Full 360-degree monitoring across chat apps, personal webmail, and USB drives. It automatically detects sensitive customer records to stop insider fraud, prevent data leaks, and ensure Decree 13 compliance.","vi":"Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB. Tự động phát hiện hồ sơ khách hàng nhạy cảm để ngăn gian lận nội bộ, rò rỉ dữ liệu và đảm bảo tuân thủ Nghị định 13."}},
-  {"id":"database-security","icon":"database","name":"Database Security",
-   "tagline":{"en":"Query-level control & real-time masking","vi":"Kiểm soát truy vấn & che giấu dữ liệu thời gian thực"},
-   "description":{"en":"Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.","vi":"Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."}},
-{
- "id": "cdn",
- "icon": "globe",
- "name": "Content Delivery Network",
- "tagline": {
-  "en": "Sub-second streaming & acceleration from 2,300+ edge PoPs",
-  "vi": "Phát trực tiếp độ trễ dưới một giây & tăng tốc nội dung từ hơn 2.300 điểm biên"
- },
- "description": {
-  "en": "VNCDN is an enterprise Multi-CDN platform integrating AI-driven traffic routing, low-latency live streaming (LL-HLS, WebRTC), and on-demand Video Management Services (VMS). The network dynamically distributes workloads to edge nodes closest to end-users, ensuring flawless media streaming even during peak traffic events exceeding millions of concurrent viewers.",
-  "vi": "VNCDN là nền tảng Multi-CDN doanh nghiệp, tích hợp định tuyến lưu lượng bằng AI, phát trực tiếp độ trễ thấp (LL-HLS, WebRTC) và dịch vụ quản lý video theo yêu cầu (VMS). Mạng lưới tự động phân bổ tải đến các nút biên gần người dùng nhất, giữ cho luồng media luôn mượt ngay cả khi lưu lượng đỉnh vượt hàng triệu người xem đồng thời."
- },
- "detail": {
-  "lead": {
-   "en": "Sub-second latency video streaming & content acceleration with 2,300+ global edge PoPs.",
-   "vi": "Phát video độ trễ dưới một giây và tăng tốc nội dung với hơn 2.300 điểm hiện diện (PoP) biên trên toàn cầu."
+  "tagline": {
+   "en": "Sovereign cloud, hosted in Vietnam",
+   "vi": "Đám mây chủ quyền đặt tại Việt Nam"
   },
-  "stats": [
-   {
-    "value": "2,300+",
-    "label": {
-     "en": "global edge PoPs",
-     "vi": "PoP biên toàn cầu"
-    }
+  "description": {
+   "en": "VCLOUD is a next-generation sovereign cloud platform with agile Public Cloud and hardware-isolated Private Cloud. It is built to meet Vietnam's Decree 13/2023 and cybersecurity requirements, on Intel Xeon 6 and AMD EPYC processors with Gen5 NVMe storage for enterprise and BFSI workloads.",
+   "vi": "VCLOUD là nền tảng đám mây chủ quyền thế hệ mới, gồm Public Cloud linh hoạt và Private Cloud cô lập phần cứng. Nền tảng được xây dựng để đáp ứng Nghị định 13/2023 và các quy định an ninh mạng của Việt Nam, chạy trên bộ xử lý Intel Xeon 6 và AMD EPYC cùng lưu trữ NVMe Gen5 cho khối doanh nghiệp và BFSI."
+  },
+  "detail": {
+   "lead": {
+    "en": "Sovereign, ultra-secure cloud with 100% in-country data residency in Tier III facilities.",
+    "vi": "Đám mây chủ quyền, bảo mật cao, dữ liệu lưu trữ 100% trong nước tại các cơ sở Tier III."
    },
-   {
-    "value": "146",
-    "label": {
-     "en": "countries with uniform performance",
-     "vi": "quốc gia với hiệu năng đồng nhất"
-    }
-   },
-   {
-    "value": "40%",
-    "label": {
-     "en": "smaller video files, same resolution",
-     "vi": "dung lượng video nhỏ hơn, giữ nguyên độ phân giải"
-    }
-   },
-   {
-    "value": "80–95%",
-    "label": {
-     "en": "less origin egress bandwidth",
-     "vi": "băng thông đầu ra máy chủ gốc được giảm"
-    }
-   }
-  ],
-  "capabilities": [
-   {
-    "en": "AI-driven traffic routing",
-    "vi": "Định tuyến lưu lượng bằng AI"
-   },
-   {
-    "en": "Low-latency live (LL-HLS, WebRTC)",
-    "vi": "Phát trực tiếp độ trễ thấp (LL-HLS, WebRTC)"
-   },
-   {
-    "en": "Video Management Services (VMS)",
-    "vi": "Dịch vụ quản lý video (VMS)"
-   },
-   {
-    "en": "Multi-CDN",
-    "vi": "Multi-CDN"
-   }
-  ],
-  "pairs": [
-   {
-    "challenge": {
-     "title": {
-      "en": "Slow website and app loading speeds during peak traffic hours",
-      "vi": "Website và ứng dụng tải chậm vào giờ cao điểm"
-     },
-     "impact": {
-      "en": "User churn, disrupted customer experience, and direct drops in conversion and revenue.",
-      "vi": "Người dùng rời bỏ, trải nghiệm khách hàng gián đoạn, tỷ lệ chuyển đổi và doanh thu sụt giảm trực tiếp."
+   "stats": [
+    {
+     "value": "100%",
+     "label": {
+      "en": "in-country data residency",
+      "vi": "dữ liệu lưu trữ trong nước"
      }
     },
-    "module": {
-     "title": {
-      "en": "Multi-CDN AI Dynamic Routing",
-      "vi": "Định tuyến động Multi-CDN bằng AI"
-     },
-     "body": {
-      "en": "Continuous AI monitoring of ISP network performance to route users automatically to the fastest performing edge node.",
-      "vi": "AI liên tục giám sát hiệu năng mạng của các nhà mạng (ISP) để tự động định tuyến người dùng đến nút biên nhanh nhất."
-     }
-    }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Origin server overload when live streaming viewership surges",
-      "vi": "Máy chủ gốc quá tải khi lượng người xem trực tiếp tăng vọt"
-     },
-     "impact": {
-      "en": "Video buffering, severe latency, server crashes, and skyrocketing origin egress bandwidth bills.",
-      "vi": "Video giật lag, độ trễ nghiêm trọng, máy chủ sập và hóa đơn băng thông đầu ra từ máy chủ gốc tăng vọt."
+    {
+     "value": "Tier III",
+     "label": {
+      "en": "data center facilities",
+      "vi": "cơ sở trung tâm dữ liệu"
      }
     },
-    "module": {
+    {
+     "value": "Gen5",
+     "label": {
+      "en": "NVMe storage",
+      "vi": "lưu trữ NVMe"
+     }
+    },
+    {
+     "value": "2",
+     "label": {
+      "en": "models: Public Cloud and Private Cloud",
+      "vi": "mô hình: Public Cloud và Private Cloud"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Public Cloud",
+     "vi": "Public Cloud"
+    },
+    {
+     "en": "Hardware-isolated Private Cloud",
+     "vi": "Private Cloud cô lập phần cứng"
+    },
+    {
+     "en": "Intel Xeon 6 & AMD EPYC",
+     "vi": "Intel Xeon 6 & AMD EPYC"
+    },
+    {
+     "en": "Gen5 NVMe storage",
+     "vi": "Lưu trữ NVMe Gen5"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Four bottlenecks that foreign clouds leave open",
+    "vi": "Bốn điểm nghẽn mà đám mây nước ngoài để lại"
+   },
+   "problems": [
+    {
      "title": {
-      "en": "Origin Shield & Smart Caching",
-      "vi": "Origin Shield & lưu đệm thông minh"
+      "en": "Personal data must stay in-country (Decree 13, Cybersecurity Law)",
+      "vi": "Dữ liệu cá nhân phải lưu trữ trong nước (Nghị định 13, Luật An ninh mạng)"
+     },
+     "impact": {
+      "en": "Hosting on foreign clouds risks compliance findings, audits and heavy penalties.",
+      "vi": "Đặt dữ liệu trên đám mây nước ngoài có nguy cơ vi phạm tuân thủ, bị kiểm toán và phạt nặng."
+     }
+    },
+    {
+     "title": {
+      "en": "Foreign cloud bills swing with exchange rates and egress fees",
+      "vi": "Hóa đơn đám mây nước ngoài biến động theo tỷ giá và phí truyền dữ liệu ra"
+     },
+     "impact": {
+      "en": "IT budgets become unpredictable and operating costs creep up.",
+      "vi": "Ngân sách CNTT khó dự báo và chi phí vận hành tăng dần."
+     }
+    },
+    {
+     "title": {
+      "en": "High latency when traffic routes to Singapore or Hong Kong",
+      "vi": "Độ trễ cao khi lưu lượng đi qua máy chủ ở Singapore hoặc Hồng Kông"
+     },
+     "impact": {
+      "en": "Real-time financial services respond slower and apps feel sluggish to users.",
+      "vi": "Dịch vụ tài chính thời gian thực phản hồi chậm hơn, ứng dụng trở nên ì ạch với người dùng."
+     }
+    },
+    {
+     "title": {
+      "en": "Remote support with no dedicated local engineers",
+      "vi": "Hỗ trợ từ xa, không có đội kỹ sư tại chỗ chuyên trách"
+     },
+     "impact": {
+      "en": "Incidents last longer, putting revenue and reputation at risk.",
+      "vi": "Sự cố kéo dài hơn, đe dọa doanh thu và uy tín."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "Technical modules",
+    "vi": "Các mô-đun kỹ thuật"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Elastic Compute & GPU Servers",
+      "vi": "Máy chủ linh hoạt & GPU"
      },
      "body": {
-      "en": "Layered caching architecture safeguarding origin servers and reducing origin egress bandwidth by 80%–95%.",
-      "vi": "Kiến trúc lưu đệm nhiều lớp bảo vệ máy chủ gốc, giảm 80%–95% băng thông đầu ra từ máy chủ gốc."
+      "en": "Customize vCPU and RAM, with dedicated GPU servers for AI training.",
+      "vi": "Tùy chỉnh vCPU và RAM, kèm máy chủ GPU riêng cho huấn luyện AI."
+     }
+    },
+    {
+     "title": {
+      "en": "Database as a Service (DBaaS)",
+      "vi": "Cơ sở dữ liệu dạng dịch vụ (DBaaS)"
      },
-     "metric": {
-      "value": "80–95%",
-      "label": {
-       "en": "less origin egress",
-       "vi": "băng thông gốc giảm"
+     "body": {
+      "en": "Fully managed PostgreSQL, MySQL, MariaDB, MongoDB, Redis and MS SQL, with point-in-time recovery.",
+      "vi": "PostgreSQL, MySQL, MariaDB, MongoDB, Redis và MS SQL được quản trị trọn gói, có khôi phục theo thời điểm."
+     }
+    },
+    {
+     "title": {
+      "en": "Managed Kubernetes (K8s) & Containers",
+      "vi": "Kubernetes (K8s) & Container được quản trị"
+     },
+     "body": {
+      "en": "Scale Kubernetes clusters and CI/CD pipelines without running the platform yourself.",
+      "vi": "Mở rộng cụm Kubernetes và quy trình CI/CD mà không phải tự vận hành nền tảng."
+     }
+    },
+    {
+     "title": {
+      "en": "Zero-Trust Virtual Private Cloud (VPC)",
+      "vi": "Mạng riêng ảo Zero-Trust (VPC)"
+     },
+     "body": {
+      "en": "Isolated private networks built on zero-trust principles.",
+      "vi": "Mạng riêng cô lập, xây dựng theo nguyên tắc zero-trust."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banking & Fintech",
+      "vi": "Ngân hàng & Fintech"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Isolated Private Clouds for domestic financial transaction data.",
+      "vi": "Private Cloud cô lập cho dữ liệu giao dịch tài chính trong nước."
+     }
+    },
+    {
+     "name": {
+      "en": "Healthcare & Hospitals",
+      "vi": "Y tế & Bệnh viện"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Securely host Electronic Medical Records (EMR) and Hospital Information Systems (HIS).",
+      "vi": "Lưu trữ an toàn bệnh án điện tử (EMR) và hệ thống thông tin bệnh viện (HIS)."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & Public Sector",
+      "vi": "Cơ quan nhà nước & Khu vực công"
+     },
+     "icon": "building-2",
+     "industry": "government",
+     "body": {
+      "en": "Keep national digital data sovereign, fully on domestic infrastructure.",
+      "vi": "Giữ chủ quyền dữ liệu số quốc gia, toàn bộ trên hạ tầng trong nước."
+     }
+    },
+    {
+     "name": {
+      "en": "Retail & Enterprise ERP",
+      "vi": "Bán lẻ & ERP doanh nghiệp"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Run high-throughput retail chains, warehouse management and e-invoicing.",
+      "vi": "Vận hành chuỗi bán lẻ lưu lượng lớn, quản lý kho và hóa đơn điện tử."
+     }
+    },
+    {
+     "name": {
+      "en": "Software & SaaS Providers",
+      "vi": "Nhà cung cấp phần mềm & SaaS"
+     },
+     "icon": "zap",
+     "industry": null,
+     "body": {
+      "en": "Rapidly scale Kubernetes clusters, CI/CD pipelines and database services.",
+      "vi": "Mở rộng nhanh cụm Kubernetes, quy trình CI/CD và dịch vụ cơ sở dữ liệu."
+     }
+    },
+    {
+     "name": {
+      "en": "Multi-industry conglomerates",
+      "vi": "Tập đoàn đa ngành"
+     },
+     "icon": "building",
+     "industry": null,
+     "body": {
+      "en": "Hybrid cloud linking on-premises data centers with agile cloud.",
+      "vi": "Hybrid cloud kết nối trung tâm dữ liệu tại chỗ với đám mây linh hoạt."
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "email-security",
+  "icon": "mail-check",
+  "name": "Email Security",
+  "tagline": {
+   "en": "Stop phishing before the inbox",
+   "vi": "Chặn phishing trước khi vào hộp thư"
+  },
+  "description": {
+   "en": "Advanced email defense that stops phishing, executive spoofing and ransomware before they reach employee inboxes.",
+   "vi": "Bảo vệ email nâng cao, chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."
+  }
+ },
+ {
+  "id": "ai-legal",
+  "icon": "scale",
+  "name": "AI Legal & Compliance",
+  "tagline": {
+   "en": "AI assistant for contracts & regulation",
+   "vi": "Trợ lý AI cho hợp đồng & quy định"
+  },
+  "description": {
+   "en": "A specialized AI assistant trained on State Bank of Vietnam regulations with 95% accuracy. It automates loan and contract reviews to cut routine workload by 42%, with an on-premise option to ensure total data privacy.",
+   "vi": "Trợ lý AI chuyên biệt được huấn luyện trên quy định của Ngân hàng Nhà nước, độ chính xác 95%. Tự động rà soát hợp đồng tín dụng, giảm 42% khối lượng công việc thường nhật, có tùy chọn triển khai on-premise để đảm bảo riêng tư dữ liệu tuyệt đối."
+  }
+ },
+ {
+  "id": "dlp",
+  "icon": "shield-check",
+  "name": "Data Loss Prevention",
+  "tagline": {
+   "en": "360° insider & leak protection",
+   "vi": "Chống thất thoát dữ liệu 360°"
+  },
+  "description": {
+   "en": "Full 360-degree monitoring across chat apps, personal webmail, and USB drives. It automatically detects sensitive customer records to stop insider fraud, prevent data leaks, and ensure Decree 13 compliance.",
+   "vi": "Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB. Tự động phát hiện hồ sơ khách hàng nhạy cảm để ngăn gian lận nội bộ, rò rỉ dữ liệu và đảm bảo tuân thủ Nghị định 13."
+  }
+ },
+ {
+  "id": "database-security",
+  "icon": "database",
+  "name": "Database Security",
+  "tagline": {
+   "en": "Query-level control & real-time masking",
+   "vi": "Kiểm soát truy vấn & che giấu dữ liệu thời gian thực"
+  },
+  "description": {
+   "en": "Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.",
+   "vi": "Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."
+  }
+ },
+ {
+  "id": "cdn",
+  "icon": "globe",
+  "name": "Content Delivery Network",
+  "tagline": {
+   "en": "Sub-second streaming & acceleration from 2,300+ edge PoPs",
+   "vi": "Phát trực tiếp độ trễ dưới một giây & tăng tốc nội dung từ hơn 2.300 điểm biên"
+  },
+  "description": {
+   "en": "VNCDN is an enterprise Multi-CDN platform integrating AI-driven traffic routing, low-latency live streaming (LL-HLS, WebRTC), and on-demand Video Management Services (VMS). The network dynamically distributes workloads to edge nodes closest to end-users, ensuring flawless media streaming even during peak traffic events exceeding millions of concurrent viewers.",
+   "vi": "VNCDN là nền tảng Multi-CDN doanh nghiệp, tích hợp định tuyến lưu lượng bằng AI, phát trực tiếp độ trễ thấp (LL-HLS, WebRTC) và dịch vụ quản lý video theo yêu cầu (VMS). Mạng lưới tự động phân bổ tải đến các nút biên gần người dùng nhất, giữ cho luồng media luôn mượt ngay cả khi lưu lượng đỉnh vượt hàng triệu người xem đồng thời."
+  },
+  "detail": {
+   "lead": {
+    "en": "Sub-second latency video streaming & content acceleration with 2,300+ global edge PoPs.",
+    "vi": "Phát video độ trễ dưới một giây và tăng tốc nội dung với hơn 2.300 điểm hiện diện (PoP) biên trên toàn cầu."
+   },
+   "stats": [
+    {
+     "value": "2,300+",
+     "label": {
+      "en": "global edge PoPs",
+      "vi": "PoP biên toàn cầu"
+     }
+    },
+    {
+     "value": "146",
+     "label": {
+      "en": "countries with uniform performance",
+      "vi": "quốc gia với hiệu năng đồng nhất"
+     }
+    },
+    {
+     "value": "40%",
+     "label": {
+      "en": "smaller video files, same resolution",
+      "vi": "dung lượng video nhỏ hơn, giữ nguyên độ phân giải"
+     }
+    },
+    {
+     "value": "80–95%",
+     "label": {
+      "en": "less origin egress bandwidth",
+      "vi": "băng thông đầu ra máy chủ gốc được giảm"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "AI-driven traffic routing",
+     "vi": "Định tuyến lưu lượng bằng AI"
+    },
+    {
+     "en": "Low-latency live (LL-HLS, WebRTC)",
+     "vi": "Phát trực tiếp độ trễ thấp (LL-HLS, WebRTC)"
+    },
+    {
+     "en": "Video Management Services (VMS)",
+     "vi": "Dịch vụ quản lý video (VMS)"
+    },
+    {
+     "en": "Multi-CDN",
+     "vi": "Multi-CDN"
+    }
+   ],
+   "pairs": [
+    {
+     "challenge": {
+      "title": {
+       "en": "Slow website and app loading speeds during peak traffic hours",
+       "vi": "Website và ứng dụng tải chậm vào giờ cao điểm"
+      },
+      "impact": {
+       "en": "User churn, disrupted customer experience, and direct drops in conversion and revenue.",
+       "vi": "Người dùng rời bỏ, trải nghiệm khách hàng gián đoạn, tỷ lệ chuyển đổi và doanh thu sụt giảm trực tiếp."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Multi-CDN AI Dynamic Routing",
+       "vi": "Định tuyến động Multi-CDN bằng AI"
+      },
+      "body": {
+       "en": "Continuous AI monitoring of ISP network performance to route users automatically to the fastest performing edge node.",
+       "vi": "AI liên tục giám sát hiệu năng mạng của các nhà mạng (ISP) để tự động định tuyến người dùng đến nút biên nhanh nhất."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Origin server overload when live streaming viewership surges",
+       "vi": "Máy chủ gốc quá tải khi lượng người xem trực tiếp tăng vọt"
+      },
+      "impact": {
+       "en": "Video buffering, severe latency, server crashes, and skyrocketing origin egress bandwidth bills.",
+       "vi": "Video giật lag, độ trễ nghiêm trọng, máy chủ sập và hóa đơn băng thông đầu ra từ máy chủ gốc tăng vọt."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Origin Shield & Smart Caching",
+       "vi": "Origin Shield & lưu đệm thông minh"
+      },
+      "body": {
+       "en": "Layered caching architecture safeguarding origin servers and reducing origin egress bandwidth by 80%–95%.",
+       "vi": "Kiến trúc lưu đệm nhiều lớp bảo vệ máy chủ gốc, giảm 80%–95% băng thông đầu ra từ máy chủ gốc."
+      },
+      "metric": {
+       "value": "80–95%",
+       "label": {
+        "en": "less origin egress",
+        "vi": "băng thông gốc giảm"
+       }
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Lack of multi-device adaptive bitrate streaming for 4K/8K content",
+       "vi": "Thiếu phát video thích ứng tốc độ bit đa thiết bị cho nội dung 4K/8K"
+      },
+      "impact": {
+       "en": "Inability to deliver optimized video compression across varied device screens and network conditions.",
+       "vi": "Không thể cung cấp video nén tối ưu cho nhiều loại màn hình và điều kiện mạng khác nhau."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "On-Demand Transcoding & VMS",
+       "vi": "Chuyển mã theo yêu cầu & VMS"
+      },
+      "body": {
+       "en": "Automated video encoding into optimized formats (H.264, H.265, AV1), saving 40% file size while preserving resolution.",
+       "vi": "Tự động mã hóa video sang các định dạng tối ưu (H.264, H.265, AV1), tiết kiệm 40% dung lượng mà vẫn giữ nguyên độ phân giải."
+      },
+      "metric": {
+       "value": "40%",
+       "label": {
+        "en": "smaller files",
+        "vi": "dung lượng nhỏ hơn"
+       }
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Digital copyright violations and stream hotlinking threats",
+       "vi": "Vi phạm bản quyền số và nguy cơ hotlink luồng phát"
+      },
+      "impact": {
+       "en": "Loss of premium proprietary content assets and unauthorized streaming distribution.",
+       "vi": "Mất tài sản nội dung độc quyền cao cấp và bị phát tán luồng trái phép."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Anti-Piracy & DRM Protection",
+       "vi": "Chống vi phạm bản quyền & bảo vệ DRM"
+      },
+      "body": {
+       "en": "Real-time detection and blocking of unauthorized restreaming with individual digital token signatures per video session.",
+       "vi": "Phát hiện và chặn theo thời gian thực việc phát lại trái phép, với chữ ký token số riêng cho từng phiên xem video."
       }
      }
     }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Lack of multi-device adaptive bitrate streaming for 4K/8K content",
-      "vi": "Thiếu phát video thích ứng tốc độ bit đa thiết bị cho nội dung 4K/8K"
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Broadcasters & OTT Platforms",
+      "vi": "Đài truyền hình & nền tảng OTT"
      },
-     "impact": {
-      "en": "Inability to deliver optimized video compression across varied device screens and network conditions.",
-      "vi": "Không thể cung cấp video nén tối ưu cho nhiều loại màn hình và điều kiện mạng khác nhau."
-     }
-    },
-    "module": {
-     "title": {
-      "en": "On-Demand Transcoding & VMS",
-      "vi": "Chuyển mã theo yêu cầu & VMS"
-     },
+     "icon": "clapperboard",
+     "industry": "media",
      "body": {
-      "en": "Automated video encoding into optimized formats (H.264, H.265, AV1), saving 40% file size while preserving resolution.",
-      "vi": "Tự động mã hóa video sang các định dạng tối ưu (H.264, H.265, AV1), tiết kiệm 40% dung lượng mà vẫn giữ nguyên độ phân giải."
-     },
-     "metric": {
-      "value": "40%",
-      "label": {
-       "en": "smaller files",
-       "vi": "dung lượng nhỏ hơn"
-      }
-     }
-    }
-   },
-   {
-    "challenge": {
-     "title": {
-      "en": "Digital copyright violations and stream hotlinking threats",
-      "vi": "Vi phạm bản quyền số và nguy cơ hotlink luồng phát"
-     },
-     "impact": {
-      "en": "Loss of premium proprietary content assets and unauthorized streaming distribution.",
-      "vi": "Mất tài sản nội dung độc quyền cao cấp và bị phát tán luồng trái phép."
+      "en": "Live broadcast of high-profile sporting and entertainment events for millions of concurrent viewers (VTV, THVL, VieON, FPT Play).",
+      "vi": "Phát sóng trực tiếp các sự kiện thể thao, giải trí lớn cho hàng triệu người xem đồng thời (VTV, THVL, VieON, FPT Play)."
      }
     },
-    "module": {
-     "title": {
-      "en": "Anti-Piracy & DRM Protection",
-      "vi": "Chống vi phạm bản quyền & bảo vệ DRM"
+    {
+     "name": {
+      "en": "Digital Media & Publishers",
+      "vi": "Truyền thông số & nhà xuất bản"
      },
+     "icon": "zap",
+     "industry": "media",
      "body": {
-      "en": "Real-time detection and blocking of unauthorized restreaming with individual digital token signatures per video session.",
-      "vi": "Phát hiện và chặn theo thời gian thực việc phát lại trái phép, với chữ ký token số riêng cho từng phiên xem video."
+      "en": "Instant page loading and high-resolution media delivery for tens of millions of daily readers.",
+      "vi": "Tải trang tức thì và phân phối media độ phân giải cao cho hàng chục triệu độc giả mỗi ngày."
+     }
+    },
+    {
+     "name": {
+      "en": "E-Commerce & Retail Giants",
+      "vi": "Thương mại điện tử & bán lẻ lớn"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Accelerate product catalogs and live video shopping during Mega Sale events.",
+      "vi": "Tăng tốc danh mục sản phẩm và livestream bán hàng trong các đợt Mega Sale."
+     }
+    },
+    {
+     "name": {
+      "en": "Online Gaming & Esports",
+      "vi": "Game trực tuyến & Esports"
+     },
+     "icon": "zap",
+     "industry": null,
+     "body": {
+      "en": "Gigabit-speed game patch delivery and low-latency esports live tournament feeds.",
+      "vi": "Phân phối bản vá game tốc độ gigabit và phát trực tiếp giải đấu esports độ trễ thấp."
+     }
+    },
+    {
+     "name": {
+      "en": "EdTech & Online Learning",
+      "vi": "EdTech & học trực tuyến"
+     },
+     "icon": "graduation-cap",
+     "industry": "education",
+     "body": {
+      "en": "Buffer-free video lectures and interactive streaming across all mobile and desktop devices.",
+      "vi": "Bài giảng video không giật và phát trực tiếp tương tác trên mọi thiết bị di động và máy tính."
+     }
+    },
+    {
+     "name": {
+      "en": "Global Enterprises",
+      "vi": "Doanh nghiệp toàn cầu"
+     },
+     "icon": "globe",
+     "industry": null,
+     "body": {
+      "en": "Seamless cross-border application and document distribution with uniform performance in 146 countries.",
+      "vi": "Phân phối ứng dụng và tài liệu xuyên biên giới liền mạch, hiệu năng đồng nhất tại 146 quốc gia."
      }
     }
-   }
-  ],
-  "audiences": [
-   {
-    "name": {
-     "en": "Broadcasters & OTT Platforms",
-     "vi": "Đài truyền hình & nền tảng OTT"
-    },
-    "icon": "clapperboard",
-    "industry": "media",
-    "body": {
-     "en": "Live broadcast of high-profile sporting and entertainment events for millions of concurrent viewers (VTV, THVL, VieON, FPT Play).",
-     "vi": "Phát sóng trực tiếp các sự kiện thể thao, giải trí lớn cho hàng triệu người xem đồng thời (VTV, THVL, VieON, FPT Play)."
-    }
-   },
-   {
-    "name": {
-     "en": "Digital Media & Publishers",
-     "vi": "Truyền thông số & nhà xuất bản"
-    },
-    "icon": "zap",
-    "industry": "media",
-    "body": {
-     "en": "Instant page loading and high-resolution media delivery for tens of millions of daily readers.",
-     "vi": "Tải trang tức thì và phân phối media độ phân giải cao cho hàng chục triệu độc giả mỗi ngày."
-    }
-   },
-   {
-    "name": {
-     "en": "E-Commerce & Retail Giants",
-     "vi": "Thương mại điện tử & bán lẻ lớn"
-    },
-    "icon": "shopping-bag",
-    "industry": "retail",
-    "body": {
-     "en": "Accelerate product catalogs and live video shopping during Mega Sale events.",
-     "vi": "Tăng tốc danh mục sản phẩm và livestream bán hàng trong các đợt Mega Sale."
-    }
-   },
-   {
-    "name": {
-     "en": "Online Gaming & Esports",
-     "vi": "Game trực tuyến & Esports"
-    },
-    "icon": "zap",
-    "industry": null,
-    "body": {
-     "en": "Gigabit-speed game patch delivery and low-latency esports live tournament feeds.",
-     "vi": "Phân phối bản vá game tốc độ gigabit và phát trực tiếp giải đấu esports độ trễ thấp."
-    }
-   },
-   {
-    "name": {
-     "en": "EdTech & Online Learning",
-     "vi": "EdTech & học trực tuyến"
-    },
-    "icon": "graduation-cap",
-    "industry": "education",
-    "body": {
-     "en": "Buffer-free video lectures and interactive streaming across all mobile and desktop devices.",
-     "vi": "Bài giảng video không giật và phát trực tiếp tương tác trên mọi thiết bị di động và máy tính."
-    }
-   },
-   {
-    "name": {
-     "en": "Global Enterprises",
-     "vi": "Doanh nghiệp toàn cầu"
-    },
-    "icon": "globe",
-    "industry": null,
-    "body": {
-     "en": "Seamless cross-border application and document distribution with uniform performance in 146 countries.",
-     "vi": "Phân phối ứng dụng và tài liệu xuyên biên giới liền mạch, hiệu năng đồng nhất tại 146 quốc gia."
-    }
-   }
-  ]
+   ]
+  }
  }
-}
 ]

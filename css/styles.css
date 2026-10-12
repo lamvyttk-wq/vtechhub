@@ -506,6 +506,16 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
   .mega-list.two { grid-template-columns: 1fr; }
 }
 
+/* ---------- solution detail: problem cards + technical modules ---------- */
+.probs, .mods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.4rem); }
+.prob, .mod { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.1rem; align-items: start; background: #fff; border: 1px solid var(--hair-2); border-radius: 22px; padding: 1.5rem 1.6rem; box-shadow: 0 1px 2px rgba(11,12,17,.04); }
+.prob .num { width: 2.4rem; height: 2.4rem; border-radius: 12px; display: grid; place-items: center; font: 700 .8rem/1 var(--sans); color: var(--red); background: #fdeeec; }
+.mod .num { font: 700 .76rem/1 var(--sans); color: #fff; background: var(--red); border-radius: 8px; padding: .5rem .55rem; margin-top: .15rem; }
+.prob h3, .mod h3 { font: 700 1.05rem/1.45 var(--sans); letter-spacing: -.015em; }
+.prob .impact { margin-top: .5rem; }
+.mod p { margin-top: .4rem; color: var(--ink-2); font-size: .92rem; line-height: 1.7; }
+@media (max-width: 960px) { .probs, .mods { grid-template-columns: 1fr; } }
+
 /* ---------- motion: everything reveals ONCE, on a timer, when it enters the viewport. Nothing is scroll-linked. ---------- */
 .hero-in { animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(24px) scale(.985); } to { opacity: 1; transform: none; } }

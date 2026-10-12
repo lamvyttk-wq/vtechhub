@@ -280,6 +280,7 @@
    "vi": "Không tìm thấy giải pháp"
   },
   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
+  "lnModules": { "en": "Architecture", "vi": "Kiến trúc" },
   "lnSolve": { "en": "Challenges", "vi": "Thách thức" },
   "lnWho": { "en": "Use cases", "vi": "Ứng dụng" },
   "lnStories": { "en": "In the stories", "vi": "Trong các câu chuyện" },

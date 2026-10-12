@@ -320,9 +320,9 @@ function solutionPage() {
   const stories = uses.length ? `<section class="sec" id="stories" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>` : '';
 
   // Solutions with rich detail follow a buyer's path: what is it -> proof -> which problem is mine -> is it for people like me -> stories -> try it -> talk.
-  let lnav = '', stats = '', overview = '', solve = '', who = '', poc = '';
+  let lnav = '', stats = '', overview = '', solve = '', modules = '', who = '', poc = '';
   if (dt) {
-    const links = [['overview', 'sol.lnOverview'], ['solve', 'sol.lnSolve'], ['who', 'sol.lnWho'], ...(uses.length ? [['stories', 'sol.lnStories']] : [])]
+    const links = [['overview', 'sol.lnOverview'], ['solve', 'sol.lnSolve'], ...(dt.modules ? [['modules', 'sol.lnModules']] : []), ['who', 'sol.lnWho'], ...(uses.length ? [['stories', 'sol.lnStories']] : [])]
       .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
     lnav = `<nav class="lnav" id="lnav" aria-label="${esc(s.name)}"><div class="wrap"><span class="lnav-t">${esc(s.name)}</span><div class="lnav-l">${links}</div>
       <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>`;
@@ -337,7 +337,14 @@ function solutionPage() {
         <div class="pair-a glass"><span class="num">${roman(k + 1)}</span><div><span class="tag">${u('sol.answer')}</span><h4>${esc(t(m.title))}</h4><p>${esc(t(m.body))}</p>
           ${m.metric ? `<div class="metric sm"><strong>${esc(m.metric.value)}</strong><span>${esc(t(m.metric.label))}</span></div>` : ''}</div></div></article>`;
     }).join('');
-    solve = `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.solveKicker')}</span><h2 class="h2 rv">${u('sol.solveTitle')}</h2><p class="lede rv">${u('sol.solveP')}</p></div><div class="pairs">${pairs}</div></div></section>`;
+    const sk = dt.problemsKicker || { en: u('sol.solveKicker') }, st = dt.problemsTitle;
+    const probs = (dt.problems || []).map((p, k) => `<article class="prob rv"><span class="num">${roman(k + 1)}</span><div><h3>${esc(t(p.title))}</h3><p class="impact"><b>${u('sol.impact')}</b> ${esc(t(p.impact))}</p></div></article>`).join('');
+    solve = dt.problems
+      ? `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${esc(t(sk))}</span><h2 class="h2 rv">${esc(t(st))}</h2></div><div class="probs">${probs}</div></div></section>`
+      : `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.solveKicker')}</span><h2 class="h2 rv">${u('sol.solveTitle')}</h2><p class="lede rv">${u('sol.solveP')}</p></div><div class="pairs">${pairs}</div></div></section>`;
+
+    const mods = (dt.modules || []).map((m, k) => `<article class="mod rv"><span class="num">${roman(k + 1)}</span><div><h3>${esc(t(m.title))}</h3><p>${esc(t(m.body))}</p></div></article>`).join('');
+    modules = dt.modules ? `<section class="sec" id="modules" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${esc(t(dt.modulesKicker))}</span><h2 class="h2 rv">${esc(t(dt.modulesTitle))}</h2></div><div class="mods">${mods}</div></div></section>` : '';
     const aud = (dt.audiences || []).map((a) => {
       const ind = a.industry && industryOf(a.industry);
       const inner = `${ic(a.icon || 'box', 'lead')}<h3>${esc(t(a.name))}</h3><p>${esc(t(a.body))}</p>${ind ? `<div class="foot"><span>${u('sol.seeStory')}</span>${ic('arrow-up-right')}</div>` : ''}`;
@@ -351,11 +358,11 @@ function solutionPage() {
   ${lnav}
   <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
-    <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(dt ? dt.lead : s.description))}</p>
+    <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.title ? t(s.title) : s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(dt ? dt.lead : s.description))}</p>
     <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
       ${dt ? `<a class="btn btn-line" href="#solve" data-scroll="#solve">${ic('arrow-down')} ${u('sol.seeSolve')}</a>` : ''}</div></div>
     <div class="hero-art hero-in" style="animation-delay:.2s">${aura(photo(state.images.bySolution?.[id] || 'conference', { w: 1200, ratio: '4 / 3', eager: true, fb: art('tile', s.icon, 's') }))}</div></div>${stats}</div></section>
-  ${overview}${solve}${who}${stories}${poc}
+  ${overview}${solve}${modules}${who}${stories}${poc}
   ${experts()}
   ${contact()}`;
 }
