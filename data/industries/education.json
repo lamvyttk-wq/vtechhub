@@ -3,7 +3,7 @@
   "name": {"en": "Education", "vi": "Giáo dục"},
   "title": {"en": "Education: Universities, K-12 Groups and E-learning", "vi": "Giáo dục: Đại học, Hệ thống phổ thông và Đào tạo trực tuyến"},
   "tagline": {"en": "Sovereign VCLOUD hosting, email defense, Data Loss Prevention and Database Security for campuses that cannot afford downtime or a student-data leak.", "vi": "Hạ tầng VCLOUD chủ quyền, bảo mật email, chống thất thoát dữ liệu và bảo mật cơ sở dữ liệu cho các cơ sở đào tạo không thể gián đoạn hay lộ dữ liệu người học."},
-  "bundle": ["email-security", "dlp", "database-security"],
+  "bundle":["vcloud","email-security","dlp","database-security"],
   "regulations": ["Decree 13", "Law on Cybersecurity", "MOET"],
   "challengesIntro": {
     "en": "Schools and universities now run admissions, teaching, exams and finance on digital platforms, while holding the personal data of large numbers of students, many of them minors. Demand arrives in sharp peaks, budgets are tight and IT teams are small, yet an outage during enrollment or exams, or a leak of student records, becomes a public issue within hours.",
@@ -20,7 +20,7 @@
           "vi": "Hạn nộp hồ sơ, đăng ký học phần và thi trực tuyến khiến lưu lượng tăng vọt trong vài giờ so với ngày thường. Phòng máy chủ tại chỗ được thiết kế cho ngày bình thường sẽ chậm hoặc sập đúng lúc hàng nghìn sinh viên và phụ huynh đang theo dõi."
         }
       },
-      "solutions": ["email-security"],
+      "solutions":["vcloud"],
       "response": {
         "title": {"en": "Run critical academic systems on VCLOUD", "vi": "Đưa hệ thống học vụ trọng yếu lên VCLOUD"},
         "body": {
@@ -116,7 +116,7 @@
           "vi": "Ngân sách chủ yếu từ học phí khó có dư địa cho từng công cụ an ninh riêng lẻ hay xây lại trung tâm dữ liệu. Trong khi đó hội đồng trường hỏi dữ liệu người học lưu ở đâu, ai truy cập được, và một mớ nhà cung cấp rời rạc khiến câu trả lời khó thống nhất."
         }
       },
-      "solutions": ["email-security", "dlp", "database-security"],
+      "solutions":["vcloud","email-security","dlp","database-security"],
       "response": {
         "title": {"en": "One integrated, sovereign stack instead of scattered tools", "vi": "Một bộ giải pháp tích hợp, chủ quyền thay vì công cụ rời rạc"},
         "body": {

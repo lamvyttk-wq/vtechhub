@@ -3,7 +3,7 @@
   "name":{"en":"Media & Digital Content","vi":"Truyền thông & Nội dung số"},
   "title":{"en":"Media & Digital Content: News, Streaming, Publishing and Gaming","vi":"Truyền thông & Nội dung số: Báo điện tử, Streaming, Xuất bản và Game"},
   "tagline":{"en":"CDN and Anti-DDoS/WAF for live events, Email Security on VCLOUD, Data Loss Prevention for content and subscriber data, and AI Legal for contract review.","vi":"CDN và Anti-DDoS/WAF cho sự kiện trực tiếp, Email Security trên VCLOUD, Chống thất thoát dữ liệu cho nội dung và dữ liệu thuê bao, cùng AI Legal rà soát hợp đồng."},
-  "bundle":["cdn","anti-ddos-waf","email-security","dlp","ai-legal"],
+  "bundle":["cdn","anti-ddos-waf","vcloud","email-security","dlp","ai-legal"],
   "regulations":["Decree 13","Law on Cybersecurity","Intellectual Property Law"],
   "challengesIntro":{"en":"For media businesses, the audience arrives all at once: a live match, a breaking story or a premiere can multiply traffic within minutes, and attackers know it. Meanwhile unreleased content, editorial accounts and subscriber data are valuable targets. Leadership must keep the platform fast, trusted and compliant at the moments that matter most.","vi":"Với doanh nghiệp truyền thông, khán giả thường đổ về cùng một lúc: một trận đấu trực tiếp, một tin nóng hay một buổi ra mắt có thể làm lưu lượng tăng vọt chỉ trong vài phút, và tin tặc cũng biết điều đó. Trong khi đó, nội dung chưa công bố, tài khoản biên tập và dữ liệu thuê bao là mục tiêu giá trị. Ban lãnh đạo cần giữ nền tảng nhanh, đáng tin và tuân thủ đúng vào những thời điểm quan trọng nhất."},
   "chapters":[
@@ -24,7 +24,7 @@
     {"id":"takeover","persona":{"en":"Editor-in-Chief / Head of IT Security","vi":"Tổng biên tập / Trưởng bộ phận An ninh thông tin"},
      "challenge":{"title":{"en":"Site Defacement and Account Takeover","vi":"Deface website và chiếm quyền tài khoản"},
        "body":{"en":"A defaced homepage or a hijacked editorial or social account can publish false content under your brand within minutes. Attackers often get in through a phishing email to a journalist or admin, or through a web application flaw.","vi":"Trang chủ bị deface hay tài khoản biên tập, mạng xã hội bị chiếm quyền có thể đăng tin sai lệch dưới tên thương hiệu của bạn chỉ trong vài phút. Tin tặc thường vào qua email phishing gửi phóng viên, quản trị viên, hoặc qua lỗ hổng ứng dụng web."}},
-     "solutions":["anti-ddos-waf","email-security"],
+     "solutions":["anti-ddos-waf","email-security","vcloud"],
      "response":{"title":{"en":"Protect the front door and the inbox","vi":"Bảo vệ cả cổng web và hộp thư"},
        "body":{"en":"A web application firewall blocks common attacks on the CMS and portal, while email defense on VCLOUD stops the phishing that steals editorial credentials.","vi":"Tường lửa ứng dụng web chặn các đòn tấn công phổ biến vào CMS và cổng thông tin, còn bảo vệ email trên VCLOUD chặn phishing đánh cắp thông tin đăng nhập của bộ phận biên tập."},
        "points":[{"en":"WAF shields the CMS and portal from web attacks","vi":"WAF che chắn CMS và cổng thông tin khỏi tấn công web"},{"en":"Blocks phishing aimed at newsroom accounts","vi":"Chặn phishing nhắm vào tài khoản tòa soạn"},{"en":"Hosting inside Vietnam on VCLOUD","vi":"Lưu trữ tại Việt Nam trên VCLOUD"}]}},
@@ -38,7 +38,7 @@
     {"id":"data-legal","persona":{"en":"CFO / Head of Legal & Data Protection","vi":"Giám đốc Tài chính / Trưởng bộ phận Pháp chế & Bảo vệ dữ liệu"},
      "challenge":{"title":{"en":"Subscriber Data and Copyright Contract Load","vi":"Dữ liệu thuê bao và khối lượng hợp đồng bản quyền"},
        "body":{"en":"Subscriptions, payments and viewing habits make subscriber data subject to Decree 13, while licensing, talent and distribution contracts pile up for legal to review. Slow reviews delay deals, and a data incident hurts trust and finances.","vi":"Đăng ký, thanh toán và thói quen xem khiến dữ liệu thuê bao thuộc phạm vi Nghị định 13, trong khi hợp đồng bản quyền, nghệ sĩ và phát hành dồn về pháp chế. Rà soát chậm làm trễ thương vụ, còn sự cố dữ liệu ảnh hưởng đến niềm tin và tài chính."}},
-     "solutions":["ai-legal","dlp","email-security"],
+     "solutions":["ai-legal","dlp","vcloud"],
      "response":{"title":{"en":"Faster contract review, safer subscriber data","vi":"Rà soát hợp đồng nhanh hơn, dữ liệu thuê bao an toàn hơn"},
        "body":{"en":"An AI assistant supports first-pass contract review with an on-premise option, while DLP and sovereign VCLOUD hosting help keep subscriber data under control inside Vietnam.","vi":"Trợ lý AI hỗ trợ rà soát hợp đồng bước đầu, có tùy chọn on-premise; DLP và lưu trữ chủ quyền trên VCLOUD giúp kiểm soát dữ liệu thuê bao ngay tại Việt Nam."},
        "points":[{"en":"AI-assisted first-pass contract review","vi":"AI hỗ trợ rà soát hợp đồng bước đầu"},{"en":"On-premise option keeps documents private","vi":"Tùy chọn on-premise giữ tài liệu riêng tư"},{"en":"Detects subscriber records leaving the company","vi":"Phát hiện hồ sơ thuê bao rời khỏi doanh nghiệp"}]}}

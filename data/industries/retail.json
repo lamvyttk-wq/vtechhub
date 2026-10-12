@@ -3,7 +3,7 @@
   "name":{"en":"Retail & E-Commerce","vi":"Bán lẻ & Thương mại điện tử"},
   "title":{"en":"Retail & E-Commerce","vi":"Bán lẻ & Thương mại điện tử"},
   "tagline":{"en":"Anti-DDoS & CDN, Web Application Firewall, sovereign VCLOUD, Data Loss Prevention and AI Legal & Compliance for always-on selling.","vi":"Chống DDoS & CDN, tường lửa ứng dụng web, VCLOUD chủ quyền, chống thất thoát dữ liệu và AI Legal & Compliance để bán hàng không gián đoạn."},
-  "bundle":["anti-ddos-cdn","web-waf","email-security","dlp","ai-legal"],
+  "bundle":["anti-ddos-cdn","web-waf","vcloud","email-security","dlp","ai-legal"],
   "regulations":["Decree 13","PCI DSS","Law on Cybersecurity","Law on Consumer Protection"],
   "challengesIntro":{"en":"Retail revenue now concentrates into a few high-stakes moments: flash sales, double-date campaigns and holiday peaks. In those hours a slow page, a failed checkout or a leaked customer list turns directly into lost revenue and lost trust, while attackers and bots target exactly the same moments.","vi":"Doanh thu bán lẻ ngày càng dồn vào vài thời điểm quyết định: flash sale, các đợt khuyến mãi ngày đôi và mùa lễ. Chỉ cần trang web chậm, thanh toán lỗi hoặc danh sách khách hàng bị lộ trong những giờ đó là mất doanh thu và niềm tin ngay lập tức, trong khi tin tặc và bot cũng nhắm đúng vào các thời điểm này."},
   "chapters":[
@@ -31,7 +31,7 @@
     {"id":"payment-cloud","persona":{"en":"CFO / CIO","vi":"Giám đốc Tài chính / Giám đốc CNTT"},
      "challenge":{"title":{"en":"Payment Data, PCI DSS and Fragile Hosting","vi":"Dữ liệu thanh toán, PCI DSS và hạ tầng thiếu vững chắc"},
        "body":{"en":"Card and payment data raises PCI DSS obligations, and phishing mail aimed at finance and procurement teams is a standard route to fraudulent supplier payments. Hosting that cannot scale or keep data in-country adds cost and audit risk.","vi":"Dữ liệu thẻ và thanh toán kéo theo nghĩa vụ PCI DSS, còn email phishing nhắm vào kế toán, mua hàng là đường quen thuộc dẫn tới chuyển tiền nhầm cho nhà cung cấp giả mạo. Hạ tầng không co giãn được hoặc không giữ dữ liệu trong nước làm tăng chi phí và rủi ro kiểm toán."}},
-     "solutions":["email-security"],
+     "solutions":["vcloud","email-security"],
      "response":{"title":{"en":"Sovereign cloud with a protected inbox","vi":"Đám mây chủ quyền cùng hộp thư được bảo vệ"},
        "body":{"en":"VCLOUD hosts commerce workloads with data kept inside Vietnam, and advanced email defense filters phishing, spoofed supplier invoices and ransomware before they reach your teams.","vi":"VCLOUD lưu trữ hệ thống thương mại với dữ liệu nằm tại Việt Nam, còn bảo vệ email nâng cao lọc phishing, hóa đơn nhà cung cấp giả mạo và ransomware trước khi tới nhân viên."},
        "points":[{"en":"Sovereign hosting inside Vietnam","vi":"Lưu trữ chủ quyền ngay tại Việt Nam"},{"en":"Filters fake supplier and payment requests","vi":"Lọc yêu cầu thanh toán, nhà cung cấp giả"},{"en":"Stops ransomware at the mail gateway","vi":"Ngăn ransomware ngay tại cổng email"}]}},

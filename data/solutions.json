@@ -1,7 +1,10 @@
 [
-  {"id":"email-security","icon":"mail-check","name":"VCLOUD & Email Security",
-   "tagline":{"en":"Sovereign cloud + email defense","vi":"Đám mây chủ quyền + bảo mật email"},
-   "description":{"en":"Secure cloud hosting that keeps your financial data inside Vietnam, paired with advanced email defense that stops phishing, executive spoofing, and ransomware before they reach employee inboxes.","vi":"Hạ tầng đám mây bảo mật giữ dữ liệu tài chính của bạn ngay tại Việt Nam, kết hợp bảo vệ email nâng cao chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."}},
+  {"id":"vcloud","icon":"cloud","name":"VCLOUD",
+   "tagline":{"en":"Sovereign cloud inside Vietnam","vi":"Đám mây chủ quyền tại Việt Nam"},
+   "description":{"en":"Secure cloud hosting that keeps your data and business-critical applications inside Vietnam, on infrastructure you can plan around.","vi":"Hạ tầng đám mây bảo mật, giữ dữ liệu và các ứng dụng trọng yếu của bạn ngay tại Việt Nam, trên nền tảng bạn có thể chủ động lập kế hoạch."}},
+  {"id":"email-security","icon":"mail-check","name":"Email Security",
+   "tagline":{"en":"Stop phishing before the inbox","vi":"Chặn phishing trước khi vào hộp thư"},
+   "description":{"en":"Advanced email defense that stops phishing, executive spoofing and ransomware before they reach employee inboxes.","vi":"Bảo vệ email nâng cao, chặn phishing, giả mạo lãnh đạo và ransomware trước khi chúng đến hộp thư nhân viên."}},
   {"id":"ai-legal","icon":"scale","name":"AI Legal & Compliance",
    "tagline":{"en":"AI assistant for contracts & regulation","vi":"Trợ lý AI cho hợp đồng & quy định"},
    "description":{"en":"A specialized AI assistant trained on State Bank of Vietnam regulations with 95% accuracy. It automates loan and contract reviews to cut routine workload by 42%, with an on-premise option to ensure total data privacy.","vi":"Trợ lý AI chuyên biệt được huấn luyện trên quy định của Ngân hàng Nhà nước, độ chính xác 95%. Tự động rà soát hợp đồng tín dụng, giảm 42% khối lượng công việc thường nhật, có tùy chọn triển khai on-premise để đảm bảo riêng tư dữ liệu tuyệt đối."}},

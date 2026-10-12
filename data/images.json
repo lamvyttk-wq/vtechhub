@@ -111,7 +111,8 @@
     "dlp": "dlp",
     "database-security": "circuit",
     "ai-legal": "training",
-    "cdn": "cdn"
+    "cdn": "cdn",
+    "vcloud": "datacenter"
   },
   "circuit": {
     "icon": "database",
