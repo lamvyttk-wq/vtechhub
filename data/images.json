@@ -1,0 +1,78 @@
+{
+  "_note": "Photo slots. `src` is tried in order; if every candidate fails the UI shows an on-brand illustrated fallback, never a broken image. {w} = target width. Run `node tools/verify-images.mjs` from a machine with internet to see which candidates resolve. Replace any `photo-...` id with one you have checked on unsplash.com (Unsplash License).",
+  "skyline": {
+    "icon": "building-2",
+    "src": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w={w}&q=80",
+      "https://unsplash.com/photos/MXVVElrij7k/download?force=true&w={w}",
+      "https://unsplash.com/photos/fIC7qz4HNqI/download?force=true&w={w}"
+    ],
+    "alt": { "en": "Low-angle view of glass skyscrapers against the sky", "vi": "Góc nhìn từ dưới lên của các tòa nhà kính chọc trời giữa bầu trời" },
+    "caption": { "en": "Institution-grade infrastructure", "vi": "Hạ tầng chuẩn tổ chức" }
+  },
+  "collab": {
+    "icon": "users",
+    "src": [
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w={w}&q=80",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w={w}&q=80"
+    ],
+    "alt": { "en": "Consultants and engineers collaborating at their workstations", "vi": "Chuyên gia tư vấn và kỹ sư cùng làm việc tại trạm làm việc" },
+    "caption": { "en": "Consultants and engineers, side by side", "vi": "Chuyên gia và kỹ sư, cùng một đội" }
+  },
+  "dashboard": {
+    "icon": "zap",
+    "src": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w={w}&q=80"
+    ],
+    "alt": { "en": "Live analytics dashboard on a laptop screen", "vi": "Bảng điều khiển phân tích thời gian thực trên màn hình laptop" },
+    "caption": { "en": "Live analytics, one shared view", "vi": "Phân tích thời gian thực, một góc nhìn chung" }
+  },
+  "datacenter": {
+    "icon": "database",
+    "src": [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w={w}&q=80"
+    ],
+    "alt": { "en": "Rows of server racks inside a data centre", "vi": "Các dãy tủ máy chủ trong trung tâm dữ liệu" },
+    "caption": { "en": "Resilient infrastructure behind every service", "vi": "Hạ tầng bền vững phía sau mọi dịch vụ" }
+  },
+  "conference": {
+    "icon": "message-square",
+    "src": [
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w={w}&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w={w}&q=80"
+    ],
+    "alt": { "en": "Executives in a modern conference setting", "vi": "Lãnh đạo doanh nghiệp trong không gian hội nghị hiện đại" },
+    "caption": { "en": "Leadership aligned, from boardroom to rollout", "vi": "Lãnh đạo đồng thuận, từ phòng họp đến triển khai" }
+  },
+  "controlroom": {
+    "icon": "shield-check",
+    "src": [
+      "https://unsplash.com/photos/wrx2tdzzgDw/download?force=true&w={w}"
+    ],
+    "alt": { "en": "A control room with many screens and monitors", "vi": "Phòng điều hành với nhiều màn hình giám sát" },
+    "caption": { "en": "Always-on monitoring and response", "vi": "Giám sát và ứng phó liên tục" }
+  },
+  "learning": {
+    "icon": "graduation-cap",
+    "src": [
+      "https://unsplash.com/photos/kp7qkHTgSKc/download?force=true&w={w}"
+    ],
+    "alt": { "en": "Students working on laptops in a university lecture hall", "vi": "Sinh viên làm việc với laptop trong giảng đường đại học" },
+    "caption": { "en": "Digital learning at campus scale", "vi": "Học tập số ở quy mô trường đại học" }
+  },
+  "port": {
+    "icon": "truck",
+    "src": [
+      "https://unsplash.com/photos/ip0yX8W1veE/download?force=true&w={w}"
+    ],
+    "alt": { "en": "Busy shipping port with cranes and cargo containers", "vi": "Cảng biển nhộn nhịp với cần cẩu và container hàng hóa" },
+    "caption": { "en": "Supply chains that never stop", "vi": "Chuỗi cung ứng không ngừng nghỉ" }
+  },
+  "byIndustry": {
+    "bfsi": "dashboard", "government": "controlroom", "healthcare": "collab", "retail": "dashboard",
+    "manufacturing": "datacenter", "logistics": "port", "media": "controlroom", "education": "learning"
+  },
+  "bySolution": {
+    "email-security": "collab", "dlp": "controlroom", "database-security": "datacenter", "ai-legal": "conference", "cdn": "datacenter"
+  }
+}

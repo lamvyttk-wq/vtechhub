@@ -364,13 +364,15 @@ div.tile { cursor: default; }
 .ind-hero .display { max-width: 20ch; }
 .ind-cta { display: grid; gap: 1.6rem; justify-items: start; padding-bottom: .4rem; }
 .ind-cta .chips { margin: 0; }
-.banner { margin-top: clamp(2rem, 4vw, 3.4rem); border-radius: 32px; overflow: hidden; aspect-ratio: 1200 / 380; min-height: 230px; box-shadow: 0 0 0 1px rgba(11,12,17,.05), 0 50px 90px -40px rgba(227,47,30,.35), 0 30px 60px -30px rgba(80,90,200,.3); }
-.banner .art { width: 100%; height: 100%; display: block; }
+.banner { margin-top: clamp(2rem, 4vw, 3.4rem); }
+.banner .ph { min-height: 230px; }
+.ph-fb .banner-art { width: 100%; height: 100%; display: block; }
 .flt { animation: floaty 7s ease-in-out infinite; }
 .flt.f2 { animation-delay: -2s; animation-duration: 8s; } .flt.f3 { animation-delay: -4s; } .flt.f4 { animation-delay: -1s; animation-duration: 9s; }
 @keyframes floaty { 50% { transform: translateY(-10px); } }
 .ov-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
-.ov-art { border-radius: 32px; overflow: hidden; padding: clamp(1rem, 2vw, 2rem); background: linear-gradient(150deg, #fff1ee, #eef0fd); box-shadow: 0 0 0 1px rgba(11,12,17,.05), 0 40px 70px -40px rgba(48,34,70,.35); }
+.ov-art { padding: 8px; }
+.ov-art .ph-fb .art, .hero-art .ph-fb .art { width: 100%; height: 100%; display: block; object-fit: cover; }
 .ov-copy { display: grid; gap: 1.2rem; }
 .ov-copy .lede { max-width: 56ch; }
 .statrow { margin-top: clamp(2.6rem, 5vw, 4.4rem); }
@@ -408,9 +410,43 @@ div.tile { cursor: default; }
   .sc { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
   .sc-body p { -webkit-line-clamp: 5; }
   .ocs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .banner { border-radius: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .flt { animation: none; } }
+
+/* ---------- photography: radiant aura frame, image on resilient fallback, compact KPI cards ---------- */
+/* equivalent of: absolute -inset-2 rounded-3xl bg-gradient-to-r from-amber-500/25 via-red-500/15 to-blue-600/25 blur-2xl -z-10 opacity-75 */
+.aura { position: relative; isolation: isolate; }
+.aura::before { content: ""; position: absolute; inset: -8px; border-radius: 24px; background: linear-gradient(to right, rgba(245,158,11,.25), rgba(239,68,68,.15), rgba(37,99,235,.25)); filter: blur(40px); opacity: .75; z-index: -1; pointer-events: none; }
+/* equivalent of: relative overflow-hidden rounded-2xl border border-slate-200/80 shadow-xl, object-cover */
+.ph { position: relative; overflow: hidden; border-radius: 16px; border: 1px solid rgba(226,232,240,.8); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1); margin: 0; background: #eef0fb; }
+.ph-fb { position: absolute; inset: 0; background: radial-gradient(60% 80% at 12% 18%, #ffd9d2 0, transparent 60%), radial-gradient(60% 80% at 92% 86%, #cfd8f7 0, transparent 60%), linear-gradient(135deg, #fff6f4, #eef0fd); display: grid; place-items: center; }
+.ph-fb > .art { position: absolute; inset: 0; }
+.ph-pat { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ph-fb .ph-ic { position: relative; width: clamp(2.6rem, 8%, 4.4rem); height: auto; aspect-ratio: 1; color: var(--red); opacity: .5; stroke-width: 1.1; }
+.ph-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; }
+.ph.ok .ph-img { opacity: 1; }
+.ph figcaption { position: absolute; left: 14px; bottom: 14px; display: none; align-items: center; gap: .5rem; padding: .5rem .85rem; border-radius: 999px; font: 600 .74rem/1 var(--sans); color: var(--ink); background: rgba(255,255,255,.78); -webkit-backdrop-filter: blur(14px) saturate(1.6); backdrop-filter: blur(14px) saturate(1.6); box-shadow: 0 6px 16px -8px rgba(11,12,17,.35); }
+.ph figcaption .ic { color: var(--red); }
+.ph.ok figcaption { display: inline-flex; }
+.ph-wide { min-height: 220px; }
+.alliance { padding: 0 0 clamp(2.5rem, 5vw, 4.5rem); }
+.al-frame { margin-top: 0; }
+.al-card { position: absolute; z-index: 3; left: clamp(14px, 3vw, 36px); bottom: clamp(14px, 3vw, 36px); max-width: min(30rem, calc(100% - 28px)); padding: clamp(1.1rem, 2.2vw, 1.8rem); border-radius: 22px; display: grid; gap: .6rem; }
+.al-card h2 { font: 700 clamp(1.15rem, 2vw, 1.7rem)/1.3 var(--sans); letter-spacing: -.025em; text-wrap: balance; }
+.al-card p { color: var(--ink-2); font-size: .92rem; line-height: 1.55; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.7rem, 1.6vw, 1.1rem); margin-top: clamp(1.6rem, 3vw, 2.4rem); }
+.kpis > div { background: #fff; border: 1px solid var(--hair-2); border-radius: 18px; padding: 1.1rem 1.3rem; display: grid; gap: .25rem; box-shadow: 0 1px 2px rgba(11,12,17,.04); }
+.kpis strong { font: 700 clamp(1.6rem, 2.6vw, 2.2rem)/1.1 var(--sans); letter-spacing: -.03em; color: var(--red); font-variant-numeric: lining-nums; }
+.kpis span { font-size: .8rem; line-height: 1.45; color: var(--ink-2); }
+.ov-line { font: 600 clamp(1.1rem, 1.7vw, 1.4rem)/1.5 var(--sans); letter-spacing: -.02em; max-width: 34ch; }
+.ov-line.sub { font-weight: 400; color: var(--ink-2); font-size: 1rem; margin-top: -.5rem; }
+.ov-copy .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .8rem; }
+@media (max-width: 960px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .al-card { position: relative; left: auto; bottom: auto; max-width: none; margin: -1.4rem 12px 0; z-index: 3; }
+  .ph-wide { min-height: 190px; }
+}
+@media (prefers-reduced-motion: reduce) { .ph-img { transition: none; } }
 
 /* ---------- motion: everything reveals ONCE, on a timer, when it enters the viewport. Nothing is scroll-linked. ---------- */
 .hero-in { animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both; }

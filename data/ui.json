@@ -126,6 +126,11 @@
    "en": "Every page pairs a real challenge with the solution that answers it.",
    "vi": "Mỗi trang ghép một thách thức thực tế với giải pháp tương ứng."
   },
+  "allKicker": { "en": "Strategic alliance", "vi": "Liên minh chiến lược" },
+  "allTitle": { "en": "One alliance, {n} industries, one accountable partner", "vi": "Một liên minh, {n} ngành, một đối tác chịu trách nhiệm" },
+  "allP": { "en": "Packaged vertical solutions, one team behind them.", "vi": "Giải pháp đóng gói theo ngành, một đội ngũ phụ trách." },
+  "kIndustries": { "en": "industries served", "vi": "ngành được phục vụ" },
+  "kSolutions": { "en": "packaged solutions", "vi": "giải pháp đóng gói" },
   "indLead": {
    "en": "Eight sectors. Each one opens as a story.",
    "vi": "Tám lĩnh vực. Mỗi lĩnh vực mở ra như một câu chuyện."
@@ -150,8 +155,8 @@
   },
   "ovKicker": { "en": "Overview", "vi": "Tổng quan" },
   "ovTitle": { "en": "One partner, from problem to proof", "vi": "Một đối tác, từ vấn đề đến bằng chứng" },
-  "ovP1": { "en": "V-Tech Foundry brings together {n} integrated solutions for {name}: {list}. Each one is packaged around a challenge your teams already recognise.", "vi": "V-Tech Foundry kết hợp {n} giải pháp tích hợp cho ngành {name}: {list}. Mỗi giải pháp được đóng gói quanh một thách thức mà đội ngũ của bạn đã quen thuộc." },
-  "ovP2": { "en": "We start from the challenge, not the product. Each story pairs a real situation with the packaged solution that answers it, and you can validate it in a dedicated PoC environment within 14 business days.", "vi": "Chúng tôi bắt đầu từ thách thức, không phải từ sản phẩm. Mỗi câu chuyện ghép một tình huống thật với gói giải pháp tương ứng, và bạn có thể kiểm chứng trong môi trường PoC riêng trong vòng 14 ngày làm việc." },
+  "ovP1": { "en": "{n} integrated solutions, packaged for {name}.", "vi": "{n} giải pháp tích hợp, đóng gói cho ngành {name}." },
+  "ovP2": { "en": "From challenge to a working PoC in 14 business days.", "vi": "Từ thách thức đến PoC vận hành được trong 14 ngày làm việc." },
   "stChallenges": { "en": "key challenges addressed", "vi": "thách thức chính được giải quyết" },
   "stSolutions": { "en": "integrated solutions in the package", "vi": "giải pháp tích hợp trong gói" },
   "stPoc": { "en": "business days to a dedicated PoC environment", "vi": "ngày làm việc để có môi trường PoC riêng" },

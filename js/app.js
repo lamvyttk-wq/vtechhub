@@ -16,7 +16,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 const state = {
   lang: store.get('vth-lang') || 'en',
-  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: []
+  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: [], images: {}
 };
 const t = (o) => (typeof o === 'string' ? o : (o && (o[state.lang] ?? o.en)) ?? '');
 const ui = (path) => path.split('.').reduce((o, k) => o?.[k], state.ui);
@@ -50,11 +50,12 @@ async function loadData() {
   let raw = window.__DATA__;
   if (!raw) {
     const j = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
-    const [uiData, solutions, experts, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
-    raw = { ui: uiData, solutions, experts, industries: inds.filter(Boolean) };
+    const [uiData, solutions, experts, images, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), j('data/images.json').catch(() => ({})), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
+    raw = { ui: uiData, solutions, experts, images, industries: inds.filter(Boolean) };
   }
   state.ui = raw.ui;
   state.experts = raw.experts || [];
+  state.images = raw.images || {};
   state.industries = [...raw.industries].sort((a, b) => a.order - b.order);
   raw.solutions.forEach((s) => state.solutions.set(s.id, s));
   state.industries.forEach((i) => (i.newSolutions || []).forEach((s) => { if (!state.solutions.has(s.id)) state.solutions.set(s.id, s); }));
@@ -134,6 +135,33 @@ function footer() {
 const art = (kind, icon, id) => scene(kind, ICONS[icon] || ICONS.box, id);
 const fill = (str, o) => str.replace(/\{(\w+)\}/g, (_, k) => o[k] ?? '');
 
+/* ---------------------------------------------------------------- photography (Unsplash, with resilient fallback)
+   Every photo sits on top of an always-rendered fallback layer (mesh gradient + pattern + icon, or a supplied illustration).
+   The <img> stays transparent until it has really loaded, tries the next candidate URL on error, and is removed if all fail,
+   so a broken-image icon or an empty/black frame can never show. */
+const fbArt = (icon) => `<svg class="ph-pat" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="phg" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#1d2140" stroke-opacity=".07"/></pattern></defs>
+  <rect width="400" height="240" fill="url(#phg)"/><g fill="none" stroke="#e32f1e" stroke-opacity=".28" stroke-width="1.4"><circle cx="300" cy="70" r="90"/><circle cx="300" cy="70" r="140" stroke-opacity=".16"/><path d="M0 190c80-40 150 30 230-10s120-10 170-50"/></g></svg>${ic(icon || 'building-2', 'ph-ic')}`;
+function photo(key, o = {}) {
+  const im = state.images[key];
+  const fb = o.fb || fbArt(im?.icon);
+  if (!im || !im.src?.length) return `<figure class="ph fail ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div></figure>`;
+  const srcs = im.src.map((x) => x.replace('{w}', o.w || 1200));
+  return `<figure class="ph ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div>
+    <img class="ph-img" src="${esc(srcs[0])}" data-srcs="${esc(srcs.slice(1).join('|'))}" alt="${esc(t(im.alt))}" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
+    <figcaption>${ic(im.icon)}<span>${esc(t(o.caption ?? im.caption))}</span></figcaption></figure>`;
+}
+const aura = (inner, cls = '') => `<div class="aura ${cls}">${inner}</div>`;
+function phLoaded(img) { img.closest('.ph')?.classList.add('ok'); }
+function phFailed(img) {
+  const rest = (img.dataset.srcs || '').split('|').filter(Boolean);
+  if (rest.length) { img.dataset.srcs = rest.slice(1).join('|'); img.src = rest[0]; return; }
+  img.closest('.ph')?.classList.add('fail'); img.remove();
+}
+// error/load do not bubble, so listen in the capture phase once for the whole document
+document.addEventListener('error', (e) => { if (e.target?.classList?.contains('ph-img')) phFailed(e.target); }, true);
+document.addEventListener('load', (e) => { if (e.target?.classList?.contains('ph-img')) phLoaded(e.target); }, true);
+function phCheck() { $$('.ph-img').forEach((i) => { if (i.complete) { if (i.naturalWidth) phLoaded(i); else phFailed(i); } }); }
+
 function experts() {
   const cards = state.experts.map((x) => {
     const av = x.photo ? `<img src="${esc(x.photo)}" alt="${esc(x.name)}" width="130" height="130" loading="lazy">` : ic('user-round');
@@ -176,6 +204,7 @@ function homePage() {
       <div class="glass card-b" aria-hidden="true"></div>
     </aside>
   </div></div></section>
+  ${alliance()}
   <section class="sec" id="industries" style="padding-top:clamp(2rem,4vw,3rem)"><div class="wrap">
     <div class="sec-head"><span class="eyebrow rv">${u('home.indKicker')}</span><h2 class="h2 rv">${u('home.indLead')}</h2><p class="lede rv">${u('home.indP')}</p></div>
     <div class="index">${rows}</div></div></section>
@@ -183,6 +212,15 @@ function homePage() {
   <section class="sec"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.solKicker')}</span><h2 class="h2 rv">${u('home.solTitle')}</h2></div><div class="tiles">${tiles}</div></div></section>
   ${experts()}
   ${contact()}`;
+}
+
+function alliance() {
+  const n = state.industries.length;
+  const kpis = [[n, 'home.kIndustries'], [state.solutions.size, 'home.kSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
+    .map(([v, k]) => `<div><strong>${v}</strong><span>${u(k)}</span></div>`).join('');
+  return `<section class="alliance" id="alliance"><div class="wrap">
+    ${aura(photo('skyline', { w: 1600, ratio: '1200 / 400', cls: 'ph-wide', eager: true, fb: banner('bfsi', [ICONS['mail-check'], ICONS['shield-check'], ICONS.database], 'a') }) + `<div class="al-card glass"><span class="eyebrow">${u('home.allKicker')}</span><h2>${esc(fill(u('home.allTitle'), { n }))}</h2><p>${u('home.allP')}</p></div>`, 'al-frame rv')}
+    <div class="kpis rv">${kpis}</div></div></section>`;
 }
 
 function industryPage() {
@@ -216,7 +254,6 @@ function industryPage() {
 
   // Flow (borrowing the logic of enterprise-services pages, not their look): who we are for you -> proof points -> your challenges
   // -> the packaged answers -> why us -> how we work / PoC -> people -> FAQ -> other sectors -> contact.
-  const solNames = d.bundle.map((s) => sol(s).name).join(', ');
   const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
     .map(([v, key]) => `<div><strong>${v}</strong><span>${u(key)}</span></div>`).join('');
 
@@ -245,13 +282,13 @@ function industryPage() {
       <div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
-    <div class="banner hero-in" style="animation-delay:.3s">${banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h')}</div>
+    <div class="hero-in" style="animation-delay:.3s">${aura(photo('skyline', { w: 1600, ratio: '1200 / 380', cls: 'ph-wide', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }), 'banner')}</div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
-    <div class="ov-row"><div class="ov-art rv">${art('tile', d.icon, 'o')}</div>
+    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.byIndustry?.[id] || 'collab', { w: 1200, ratio: '4 / 3', fb: art('tile', d.icon, 'o') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
-        <p class="lede rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name, list: solNames }))}</p><p class="lede rv">${u('ind.ovP2')}</p></div></div>
-    <div class="statrow rv">${stats}</div></div></section>
+        <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')}</p>
+        <div class="kpis rv">${stats}</div></div></div></div></section>
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
@@ -311,7 +348,7 @@ function solutionPage() {
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(dt ? dt.lead : s.description))}</p>
     <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
       ${dt ? `<a class="btn btn-line" href="#solve" data-scroll="#solve">${ic('arrow-down')} ${u('sol.seeSolve')}</a>` : ''}</div></div>
-    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', s.icon, 's')}</div></div>${stats}</div></section>
+    <div class="hero-art hero-in" style="animation-delay:.2s">${aura(photo(state.images.bySolution?.[id] || 'conference', { w: 1200, ratio: '4 / 3', eager: true, fb: art('tile', s.icon, 's') }))}</div></div>${stats}</div></section>
   ${overview}${solve}${who}${stories}${poc}
   ${experts()}
   ${contact()}`;
@@ -501,6 +538,7 @@ function render(instant = false) {
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
   bindChrome(); bindForm(); initLocalNav(); initFaq();
   initMotion(instant);
+  phCheck();
 }
 
 function setLang(l) {
