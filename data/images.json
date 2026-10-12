@@ -105,8 +105,7 @@
   },
   "byIndustry": {
     "bfsi": "dashboard",
-    "retail": "dashboard",
-    "media": "controlroom"
+    "retail": "dashboard"
   },
   "bySolution": {
     "email-security": "phishing",
@@ -177,7 +176,8 @@
     "logistics": "port",
     "healthcare": "clinic",
     "education": "training",
-    "government": "government"
+    "government": "government",
+    "media": "media"
   },
   "phishing": {
     "icon": "mail-check",
@@ -296,6 +296,21 @@
     "caption": {
       "en": "Digital public services, secured",
       "vi": "Dịch vụ công số, được bảo vệ"
+    }
+  },
+  "media": {
+    "icon": "clapperboard",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/media.webp"
+    ],
+    "alt": {
+      "en": "Floating glowing content tiles above a circuit-board stage",
+      "vi": "Các ô nội dung phát sáng lơ lửng phía trên bo mạch"
+    },
+    "caption": {
+      "en": "Content delivered at scale",
+      "vi": "Nội dung phân phối ở quy mô lớn"
     }
   }
 }
