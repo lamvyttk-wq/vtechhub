@@ -305,6 +305,46 @@ form { display: grid; gap: 1.4rem; }
 .xp-role { font: 600 .9rem/1.4 var(--sans); color: var(--red); }
 .xp-bio { margin-top: .5rem; color: var(--ink-2); font-size: .92rem; line-height: 1.7; }
 
+/* ---------- solution detail: stat band, overview, challenge -> answer pairs ---------- */
+.statband { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(2.4rem, 5vw, 4rem); border-top: 1px solid var(--hair); }
+.statband > div { padding: 1.5rem 1.4rem 0 0; display: grid; gap: .4rem; align-content: start; }
+.statband > div + div { padding-left: 1.4rem; border-left: 1px solid var(--hair); }
+.statband strong { font: 700 clamp(1.8rem, 3.4vw, 2.8rem)/1.1 var(--sans); letter-spacing: -.03em; color: var(--red); font-variant-numeric: lining-nums; }
+.statband span { font-size: .84rem; line-height: 1.5; color: var(--ink-2); max-width: 22ch; }
+.ov { padding: clamp(2rem, 4vw, 3.5rem) 0; }
+.ov-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 2rem; align-items: start; }
+.ov-text { font: 500 clamp(1.1rem, 1.7vw, 1.4rem)/1.65 var(--sans); letter-spacing: -.01em; color: var(--ink); max-width: 62ch; }
+.ov .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
+.pairs { display: grid; gap: 1.4rem; }
+.pair { display: grid; grid-template-columns: minmax(0, 5fr) 3.2rem minmax(0, 6fr); gap: 0; align-items: stretch; }
+.pair-q { padding: 1.8rem 0; display: grid; gap: .8rem; align-content: center; border-top: 1px solid var(--hair); }
+.pair .tag { font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--red); }
+.pair-q h3 { font: 700 clamp(1.15rem, 1.8vw, 1.45rem)/1.4 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
+.impact { font-size: .9rem; line-height: 1.65; color: var(--ink-2); max-width: 46ch; }
+.impact b { color: var(--red); font-weight: 600; margin-right: .3rem; }
+.pair-go { display: grid; place-items: center; color: var(--red); }
+.pair-go .ic { width: 1.4rem; height: 1.4rem; }
+.pair-a { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; padding: 1.7rem 1.9rem; align-items: start; }
+.pair-a .num { font: 700 .78rem/1 var(--sans); letter-spacing: .06em; color: #fff; background: var(--red); border-radius: 9px; padding: .5rem .55rem; margin-top: .1rem; }
+.pair-a > div { display: grid; gap: .6rem; }
+.pair-a .tag { color: var(--ink-3); }
+.pair-a h4 { font: 600 1.15rem/1.4 var(--sans); letter-spacing: -.015em; margin: 0; }
+.pair-a p { color: var(--ink-2); font-size: .92rem; line-height: 1.7; }
+.metric.sm { padding-top: .9rem; gap: .8rem; }
+.metric.sm strong { font-size: 1.9rem; }
+div.tile { cursor: default; }
+.tiles.t3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 960px) { .tiles.t3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
+@media (max-width: 960px) {
+  .statband { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .statband > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .statband > div:nth-child(n+3) { padding-top: 1.4rem; margin-top: 1.4rem; border-top: 1px solid var(--hair); }
+  .ov-grid, .pair { grid-template-columns: 1fr; }
+  .pair-go { padding: .2rem 0 .6rem; justify-items: start; }
+  .pair-go .ic { transform: rotate(90deg); }
+  .pair-q { padding: 1.4rem 0 .8rem; }
+}
+
 /* ---------- local nav (industry): Apple-style sticky sub-nav ---------- */
 .lnav { position: sticky; top: var(--header-h); z-index: 40; transition: background .35s, box-shadow .35s; }
 .lnav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 52px; }

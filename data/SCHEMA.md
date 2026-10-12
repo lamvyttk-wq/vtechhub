@@ -54,3 +54,19 @@ All user-facing strings are bilingual objects: `{ "en": "...", "vi": "..." }`.
 - Prefer existing solution ids; add `newSolutions` only for products VNETWORK / V-Tech Hub really sells.
 - Vietnamese copy must be natural business Vietnamese (not literal translation); cite Vietnamese regulation by its real name.
 - Tone: enterprise decision-maker (CIO/CTO/CFO): outcome and risk first, no jargon dumps.
+
+## Solution detail (optional, `solution.detail`)
+When present, the solution page follows the buyer path (overview -> proof -> which problem is mine -> who it is for -> stories -> PoC -> contact).
+Without it the page is just hero + "where it appears". Currently only `cdn` has it. Numbers must come from vendor material.
+```jsonc
+"detail": {
+  "lead": {"en":"","vi":""},                          // hero sub-line (the one-sentence promise)
+  "stats": [ {"value":"2,300+","label":{"en":"","vi":""}} ],      // 3-4 proof numbers shown under the hero
+  "capabilities": [ {"en":"","vi":""} ],              // chips under the overview text (description is the overview)
+  "pairs": [ {                                         // each customer challenge paired with the module that answers it
+    "challenge": {"title":{..},"impact":{..}},
+    "module":    {"title":{..},"body":{..},"metric":{"value":"40%","label":{..}}}   // metric optional
+  } ],
+  "audiences": [ {"name":{..},"body":{..},"icon":"globe","industry":"media"} ]     // industry (optional) links to that industry story
+}
+```

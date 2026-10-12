@@ -10,5 +10,250 @@
    "description":{"en":"Full 360-degree monitoring across chat apps, personal webmail, and USB drives. It automatically detects sensitive customer records to stop insider fraud, prevent data leaks, and ensure Decree 13 compliance.","vi":"Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB. Tự động phát hiện hồ sơ khách hàng nhạy cảm để ngăn gian lận nội bộ, rò rỉ dữ liệu và đảm bảo tuân thủ Nghị định 13."}},
   {"id":"database-security","icon":"database","name":"Database Security",
    "tagline":{"en":"Query-level control & real-time masking","vi":"Kiểm soát truy vấn & che giấu dữ liệu thời gian thực"},
-   "description":{"en":"Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.","vi":"Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."}}
+   "description":{"en":"Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.","vi":"Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."}},
+{
+ "id": "cdn",
+ "icon": "globe",
+ "name": "Content Delivery Network",
+ "tagline": {
+  "en": "Sub-second streaming & acceleration from 2,300+ edge PoPs",
+  "vi": "Phát trực tiếp độ trễ dưới một giây & tăng tốc nội dung từ hơn 2.300 điểm biên"
+ },
+ "description": {
+  "en": "VNCDN is an enterprise Multi-CDN platform integrating AI-driven traffic routing, low-latency live streaming (LL-HLS, WebRTC), and on-demand Video Management Services (VMS). The network dynamically distributes workloads to edge nodes closest to end-users, ensuring flawless media streaming even during peak traffic events exceeding millions of concurrent viewers.",
+  "vi": "VNCDN là nền tảng Multi-CDN doanh nghiệp, tích hợp định tuyến lưu lượng bằng AI, phát trực tiếp độ trễ thấp (LL-HLS, WebRTC) và dịch vụ quản lý video theo yêu cầu (VMS). Mạng lưới tự động phân bổ tải đến các nút biên gần người dùng nhất, giữ cho luồng media luôn mượt ngay cả khi lưu lượng đỉnh vượt hàng triệu người xem đồng thời."
+ },
+ "detail": {
+  "lead": {
+   "en": "Sub-second latency video streaming & content acceleration with 2,300+ global edge PoPs.",
+   "vi": "Phát video độ trễ dưới một giây và tăng tốc nội dung với hơn 2.300 điểm hiện diện (PoP) biên trên toàn cầu."
+  },
+  "stats": [
+   {
+    "value": "2,300+",
+    "label": {
+     "en": "global edge PoPs",
+     "vi": "PoP biên toàn cầu"
+    }
+   },
+   {
+    "value": "146",
+    "label": {
+     "en": "countries with uniform performance",
+     "vi": "quốc gia với hiệu năng đồng nhất"
+    }
+   },
+   {
+    "value": "40%",
+    "label": {
+     "en": "smaller video files, same resolution",
+     "vi": "dung lượng video nhỏ hơn, giữ nguyên độ phân giải"
+    }
+   },
+   {
+    "value": "80–95%",
+    "label": {
+     "en": "less origin egress bandwidth",
+     "vi": "băng thông đầu ra máy chủ gốc được giảm"
+    }
+   }
+  ],
+  "capabilities": [
+   {
+    "en": "AI-driven traffic routing",
+    "vi": "Định tuyến lưu lượng bằng AI"
+   },
+   {
+    "en": "Low-latency live (LL-HLS, WebRTC)",
+    "vi": "Phát trực tiếp độ trễ thấp (LL-HLS, WebRTC)"
+   },
+   {
+    "en": "Video Management Services (VMS)",
+    "vi": "Dịch vụ quản lý video (VMS)"
+   },
+   {
+    "en": "Multi-CDN",
+    "vi": "Multi-CDN"
+   }
+  ],
+  "pairs": [
+   {
+    "challenge": {
+     "title": {
+      "en": "Slow website and app loading speeds during peak traffic hours",
+      "vi": "Website và ứng dụng tải chậm vào giờ cao điểm"
+     },
+     "impact": {
+      "en": "User churn, disrupted customer experience, and direct drops in conversion and revenue.",
+      "vi": "Người dùng rời bỏ, trải nghiệm khách hàng gián đoạn, tỷ lệ chuyển đổi và doanh thu sụt giảm trực tiếp."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Multi-CDN AI Dynamic Routing",
+      "vi": "Định tuyến động Multi-CDN bằng AI"
+     },
+     "body": {
+      "en": "Continuous AI monitoring of ISP network performance to route users automatically to the fastest performing edge node.",
+      "vi": "AI liên tục giám sát hiệu năng mạng của các nhà mạng (ISP) để tự động định tuyến người dùng đến nút biên nhanh nhất."
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Origin server overload when live streaming viewership surges",
+      "vi": "Máy chủ gốc quá tải khi lượng người xem trực tiếp tăng vọt"
+     },
+     "impact": {
+      "en": "Video buffering, severe latency, server crashes, and skyrocketing origin egress bandwidth bills.",
+      "vi": "Video giật lag, độ trễ nghiêm trọng, máy chủ sập và hóa đơn băng thông đầu ra từ máy chủ gốc tăng vọt."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Origin Shield & Smart Caching",
+      "vi": "Origin Shield & lưu đệm thông minh"
+     },
+     "body": {
+      "en": "Layered caching architecture safeguarding origin servers and reducing origin egress bandwidth by 80%–95%.",
+      "vi": "Kiến trúc lưu đệm nhiều lớp bảo vệ máy chủ gốc, giảm 80%–95% băng thông đầu ra từ máy chủ gốc."
+     },
+     "metric": {
+      "value": "80–95%",
+      "label": {
+       "en": "less origin egress",
+       "vi": "băng thông gốc giảm"
+      }
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Lack of multi-device adaptive bitrate streaming for 4K/8K content",
+      "vi": "Thiếu phát video thích ứng tốc độ bit đa thiết bị cho nội dung 4K/8K"
+     },
+     "impact": {
+      "en": "Inability to deliver optimized video compression across varied device screens and network conditions.",
+      "vi": "Không thể cung cấp video nén tối ưu cho nhiều loại màn hình và điều kiện mạng khác nhau."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "On-Demand Transcoding & VMS",
+      "vi": "Chuyển mã theo yêu cầu & VMS"
+     },
+     "body": {
+      "en": "Automated video encoding into optimized formats (H.264, H.265, AV1), saving 40% file size while preserving resolution.",
+      "vi": "Tự động mã hóa video sang các định dạng tối ưu (H.264, H.265, AV1), tiết kiệm 40% dung lượng mà vẫn giữ nguyên độ phân giải."
+     },
+     "metric": {
+      "value": "40%",
+      "label": {
+       "en": "smaller files",
+       "vi": "dung lượng nhỏ hơn"
+      }
+     }
+    }
+   },
+   {
+    "challenge": {
+     "title": {
+      "en": "Digital copyright violations and stream hotlinking threats",
+      "vi": "Vi phạm bản quyền số và nguy cơ hotlink luồng phát"
+     },
+     "impact": {
+      "en": "Loss of premium proprietary content assets and unauthorized streaming distribution.",
+      "vi": "Mất tài sản nội dung độc quyền cao cấp và bị phát tán luồng trái phép."
+     }
+    },
+    "module": {
+     "title": {
+      "en": "Anti-Piracy & DRM Protection",
+      "vi": "Chống vi phạm bản quyền & bảo vệ DRM"
+     },
+     "body": {
+      "en": "Real-time detection and blocking of unauthorized restreaming with individual digital token signatures per video session.",
+      "vi": "Phát hiện và chặn theo thời gian thực việc phát lại trái phép, với chữ ký token số riêng cho từng phiên xem video."
+     }
+    }
+   }
+  ],
+  "audiences": [
+   {
+    "name": {
+     "en": "Broadcasters & OTT Platforms",
+     "vi": "Đài truyền hình & nền tảng OTT"
+    },
+    "icon": "clapperboard",
+    "industry": "media",
+    "body": {
+     "en": "Live broadcast of high-profile sporting and entertainment events for millions of concurrent viewers (VTV, THVL, VieON, FPT Play).",
+     "vi": "Phát sóng trực tiếp các sự kiện thể thao, giải trí lớn cho hàng triệu người xem đồng thời (VTV, THVL, VieON, FPT Play)."
+    }
+   },
+   {
+    "name": {
+     "en": "Digital Media & Publishers",
+     "vi": "Truyền thông số & nhà xuất bản"
+    },
+    "icon": "zap",
+    "industry": "media",
+    "body": {
+     "en": "Instant page loading and high-resolution media delivery for tens of millions of daily readers.",
+     "vi": "Tải trang tức thì và phân phối media độ phân giải cao cho hàng chục triệu độc giả mỗi ngày."
+    }
+   },
+   {
+    "name": {
+     "en": "E-Commerce & Retail Giants",
+     "vi": "Thương mại điện tử & bán lẻ lớn"
+    },
+    "icon": "shopping-bag",
+    "industry": "retail",
+    "body": {
+     "en": "Accelerate product catalogs and live video shopping during Mega Sale events.",
+     "vi": "Tăng tốc danh mục sản phẩm và livestream bán hàng trong các đợt Mega Sale."
+    }
+   },
+   {
+    "name": {
+     "en": "Online Gaming & Esports",
+     "vi": "Game trực tuyến & Esports"
+    },
+    "icon": "zap",
+    "industry": null,
+    "body": {
+     "en": "Gigabit-speed game patch delivery and low-latency esports live tournament feeds.",
+     "vi": "Phân phối bản vá game tốc độ gigabit và phát trực tiếp giải đấu esports độ trễ thấp."
+    }
+   },
+   {
+    "name": {
+     "en": "EdTech & Online Learning",
+     "vi": "EdTech & học trực tuyến"
+    },
+    "icon": "graduation-cap",
+    "industry": "education",
+    "body": {
+     "en": "Buffer-free video lectures and interactive streaming across all mobile and desktop devices.",
+     "vi": "Bài giảng video không giật và phát trực tiếp tương tác trên mọi thiết bị di động và máy tính."
+    }
+   },
+   {
+    "name": {
+     "en": "Global Enterprises",
+     "vi": "Doanh nghiệp toàn cầu"
+    },
+    "icon": "globe",
+    "industry": null,
+    "body": {
+     "en": "Seamless cross-border application and document distribution with uniform performance in 146 countries.",
+     "vi": "Phân phối ứng dụng và tài liệu xuyên biên giới liền mạch, hiệu năng đồng nhất tại 146 quốc gia."
+    }
+   }
+  ]
+ }
+}
 ]

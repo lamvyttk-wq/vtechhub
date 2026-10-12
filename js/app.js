@@ -255,15 +255,48 @@ function solutionPage() {
   const id = state.route.id;
   const s = state.solutions.get(id);
   if (!s) return notFound(u('sol.notFound'));
+  const dt = s.detail;
   const uses = state.industries.flatMap((i) => i.chapters.filter((c) => c.solutions.includes(id)).map((c) => ({ i, c })));
   const tiles = uses.map(({ i, c }) => link(`industry-${i.id}`, `${ic(i.icon, 'lead')}<span class="chip">${esc(t(i.name))}</span><h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.response.title))}</p><div class="foot"><span>${u('home.read')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
+  const stories = uses.length ? `<section class="sec" id="stories" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>` : '';
+
+  // Solutions with rich detail follow a buyer's path: what is it -> proof -> which problem is mine -> is it for people like me -> stories -> try it -> talk.
+  let lnav = '', stats = '', overview = '', solve = '', who = '', poc = '';
+  if (dt) {
+    const links = [['overview', 'sol.lnOverview'], ['solve', 'sol.lnSolve'], ['who', 'sol.lnWho'], ...(uses.length ? [['stories', 'sol.lnStories']] : [])]
+      .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
+    lnav = `<nav class="lnav" id="lnav" aria-label="${esc(s.name)}"><div class="wrap"><span class="lnav-t">${esc(s.name)}</span><div class="lnav-l">${links}</div>
+      <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>`;
+    stats = `<div class="statband hero-in" style="animation-delay:.34s">${(dt.stats || []).map((x) => `<div><strong>${esc(x.value)}</strong><span>${esc(t(x.label))}</span></div>`).join('')}</div>`;
+    overview = `<section class="sec ov" id="overview"><div class="wrap"><div class="ov-grid"><div><span class="eyebrow rv">${u('sol.overview')}</span></div>
+      <div><p class="ov-text rv">${esc(t(s.description))}</p><div class="chips rv">${(dt.capabilities || []).map((c) => `<span class="chip">${ic('check')} ${esc(t(c))}</span>`).join('')}</div></div></div></div></section>`;
+    const pairs = (dt.pairs || []).map((p, k) => {
+      const m = p.module;
+      return `<article class="pair rv"><div class="pair-q"><span class="tag">${u('sol.challenge')} ${roman(k + 1)}</span><h3>${esc(t(p.challenge.title))}</h3>
+        <p class="impact"><b>${u('sol.impact')}</b> ${esc(t(p.challenge.impact))}</p></div>
+        <div class="pair-go" aria-hidden="true">${ic('arrow-right')}</div>
+        <div class="pair-a glass"><span class="num">${roman(k + 1)}</span><div><span class="tag">${u('sol.answer')}</span><h4>${esc(t(m.title))}</h4><p>${esc(t(m.body))}</p>
+          ${m.metric ? `<div class="metric sm"><strong>${esc(m.metric.value)}</strong><span>${esc(t(m.metric.label))}</span></div>` : ''}</div></div></article>`;
+    }).join('');
+    solve = `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.solveKicker')}</span><h2 class="h2 rv">${u('sol.solveTitle')}</h2><p class="lede rv">${u('sol.solveP')}</p></div><div class="pairs">${pairs}</div></div></section>`;
+    const aud = (dt.audiences || []).map((a) => {
+      const ind = a.industry && industryOf(a.industry);
+      const inner = `${ic(a.icon || 'box', 'lead')}<h3>${esc(t(a.name))}</h3><p>${esc(t(a.body))}</p>${ind ? `<div class="foot"><span>${u('sol.seeStory')}</span>${ic('arrow-up-right')}</div>` : ''}`;
+      return ind ? link(`industry-${ind.id}`, inner, 'tile glass rv') : `<div class="tile glass rv">${inner}</div>`;
+    }).join('');
+    who = `<section class="sec" id="who" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.whoKicker')}</span><h2 class="h2 rv">${u('sol.whoTitle')}</h2><p class="lede rv">${u('sol.whoP')}</p></div><div class="tiles t3">${aud}</div></div></section>`;
+    poc = `<section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
+      <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>`;
+  }
   return `
+  ${lnav}
   <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
     <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
-    <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(s.description))}</p>
-    <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
-    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', s.icon, 's')}</div></div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>
+    <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(dt ? dt.lead : s.description))}</p>
+    <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
+      ${dt ? `<a class="btn btn-line" href="#solve" data-scroll="#solve">${ic('arrow-down')} ${u('sol.seeSolve')}</a>` : ''}</div></div>
+    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', s.icon, 's')}</div></div>${stats}</div></section>
+  ${overview}${solve}${who}${stories}${poc}
   ${experts()}
   ${contact()}`;
 }

@@ -258,7 +258,23 @@
   "notFound": {
    "en": "Solution not found",
    "vi": "Không tìm thấy giải pháp"
-  }
+  },
+  "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
+  "lnSolve": { "en": "Challenges", "vi": "Thách thức" },
+  "lnWho": { "en": "Use cases", "vi": "Ứng dụng" },
+  "lnStories": { "en": "In the stories", "vi": "Trong các câu chuyện" },
+  "overview": { "en": "Overview", "vi": "Tổng quan" },
+  "seeSolve": { "en": "See what it solves", "vi": "Xem nó giải quyết gì" },
+  "solveKicker": { "en": "Challenges solved", "vi": "Thách thức được giải quyết" },
+  "solveTitle": { "en": "Which of these sounds like you?", "vi": "Điều nào đang xảy ra với bạn?" },
+  "solveP": { "en": "Each challenge is paired with the capability that answers it.", "vi": "Mỗi thách thức đi kèm năng lực giải quyết nó." },
+  "challenge": { "en": "Challenge", "vi": "Thách thức" },
+  "impact": { "en": "Impact", "vi": "Hệ quả" },
+  "answer": { "en": "Our answer", "vi": "Lời giải" },
+  "whoKicker": { "en": "Use cases", "vi": "Ứng dụng" },
+  "whoTitle": { "en": "Who we build this for", "vi": "Chúng tôi xây dựng giải pháp này cho ai" },
+  "whoP": { "en": "Tailored to distinct operational workflows. Pick the one closest to yours.", "vi": "Thiết kế cho từng quy trình vận hành riêng biệt. Chọn trường hợp gần với bạn nhất." },
+  "seeStory": { "en": "See the industry story", "vi": "Xem câu chuyện ngành" }
  },
  "cta": {
   "kicker": {

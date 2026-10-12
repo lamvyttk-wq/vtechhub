@@ -57,9 +57,6 @@
      "a":{"en":"Yes. Decree 13 on personal data protection applies to subscriber information. Hosting in Vietnam and controlling data movement help you prepare; confirm obligations with your legal counsel.","vi":"Có. Nghị định 13 về bảo vệ dữ liệu cá nhân áp dụng cho thông tin thuê bao. Lưu trữ tại Việt Nam và kiểm soát luồng dữ liệu giúp bạn chuẩn bị; nên xác nhận nghĩa vụ cụ thể với cố vấn pháp lý."}}
   ],
   "newSolutions":[
-    {"id":"cdn","icon":"globe","name":"CDN",
-     "tagline":{"en":"Faster content delivery across Vietnam","vi":"Phân phối nội dung nhanh trên toàn Việt Nam"},
-     "description":{"en":"Content delivery network that caches video, images and web assets close to viewers, reducing origin load and buffering during traffic peaks.","vi":"Mạng phân phối nội dung lưu đệm video, hình ảnh và tài nguyên web gần người xem, giảm tải máy chủ gốc và hạn chế giật lag khi lưu lượng tăng cao."}},
     {"id":"anti-ddos-waf","icon":"shield-alert","name":"Anti-DDoS & WAF",
      "tagline":{"en":"Keep sites up under attack","vi":"Giữ website hoạt động khi bị tấn công"},
      "description":{"en":"Filters DDoS floods and blocks web application attacks so portals, streaming and content platforms stay available and uncompromised.","vi":"Lọc tấn công DDoS và chặn tấn công ứng dụng web để cổng thông tin, streaming và nền tảng nội dung luôn sẵn sàng và không bị xâm nhập."}}
