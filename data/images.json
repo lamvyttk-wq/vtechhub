@@ -104,8 +104,7 @@
     "pos": "55% 55%"
   },
   "byIndustry": {
-    "bfsi": "dashboard",
-    "retail": "dashboard"
+    "bfsi": "dashboard"
   },
   "bySolution": {
     "email-security": "phishing",
@@ -177,7 +176,8 @@
     "healthcare": "clinic",
     "education": "training",
     "government": "government",
-    "media": "media"
+    "media": "media",
+    "retail": "retail"
   },
   "phishing": {
     "icon": "mail-check",
@@ -311,6 +311,21 @@
     "caption": {
       "en": "Content delivered at scale",
       "vi": "Nội dung phân phối ở quy mô lớn"
+    }
+  },
+  "retail": {
+    "icon": "shopping-bag",
+    "pos": "35% 50%",
+    "src": [
+      "assets/photos/retail.webp"
+    ],
+    "alt": {
+      "en": "A hand touching a glowing shopping-cart icon in a connected network of carts",
+      "vi": "Bàn tay chạm vào biểu tượng giỏ hàng phát sáng trong mạng lưới các giỏ hàng kết nối"
+    },
+    "caption": {
+      "en": "Every cart, every checkout, protected",
+      "vi": "Mỗi giỏ hàng, mỗi lượt thanh toán đều được bảo vệ"
     }
   }
 }
