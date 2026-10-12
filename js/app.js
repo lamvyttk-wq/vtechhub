@@ -500,7 +500,7 @@ function initMotion(instant) {
   watch($$('.chapter:not(.in)'), { rootMargin: '0px 0px -18% 0px', threshold: .2 }, (hits, io) => {
     hits.forEach((e) => {
       e.target.classList.add('in'); io.unobserve(e.target);
-      const c = $('[data-count]', e.target); if (c) setTimeout(() => countUp(c), 1300);
+      const c = $('[data-count]', e.target); if (c) setTimeout(() => countUp(c), 300);
     });
   });
   $$('.chapter:not(.in) [data-count]').forEach((c) => { c.textContent = c.dataset.count.replace(/[\d.,]+/, '0'); });

@@ -18,7 +18,7 @@ Deploys as-is to GitHub Pages / any static host.
 Native scrolling only: no smooth-scroll library, no pinned scenes, no scroll-scrubbed animation, no parallax.
 Instead (all in `js/app.js` + the motion block at the end of `css/styles.css`):
 - **Reveal once** — `.rv` elements fade/rise the first time they enter the viewport (IntersectionObserver, short stagger).
-- **Chapter sequence** — each story chapter plays a timed sequence on entry: challenge → bridge draws → answer resolves from blur → points → metric counts up.
+- **Chapter entrance** — challenge and answer fade in together on entry (the answer points settle in just after, the metric counts up).
 - **Sticky local nav** (industry pages) — Overview · Key challenges · Solutions · Why · FAQ, active section underlined, CTA on the right.
 - **FAQ** — accordion height eases open/closed.
 - `prefers-reduced-motion` disables all of it; content is fully readable without JS motion.
