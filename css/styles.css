@@ -391,6 +391,10 @@ div.tile { cursor: default; }
 .oc:hover { transform: translateY(-6px); box-shadow: 0 30px 50px -28px rgba(48,34,70,.35); }
 .oc-img { aspect-ratio: 240 / 190; overflow: hidden; }
 .oc-img .art { width: 100%; height: 100%; display: block; }
+.oc-img .ph { height: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.oc-img .ph-fb > .art { position: absolute; inset: 0; }
+.oc:hover .ph-img { transform: scale(1.05); }
+.ph-img { transition: opacity .9s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
 .oc-b { display: flex; justify-content: space-between; align-items: center; gap: .8rem; padding: 1rem 1.2rem; font: 600 .92rem/1.3 var(--sans); }
 .oc-b .ic { color: var(--red); }
 @media (max-width: 960px) {

@@ -260,7 +260,7 @@ function industryPage() {
   const steps = ui('home.steps').map((st, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(st.t)}</h3><p>${t(st.d)}</p></div>`).join('');
   const faq = d.faq.map((f) => `<details class="rv"><summary>${esc(t(f.q))}${ic('plus')}</summary><div class="a">${esc(t(f.a))}</div></details>`).join('');
   const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
-    `<div class="oc-img">${thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true)}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
+    `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div>
