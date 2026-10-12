@@ -112,7 +112,7 @@
     "database-security": "circuit",
     "ai-legal": "training",
     "cdn": "cdn",
-    "vcloud": "datacenter"
+    "vcloud": "vcloud"
   },
   "circuit": {
     "icon": "database",
@@ -268,6 +268,21 @@
     ],
     "education/student-data": [
       "dlp"
+    ],
+    "education/peak-availability": [
+      "vcloud"
+    ],
+    "logistics/uptime": [
+      "vcloud"
+    ],
+    "retail/payment-cloud": [
+      "vcloud"
+    ],
+    "healthcare/sovereignty": [
+      "vcloud"
+    ],
+    "education/budget-sovereignty": [
+      "vcloud"
     ]
   },
   "dlp": {
@@ -327,6 +342,21 @@
     "caption": {
       "en": "Every cart, every checkout, protected",
       "vi": "Mỗi giỏ hàng, mỗi lượt thanh toán đều được bảo vệ"
+    }
+  },
+  "vcloud": {
+    "icon": "cloud",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/vcloud.webp"
+    ],
+    "alt": {
+      "en": "Glass server racks wrapped in glowing red data streams in a bright, clean room",
+      "vi": "Các tủ máy chủ kính được bao quanh bởi dòng dữ liệu đỏ phát sáng trong căn phòng sáng sạch"
+    },
+    "caption": {
+      "en": "Sovereign cloud, hosted in Vietnam",
+      "vi": "Đám mây chủ quyền, đặt tại Việt Nam"
     }
   }
 }
