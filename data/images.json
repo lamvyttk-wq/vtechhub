@@ -103,9 +103,7 @@
     },
     "pos": "55% 55%"
   },
-  "byIndustry": {
-    "bfsi": "dashboard"
-  },
+  "byIndustry": {},
   "bySolution": {
     "email-security": "egplatform",
     "dlp": "dlp",
@@ -181,7 +179,8 @@
     "education": "training",
     "government": "government",
     "media": "media",
-    "retail": "retail"
+    "retail": "retail",
+    "bfsi": "bfsi"
   },
   "phishing": {
     "icon": "mail-check",
@@ -405,6 +404,21 @@
     "caption": {
       "en": "Object storage, kept in-country",
       "vi": "Lưu trữ đối tượng, đặt trong nước"
+    }
+  },
+  "bfsi": {
+    "icon": "landmark",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/bfsi.webp"
+    ],
+    "alt": {
+      "en": "A hand touching a glowing BFSI interface surrounded by bank, payment and savings icons",
+      "vi": "Bàn tay chạm vào giao diện BFSI phát sáng, xung quanh là các biểu tượng ngân hàng, thanh toán và tiết kiệm"
+    },
+    "caption": {
+      "en": "Banking, finance and insurance, secured",
+      "vi": "Ngân hàng, tài chính và bảo hiểm được bảo vệ"
     }
   }
 }
