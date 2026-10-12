@@ -8,7 +8,7 @@ const experts = JSON.parse(read('data/experts.json')).map((x) => ({ ...x, photo:
 const data = { experts, ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
 const js = [read('js/config.js'), read('js/icons.js'), read('js/art.js'), read('js/app.js')].map(strip).join('\n');
 const html = `<meta charset="utf-8">
-<title>V-TECH HUB</title>
+<title>V-TECH FOUNDRY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

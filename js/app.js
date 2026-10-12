@@ -1,4 +1,4 @@
-// V-TECH HUB landing engine. No build step, no libraries: plain ES module.
+// V-TECH FOUNDRY landing engine. No build step, no libraries: plain ES module.
 // Motion follows the Apple product-page model: native scrolling (no smooth-scroll hijack, no pinned/scrubbed scenes);
 // things reveal once, on a timer, when they enter the viewport; navigation is a sticky local nav, a carousel and click-driven controls.
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
@@ -70,7 +70,7 @@ function header() {
   const inds = state.industries.map((i) => link(`industry-${i.id}`, `${ic(i.icon)}<span>${esc(t(i.name))}<small>${esc(t(i.tagline))}</small></span>`)).join('');
   const sols = [...state.solutions.values()].map((s) => link(`solution-${s.id}`, `${ic(s.icon)}<span>${esc(s.name)}<small>${esc(t(s.tagline))}</small></span>`)).join('');
   return `<header class="hdr" id="hdr"><div class="wrap">
-    ${link('home', '<b>V-TECH</b><span>HUB</span>', 'logo', 'aria-label="V-TECH HUB"')}
+    ${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo', 'aria-label="V-TECH FOUNDRY"')}
     <nav class="nav" id="nav" aria-label="Primary">
       <div class="dd"><button class="nav-btn ${state.route.page === 'solution' ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.solutions')} ${ic('chevron-down')}</button><div class="panel wide">${sols}</div></div>
       <div class="dd"><button class="nav-btn ${cur ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.industry')} ${ic('chevron-down')}</button><div class="panel wide">${inds}</div></div>
@@ -123,7 +123,7 @@ function contact(preset = '') {
 function footer() {
   return `<footer class="foot"><div class="wrap">
     <div class="cols">
-      <div>${link('home', '<b>V-TECH</b><span>HUB</span>', 'logo')}<p style="margin-top:1.2rem">${u('foot.powered')} <a href="${CONFIG.website}" target="_blank" rel="noopener"><b>VNETWORK</b></a></p></div>
+      <div>${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo')}<p style="margin-top:1.2rem">${u('foot.powered')} <a href="${CONFIG.website}" target="_blank" rel="noopener"><b>VNETWORK</b></a></p></div>
       <div class="list"><span>${esc(CONFIG.phoneDisplay)}</span><span>${esc(CONFIG.email)}</span><a href="${CONFIG.website}" target="_blank" rel="noopener">vnetwork.vn</a></div>
       <div class="list">${CONFIG.offices.map((o) => `<p>${esc(o)}</p>`).join('')}</div>
     </div>
@@ -226,7 +226,7 @@ function industryPage() {
   <nav class="lnav" id="lnav" aria-label="${esc(t(d.name))}"><div class="wrap"><span class="lnav-t">${esc(t(d.name))}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
   <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
-    <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(t(d.name))}</span></div>
+    <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(t(d.name))}</span></div>
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
     <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>
     <div class="chips hero-in" style="animation-delay:.2s">${chips}</div>
@@ -291,7 +291,7 @@ function solutionPage() {
   return `
   ${lnav}
   <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
-    <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
+    <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(dt ? dt.lead : s.description))}</p>
     <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
       ${dt ? `<a class="btn btn-line" href="#solve" data-scroll="#solve">${ic('arrow-down')} ${u('sol.seeSolve')}</a>` : ''}</div></div>
@@ -300,7 +300,7 @@ function solutionPage() {
   ${experts()}
   ${contact()}`;
 }
-const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '\u2190 V-TECH HUB', 'red')}</p></div></section>`;
+const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '\u2190 V-TECH FOUNDRY', 'red')}</p></div></section>`;
 
 /* ---------------------------------------------------------------- behaviour */
 function bindChrome() {
@@ -502,7 +502,7 @@ function render(instant = false) {
   const { page, id } = state.route;
   const d = page === 'industry' ? industryOf(id) : null;
   const s = page === 'solution' ? state.solutions.get(id) : null;
-  document.title = d ? `${t(d.name)} | V-TECH HUB` : s ? `${s.name} | V-TECH HUB` : 'V-TECH HUB';
+  document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
   bindChrome(); bindForm(); initLocalNav(); initRail(); initFaq();
