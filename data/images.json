@@ -100,15 +100,14 @@
     "caption": {
       "en": "Supply chains that never stop",
       "vi": "Chuỗi cung ứng không ngừng nghỉ"
-    }
+    },
+    "pos": "50% 60%"
   },
   "byIndustry": {
     "bfsi": "dashboard",
     "government": "controlroom",
     "healthcare": "clinic",
     "retail": "dashboard",
-    "manufacturing": "engineers",
-    "logistics": "port",
     "media": "controlroom",
     "education": "training"
   },
@@ -145,7 +144,8 @@
     "caption": {
       "en": "Smart, secure production floors",
       "vi": "Dây chuyền sản xuất thông minh, an toàn"
-    }
+    },
+    "pos": "80% 28%"
   },
   "clinic": {
     "icon": "heart-pulse",
@@ -174,5 +174,9 @@
       "en": "Knowledge shared at scale",
       "vi": "Tri thức lan tỏa ở quy mô lớn"
     }
+  },
+  "heroByIndustry": {
+    "manufacturing": "engineers",
+    "logistics": "port"
   }
 }

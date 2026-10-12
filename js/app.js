@@ -147,7 +147,7 @@ function photo(key, o = {}) {
   if (!im || !im.src?.length) return `<figure class="ph fail ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div></figure>`;
   const srcs = im.src.map((x) => x.replace('{w}', o.w || 1200));
   return `<figure class="ph ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div>
-    <img class="ph-img" src="${esc(srcs[0])}" data-srcs="${esc(srcs.slice(1).join('|'))}" alt="${esc(t(im.alt))}" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
+    <img class="ph-img" ${im.pos ? `style="object-position:${esc(im.pos)}"` : ''} src="${esc(srcs[0])}" data-srcs="${esc(srcs.slice(1).join('|'))}" alt="${esc(t(im.alt))}" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
     ${o.nocap ? '' : `<figcaption>${ic(im.icon)}<span>${esc(t(o.caption ?? im.caption))}</span></figcaption>`}</figure>`;
 }
 const aura = (inner, cls = '') => `<div class="aura ${cls}">${inner}</div>`;
@@ -283,7 +283,7 @@ function industryPage() {
       <div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
-    <div class="hero-in" style="animation-delay:.3s">${aura(photo('skyline', { w: 1600, ratio: '1200 / 380', cls: 'ph-wide', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }), 'banner')}</div>
+    <div class="hero-in" style="animation-delay:.3s">${aura(photo(state.images.heroByIndustry?.[id] || 'skyline', { w: 1600, ratio: '1200 / 380', cls: 'ph-wide', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }), 'banner')}</div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
     <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.byIndustry?.[id] || 'collab', { w: 1200, ratio: '4 / 3', fb: art('tile', d.icon, 'o') }))}</div>
