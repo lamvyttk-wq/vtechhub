@@ -111,7 +111,7 @@
   },
   "bySolution": {
     "email-security": "phishing",
-    "dlp": "controlroom",
+    "dlp": "dlp",
     "database-security": "circuit",
     "ai-legal": "training",
     "cdn": "cdn"
@@ -243,6 +243,44 @@
     ],
     "media/latency": [
       "cdn"
+    ],
+    "bfsi/leak": [
+      "dlp"
+    ],
+    "healthcare/leak": [
+      "dlp"
+    ],
+    "government/citizen-data": [
+      "dlp"
+    ],
+    "manufacturing/ip-leak": [
+      "dlp"
+    ],
+    "logistics/partner-data": [
+      "dlp"
+    ],
+    "media/leaks": [
+      "dlp"
+    ],
+    "retail/customer-data": [
+      "dlp"
+    ],
+    "education/student-data": [
+      "dlp"
     ]
+  },
+  "dlp": {
+    "icon": "shield-check",
+    "src": [
+      "assets/photos/dlp.webp"
+    ],
+    "alt": {
+      "en": "A hand touching a glowing padlock surrounded by data-channel icons: email, files, cloud, cards",
+      "vi": "Bàn tay chạm vào ổ khóa phát sáng bao quanh bởi các biểu tượng kênh dữ liệu: email, tệp, đám mây, thẻ"
+    },
+    "caption": {
+      "en": "Every data channel, one view",
+      "vi": "Mọi kênh dữ liệu, một góc nhìn"
+    }
   }
 }
