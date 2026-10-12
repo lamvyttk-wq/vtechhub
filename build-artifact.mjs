@@ -8,7 +8,8 @@ const experts = JSON.parse(read('data/experts.json')).map((x) => ({ ...x, photo:
 const images = JSON.parse(read('data/images.json'));
 // local photos are inlined as data URIs so the single-file build is self-contained
 for (const v of Object.values(images)) {
-  if (v && Array.isArray(v.src)) v.src = v.src.map((x) => (/^https?:/.test(x) ? x : `data:image/${x.split('.').pop()};base64,` + fs.readFileSync(x).toString('base64')));
+  // local photo -> [inline data URI, relative published file]; the second is a fallback when the host serves the files next to the page
+  if (v && Array.isArray(v.src)) v.src = v.src.flatMap((x) => (/^https?:/.test(x) ? [x] : [`data:image/${x.split('.').pop()};base64,` + fs.readFileSync(x).toString('base64'), x]));
 }
 const data = { experts, images, ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
 const js = [read('js/config.js'), read('js/icons.js'), read('js/art.js'), read('js/app.js')].map(strip).join('\n');

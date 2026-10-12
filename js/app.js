@@ -146,7 +146,8 @@ function photo(key, o = {}) {
   const fb = o.fb || fbArt(im?.icon);
   if (!im || !im.src?.length) return `<figure class="ph fail ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div></figure>`;
   const srcs = im.src.map((x) => x.replace('{w}', o.w || 1200));
-  return `<figure class="ph ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div>
+  const local = /^(data:|assets\/)/.test(srcs[0]); // inline/own-file photos cannot be slow, so show them without waiting for the load event
+  return `<figure class="ph${local ? ' ok' : ''} ${o.cls || ''}" ${o.ratio ? `style="aspect-ratio:${o.ratio}"` : ''}><div class="ph-fb">${fb}</div>
     <img class="ph-img" ${im.pos ? `style="object-position:${esc(im.pos)}"` : ''} src="${esc(srcs[0])}" data-srcs="${esc(srcs.slice(1).join('|'))}" alt="${esc(t(im.alt))}" loading="${o.eager ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
     ${o.nocap ? '' : `<figcaption>${ic(im.icon)}<span>${esc(t(o.caption ?? im.caption))}</span></figcaption>`}</figure>`;
 }
@@ -155,7 +156,7 @@ function phLoaded(img) { img.closest('.ph')?.classList.add('ok'); }
 function phFailed(img) {
   const rest = (img.dataset.srcs || '').split('|').filter(Boolean);
   if (rest.length) { img.dataset.srcs = rest.slice(1).join('|'); img.src = rest[0]; return; }
-  img.closest('.ph')?.classList.add('fail'); img.remove();
+  const f = img.closest('.ph'); f?.classList.remove('ok'); f?.classList.add('fail'); img.remove();
 }
 // error/load do not bubble, so listen in the capture phase once for the whole document
 document.addEventListener('error', (e) => { if (e.target?.classList?.contains('ph-img')) phFailed(e.target); }, true);
