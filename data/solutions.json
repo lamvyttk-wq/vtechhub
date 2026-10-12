@@ -490,6 +490,271 @@
   }
  },
  {
+  "id": "cloud-storage",
+  "icon": "box",
+  "name": "Cloud Storage",
+  "title": {
+   "en": "Cloud Storage S3",
+   "vi": "Cloud Storage S3"
+  },
+  "tagline": {
+   "en": "S3-compatible object storage in Vietnam",
+   "vi": "Lưu trữ đối tượng chuẩn S3 tại Việt Nam"
+  },
+  "description": {
+   "en": "S3-compatible object storage that works with the tools you already use, with fine-grained access control, encryption and audit logging, and data kept in Tier III data centers inside Vietnam.",
+   "vi": "Lưu trữ đối tượng tương thích S3, chạy với chính các công cụ bạn đang dùng, có phân quyền chi tiết, mã hóa và nhật ký kiểm toán, dữ liệu đặt tại các trung tâm dữ liệu Tier III trong nước."
+  },
+  "detail": {
+   "lead": {
+    "en": "Scalable, secure object storage that speaks the S3 API.",
+    "vi": "Lưu trữ đối tượng mở rộng được, bảo mật, dùng chuẩn giao tiếp S3."
+   },
+   "stats": [
+    {
+     "value": "S3",
+     "label": {
+      "en": "API compatible, so existing tools just work",
+      "vi": "tương thích API, dùng được ngay các công cụ sẵn có"
+     }
+    },
+    {
+     "value": "99.99%",
+     "label": {
+      "en": "availability with CDN acceleration, as advertised",
+      "vi": "độ sẵn sàng khi có CDN tăng tốc, theo công bố"
+     }
+    },
+    {
+     "value": "Tier III",
+     "label": {
+      "en": "data centers, data kept in-country",
+      "vi": "trung tâm dữ liệu, dữ liệu lưu trong nước"
+     }
+    },
+    {
+     "value": "4",
+     "label": {
+      "en": "ways in: console, SDK, CLI and REST API",
+      "vi": "cách truy cập: giao diện web, SDK, CLI và REST API"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "S3-compatible API",
+     "vi": "API tương thích S3"
+    },
+    {
+     "en": "Fine-grained permissions",
+     "vi": "Phân quyền chi tiết"
+    },
+    {
+     "en": "Encryption & audit logging",
+     "vi": "Mã hóa & nhật ký kiểm toán"
+    },
+    {
+     "en": "Video transcoding on upload",
+     "vi": "Chuyển mã video khi tải lên"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "When files outgrow your own disks",
+    "vi": "Khi dữ liệu vượt quá dung lượng ổ đĩa của bạn"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Backups, media and logs keep growing",
+      "vi": "Bản sao lưu, media và nhật ký tăng không ngừng"
+     },
+     "impact": {
+      "en": "On-premises disks need constant capacity planning and costly upgrades.",
+      "vi": "Ổ đĩa tại chỗ phải liên tục tính toán dung lượng và nâng cấp tốn kém."
+     }
+    },
+    {
+     "title": {
+      "en": "Files must stay in Vietnam (Decree 53/2022)",
+      "vi": "Dữ liệu phải lưu trong nước (Nghị định 53/2022)"
+     },
+     "impact": {
+      "en": "Offshore object storage creates compliance and audit risk.",
+      "vi": "Lưu trữ đối tượng ở nước ngoài tạo rủi ro tuân thủ và kiểm toán."
+     }
+    },
+    {
+     "title": {
+      "en": "Applications already built for S3",
+      "vi": "Ứng dụng đã được xây dựng cho S3"
+     },
+     "impact": {
+      "en": "Moving to a different storage API means rewriting code and retesting.",
+      "vi": "Chuyển sang API lưu trữ khác nghĩa là phải viết lại mã và kiểm thử lại."
+     }
+    },
+    {
+     "title": {
+      "en": "Videos arrive in every format",
+      "vi": "Video được tải lên với đủ loại định dạng"
+     },
+     "impact": {
+      "en": "Manual conversion slows publishing and wastes engineering time.",
+      "vi": "Chuyển đổi thủ công làm chậm xuất bản và tốn thời gian của kỹ sư."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Key features",
+    "vi": "Tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What you get",
+    "vi": "Bạn nhận được gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "S3-compatible API and tools",
+      "vi": "API và công cụ tương thích S3"
+     },
+     "body": {
+      "en": "Use the same SDKs, AWS CLI commands and integrations you use today.",
+      "vi": "Dùng đúng các SDK, lệnh AWS CLI và tích hợp bạn đang dùng."
+     }
+    },
+    {
+     "title": {
+      "en": "Granular access control",
+      "vi": "Phân quyền truy cập chi tiết"
+     },
+     "body": {
+      "en": "Per-bucket and per-object permissions, with unique Access Key and Secret Key pairs.",
+      "vi": "Phân quyền theo từng bucket và đối tượng, với cặp Access Key và Secret Key riêng."
+     }
+    },
+    {
+     "title": {
+      "en": "Encryption and audit logging",
+      "vi": "Mã hóa và nhật ký kiểm toán"
+     },
+     "body": {
+      "en": "Protect data at rest and keep a record of who accessed what.",
+      "vi": "Bảo vệ dữ liệu lưu trữ và ghi lại ai đã truy cập gì."
+     }
+    },
+    {
+     "title": {
+      "en": "Video transcoding on upload",
+      "vi": "Chuyển mã video khi tải lên"
+     },
+     "body": {
+      "en": "Convert videos to the formats you need automatically, with CDN-accelerated delivery.",
+      "vi": "Tự động chuyển video sang các định dạng cần thiết, phân phối nhanh nhờ CDN."
+     }
+    },
+    {
+     "title": {
+      "en": "Console, SDK, CLI, REST API and Terraform",
+      "vi": "Giao diện web, SDK, CLI, REST API và Terraform"
+     },
+     "body": {
+      "en": "Manage storage by hand or as code, whichever suits your team.",
+      "vi": "Quản lý lưu trữ thủ công hoặc bằng mã, tùy cách làm việc của đội bạn."
+     }
+    },
+    {
+     "title": {
+      "en": "In-country storage",
+      "vi": "Lưu trữ trong nước"
+     },
+     "body": {
+      "en": "Data stays in Tier III data centers inside Vietnam.",
+      "vi": "Dữ liệu nằm tại các trung tâm dữ liệu Tier III trong nước."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Media & OTT platforms",
+      "vi": "Truyền thông & nền tảng OTT"
+     },
+     "icon": "clapperboard",
+     "industry": "media",
+     "body": {
+      "en": "Store, transcode and deliver large video libraries.",
+      "vi": "Lưu trữ, chuyển mã và phân phối thư viện video lớn."
+     }
+    },
+    {
+     "name": {
+      "en": "Backup and archive",
+      "vi": "Sao lưu & lưu trữ dài hạn"
+     },
+     "icon": "database",
+     "industry": null,
+     "body": {
+      "en": "Keep backups and records that grow every year.",
+      "vi": "Giữ các bản sao lưu và hồ sơ tăng lên mỗi năm."
+     }
+    },
+    {
+     "name": {
+      "en": "Software & SaaS teams",
+      "vi": "Đội phần mềm & SaaS"
+     },
+     "icon": "zap",
+     "industry": null,
+     "body": {
+      "en": "Storage for uploads, assets and app data through the S3 API.",
+      "vi": "Lưu trữ tệp tải lên, tài nguyên và dữ liệu ứng dụng qua API S3."
+     }
+    },
+    {
+     "name": {
+      "en": "E-commerce & retail",
+      "vi": "Thương mại điện tử & bán lẻ"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Product images and catalogs delivered quickly at sale peaks.",
+      "vi": "Hình ảnh sản phẩm và danh mục phân phối nhanh trong đợt khuyến mãi."
+     }
+    },
+    {
+     "name": {
+      "en": "Healthcare",
+      "vi": "Y tế"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Keep records and imaging files in-country with access logs.",
+      "vi": "Lưu hồ sơ và ảnh chẩn đoán trong nước, có nhật ký truy cập."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Cơ quan nhà nước & khu vực công"
+     },
+     "icon": "building-2",
+     "industry": "government",
+     "body": {
+      "en": "Documents and archives on sovereign, auditable storage.",
+      "vi": "Tài liệu và kho lưu trữ trên nền tảng chủ quyền, kiểm toán được."
+     }
+    }
+   ]
+  }
+ },
+ {
   "id": "email-security",
   "icon": "mail-check",
   "name": "Email Security",

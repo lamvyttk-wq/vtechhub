@@ -14,7 +14,7 @@
             { "id": "cdn", "name": { "en": "Content Delivery Network", "vi": "Mạng phân phối nội dung (CDN)" } },
             { "id": "vcloud", "name": { "en": "Public Cloud & Private Cloud", "vi": "Public Cloud & Private Cloud" } },
             { "id": "bare-metal", "name": { "en": "Bare Metal Server & Data Center", "vi": "Máy chủ vật lý (Bare Metal) & Data Center" } },
-            { "id": null, "name": { "en": "Cloud Storage", "vi": "Lưu trữ đám mây" } }
+            { "id": "cloud-storage", "name": { "en": "Cloud Storage", "vi": "Lưu trữ đám mây" } }
           ]
         },
         {
