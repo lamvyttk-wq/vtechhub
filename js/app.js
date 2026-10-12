@@ -16,7 +16,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 const state = {
   lang: store.get('vth-lang') || 'en',
-  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: [], images: {}
+  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: [], images: {}, menu: null
 };
 const t = (o) => (typeof o === 'string' ? o : (o && (o[state.lang] ?? o.en)) ?? '');
 const ui = (path) => path.split('.').reduce((o, k) => o?.[k], state.ui);
@@ -50,12 +50,13 @@ async function loadData() {
   let raw = window.__DATA__;
   if (!raw) {
     const j = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
-    const [uiData, solutions, experts, images, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), j('data/images.json').catch(() => ({})), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
-    raw = { ui: uiData, solutions, experts, images, industries: inds.filter(Boolean) };
+    const [uiData, solutions, experts, images, menu, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), j('data/images.json').catch(() => ({})), j('data/solutionmenu.json').catch(() => null), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
+    raw = { ui: uiData, solutions, experts, images, menu, industries: inds.filter(Boolean) };
   }
   state.ui = raw.ui;
   state.experts = raw.experts || [];
   state.images = raw.images || {};
+  state.menu = raw.menu || null;
   state.industries = [...raw.industries].sort((a, b) => a.order - b.order);
   raw.solutions.forEach((s) => state.solutions.set(s.id, s));
   state.industries.forEach((i) => (i.newSolutions || []).forEach((s) => { if (!state.solutions.has(s.id)) state.solutions.set(s.id, s); }));
@@ -66,6 +67,21 @@ const link = (hash, inner, cls = '', extra = '') => `<a href="#${hash}" data-go=
 const roman = (n) => String(n).padStart(2, '0');
 
 /* ---------------------------------------------------------------- shared chrome */
+// "Solutions Architecture" mega menu: the catalogue grouped as Engineer / Operate. Entries without a page yet render as "Soon".
+function megaMenu() {
+  const m = state.menu; if (!m) return '';
+  const item = (it) => {
+    const label = esc(t(it.name));
+    if (it.id && state.solutions.has(it.id)) return link(`solution-${it.id}`, `<span>${label}</span>${ic('chevron-right')}`, 'mega-item');
+    return `<span class="mega-item soon" aria-disabled="true"><span>${label}</span><em>${esc(t(m.soon))}</em></span>`;
+  };
+  const groups = m.groups.map((g) => `<section class="mega-card"><span class="mega-label">${esc(t(g.label))}</span>
+    <div class="mega-cols" style="--cols:${g.columns.length}">${g.columns.map((c) => `<div><h3>${esc(t(c.title))}</h3><div class="mega-list${c.split ? ' two' : ''}">${c.items.map(item).join('')}</div></div>`).join('')}</div></section>`).join('');
+  return `<div class="mega-in"><div class="mega-head"><h2>${esc(t(m.title))}</h2><span class="mega-tag">${esc(t(m.tag))}</span>
+    <button type="button" class="mega-close" data-mega-close>${ic('x')}<span>${esc(t(m.close))}</span></button></div><div class="mega-groups">${groups}</div></div>`;
+}
+
+
 function header() {
   const cur = state.route.page === 'industry' ? state.route.id : '';
   const inds = state.industries.map((i) => link(`industry-${i.id}`, `${ic(i.icon)}<span>${esc(t(i.name))}<small>${esc(t(i.tagline))}</small></span>`)).join('');
@@ -73,7 +89,7 @@ function header() {
   return `<header class="hdr" id="hdr"><div class="wrap">
     ${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo', 'aria-label="V-TECH FOUNDRY"')}
     <nav class="nav" id="nav" aria-label="Primary">
-      <div class="dd"><button class="nav-btn ${state.route.page === 'solution' ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.solutions')} ${ic('chevron-down')}</button><div class="panel wide">${sols}</div></div>
+      <div class="dd mega-dd"><button class="nav-btn ${state.route.page === 'solution' ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.solutions')} ${ic('chevron-down')}</button><div class="mega">${state.menu ? megaMenu() : `<div class="panel wide">${sols}</div>`}</div></div>
       <div class="dd"><button class="nav-btn ${cur ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.industry')} ${ic('chevron-down')}</button><div class="panel wide">${inds}</div></div>
       <div class="dd"><button class="nav-btn" aria-expanded="false" aria-haspopup="true">${u('nav.meet')} ${ic('chevron-down')}</button>
         <div class="panel"><a href="${CONFIG.website}" target="_blank" rel="noopener">${ic('building')}<span>${u('nav.about')}</span></a>
@@ -358,8 +374,10 @@ function bindChrome() {
     const b = $('.nav-btn', d);
     const set = (o) => { closeAll(); d.classList.toggle('open', o); b.setAttribute('aria-expanded', String(o)); };
     b.addEventListener('click', (e) => { e.stopPropagation(); set(!d.classList.contains('open')); });
-    d.addEventListener('mouseenter', () => hoverable() && set(true));
-    d.addEventListener('mouseleave', () => hoverable() && set(false));
+    if (!d.classList.contains('mega-dd')) { // the mega menu opens on click and closes with its button, ESC or an outside click
+      d.addEventListener('mouseenter', () => hoverable() && set(true));
+      d.addEventListener('mouseleave', () => hoverable() && set(false));
+    }
   });
   $('#burger').addEventListener('click', (e) => { const o = $('#nav').classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded', String(o)); });
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
@@ -368,6 +386,7 @@ function bindChrome() {
 // one delegated handler for the whole document (links, smooth scroll, copy buttons, dismissals)
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.dd')) state.closeAll?.();
+  if (e.target.closest('[data-mega-close]')) { state.closeAll?.(); return; }
   const nav = e.target.closest('[data-go]');
   if (nav) { e.preventDefault(); state.closeAll?.(); $('#nav')?.classList.remove('open'); go(nav.dataset.go); return; }
   const a = e.target.closest('[data-scroll]');

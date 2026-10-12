@@ -2,6 +2,7 @@
 export const ICONS = {
  "arrow-down": "<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>",
  "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 0 1 0 9Z\"/>",
+ "chevron-right": "<path d=\"m9 18 6-6-6-6\"/>",
  "arrow-left": "<path d=\"M19 12H5\"/><path d=\"m12 19-7-7 7-7\"/>",
  "arrow-right": "<path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/>",
  "arrow-up-right": "<path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/>",

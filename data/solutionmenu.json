@@ -1,0 +1,49 @@
+{
+  "title": { "en": "Solutions Architecture", "vi": "Kiến trúc giải pháp" },
+  "tag": { "en": "Enterprise capabilities", "vi": "Năng lực doanh nghiệp" },
+  "close": { "en": "Close (ESC)", "vi": "Đóng (ESC)" },
+  "soon": { "en": "Soon", "vi": "Sắp có" },
+  "groups": [
+    {
+      "id": "engineer",
+      "label": { "en": "Engineer", "vi": "Xây dựng" },
+      "columns": [
+        {
+          "title": { "en": "Cloud & Delivery", "vi": "Đám mây & Phân phối" },
+          "items": [
+            { "id": "cdn", "name": { "en": "Content Delivery Network", "vi": "Mạng phân phối nội dung (CDN)" } },
+            { "id": "vcloud", "name": { "en": "Public Cloud & Private Cloud", "vi": "Public Cloud & Private Cloud" } },
+            { "id": null, "name": { "en": "Bare Metal Server & Data Center", "vi": "Máy chủ vật lý (Bare Metal) & Data Center" } },
+            { "id": null, "name": { "en": "Cloud Storage", "vi": "Lưu trữ đám mây" } }
+          ]
+        },
+        {
+          "title": { "en": "Cyber Security", "vi": "An ninh mạng" },
+          "items": [
+            { "id": "web-waf", "name": { "en": "Web/App/API Security", "vi": "Bảo mật Web/App/API" } },
+            { "id": "email-security", "name": { "en": "Email Security", "vi": "Bảo mật Email" } },
+            { "id": "dlp", "name": { "en": "Data Loss Prevention", "vi": "Chống thất thoát dữ liệu (DLP)" } },
+            { "id": "database-security", "name": { "en": "Database Security", "vi": "Bảo mật cơ sở dữ liệu" } },
+            { "id": null, "name": { "en": "SOC", "vi": "SOC" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operate",
+      "label": { "en": "Operate", "vi": "Vận hành" },
+      "columns": [
+        {
+          "title": { "en": "AI Operations & Business Process", "vi": "Vận hành AI & Quy trình nghiệp vụ" },
+          "split": true,
+          "items": [
+            { "id": "ai-legal", "name": { "en": "AI Legal & Compliance", "vi": "AI Pháp chế & Tuân thủ" } },
+            { "id": null, "name": { "en": "AI Agent", "vi": "AI Agent" } },
+            { "id": null, "name": { "en": "AI Healthcare & Health Insurance", "vi": "AI Y tế & Bảo hiểm sức khỏe" } },
+            { "id": null, "name": { "en": "AI CRM", "vi": "AI CRM" } }
+          ]
+        }
+      ]
+    }
+  ]
+}
