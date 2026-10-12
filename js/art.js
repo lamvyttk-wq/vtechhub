@@ -139,3 +139,21 @@ export function thumb(iconMarkup = '', id = 't', variant = 0, wide = false) {
     <g transform="translate(28 28) scale(1.9)" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${iconMarkup}</g></g>
 </svg>`;
 }
+
+// soft flowing silk ribbons for the home hero (lavender / blue / blush with a trace of brand red)
+export function ribbons() {
+  const lines = (d, n, step, op) => Array.from({ length: n }, (_, i) => `<path d="${d}" transform="translate(0 ${i * step})" fill="none" stroke="#fff" stroke-opacity="${op}" stroke-width="1.2"/>`).join('');
+  return `<svg class="ribbons-art" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="rbA" x1="0" x2="1"><stop offset="0" stop-color="#b9a6ff"/><stop offset=".45" stop-color="#f4c9f2"/><stop offset="1" stop-color="#ff9fa0"/></linearGradient>
+    <linearGradient id="rbB" x1="0" x2="1"><stop offset="0" stop-color="#9fd0ff"/><stop offset=".5" stop-color="#a9a7f6"/><stop offset="1" stop-color="#f0b8ee"/></linearGradient>
+    <linearGradient id="rbC" x1="0" x2="1"><stop offset="0" stop-color="#ffd0cf"/><stop offset=".55" stop-color="#e8c7ff"/><stop offset="1" stop-color="#b7cdff"/></linearGradient>
+    <linearGradient id="rbF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset=".7" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path d="M-20 300C220 120 460 360 760 250S1230 90 1420 180 1560 330 1640 250V430H-20z" fill="url(#rbB)" opacity=".62"/>
+  <path d="M-20 330C200 220 470 150 760 270S1180 330 1420 220 1560 130 1640 170V430H-20z" fill="url(#rbC)" opacity=".7"/>
+  <path d="M-20 262C250 360 520 210 820 300S1260 200 1420 290 1580 330 1640 300V430H-20z" fill="url(#rbA)" opacity=".55"/>
+  ${lines('M-20 300C220 120 460 360 760 250S1230 90 1420 180 1560 330 1640 250', 9, 7, .28)}
+  ${lines('M-20 262C250 360 520 210 820 300S1260 200 1420 290 1580 330 1640 300', 7, 6, .3)}
+</svg>`;
+}

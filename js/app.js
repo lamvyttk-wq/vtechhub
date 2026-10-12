@@ -4,7 +4,7 @@
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
-import { scene, banner, thumb } from './art.js';
+import { scene, banner, thumb, ribbons } from './art.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -182,16 +182,16 @@ function homePage() {
   const tiles = [...state.solutions.values()].map((s, k) => link(`solution-${s.id}`,
     `<div class="tile-ph">${photo(state.images.bySolution?.[s.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[s.icon] || ICONS.box, `home${k}`, k, true) })}</div>${ic(s.icon, 'lead')}<h3>${esc(s.name)}</h3><p>${esc(t(s.tagline))}</p><div class="foot"><span>${u('ind.learn')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
   return `
-  <section class="hero"><div class="wrap"><div class="grid">
-    <div>
+  <section class="hero hero-c"><div class="hero-glow" aria-hidden="true"></div><div class="ribbons" aria-hidden="true">${ribbons()}</div>
+    <div class="wrap">
       <span class="eyebrow hero-in">${u('home.eyebrow')}</span>
-      <h1 class="display hero-in" style="animation-delay:.08s">${u('home.heroA')} <em>${u('home.heroB')}</em></h1>
+      <h1 class="display hero-in" style="animation-delay:.08s">${u('home.heroA')} <em class="uline">${u('home.heroB')}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${u('home.heroP')}</p>
       <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#industries" data-scroll="#industries">${u('home.explore')} ${ic('arrow-right')}</a>
-        <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('nav.request')}</a></div>
+        <a class="btn btn-line" href="#contact" data-scroll="#contact">${ic('message-square')} ${u('nav.request')}</a></div>
+      <div class="hero-scene hero-in" style="animation-delay:.32s" aria-hidden="true">${art('cloud', 'cloud', 'h')}</div>
     </div>
-    <aside class="preview hero-in" style="animation-delay:.3s" aria-hidden="true">${art('cloud', 'cloud', 'h')}</aside>
-  </div></div></section>
+    <a class="scroll-cue" href="#alliance" data-scroll="#alliance" aria-label="${u('ind.scroll')}"><span>${ic('arrow-down')}</span></a></section>
   ${alliance()}
   <section class="sec" id="industries" style="padding-top:clamp(2rem,4vw,3rem)"><div class="wrap">
     <div class="sec-head"><span class="eyebrow rv">${u('home.indKicker')}</span><h2 class="h2 rv">${u('home.indLead')}</h2><p class="lede rv">${u('home.indP')}</p></div>
