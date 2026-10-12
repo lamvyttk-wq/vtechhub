@@ -6,6 +6,7 @@ for (const [slot, v] of Object.entries(m)) {
   if (!v || !v.src) continue;
   let any = false;
   for (const s of v.src) {
+    if (!/^https?:/.test(s)) { console.log('LOCAL', slot, s, fs.existsSync(new URL('../' + s, import.meta.url)) ? 'exists' : 'MISSING'); any ||= fs.existsSync(new URL('../' + s, import.meta.url)); continue; }
     const url = s.replace('{w}', '800');
     try {
       const r = await fetch(url, { method: 'GET', redirect: 'follow', headers: { Range: 'bytes=0-1023' } });

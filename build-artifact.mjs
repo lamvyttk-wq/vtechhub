@@ -6,6 +6,10 @@ const strip = (src) => src.replace(/^import .*$/gm, '').replace(/^export /gm, ''
 const industries = fs.readdirSync('data/industries').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(read('data/industries/' + f)));
 const experts = JSON.parse(read('data/experts.json')).map((x) => ({ ...x, photo: x.photo ? `data:image/${x.photo.split('.').pop()};base64,` + fs.readFileSync(x.photo).toString('base64') : null }));
 const images = JSON.parse(read('data/images.json'));
+// local photos are inlined as data URIs so the single-file build is self-contained
+for (const v of Object.values(images)) {
+  if (v && Array.isArray(v.src)) v.src = v.src.map((x) => (/^https?:/.test(x) ? x : `data:image/${x.split('.').pop()};base64,` + fs.readFileSync(x).toString('base64')));
+}
 const data = { experts, images, ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
 const js = [read('js/config.js'), read('js/icons.js'), read('js/art.js'), read('js/app.js')].map(strip).join('\n');
 const html = `<meta charset="utf-8">
