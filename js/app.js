@@ -176,8 +176,6 @@ function experts() {
 
 /* ---------------------------------------------------------------- pages */
 function homePage() {
-  const bfsi = industryOf('bfsi') || state.industries[0];
-  const c0 = bfsi.chapters[0];
   const rows = state.industries.map((i) => link(`industry-${i.id}`,
     `${ic(i.icon, 'lead')}<h3>${esc(t(i.name))}</h3><p>${esc(t(i.tagline))}</p><span class="go">${ic('arrow-right')}</span>`, 'ix rv')).join('');
   const steps = ui('home.steps').map((s, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(s.t)}</h3><p>${t(s.d)}</p></div>`).join('');
@@ -192,18 +190,7 @@ function homePage() {
       <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#industries" data-scroll="#industries">${u('home.explore')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('nav.request')}</a></div>
     </div>
-    <aside class="preview hero-in" style="animation-delay:.3s" aria-label="${u('home.previewKicker')}">
-      ${art('cloud', 'cloud', 'h')}
-      <div class="glass card-a">
-        <div class="lbl"><span class="eyebrow">${esc(t(bfsi.name))}</span><span class="chip">${u('home.previewKicker')}</span></div>
-        <p class="was">${esc(t(c0.challenge.title))}</p>
-        <div class="rule">${ic('arrow-down')}<i></i></div>
-        <p class="now">${esc(t(c0.response.title))}</p>
-        <div class="sol solchips">${c0.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('')}</div>
-        <p class="cap">${u('home.previewP')}</p>
-      </div>
-      <div class="glass card-b" aria-hidden="true"></div>
-    </aside>
+    <aside class="preview hero-in" style="animation-delay:.3s" aria-hidden="true">${art('cloud', 'cloud', 'h')}</aside>
   </div></div></section>
   ${alliance()}
   <section class="sec" id="industries" style="padding-top:clamp(2rem,4vw,3rem)"><div class="wrap">
