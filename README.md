@@ -20,17 +20,18 @@ Instead (all in `js/app.js` + the motion block at the end of `css/styles.css`):
 - **Reveal once** — `.rv` elements fade/rise the first time they enter the viewport (IntersectionObserver, short stagger).
 - **Chapter sequence** — each story chapter plays a timed sequence on entry: challenge → bridge draws → answer resolves from blur → points → metric counts up.
 - **Sticky local nav** (industry pages) — Overview · Key challenges · Solutions · Why · FAQ, active section underlined, CTA on the right.
-- **Highlights rail** — the solution bundle is a native scroll-snap carousel with arrows and progress dots.
 - **FAQ** — accordion height eases open/closed.
 - `prefers-reduced-motion` disables all of it; content is fully readable without JS motion.
 
-## How the story reads (industry page)
-Hero → local nav → "what worries you most?" picker (jumps to the chapter) → 5 chapters, challenge left / answer right
-(stacked on mobile) → solution rail → outcomes → FAQ → PoC → contact. EN/VI toggle persists. Single white theme.
+## How the industry page reads
+Modelled on the information flow of enterprise-services pages (overview -> proof -> offering -> why us -> approach -> people -> FAQ -> other sectors), not on their look:
+sticky local nav -> hero + illustrated banner -> **Overview** (who we are for you + 4 proof points taken from the site's own copy: challenges, solutions, 14-day PoC, 1-day reply)
+-> **Challenges** (picker + 5 timed challenge/answer chapters) -> **Solutions** (image cards) -> **Why us** -> **Approach** (problem, answer, proof + PoC CTA)
+-> **Experts** -> **FAQ** -> **Other industries** -> contact. EN/VI toggle persists. Single white theme.
 
 ## Look & feel
 - Typeface: **Be Vietnam Pro** (single family, bold headings) to match vnetwork.vn's geometric sans; brand red `#e32f1e` sampled from vnetwork.vn. Both are CSS variables at the top of `css/styles.css`. The font match is visual, not read from VNETWORK's stylesheet: confirm against their site and swap `--sans` if needed.
-- Illustrations: `js/art.js` draws original SVG scenes (white server stacks with red bands, red glass cloud/tile) in VNETWORK's visual style. No image files, no network. Replace with official VNETWORK artwork by swapping the `art()` calls in `js/app.js`.
+- Illustrations: `js/art.js` draws original SVG art in VNETWORK's visual style (white server stacks with red bands, red glass tiles): hero scenes, one wide banner per industry (8 hand-drawn motifs, chips use the package's solution icons) and solution/industry thumbnails. No image files, no network. Replace with official VNETWORK artwork by swapping the `art()` calls in `js/app.js`.
 - Experts: `data/experts.json` (3 cards, EN/VI). Photos go in `assets/experts/` and are referenced by `photo`; `null` shows a neutral avatar. **Phan Thi My Hau has no role/bio yet** (card shows "Speaker"/"Diễn giả" only).
 
 ## Editing content (no code)

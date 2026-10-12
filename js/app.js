@@ -4,7 +4,7 @@
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
-import { scene } from './art.js';
+import { scene, banner, thumb } from './art.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -132,6 +132,7 @@ function footer() {
 }
 
 const art = (kind, icon, id) => scene(kind, ICONS[icon] || ICONS.box, id);
+const fill = (str, o) => str.replace(/\{(\w+)\}/g, (_, k) => o[k] ?? '');
 
 function experts() {
   const cards = state.experts.map((x) => {
@@ -188,12 +189,12 @@ function industryPage() {
   const id = state.route.id;
   const d = industryOf(id);
   if (!d) return notFound(u('ind.notFound'));
+  const name = t(d.name);
   const chips = (d.regulations || []).map((r) => `<span class="chip">${ic('shield')} ${esc(t(r))}</span>`).join('');
-  const sw = state.industries.map((i) => link(`industry-${i.id}`, esc(t(i.name)), i.id === id ? 'on' : '')).join('');
   const n = d.chapters.length;
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
-  const lnav = [['intro', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.whyKicker'], ['faq', 'ind.lnFaq']]
-    .map(([id, key]) => `<a href="#${id}" data-scroll="#${id}" data-spy="${id}">${u(key)}</a>`).join('');
+  const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
+    .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
     const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('');
@@ -213,41 +214,56 @@ function industryPage() {
     </div></div></section>`;
   }).join('');
 
-  const bundle = d.bundle.map((s) => {
-    const covers = d.chapters.map((c, k) => (c.solutions.includes(s) ? roman(k + 1) : '')).filter(Boolean).join(' \u00b7 ');
+  // Flow (borrowing the logic of enterprise-services pages, not their look): who we are for you -> proof points -> your challenges
+  // -> the packaged answers -> why us -> how we work / PoC -> people -> FAQ -> other sectors -> contact.
+  const solNames = d.bundle.map((s) => sol(s).name).join(', ');
+  const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
+    .map(([v, key]) => `<div><strong>${v}</strong><span>${u(key)}</span></div>`).join('');
+
+  const cards = d.bundle.map((s, k) => {
+    const covers = d.chapters.map((c, j) => (c.solutions.includes(s) ? roman(j + 1) : '')).filter(Boolean).join(' · ');
     const x = sol(s);
-    return link(`solution-${s}`, `${ic(x.icon, 'lead')}<h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
-      <div class="foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span>${ic('arrow-up-right')}</div>`, 'tile glass');
+    return link(`solution-${s}`, `<div class="sc-img">${thumb(ICONS[x.icon] || ICONS.box, `${id}${k}`, k)}</div>
+      <div class="sc-body"><h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
+        <div class="sc-foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span><span class="more"><i></i>${u('ind.learn')}</span></div></div>`, 'sc rv');
   }).join('');
-  const outcomes = d.outcomes.map((o, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
+
+  const why = d.outcomes.map((o, k) => `<div class="why-c rv"><span class="why-i">${ic(['shield-check', 'check-circle-2', 'zap'][k % 3])}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
+  const steps = ui('home.steps').map((st, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(st.t)}</h3><p>${t(st.d)}</p></div>`).join('');
   const faq = d.faq.map((f) => `<details class="rv"><summary>${esc(t(f.q))}${ic('plus')}</summary><div class="a">${esc(t(f.a))}</div></details>`).join('');
+  const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
+    `<div class="oc-img">${thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true)}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
   return `
-  <nav class="lnav" id="lnav" aria-label="${esc(t(d.name))}"><div class="wrap"><span class="lnav-t">${esc(t(d.name))}</span><div class="lnav-l">${lnav}</div>
+  <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
-  <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
-    <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(t(d.name))}</span></div>
-    <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
-    <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>
-    <div class="chips hero-in" style="animation-delay:.2s">${chips}</div>
-    <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
-      <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div>
-    <nav class="switcher hero-in" style="animation-delay:.3s" aria-label="${u('ind.otherIndustries')}">${sw}</nav></div>
-    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', d.icon, 'i')}</div></div></div></section>
+  <section class="hero ind-hero"><div class="wrap">
+    <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
+    <div class="ind-top"><div>
+      <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
+      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p></div>
+      <div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
+        <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
+        <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
+    <div class="banner hero-in" style="animation-delay:.3s">${banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h')}</div>
+  </div></section>
+  <section class="sec ov" id="overview"><div class="wrap">
+    <div class="ov-row"><div class="ov-art rv">${art('tile', d.icon, 'o')}</div>
+      <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
+        <p class="lede rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name, list: solNames }))}</p><p class="lede rv">${u('ind.ovP2')}</p></div></div>
+    <div class="statrow rv">${stats}</div></div></section>
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
-    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(t(d.name))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
+    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
-  <div class="story" id="story">
-    ${chapters}</div>
-  <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div></div>
-    <div class="carousel rv" id="rail" aria-roledescription="carousel" aria-label="${u('ind.bundleKicker')}"><div class="rail" tabindex="0">${bundle}</div>
-      <div class="wrap rail-ctl"><div class="dots" aria-hidden="true">${d.bundle.map(() => '<i></i>').join('')}</div>
-        <div class="arrows"><button type="button" data-rail="-1" aria-label="${u('ind.prev')}">${ic('arrow-left')}</button><button type="button" data-rail="1" aria-label="${u('ind.next')}">${ic('arrow-right')}</button></div></div></div></section>
-  <section class="sec" id="why" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span></div><div class="cols3">${outcomes}</div></div></section>
-  <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
-  <section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
+  <div class="story" id="story">${chapters}</div>
+  <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div><div class="scs">${cards}</div></div></section>
+  <section class="sec why" id="why"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span><h2 class="h2 rv">${u('ind.whyTitle')}</h2></div><div class="whys">${why}</div></div></section>
+  <section class="sec" id="approach"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>
+    <div class="poc glass rv" style="margin-top:clamp(2rem,4vw,3.5rem)"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
   ${experts()}
+  <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
+  <section class="sec" id="others" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.otherIndustries')}</span><h2 class="h2 rv">${u('ind.othersTitle')}</h2></div><div class="ocs">${others}</div></div></section>
   ${contact(id)}`;
 }
 
@@ -442,36 +458,14 @@ function initLocalNav() {
   const links = $$('[data-spy]'); if (!links.length || !window.IntersectionObserver) return;
   const map = new Map(links.map((a) => [a.dataset.spy, a]));
   const on = (id) => links.forEach((a) => a.classList.toggle('on', a.dataset.spy === id));
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) on(e.target.id); }), { rootMargin: '-35% 0px -60% 0px' });
-  map.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) on(map.has(e.target.id) ? e.target.id : null); }), { rootMargin: '-35% 0px -60% 0px' });
+  [...map.keys(), 'others', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   cleanups.push(() => io.disconnect());
   const nav = $('#lnav'); const bar = () => nav.classList.toggle('stuck', nav.getBoundingClientRect().top <= (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) + 1);
   addEventListener('scroll', bar, { passive: true }); bar();
   cleanups.push(() => removeEventListener('scroll', bar));
   // the chapter picker in the intro jumps straight to the matching chapter
   $$('[data-goto]').forEach((b) => b.addEventListener('click', () => scrollToEl($(`#ch-${b.dataset.goto}`))));
-}
-
-// Apple-style "highlights" rail: native horizontal scroll-snap, plus arrows and progress dots
-function initRail() {
-  const rail = $('#rail .rail'); if (!rail) return;
-  const dots = $$('#rail .dots i'); const [prev, next] = $$('#rail [data-rail]');
-  const items = [...rail.children];
-  const sync = () => {
-    const max = rail.scrollWidth - rail.clientWidth;
-    let cur = 0, best = 1e9;
-    items.forEach((it, i) => { const d = Math.abs(it.offsetLeft - rail.offsetLeft - rail.scrollLeft - parseFloat(getComputedStyle(rail).paddingLeft)); if (d < best) { best = d; cur = i; } });
-    if (rail.scrollLeft >= max - 4) cur = items.length - 1;
-    dots.forEach((d, i) => d.classList.toggle('on', i === cur));
-    prev.disabled = rail.scrollLeft <= 4; next.disabled = rail.scrollLeft >= max - 4;
-    $('#rail').classList.toggle('static', max <= 4);
-  };
-  const step = (dir) => rail.scrollBy({ left: dir * (items[0].offsetWidth + 20), behavior: motionOK ? 'smooth' : 'auto' });
-  prev.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
-  rail.addEventListener('scroll', sync, { passive: true });
-  addEventListener('resize', sync); cleanups.push(() => removeEventListener('resize', sync));
-  rail.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } });
-  sync();
 }
 
 // FAQ: height eases open/closed instead of snapping
@@ -505,7 +499,7 @@ function render(instant = false) {
   document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
   $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
-  bindChrome(); bindForm(); initLocalNav(); initRail(); initFaq();
+  bindChrome(); bindForm(); initLocalNav(); initFaq();
   initMotion(instant);
 }
 
