@@ -4,6 +4,7 @@
 // Routing is hash based (#home, #industry-bfsi, #solution-dlp) so the whole site works as a single page.
 import { CONFIG } from './config.js';
 import { ICONS } from './icons.js';
+import { scene } from './art.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -15,7 +16,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 const state = {
   lang: store.get('vth-lang') || 'en',
-  route: parseRoute(), ui: null, solutions: new Map(), industries: []
+  route: parseRoute(), ui: null, solutions: new Map(), industries: [], experts: []
 };
 const t = (o) => (typeof o === 'string' ? o : (o && (o[state.lang] ?? o.en)) ?? '');
 const ui = (path) => path.split('.').reduce((o, k) => o?.[k], state.ui);
@@ -49,10 +50,11 @@ async function loadData() {
   let raw = window.__DATA__;
   if (!raw) {
     const j = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.json(); });
-    const [uiData, solutions, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
-    raw = { ui: uiData, solutions, industries: inds.filter(Boolean) };
+    const [uiData, solutions, experts, ...inds] = await Promise.all([j('data/ui.json'), j('data/solutions.json'), j('data/experts.json').catch(() => []), ...CONFIG.industries.map((id) => j(`data/industries/${id}.json`).catch(() => null))]);
+    raw = { ui: uiData, solutions, experts, industries: inds.filter(Boolean) };
   }
   state.ui = raw.ui;
+  state.experts = raw.experts || [];
   state.industries = [...raw.industries].sort((a, b) => a.order - b.order);
   raw.solutions.forEach((s) => state.solutions.set(s.id, s));
   state.industries.forEach((i) => (i.newSolutions || []).forEach((s) => { if (!state.solutions.has(s.id)) state.solutions.set(s.id, s); }));
@@ -74,7 +76,7 @@ function header() {
       <div class="dd"><button class="nav-btn ${cur ? 'on' : ''}" aria-expanded="false" aria-haspopup="true">${u('nav.industry')} ${ic('chevron-down')}</button><div class="panel wide">${inds}</div></div>
       <div class="dd"><button class="nav-btn" aria-expanded="false" aria-haspopup="true">${u('nav.meet')} ${ic('chevron-down')}</button>
         <div class="panel"><a href="${CONFIG.website}" target="_blank" rel="noopener">${ic('building')}<span>${u('nav.about')}</span></a>
-        <a href="#contact" data-scroll="#contact">${ic('users')}<span>${u('nav.expert')}</span></a></div></div>
+        <a href="#experts" data-scroll="#experts">${ic('users')}<span>${u('nav.expert')}</span></a></div></div>
     </nav>
     <div class="tools">
       <div class="lang" role="group" aria-label="Language"><button data-lang="en" class="${state.lang === 'en' ? 'on' : ''}">EN</button><span>|</span><button data-lang="vi" class="${state.lang === 'vi' ? 'on' : ''}">VI</button></div>
@@ -129,6 +131,19 @@ function footer() {
   </div></footer>`;
 }
 
+const art = (kind, icon, id) => scene(kind, ICONS[icon] || ICONS.box, id);
+
+function experts() {
+  const cards = state.experts.map((x) => {
+    const av = x.photo ? `<img src="${esc(x.photo)}" alt="${esc(x.name)}" width="130" height="130" loading="lazy">` : ic('user-round');
+    const bio = t(x.bio);
+    return `<article class="xp rv"><div class="xp-top"><span class="xp-av">${av}</span></div>
+      <div class="xp-body"><h3>${esc(x.name)}</h3><p class="xp-role">${esc(t(x.role))}</p>${bio ? `<p class="xp-bio">${esc(bio)}</p>` : ''}</div></article>`;
+  }).join('');
+  return `<section class="sec" id="experts"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('expert.kicker')}</span><h2 class="h2 rv">${u('expert.title')}</h2><p class="lede rv">${u('expert.p')}</p></div>
+    <div class="xps">${cards}</div></div></section>`;
+}
+
 /* ---------------------------------------------------------------- pages */
 function homePage() {
   const bfsi = industryOf('bfsi') || state.industries[0];
@@ -148,6 +163,7 @@ function homePage() {
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('nav.request')}</a></div>
     </div>
     <aside class="preview hero-in" style="animation-delay:.3s" aria-label="${u('home.previewKicker')}">
+      ${art('cloud', 'cloud', 'h')}
       <div class="glass card-a">
         <div class="lbl"><span class="eyebrow">${esc(t(bfsi.name))}</span><span class="chip">${u('home.previewKicker')}</span></div>
         <p class="was">${esc(t(c0.challenge.title))}</p>
@@ -164,6 +180,7 @@ function homePage() {
     <div class="index">${rows}</div></div></section>
   <section class="sec"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span></div><div class="cols3">${steps}</div></div></section>
   <section class="sec"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.solKicker')}</span><h2 class="h2 rv">${u('home.solTitle')}</h2></div><div class="tiles">${tiles}</div></div></section>
+  ${experts()}
   ${contact()}`;
 }
 
@@ -208,14 +225,15 @@ function industryPage() {
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(t(d.name))}"><div class="wrap"><span class="lnav-t">${esc(t(d.name))}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
-  <section class="hero ind-hero"><div class="wrap">
+  <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
     <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(t(d.name))}</span></div>
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
     <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>
     <div class="chips hero-in" style="animation-delay:.2s">${chips}</div>
     <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
       <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div>
-    <nav class="switcher hero-in" style="animation-delay:.3s" aria-label="${u('ind.otherIndustries')}">${sw}</nav></div></section>
+    <nav class="switcher hero-in" style="animation-delay:.3s" aria-label="${u('ind.otherIndustries')}">${sw}</nav></div>
+    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', d.icon, 'i')}</div></div></div></section>
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(t(d.name))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
@@ -229,6 +247,7 @@ function industryPage() {
   <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
+  ${experts()}
   ${contact(id)}`;
 }
 
@@ -239,11 +258,13 @@ function solutionPage() {
   const uses = state.industries.flatMap((i) => i.chapters.filter((c) => c.solutions.includes(id)).map((c) => ({ i, c })));
   const tiles = uses.map(({ i, c }) => link(`industry-${i.id}`, `${ic(i.icon, 'lead')}<span class="chip">${esc(t(i.name))}</span><h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.response.title))}</p><div class="foot"><span>${u('home.read')}</span>${ic('arrow-up-right')}</div>`, 'tile glass rv')).join('');
   return `
-  <section class="hero ind-hero"><div class="wrap">
+  <section class="hero ind-hero"><div class="wrap"><div class="hero-grid"><div class="hero-copy">
     <div class="crumbs hero-in">${link('home', 'V-TECH HUB')} / <span>${u('sol.kicker')}</span> / <span>${esc(s.name)}</span></div>
     <h1 class="display hero-in" style="animation-delay:.08s">${esc(s.name)}</h1><p class="lede hero-in" style="animation-delay:.16s">${esc(t(s.description))}</p>
-    <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div></section>
+    <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
+    <div class="hero-art hero-in" style="animation-delay:.2s">${art('tile', s.icon, 's')}</div></div></div></section>
   <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>
+  ${experts()}
   ${contact()}`;
 }
 const notFound = (msg) => `<section class="hero"><div class="wrap"><h1 class="display">${esc(msg)}</h1><p class="lede" style="margin-top:1.4rem">${link('home', '\u2190 V-TECH HUB', 'red')}</p></div></section>`;

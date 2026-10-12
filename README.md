@@ -28,10 +28,16 @@ Instead (all in `js/app.js` + the motion block at the end of `css/styles.css`):
 Hero → local nav → "what worries you most?" picker (jumps to the chapter) → 5 chapters, challenge left / answer right
 (stacked on mobile) → solution rail → outcomes → FAQ → PoC → contact. EN/VI toggle persists. Single white theme.
 
+## Look & feel
+- Typeface: **Be Vietnam Pro** (single family, bold headings) to match vnetwork.vn's geometric sans; brand red `#e32f1e` sampled from vnetwork.vn. Both are CSS variables at the top of `css/styles.css`. The font match is visual, not read from VNETWORK's stylesheet: confirm against their site and swap `--sans` if needed.
+- Illustrations: `js/art.js` draws original SVG scenes (white server stacks with red bands, red glass cloud/tile) in VNETWORK's visual style. No image files, no network. Replace with official VNETWORK artwork by swapping the `art()` calls in `js/app.js`.
+- Experts: `data/experts.json` (3 cards, EN/VI). Photos go in `assets/experts/` and are referenced by `photo`; `null` shows a neutral avatar. **Phan Thi My Hau has no role/bio yet** (card shows "Speaker"/"Diễn giả" only).
+
 ## Editing content (no code)
 - `data/industries/<id>.json` — one story per industry. Schema + rules in `data/SCHEMA.md`.
 - `data/solutions.json` — shared product catalog (industries may add `newSolutions`).
 - `data/ui.json` — all interface strings (EN/VI).
+- `data/experts.json` — speaker cards.
 - `js/config.js` — phone, email, Zalo, offices, and **`leadEndpoint`** (form POST target; `null` = log only).
 - Brand tokens are CSS variables at the top of `css/styles.css`.
 

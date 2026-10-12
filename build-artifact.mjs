@@ -4,13 +4,14 @@ import fs from 'fs';
 const read = (p) => fs.readFileSync(p, 'utf8');
 const strip = (src) => src.replace(/^import .*$/gm, '').replace(/^export /gm, '');
 const industries = fs.readdirSync('data/industries').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(read('data/industries/' + f)));
-const data = { ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
-const js = [read('js/config.js'), read('js/icons.js'), read('js/app.js')].map(strip).join('\n');
+const experts = JSON.parse(read('data/experts.json')).map((x) => ({ ...x, photo: x.photo ? `data:image/${x.photo.split('.').pop()};base64,` + fs.readFileSync(x.photo).toString('base64') : null }));
+const data = { experts, ui: JSON.parse(read('data/ui.json')), solutions: JSON.parse(read('data/solutions.json')), industries };
+const js = [read('js/config.js'), read('js/icons.js'), read('js/art.js'), read('js/app.js')].map(strip).join('\n');
 const html = `<meta charset="utf-8">
 <title>V-TECH HUB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 ${read('css/styles.css')}
 </style>

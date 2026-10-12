@@ -374,6 +374,11 @@
    "vi": "Yêu cầu đã được ghi nhận trong bản xem trước."
   }
  },
+ "expert": {
+  "kicker": { "en": "Expert", "vi": "Chuyên gia" },
+  "title": { "en": "Meet the experts", "vi": "Gặp gỡ các chuyên gia" },
+  "p": { "en": "The people behind the solutions. Speak with them directly about your challenge.", "vi": "Những người đứng sau các giải pháp. Trao đổi trực tiếp với họ về thách thức của bạn." }
+ },
  "foot": {
   "powered": {
    "en": "Powered by",
