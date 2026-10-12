@@ -114,7 +114,8 @@
     "cdn": "cdn",
     "vcloud": "vcloud",
     "ai-healthcare": "clinic",
-    "web-waf": "waap"
+    "web-waf": "waap",
+    "cloud-storage": "storage"
   },
   "circuit": {
     "icon": "database",
@@ -389,6 +390,21 @@
     "caption": {
       "en": "One shield for web, apps and APIs",
       "vi": "Một lớp bảo vệ cho web, ứng dụng và API"
+    }
+  },
+  "storage": {
+    "icon": "box",
+    "pos": "50% 52%",
+    "src": [
+      "assets/photos/storage.webp"
+    ],
+    "alt": {
+      "en": "A glass cloud holding a database stack, documents and a shield",
+      "vi": "Đám mây thủy tinh chứa cụm cơ sở dữ liệu, tài liệu và khiên bảo vệ"
+    },
+    "caption": {
+      "en": "Object storage, kept in-country",
+      "vi": "Lưu trữ đối tượng, đặt trong nước"
     }
   }
 }
