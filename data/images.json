@@ -105,7 +105,6 @@
   },
   "byIndustry": {
     "bfsi": "dashboard",
-    "government": "controlroom",
     "retail": "dashboard",
     "media": "controlroom"
   },
@@ -177,7 +176,8 @@
     "manufacturing": "engineers",
     "logistics": "port",
     "healthcare": "clinic",
-    "education": "training"
+    "education": "training",
+    "government": "government"
   },
   "phishing": {
     "icon": "mail-check",
@@ -281,6 +281,21 @@
     "caption": {
       "en": "Every data channel, one view",
       "vi": "Mọi kênh dữ liệu, một góc nhìn"
+    }
+  },
+  "government": {
+    "icon": "building-2",
+    "pos": "12% 50%",
+    "src": [
+      "assets/photos/government.webp"
+    ],
+    "alt": {
+      "en": "A hand touching a holographic hexagon interface labelled Government, with security, data and global network icons",
+      "vi": "Bàn tay chạm vào giao diện lục giác ba chiều mang chữ Government cùng các biểu tượng bảo mật, dữ liệu và mạng toàn cầu"
+    },
+    "caption": {
+      "en": "Digital public services, secured",
+      "vi": "Dịch vụ công số, được bảo vệ"
     }
   }
 }
