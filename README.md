@@ -53,4 +53,5 @@ sticky local nav -> hero + illustrated banner -> **Overview** (who we are for yo
   - `95%` / `42%` appear only in BFSI/AI Legal (from the mockup); no other metric or customer claim exists.
   - Regulation chips are English-only strings.
 - VCLOUD ("Public Cloud & Private Cloud") copy is rewritten from the client's own draft screenshots (lead, overview, 4 business challenges, 6 audiences, modules 01-04; the last two modules' text was cut off, so their descriptions are minimal). The earlier uptime/IOPS/ISO figures from web search were removed. Intel Xeon 6 / AMD EPYC / Gen5 NVMe / Tier III / 100% in-country come from that draft; confirm with VNETWORK.
+- Bare Metal Server copy summarised from vnetwork.vn search results (page not reachable), pricing omitted as requested. Bandwidth ("unlimited" vs fixed uplinks), RAM/uplink maximums and prices are inconsistent across VNETWORK pages and deliberately left out; "24h deployment" is labelled as VNETWORK's claim. Confirm before publishing.
 - Confirm the Zalo link and the `Terms`/`Privacy` URLs.

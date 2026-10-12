@@ -245,6 +245,251 @@
   }
  },
  {
+  "id": "bare-metal",
+  "icon": "database",
+  "name": "Bare Metal Server",
+  "title": {
+   "en": "Bare Metal Server",
+   "vi": "Máy chủ vật lý (Bare Metal)"
+  },
+  "tagline": {
+   "en": "Dedicated hardware, hosted in Vietnam",
+   "vi": "Phần cứng chuyên dụng, đặt tại Việt Nam"
+  },
+  "description": {
+   "en": "Dedicated physical servers that only your workloads use, on AMD EPYC or Intel Xeon processors with NVMe SSD, hosted in Tier III data centers in Hanoi and Ho Chi Minh City.",
+   "vi": "Máy chủ vật lý dành riêng, chỉ phục vụ khối lượng công việc của bạn, dùng bộ xử lý AMD EPYC hoặc Intel Xeon cùng ổ NVMe SSD, đặt tại các trung tâm dữ liệu Tier III ở Hà Nội và TP.HCM."
+  },
+  "detail": {
+   "lead": {
+    "en": "Private, secure and flexible dedicated servers for performance-critical workloads.",
+    "vi": "Máy chủ chuyên dụng riêng tư, bảo mật và linh hoạt cho các khối lượng công việc đòi hỏi hiệu năng cao."
+   },
+   "stats": [
+    {
+     "value": "Tier III",
+     "label": {
+      "en": "data centers in Hanoi and Ho Chi Minh City",
+      "vi": "trung tâm dữ liệu tại Hà Nội và TP.HCM"
+     }
+    },
+    {
+     "value": "24h",
+     "label": {
+      "en": "deployment and expansion, as stated by VNETWORK",
+      "vi": "triển khai và mở rộng, theo công bố của VNETWORK"
+     }
+    },
+    {
+     "value": "24/7",
+     "label": {
+      "en": "local support",
+      "vi": "hỗ trợ tại chỗ"
+     }
+    },
+    {
+     "value": "7",
+     "label": {
+      "en": "configuration tiers, VBM1 to VBM7",
+      "vi": "cấu hình, từ VBM1 đến VBM7"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Single-tenant hardware",
+     "vi": "Phần cứng dành riêng"
+    },
+    {
+     "en": "AMD EPYC & Intel Xeon",
+     "vi": "AMD EPYC & Intel Xeon"
+    },
+    {
+     "en": "NVMe SSD storage",
+     "vi": "Lưu trữ NVMe SSD"
+    },
+    {
+     "en": "Custom configurations",
+     "vi": "Cấu hình tùy chỉnh"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Why teams choose bare metal",
+    "vi": "Vì sao chọn máy chủ vật lý"
+   },
+   "problemsTitle": {
+    "en": "When shared infrastructure is not enough",
+    "vi": "Khi hạ tầng dùng chung không còn đủ"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Performance drops when neighbours share the same host",
+      "vi": "Hiệu năng giảm khi nhiều khách hàng dùng chung một máy chủ"
+     },
+     "impact": {
+      "en": "Databases and real-time services see uneven latency at peak hours.",
+      "vi": "Cơ sở dữ liệu và dịch vụ thời gian thực bị độ trễ thất thường vào giờ cao điểm."
+     }
+    },
+    {
+     "title": {
+      "en": "Heavy workloads need the whole machine",
+      "vi": "Tải nặng cần dùng trọn vẹn cả máy chủ"
+     },
+     "impact": {
+      "en": "Large databases, analytics and AI jobs are throttled by virtualization overhead.",
+      "vi": "Cơ sở dữ liệu lớn, phân tích và AI bị chậm do chi phí ảo hóa."
+     }
+    },
+    {
+     "title": {
+      "en": "Data must stay in Vietnam and under your control",
+      "vi": "Dữ liệu phải ở lại Việt Nam và nằm trong tầm kiểm soát"
+     },
+     "impact": {
+      "en": "Shared or offshore hosting complicates compliance and audits.",
+      "vi": "Lưu trữ dùng chung hoặc ở nước ngoài làm phức tạp việc tuân thủ và kiểm toán."
+     }
+    },
+    {
+     "title": {
+      "en": "Hardware projects take weeks to deliver",
+      "vi": "Dự án phần cứng mất nhiều tuần để bàn giao"
+     },
+     "impact": {
+      "en": "Launches slip while servers are bought, shipped and racked.",
+      "vi": "Kế hoạch ra mắt bị trễ trong lúc mua, vận chuyển và lắp đặt máy chủ."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Key features",
+    "vi": "Tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What you get",
+    "vi": "Bạn nhận được gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Dedicated, single-tenant hardware",
+      "vi": "Phần cứng dành riêng cho một khách hàng"
+     },
+     "body": {
+      "en": "The whole server is yours, with predictable performance and no noisy neighbours.",
+      "vi": "Toàn bộ máy chủ thuộc về bạn, hiệu năng ổn định và không bị khách hàng khác ảnh hưởng."
+     }
+    },
+    {
+     "title": {
+      "en": "AMD EPYC and Intel Xeon with NVMe SSD",
+      "vi": "AMD EPYC và Intel Xeon cùng NVMe SSD"
+     },
+     "body": {
+      "en": "Seven tiers from entry level to dual-processor, with room to upgrade and expand.",
+      "vi": "Bảy cấu hình từ cơ bản đến hai bộ xử lý, có thể nâng cấp và mở rộng."
+     }
+    },
+    {
+     "title": {
+      "en": "Tier III data centers in Hanoi and Ho Chi Minh City",
+      "vi": "Trung tâm dữ liệu Tier III tại Hà Nội và TP.HCM"
+     },
+     "body": {
+      "en": "Data stays in Vietnam, in facilities run with partners such as Viettel IDC, VNPT, FPT and Mobifone.",
+      "vi": "Dữ liệu ở lại Việt Nam, tại các cơ sở vận hành cùng đối tác như Viettel IDC, VNPT, FPT và Mobifone."
+     }
+    },
+    {
+     "title": {
+      "en": "Fast deployment and 24/7 local support",
+      "vi": "Triển khai nhanh và hỗ trợ tại chỗ 24/7"
+     },
+     "body": {
+      "en": "VNETWORK states deployment and expansion within 24 hours, backed by round-the-clock support.",
+      "vi": "VNETWORK công bố triển khai và mở rộng trong vòng 24 giờ, kèm hỗ trợ suốt ngày đêm."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banking & finance",
+      "vi": "Ngân hàng & tài chính"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Core systems and databases that need stable, isolated performance.",
+      "vi": "Hệ thống lõi và cơ sở dữ liệu cần hiệu năng ổn định, cô lập."
+     }
+    },
+    {
+     "name": {
+      "en": "E-commerce & retail",
+      "vi": "Thương mại điện tử & bán lẻ"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Predictable capacity for sale peaks and high-traffic platforms.",
+      "vi": "Năng lực ổn định cho đợt khuyến mãi cao điểm và nền tảng lưu lượng lớn."
+     }
+    },
+    {
+     "name": {
+      "en": "Media & gaming",
+      "vi": "Truyền thông & game"
+     },
+     "icon": "clapperboard",
+     "industry": "media",
+     "body": {
+      "en": "Streaming, game servers and content platforms that cannot lag.",
+      "vi": "Phát trực tuyến, máy chủ game và nền tảng nội dung không được phép giật lag."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Cơ quan nhà nước & khu vực công"
+     },
+     "icon": "building-2",
+     "industry": "government",
+     "body": {
+      "en": "Sovereign hosting on hardware dedicated to one agency.",
+      "vi": "Lưu trữ chủ quyền trên phần cứng dành riêng cho từng đơn vị."
+     }
+    },
+    {
+     "name": {
+      "en": "Enterprise databases & ERP",
+      "vi": "Cơ sở dữ liệu & ERP doanh nghiệp"
+     },
+     "icon": "database",
+     "industry": null,
+     "body": {
+      "en": "Large, steady workloads that run best on a full machine.",
+      "vi": "Tải lớn, ổn định, chạy tốt nhất khi dùng trọn vẹn một máy chủ."
+     }
+    },
+    {
+     "name": {
+      "en": "AI & big data",
+      "vi": "AI & dữ liệu lớn"
+     },
+     "icon": "zap",
+     "industry": null,
+     "body": {
+      "en": "Compute-heavy jobs that need every core and fast NVMe storage.",
+      "vi": "Tác vụ nặng về tính toán, cần toàn bộ lõi xử lý và lưu trữ NVMe tốc độ cao."
+     }
+    }
+   ]
+  }
+ },
+ {
   "id": "email-security",
   "icon": "mail-check",
   "name": "Email Security",
