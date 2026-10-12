@@ -284,10 +284,9 @@ function industryPage() {
       <div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
-    <div class="hero-in" style="animation-delay:.3s">${aura(photo(state.images.heroByIndustry?.[id] || 'skyline', { w: 1600, ratio: '1200 / 380', cls: 'ph-wide', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }), 'banner')}</div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
-    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.byIndustry?.[id] || 'collab', { w: 1200, ratio: '4 / 3', fb: art('tile', d.icon, 'o') }))}</div>
+    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1400, ratio: '4 / 3', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>

@@ -101,15 +101,13 @@
       "en": "Supply chains that never stop",
       "vi": "Chuỗi cung ứng không ngừng nghỉ"
     },
-    "pos": "50% 60%"
+    "pos": "55% 55%"
   },
   "byIndustry": {
     "bfsi": "dashboard",
     "government": "controlroom",
-    "healthcare": "clinic",
     "retail": "dashboard",
-    "media": "controlroom",
-    "education": "training"
+    "media": "controlroom"
   },
   "bySolution": {
     "email-security": "collab",
@@ -177,6 +175,8 @@
   },
   "heroByIndustry": {
     "manufacturing": "engineers",
-    "logistics": "port"
+    "logistics": "port",
+    "healthcare": "clinic",
+    "education": "training"
   }
 }
