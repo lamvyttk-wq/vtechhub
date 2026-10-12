@@ -227,9 +227,11 @@ function industryPage() {
     const pts = (c.response.points || []).map((p) => `<li class="pt">${ic('check')}<span>${esc(t(p))}</span></li>`).join('');
     const stat = c.challenge.stat ? `<div class="stat"><strong>${esc(c.challenge.stat.value)}</strong><span>${esc(t(c.challenge.stat.label))}</span></div>` : '';
     const m = c.response.metric ? `<div class="metric"><strong data-count="${esc(c.response.metric.value)}">${esc(c.response.metric.value)}</strong><span>${esc(t(c.response.metric.label))}</span></div>` : '';
+    const cm = state.images.byChapter?.[`${id}/${c.id}`] || [];
+    const media = cm.length ? `<div class="ch-media" style="--n:${cm.length}">${cm.map((key) => photo(key, { w: 800, ratio: '16 / 10' })).join('')}</div>` : '';
     return `<section class="chapter" id="ch-${k}"><div class="wrap"><div class="stage">
       <div class="numeral" aria-hidden="true">${roman(k + 1)}</div>
-      <article class="pain"><span class="tag">${u('ind.challenge')} <i>${roman(k + 1)} / ${roman(n)}</i></span>
+      <article class="pain">${media}<span class="tag">${u('ind.challenge')} <i>${roman(k + 1)} / ${roman(n)}</i></span>
         <h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.challenge.body))}</p>${stat}
         <div class="persona">${ic('user-round')}<span>${u('ind.felt')} <b>${esc(t(c.persona))}</b></span></div></article>
       <div class="bridge" aria-hidden="true"></div>

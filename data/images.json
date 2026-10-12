@@ -110,11 +110,11 @@
     "media": "controlroom"
   },
   "bySolution": {
-    "email-security": "collab",
+    "email-security": "phishing",
     "dlp": "controlroom",
     "database-security": "circuit",
     "ai-legal": "training",
-    "cdn": "circuit"
+    "cdn": "cdn"
   },
   "circuit": {
     "icon": "database",
@@ -178,5 +178,71 @@
     "logistics": "port",
     "healthcare": "clinic",
     "education": "training"
+  },
+  "phishing": {
+    "icon": "mail-check",
+    "src": [
+      "assets/photos/phishing.webp"
+    ],
+    "alt": {
+      "en": "A fishing hook catching a bank card in a clean, futuristic room",
+      "vi": "Lưỡi câu móc vào thẻ ngân hàng trong căn phòng công nghệ sáng sạch"
+    },
+    "caption": {
+      "en": "Phishing: a lure for credentials",
+      "vi": "Phishing: mồi nhử thông tin đăng nhập"
+    }
+  },
+  "ransomware": {
+    "icon": "shield-alert",
+    "src": [
+      "assets/photos/ransomware.webp"
+    ],
+    "alt": {
+      "en": "A hooded attacker behind a warning screen while red missiles close in",
+      "vi": "Kẻ tấn công trùm mũ sau màn hình cảnh báo khi các tên lửa đỏ lao tới"
+    },
+    "caption": {
+      "en": "Ransomware: an attack that halts operations",
+      "vi": "Ransomware: cuộc tấn công làm đình trệ vận hành"
+    }
+  },
+  "cdn": {
+    "icon": "globe",
+    "src": [
+      "assets/photos/cdn.webp"
+    ],
+    "alt": {
+      "en": "Glass globe labelled CDN ringed by a glowing red orbit",
+      "vi": "Quả cầu thủy tinh ghi CDN với quỹ đạo đỏ phát sáng"
+    },
+    "caption": {
+      "en": "Content delivered from the nearest edge",
+      "vi": "Nội dung phân phối từ nút biên gần nhất"
+    }
+  },
+  "byChapter": {
+    "bfsi/phishing": [
+      "phishing",
+      "ransomware"
+    ],
+    "education/phishing": [
+      "phishing"
+    ],
+    "government/phishing": [
+      "phishing"
+    ],
+    "healthcare/ransomware": [
+      "ransomware"
+    ],
+    "manufacturing/ransomware": [
+      "ransomware"
+    ],
+    "logistics/bec": [
+      "phishing"
+    ],
+    "media/latency": [
+      "cdn"
+    ]
   }
 }
