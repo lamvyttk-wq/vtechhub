@@ -107,7 +107,7 @@
     "bfsi": "dashboard"
   },
   "bySolution": {
-    "email-security": "phishing",
+    "email-security": "egplatform",
     "dlp": "dlp",
     "database-security": "circuit",
     "ai-legal": "training",
@@ -357,6 +357,21 @@
     "caption": {
       "en": "Sovereign cloud, hosted in Vietnam",
       "vi": "Đám mây chủ quyền, đặt tại Việt Nam"
+    }
+  },
+  "egplatform": {
+    "icon": "mail-check",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/egplatform.webp"
+    ],
+    "alt": {
+      "en": "EGPlatform, the Email Gateway Platform, over a network of mail icons",
+      "vi": "EGPlatform, nền tảng cổng email, trên nền mạng lưới các biểu tượng thư"
+    },
+    "caption": {
+      "en": "EGPlatform: Email Gateway Platform",
+      "vi": "EGPlatform: Nền tảng cổng email"
     }
   }
 }
