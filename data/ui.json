@@ -33,16 +33,16 @@
  },
  "home": {
   "heroA": {
-   "en": "Trusted digital infrastructure,",
-   "vi": "Hạ tầng số đáng tin cậy,"
+   "en": "The right technology partners,",
+   "vi": "Đúng đối tác công nghệ,"
   },
   "heroB": {
-   "en": "kept in Vietnam",
-   "vi": "đặt tại Việt Nam"
+   "en": "mapped to your business",
+   "vi": "ghép đúng bài toán của bạn"
   },
   "heroP": {
-   "en": "Cloud, security and AI for enterprises.",
-   "vi": "Đám mây, an ninh mạng và AI cho doanh nghiệp."
+   "en": "We integrate solutions from leading partners across cloud, security and AI.",
+   "vi": "Chúng tôi tích hợp giải pháp từ các đối tác hàng đầu về đám mây, an ninh mạng và AI."
   },
   "explore": {
    "en": "Explore Solutions",
@@ -130,10 +130,10 @@
   "anyP": { "en": "We package in depth for the sectors where most of our customers operate. Tell us about your sector and we will shape the right combination of solutions.", "vi": "Chúng tôi đóng gói chuyên sâu cho những ngành có nhiều khách hàng nhất. Hãy cho chúng tôi biết ngành của bạn, chúng tôi sẽ thiết kế tổ hợp giải pháp phù hợp." },
   "anyBtn": { "en": "Talk about my industry", "vi": "Trao đổi về ngành của tôi" },
   "anyNav": { "en": "Other industries? Talk to us", "vi": "Ngành khác? Trao đổi với chúng tôi" },
-  "v1t": { "en": "Your data stays in Vietnam", "vi": "Dữ liệu của bạn ở lại Việt Nam" },
-  "v1d": { "en": "Sovereign hosting and in-country controls, so where your data lives is never a question in an audit.", "vi": "Lưu trữ chủ quyền và kiểm soát trong nước, để vị trí lưu trữ dữ liệu không còn là câu hỏi khi kiểm toán." },
-  "v2t": { "en": "One team, from cloud to security", "vi": "Một đội ngũ, từ đám mây đến an ninh mạng" },
-  "v2d": { "en": "Cloud, security and AI solutions from one consortium, with one partner accountable for the result.", "vi": "Giải pháp đám mây, an ninh mạng và AI từ một liên danh, với một đối tác chịu trách nhiệm về kết quả." },
+  "v1t": { "en": "Leading partners, one entry point", "vi": "Nhiều đối tác hàng đầu, một đầu mối" },
+  "v1d": { "en": "Technologies from many partners across fields, brought together so you do not have to source them one by one.", "vi": "Công nghệ từ nhiều đối tác ở nhiều lĩnh vực được tập hợp lại, để bạn không phải tự làm việc với từng bên." },
+  "v2t": { "en": "Mapped to your need", "vi": "Ghép đúng nhu cầu" },
+  "v2d": { "en": "We match each partner’s products to your business problem and integrate them into one working whole.", "vi": "Chúng tôi ghép sản phẩm của từng đối tác với bài toán của bạn và tích hợp thành một hệ thống vận hành thống nhất." },
   "v3t": { "en": "Proof before commitment", "vi": "Kiểm chứng trước khi cam kết" },
   "v3d": { "en": "A working proof of concept in a dedicated environment within 14 business days.", "vi": "Bản thử nghiệm PoC vận hành được trong môi trường riêng, trong vòng 14 ngày làm việc." },
   "allKicker": { "en": "Why V-Tech Foundry", "vi": "Vì sao chọn V-Tech Foundry" },
