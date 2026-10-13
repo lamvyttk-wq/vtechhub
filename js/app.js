@@ -84,7 +84,8 @@ function megaMenu() {
 
 function header() {
   const cur = state.route.page === 'industry' ? state.route.id : '';
-  const inds = state.industries.map((i) => link(`industry-${i.id}`, `${ic(i.icon)}<span>${esc(t(i.name))}<small>${esc(t(i.tagline))}</small></span>`)).join('');
+  const inds = state.industries.map((i) => link(`industry-${i.id}`, `${ic(i.icon)}<span>${esc(t(i.name))}<small>${esc(t(i.tagline))}</small></span>`)).join('')
+    + `<a href="#contact" data-scroll="#contact" class="panel-any">${ic('globe')}<span>${u('home.anyNav')}</span></a>`;
   const sols = [...state.solutions.values()].map((s) => link(`solution-${s.id}`, `${ic(s.icon)}<span>${esc(s.name)}<small>${esc(t(s.tagline))}</small></span>`)).join('');
   return `<header class="hdr" id="hdr"><div class="wrap">
     ${link('home', '<b>V-TECH</b><span>FOUNDRY</span>', 'logo', 'aria-label="V-TECH FOUNDRY"')}
@@ -203,19 +204,26 @@ function homePage() {
       <span class="eyebrow hero-in">${u('home.eyebrow')}</span>
       <h1 class="display hero-in" style="animation-delay:.08s">${u('home.heroA')} <em class="uline">${u('home.heroB')}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${u('home.heroP')}</p>
-      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#industries" data-scroll="#industries">${u('home.explore')} ${ic('arrow-right')}</a>
+      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#solutions-home" data-scroll="#solutions-home">${u('home.explore')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${ic('message-square')} ${u('nav.request')}</a></div>
       <div class="hero-scene hero-in" style="animation-delay:.32s" aria-hidden="true">${art('cloud', 'cloud', 'h')}</div>
     </div>
     <a class="scroll-cue" href="#alliance" data-scroll="#alliance" aria-label="${u('ind.scroll')}"><span>${ic('arrow-down')}</span></a></section>
   ${alliance()}
-  <section class="sec" id="industries" style="padding-top:clamp(2rem,4vw,3rem)"><div class="wrap">
+  <section class="sec" id="solutions-home" style="padding-top:clamp(2rem,4vw,3rem)"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.solKicker')}</span><h2 class="h2 rv">${u('home.solTitle')}</h2><p class="lede rv">${u('home.solP')}</p></div><div class="tiles">${tiles}</div></div></section>
+  <section class="sec" id="industries"><div class="wrap">
     <div class="sec-head"><span class="eyebrow rv">${u('home.indKicker')}</span><h2 class="h2 rv">${u('home.indLead')}</h2><p class="lede rv">${u('home.indP')}</p></div>
     <div class="index">${rows}</div></div></section>
+  ${anyIndustry()}
   <section class="sec"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span></div><div class="cols3">${steps}</div></div></section>
-  <section class="sec"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.solKicker')}</span><h2 class="h2 rv">${u('home.solTitle')}</h2></div><div class="tiles">${tiles}</div></div></section>
   ${experts()}
   ${contact()}`;
+}
+
+// Positions the packages correctly: they are where we have gone deepest, not the only places the solutions work.
+function anyIndustry() {
+  return `<section class="sec any" id="any-industry" style="padding-top:0"><div class="wrap"><div class="poc glass rv"><div><span class="eyebrow">${u('home.anyKicker')}</span><h2 class="h2">${u('home.anyTitle')}</h2><p class="lede">${u('home.anyP')}</p></div>
+    <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('home.anyBtn')} ${ic('arrow-right')}</a></div></div></section>`;
 }
 
 function alliance() {
@@ -223,7 +231,7 @@ function alliance() {
   const kpis = [[n, 'home.kIndustries'], [state.solutions.size, 'home.kSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
     .map(([v, k]) => `<div><strong>${v}</strong><span>${u(k)}</span></div>`).join('');
   return `<section class="alliance" id="alliance"><div class="wrap">
-    ${aura(photo('skyline', { w: 1600, ratio: '1200 / 400', cls: 'ph-wide', eager: true, fb: banner('bfsi', [ICONS['mail-check'], ICONS['shield-check'], ICONS.database], 'a') }) + `<div class="al-card glass"><span class="eyebrow">${u('home.allKicker')}</span><h2>${esc(fill(u('home.allTitle'), { n }))}</h2><p>${u('home.allP')}</p></div>`, 'al-frame rv')}
+    ${aura(photo('skyline', { w: 1600, ratio: '1200 / 400', cls: 'ph-wide', eager: true, fb: banner('bfsi', [ICONS['mail-check'], ICONS['shield-check'], ICONS.database], 'a') }) + `<div class="al-card glass"><span class="eyebrow">${u('home.allKicker')}</span><h2>${u('home.allTitle')}</h2><p>${esc(fill(u('home.allP'), { n }))}</p></div>`, 'al-frame rv')}
     <div class="kpis rv">${kpis}</div></div></section>`;
 }
 
@@ -293,7 +301,7 @@ function industryPage() {
   <section class="sec ov" id="overview"><div class="wrap">
     <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
-        <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')}</p>
+        <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
@@ -307,6 +315,7 @@ function industryPage() {
   ${experts()}
   <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
   <section class="sec" id="others" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.otherIndustries')}</span><h2 class="h2 rv">${u('ind.othersTitle')}</h2></div><div class="ocs">${others}</div></div></section>
+  ${anyIndustry()}
   ${contact(id)}`;
 }
 

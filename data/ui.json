@@ -4,9 +4,7 @@
    "en": "Solutions",
    "vi": "Giải pháp"
   },
-  "industry": {
-   "en": "Industry",
-   "vi": "Ngành"
+  "industry": { "en": "Industry packages", "vi": "Gói theo ngành"
   },
   "meet": {
    "en": "Meet V-Tech Foundry",
@@ -39,36 +37,36 @@
    "vi": "Khối liên kết công nghệ kiến tạo"
   },
   "heroB": {
-   "en": "Industry‑Specific Solutions",
-   "vi": "Giải pháp chuyên biệt theo ngành"
+   "en": "Secure, Sovereign Enterprise Solutions",
+   "vi": "Giải pháp doanh nghiệp an toàn, chủ quyền dữ liệu"
   },
   "heroP": {
-   "en": "V-TECH FOUNDRY leads a premier technology alliance, delivering packaged, vertical-tailored solutions to solve complex challenges and accelerate digital transformation for enterprises.",
-   "vi": "V-TECH FOUNDRY dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đo ni đóng giày theo ngành để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số doanh nghiệp."
+   "en": "V-TECH FOUNDRY brings leading technology partners together to keep your data in Vietnam, defend against threats and keep your business moving, with a working proof of concept in 14 business days.",
+   "vi": "V-TECH FOUNDRY quy tụ các đối tác công nghệ hàng đầu để giữ dữ liệu của bạn tại Việt Nam, chống lại các mối đe dọa và giữ hoạt động kinh doanh thông suốt, với bản thử nghiệm PoC vận hành được trong 14 ngày làm việc."
   },
   "explore": {
-   "en": "Explore Industry Solutions",
-   "vi": "Khám phá giải pháp theo ngành"
+   "en": "Explore Solutions",
+   "vi": "Khám phá giải pháp"
   },
   "indKicker": {
-   "en": "Choose your industry",
-   "vi": "Chọn ngành của bạn"
+   "en": "Industry packages",
+   "vi": "Gói theo ngành"
   },
   "indTitle": {
    "en": "Your challenge, told as a story",
    "vi": "Thách thức của bạn, kể thành câu chuyện"
   },
   "indP": {
-   "en": "Pick your sector. We walk you from the real-world problem to the packaged solution in under two minutes.",
-   "vi": "Chọn lĩnh vực của bạn. Chúng tôi dẫn bạn từ vấn đề thực tế đến gói giải pháp trong chưa đầy hai phút."
+   "en": "Eight sectors where most of our customers operate, each told as a story from problem to packaged solution.",
+   "vi": "Tám ngành mà phần lớn khách hàng của chúng tôi đang hoạt động, mỗi ngành được kể thành câu chuyện từ vấn đề đến gói giải pháp."
   },
   "solKicker": {
    "en": "The portfolio",
    "vi": "Danh mục giải pháp"
   },
   "solTitle": {
-   "en": "Building blocks, packaged by industry",
-   "vi": "Các khối giải pháp, đóng gói theo ngành"
+   "en": "Cloud, security and AI solutions",
+   "vi": "Giải pháp đám mây, an ninh mạng và AI"
   },
   "stories": {
    "en": "stories",
@@ -126,14 +124,20 @@
    "en": "Every page pairs a real challenge with the solution that answers it.",
    "vi": "Mỗi trang ghép một thách thức thực tế với giải pháp tương ứng."
   },
+  "solP": { "en": "Each solution stands on its own, and they work together as one package.", "vi": "Mỗi giải pháp đều dùng độc lập, và kết hợp được thành một gói hoàn chỉnh." },
+  "anyKicker": { "en": "Other sectors", "vi": "Ngành khác" },
+  "anyTitle": { "en": "Your sector is not listed? Let's talk.", "vi": "Ngành của bạn chưa có trong danh sách? Hãy trao đổi với chúng tôi." },
+  "anyP": { "en": "We package in depth for the sectors where most of our customers operate. Tell us about your sector and we will shape the right combination of solutions.", "vi": "Chúng tôi đóng gói chuyên sâu cho những ngành có nhiều khách hàng nhất. Hãy cho chúng tôi biết ngành của bạn, chúng tôi sẽ thiết kế tổ hợp giải pháp phù hợp." },
+  "anyBtn": { "en": "Talk about my industry", "vi": "Trao đổi về ngành của tôi" },
+  "anyNav": { "en": "Other industries? Talk to us", "vi": "Ngành khác? Trao đổi với chúng tôi" },
   "allKicker": { "en": "Strategic alliance", "vi": "Liên minh chiến lược" },
-  "allTitle": { "en": "One alliance, {n} industries, one accountable partner", "vi": "Một liên minh, {n} ngành, một đối tác chịu trách nhiệm" },
-  "allP": { "en": "Packaged vertical solutions, one team behind them.", "vi": "Giải pháp đóng gói theo ngành, một đội ngũ phụ trách." },
-  "kIndustries": { "en": "industries served", "vi": "ngành được phục vụ" },
-  "kSolutions": { "en": "packaged solutions", "vi": "giải pháp đóng gói" },
+  "allTitle": { "en": "One alliance, one accountable partner", "vi": "Một liên minh, một đối tác chịu trách nhiệm" },
+  "allP": { "en": "Cloud, security and AI from one team, with ready-made packages for {n} industries.", "vi": "Đám mây, an ninh mạng và AI từ một đội ngũ, kèm gói đóng gói sẵn cho {n} ngành." },
+  "kIndustries": { "en": "industry packages", "vi": "gói theo ngành" },
+  "kSolutions": { "en": "solutions", "vi": "giải pháp" },
   "indLead": {
-   "en": "Eight sectors. Each one opens as a story.",
-   "vi": "Tám lĩnh vực. Mỗi lĩnh vực mở ra như một câu chuyện."
+   "en": "Ready-made packages for the sectors we serve most.",
+   "vi": "Gói đóng gói sẵn cho những ngành chúng tôi phục vụ nhiều nhất."
   }
  },
  "ind": {
@@ -142,8 +146,8 @@
    "vi": "Quay lại"
   },
   "crumbIndustry": {
-   "en": "Industry Solutions",
-   "vi": "Giải pháp theo ngành"
+   "en": "Industry packages",
+   "vi": "Gói theo ngành"
   },
   "talk": {
    "en": "Talk to an expert",
@@ -157,6 +161,7 @@
   "ovTitle": { "en": "One partner, from problem to proof", "vi": "Một đối tác, từ vấn đề đến bằng chứng" },
   "ovP1": { "en": "{n} integrated solutions, packaged for {name}.", "vi": "{n} giải pháp tích hợp, đóng gói cho ngành {name}." },
   "ovP2": { "en": "From challenge to a working PoC in 14 business days.", "vi": "Từ thách thức đến PoC vận hành được trong 14 ngày làm việc." },
+  "anyLine": { "en": "Each solution is also available on its own.", "vi": "Mỗi giải pháp cũng có thể dùng riêng lẻ." },
   "stChallenges": { "en": "key challenges addressed", "vi": "thách thức chính được giải quyết" },
   "stSolutions": { "en": "integrated solutions in the package", "vi": "giải pháp tích hợp trong gói" },
   "stPoc": { "en": "business days to a dedicated PoC environment", "vi": "ngày làm việc để có môi trường PoC riêng" },
@@ -167,7 +172,7 @@
   "lnExperts": { "en": "Experts", "vi": "Chuyên gia" },
   "whyTitle": { "en": "Why teams choose V-Tech Foundry", "vi": "Vì sao đội ngũ chọn V-Tech Foundry" },
   "approachTitle": { "en": "Our approach: problem, answer, proof", "vi": "Cách tiếp cận: vấn đề, lời giải, bằng chứng" },
-  "othersTitle": { "en": "Explore other industries", "vi": "Khám phá các ngành khác" },
+  "othersTitle": { "en": "Explore other industry packages", "vi": "Khám phá các gói ngành khác" },
   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
   "lnSolutions": { "en": "Solutions", "vi": "Giải pháp" },
   "lnFaq": { "en": "FAQ", "vi": "Hỏi đáp" },
@@ -264,8 +269,8 @@
    "vi": "Giải pháp"
   },
   "where": {
-   "en": "Where it makes the difference",
-   "vi": "Nơi giải pháp tạo khác biệt"
+   "en": "Featured in these industry packages",
+   "vi": "Có mặt trong các gói theo ngành"
   },
   "inStory": {
    "en": "in the story of",
@@ -279,11 +284,11 @@
    "en": "Solution not found",
    "vi": "Không tìm thấy giải pháp"
   },
-  "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
+   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
   "lnModules": { "en": "Architecture", "vi": "Kiến trúc" },
   "lnSolve": { "en": "Challenges", "vi": "Thách thức" },
   "lnWho": { "en": "Use cases", "vi": "Ứng dụng" },
-  "lnStories": { "en": "In the stories", "vi": "Trong các câu chuyện" },
+  "lnStories": { "en": "Industry packages", "vi": "Gói theo ngành" },
   "overview": { "en": "Overview", "vi": "Tổng quan" },
   "seeSolve": { "en": "See what it solves", "vi": "Xem nó giải quyết gì" },
   "solveKicker": { "en": "Challenges solved", "vi": "Thách thức được giải quyết" },
