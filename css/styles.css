@@ -449,16 +449,18 @@ div.tile { cursor: default; }
 .ch-media[style*="--n:2"] .ph figcaption { left: 8px; bottom: 8px; padding: .4rem .65rem; font-size: .66rem; }
 
 /* ---------- centered home hero: glow, silk ribbons, scene, scroll cue ---------- */
-.hero-c { text-align: center; overflow: hidden; padding-bottom: clamp(5rem, 9vw, 7.5rem); }
+.hero-c { text-align: center; overflow: hidden; padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5.5rem)); padding-bottom: clamp(5rem, 9vw, 7.5rem); }
 .hero-c .wrap { position: relative; z-index: 2; display: grid; justify-items: center; }
 .hero-glow { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(55% 50% at 50% 24%, rgba(255,150,150,.34), transparent 72%); }
 .ribbons { position: absolute; left: 0; right: 0; bottom: 0; height: min(52%, 420px); z-index: 1; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 55%); mask-image: linear-gradient(to bottom, transparent, #000 55%); }
 .ribbons-art { width: 100%; height: 100%; display: block; }
-.hero-c .display { max-width: 22ch; margin: 1.6rem auto 1.6rem; font-size: clamp(2.3rem, 5.4vw, 4.8rem); }
+.hero-c .display { max-width: 20ch; margin: 0 auto 1.4rem; font-size: clamp(2.4rem, 5.6vw, 5rem); }
 .display em.uline { text-decoration: underline; text-decoration-color: rgba(227,47,30,.38); text-decoration-thickness: 2px; text-underline-offset: .2em; text-decoration-skip-ink: none; }
-.hero-c .lede { margin: 0 auto 2.2rem; max-width: 62ch; }
+.hero-c .lede { margin: 0 auto 2.2rem; max-width: 62ch; font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--ink-2); }
 .hero-c .actions { justify-content: center; }
-.hero-c .btn-line .ic { color: var(--red); }
+.btn-text { background: none; color: var(--ink); padding-inline: 1rem; }
+.btn-text:hover { color: var(--red); }
+.hero-c .btn-text .ic { color: var(--red); }
 .hero-scene { width: min(620px, 92%); margin-top: clamp(1.4rem, 3.4vw, 2.8rem); }
 .hero-scene .art { filter: drop-shadow(0 30px 40px rgba(48,34,70,.14)); }
 .scroll-cue { position: absolute; left: 50%; bottom: 1.4rem; z-index: 3; translate: -50% 0; display: grid; place-items: center; width: 3.4rem; height: 3.4rem; }

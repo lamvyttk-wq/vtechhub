@@ -201,11 +201,10 @@ function homePage() {
   return `
   <section class="hero hero-c"><div class="hero-glow" aria-hidden="true"></div><div class="ribbons" aria-hidden="true">${ribbons()}</div>
     <div class="wrap">
-      <span class="eyebrow hero-in">${u('home.eyebrow')}</span>
-      <h1 class="display hero-in" style="animation-delay:.08s">${u('home.heroA')} <em class="uline">${u('home.heroB')}</em></h1>
+      <h1 class="display hero-in">${u('home.heroA')} <em class="uline">${u('home.heroB')}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${u('home.heroP')}</p>
       <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#solutions-home" data-scroll="#solutions-home">${u('home.explore')} ${ic('arrow-right')}</a>
-        <a class="btn btn-line" href="#contact" data-scroll="#contact">${ic('message-square')} ${u('nav.request')}</a></div>
+        <a class="btn btn-text" href="#contact" data-scroll="#contact">${u('nav.request')} ${ic('arrow-right')}</a></div>
       <div class="hero-scene hero-in" style="animation-delay:.32s" aria-hidden="true">${art('cloud', 'cloud', 'h')}</div>
     </div>
     <a class="scroll-cue" href="#alliance" data-scroll="#alliance" aria-label="${u('ind.scroll')}"><span>${ic('arrow-down')}</span></a></section>
