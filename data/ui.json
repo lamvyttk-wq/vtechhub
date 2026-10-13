@@ -33,16 +33,16 @@
  },
  "home": {
   "heroA": {
-   "en": "The Tech Alliance Driving",
-   "vi": "Liên minh công nghệ dẫn dắt"
+   "en": "The Tech Ecosystem Driving",
+   "vi": "Hệ sinh thái công nghệ dẫn dắt"
   },
   "heroB": {
    "en": "Trusted Digital Infrastructure",
    "vi": "Hạ tầng số đáng tin cậy"
   },
   "heroP": {
-   "en": "V-TECH FOUNDRY leads a premier technology alliance, delivering packaged solutions in cloud, security and AI that solve complex challenges and accelerate digital transformation for enterprises, with your data kept in Vietnam.",
-   "vi": "V-TECH FOUNDRY dẫn dắt liên minh công nghệ hàng đầu, cung cấp các gói giải pháp đám mây, an ninh mạng và AI để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số cho doanh nghiệp, với dữ liệu ở lại Việt Nam."
+   "en": "V-TECH FOUNDRY leads a premier technology ecosystem, delivering packaged solutions in cloud, security and AI that solve complex challenges and accelerate digital transformation for enterprises, with your data kept in Vietnam.",
+   "vi": "V-TECH FOUNDRY dẫn dắt hệ sinh thái công nghệ hàng đầu, cung cấp các gói giải pháp đám mây, an ninh mạng và AI để giải quyết thách thức phức tạp và thúc đẩy chuyển đổi số cho doanh nghiệp, với dữ liệu ở lại Việt Nam."
   },
   "explore": {
    "en": "Explore Solutions",
@@ -113,8 +113,8 @@
    }
   ],
   "eyebrow": {
-   "en": "A VNETWORK technology alliance",
-   "vi": "Liên minh công nghệ của VNETWORK"
+   "en": "A VNETWORK technology ecosystem",
+   "vi": "Hệ sinh thái công nghệ của VNETWORK"
   },
   "previewKicker": {
    "en": "One story, two sides",
@@ -133,11 +133,11 @@
   "v1t": { "en": "Your data stays in Vietnam", "vi": "Dữ liệu của bạn ở lại Việt Nam" },
   "v1d": { "en": "Sovereign hosting and in-country controls, so where your data lives is never a question in an audit.", "vi": "Lưu trữ chủ quyền và kiểm soát trong nước, để vị trí lưu trữ dữ liệu không còn là câu hỏi khi kiểm toán." },
   "v2t": { "en": "One team, from cloud to security", "vi": "Một đội ngũ, từ đám mây đến an ninh mạng" },
-  "v2d": { "en": "Cloud, security and AI solutions from one alliance, with one partner accountable for the result.", "vi": "Giải pháp đám mây, an ninh mạng và AI từ một liên minh, với một đối tác chịu trách nhiệm về kết quả." },
+  "v2d": { "en": "Cloud, security and AI solutions from one ecosystem, with one partner accountable for the result.", "vi": "Giải pháp đám mây, an ninh mạng và AI từ một hệ sinh thái, với một đối tác chịu trách nhiệm về kết quả." },
   "v3t": { "en": "Proof before commitment", "vi": "Kiểm chứng trước khi cam kết" },
   "v3d": { "en": "A working proof of concept in a dedicated environment within 14 business days.", "vi": "Bản thử nghiệm PoC vận hành được trong môi trường riêng, trong vòng 14 ngày làm việc." },
-  "allKicker": { "en": "Strategic alliance", "vi": "Liên minh chiến lược" },
-  "allTitle": { "en": "One alliance, one accountable partner", "vi": "Một liên minh, một đối tác chịu trách nhiệm" },
+  "allKicker": { "en": "Why V-Tech Foundry", "vi": "Vì sao chọn V-Tech Foundry" },
+  "allTitle": { "en": "One ecosystem, one accountable partner", "vi": "Một hệ sinh thái, một đối tác chịu trách nhiệm" },
   "allP": { "en": "Cloud, security and AI from one team, backed by leading technology partners.", "vi": "Đám mây, an ninh mạng và AI từ một đội ngũ, được hậu thuẫn bởi các đối tác công nghệ hàng đầu." },
   "kIndustries": { "en": "industry packages", "vi": "gói theo ngành" },
   "kSolutions": { "en": "solutions", "vi": "giải pháp" },
