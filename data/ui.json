@@ -33,16 +33,16 @@
  },
  "home": {
   "heroA": {
-   "en": "The Sovereign",
-   "vi": "Doanh nghiệp"
+   "en": "Forged for",
+   "vi": "Rèn nên"
   },
   "heroB": {
-   "en": "Enterprise",
-   "vi": "chủ quyền số"
+   "en": "Trust",
+   "vi": "niềm tin"
   },
   "heroP": {
-   "en": "Cloud, security and AI, with your data kept in Vietnam.",
-   "vi": "Đám mây, an ninh mạng và AI, với dữ liệu của bạn ở lại Việt Nam."
+   "en": "Cloud, security and AI, built and kept in Vietnam.",
+   "vi": "Đám mây, an ninh mạng và AI, được xây dựng và lưu giữ ngay tại Việt Nam."
   },
   "explore": {
    "en": "Explore Solutions",
