@@ -33,16 +33,16 @@
  },
  "home": {
   "heroA": {
-   "en": "The Technology Coalition Powering",
-   "vi": "Khối liên kết công nghệ kiến tạo"
+   "en": "Enterprise Technology You Can Trust,",
+   "vi": "Công nghệ doanh nghiệp đáng tin cậy,"
   },
   "heroB": {
-   "en": "Secure, Sovereign Enterprise Solutions",
-   "vi": "Giải pháp doanh nghiệp an toàn, chủ quyền dữ liệu"
+   "en": "With Your Data Kept in Vietnam",
+   "vi": "Dữ liệu của bạn ở lại Việt Nam"
   },
   "heroP": {
-   "en": "V-TECH FOUNDRY brings leading technology partners together to keep your data in Vietnam, defend against threats and keep your business moving, with a working proof of concept in 14 business days.",
-   "vi": "V-TECH FOUNDRY quy tụ các đối tác công nghệ hàng đầu để giữ dữ liệu của bạn tại Việt Nam, chống lại các mối đe dọa và giữ hoạt động kinh doanh thông suốt, với bản thử nghiệm PoC vận hành được trong 14 ngày làm việc."
+   "en": "V-TECH FOUNDRY brings leading technology partners together across cloud, security and AI, so you can defend against threats and keep your business moving, with a working proof of concept in 14 business days.",
+   "vi": "V-TECH FOUNDRY quy tụ các đối tác công nghệ hàng đầu về đám mây, an ninh mạng và AI, để bạn chống lại các mối đe dọa và giữ hoạt động kinh doanh thông suốt, với bản thử nghiệm PoC vận hành được trong 14 ngày làm việc."
   },
   "explore": {
    "en": "Explore Solutions",
@@ -130,9 +130,15 @@
   "anyP": { "en": "We package in depth for the sectors where most of our customers operate. Tell us about your sector and we will shape the right combination of solutions.", "vi": "Chúng tôi đóng gói chuyên sâu cho những ngành có nhiều khách hàng nhất. Hãy cho chúng tôi biết ngành của bạn, chúng tôi sẽ thiết kế tổ hợp giải pháp phù hợp." },
   "anyBtn": { "en": "Talk about my industry", "vi": "Trao đổi về ngành của tôi" },
   "anyNav": { "en": "Other industries? Talk to us", "vi": "Ngành khác? Trao đổi với chúng tôi" },
+  "v1t": { "en": "Your data stays in Vietnam", "vi": "Dữ liệu của bạn ở lại Việt Nam" },
+  "v1d": { "en": "Sovereign hosting and in-country controls, so where your data lives is never a question in an audit.", "vi": "Lưu trữ chủ quyền và kiểm soát trong nước, để vị trí lưu trữ dữ liệu không còn là câu hỏi khi kiểm toán." },
+  "v2t": { "en": "One team, from cloud to security", "vi": "Một đội ngũ, từ đám mây đến an ninh mạng" },
+  "v2d": { "en": "Cloud, security and AI solutions from one alliance, with one partner accountable for the result.", "vi": "Giải pháp đám mây, an ninh mạng và AI từ một liên minh, với một đối tác chịu trách nhiệm về kết quả." },
+  "v3t": { "en": "Proof before commitment", "vi": "Kiểm chứng trước khi cam kết" },
+  "v3d": { "en": "A working proof of concept in a dedicated environment within 14 business days.", "vi": "Bản thử nghiệm PoC vận hành được trong môi trường riêng, trong vòng 14 ngày làm việc." },
   "allKicker": { "en": "Strategic alliance", "vi": "Liên minh chiến lược" },
   "allTitle": { "en": "One alliance, one accountable partner", "vi": "Một liên minh, một đối tác chịu trách nhiệm" },
-  "allP": { "en": "Cloud, security and AI from one team, with ready-made packages for {n} industries.", "vi": "Đám mây, an ninh mạng và AI từ một đội ngũ, kèm gói đóng gói sẵn cho {n} ngành." },
+  "allP": { "en": "Cloud, security and AI from one team, backed by leading technology partners.", "vi": "Đám mây, an ninh mạng và AI từ một đội ngũ, được hậu thuẫn bởi các đối tác công nghệ hàng đầu." },
   "kIndustries": { "en": "industry packages", "vi": "gói theo ngành" },
   "kSolutions": { "en": "solutions", "vi": "giải pháp" },
   "indLead": {

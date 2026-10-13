@@ -227,12 +227,11 @@ function anyIndustry() {
 }
 
 function alliance() {
-  const n = state.industries.length;
-  const kpis = [[n, 'home.kIndustries'], [state.solutions.size, 'home.kSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
-    .map(([v, k]) => `<div><strong>${v}</strong><span>${u(k)}</span></div>`).join('');
-  return `<section class="alliance" id="alliance"><div class="wrap">
-    ${aura(photo('skyline', { w: 1600, ratio: '1200 / 400', cls: 'ph-wide', eager: true, fb: banner('bfsi', [ICONS['mail-check'], ICONS['shield-check'], ICONS.database], 'a') }) + `<div class="al-card glass"><span class="eyebrow">${u('home.allKicker')}</span><h2>${u('home.allTitle')}</h2><p>${esc(fill(u('home.allP'), { n }))}</p></div>`, 'al-frame rv')}
-    <div class="kpis rv">${kpis}</div></div></section>`;
+  const vals = [['globe', 'v1t', 'v1d'], ['users', 'v2t', 'v2d'], ['check-circle-2', 'v3t', 'v3d']]
+    .map(([icon, tk, dk]) => `<li class="rv">${ic(icon)}<div><h3>${u('home.' + tk)}</h3><p>${u('home.' + dk)}</p></div></li>`).join('');
+  return `<section class="alliance" id="alliance"><div class="wrap al-split">
+    <div class="al-head"><span class="eyebrow rv">${u('home.allKicker')}</span><h2 class="h2 rv">${u('home.allTitle')}</h2><p class="lede rv">${esc(fill(u('home.allP'), { n: state.industries.length }))}</p></div>
+    <ul class="al-list">${vals}</ul></div></section>`;
 }
 
 function industryPage() {
