@@ -33,12 +33,12 @@
  },
  "home": {
   "heroA": {
-   "en": "The right technology partners,",
-   "vi": "Đúng đối tác công nghệ,"
+   "en": "The right technology,",
+   "vi": "Đúng công nghệ,"
   },
   "heroB": {
-   "en": "mapped to your business",
-   "vi": "ghép đúng bài toán của bạn"
+   "en": "where your business needs it",
+   "vi": "đúng nơi doanh nghiệp cần"
   },
   "heroP": {
    "en": "We integrate solutions from leading partners across cloud, security and AI.",
