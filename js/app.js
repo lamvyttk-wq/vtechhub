@@ -264,10 +264,20 @@ function industryPage() {
     </div></div></section>`;
   }).join('');
 
+  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
+  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
   // Flow (borrowing the logic of enterprise-services pages, not their look): who we are for you -> proof points -> your challenges
   // -> the packaged answers -> why us -> how we work / PoC -> people -> FAQ -> other sectors -> contact.
   const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
     .map(([v, key]) => `<div><strong>${v}</strong><span>${u(key)}</span></div>`).join('');
+  // Industries with their own hero illustration show the numbers as a band of icon cards under the hero instead of the photo + 2x2 tiles
+  const deco = [
+    '<svg viewBox="0 0 160 80" aria-hidden="true"><defs><linearGradient id="kd1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8483a" stop-opacity=".28"/><stop offset="1" stop-color="#e8483a" stop-opacity="0"/></linearGradient></defs><path d="M0 74C28 70 40 58 62 56S104 44 120 30 148 12 160 8V80H0Z" fill="url(#kd1)"/><path d="M0 74C28 70 40 58 62 56S104 44 120 30 148 12 160 8" fill="none" stroke="#e8483a" stroke-opacity=".35" stroke-width="2"/></svg>',
+    '<svg viewBox="0 0 120 90" aria-hidden="true"><g fill="#e8483a"><path fill-opacity=".10" d="M60 6 112 30 60 54 8 30Z"/><path fill-opacity=".16" d="M60 24 112 48 60 72 8 48Z"/><path fill-opacity=".24" d="M60 42 112 66 60 90 8 66Z"/></g></svg>',
+    '<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="14" y="20" width="72" height="68" rx="12" fill="#e8483a" fill-opacity=".10"/><rect x="14" y="20" width="72" height="20" rx="10" fill="#e8483a" fill-opacity=".22"/><g fill="#e8483a" fill-opacity=".22"><rect x="26" y="50" width="12" height="10" rx="3"/><rect x="44" y="50" width="12" height="10" rx="3"/><rect x="62" y="50" width="12" height="10" rx="3"/><rect x="26" y="68" width="12" height="10" rx="3"/><rect x="44" y="68" width="12" height="10" rx="3"/></g></svg>',
+    '<svg viewBox="0 0 100 90" aria-hidden="true"><rect x="8" y="14" width="62" height="46" rx="14" fill="#e8483a" fill-opacity=".20"/><rect x="40" y="36" width="52" height="40" rx="12" fill="#e8483a" fill-opacity=".12"/><g fill="#fff" fill-opacity=".8"><circle cx="26" cy="37" r="4"/><circle cx="39" cy="37" r="4"/><circle cx="52" cy="37" r="4"/></g></svg>'];
+  const kpiBand = heroSide ? `<div class="kpi-band hero-in" style="animation-delay:.3s">${[[n, 'ind.stChallenges', 'shield', '#story'], [d.bundle.length, 'ind.stSolutions', 'box', '#bundle'], [14, 'ind.stPoc', 'clock', '#approach'], [1, 'ind.stReply', 'users', '']]
+    .map(([v, key, icn, to], k) => `<${to ? `a href="${to}" data-scroll="${to}"` : 'div'} class="kb"><span class="kb-i">${ic(icn)}</span><span class="kb-t"><strong>${v}</strong><span>${u(key)}</span></span>${to ? `<i class="kb-go">${ic('arrow-right')}</i>` : ''}<span class="kb-d">${deco[k]}</span></${to ? 'a' : 'div'}>`).join('')}</div>` : '';
 
   const cards = d.bundle.map((s, k) => {
     const covers = d.chapters.map((c, j) => (c.solutions.includes(s) ? roman(j + 1) : '')).filter(Boolean).join(' · ');
@@ -284,8 +294,6 @@ function industryPage() {
   const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
     `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
-  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
-  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
   const indCta = `<div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div>`;
@@ -298,12 +306,13 @@ function industryPage() {
       <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>${heroSide ? indCta : ''}</div>
       ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1748, ratio: '1748 / 899', eager: true, nocap: true })}</div>` : indCta}</div>
-  </div></section>
+    ${kpiBand}</div></section>
   <section class="sec ov" id="overview"><div class="wrap">
-    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
+    ${heroSide ? `<div class="ov-solo"><div><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2></div>
+      <div><p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p></div></div>` : `<div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
-        <div class="kpis rv">${stats}</div></div></div></div></section>
+        <div class="kpis rv">${stats}</div></div></div>`}</div></section>
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
