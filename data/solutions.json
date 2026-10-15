@@ -1194,12 +1194,230 @@
   "icon": "shield-check",
   "name": "Data Loss Prevention",
   "tagline": {
-   "en": "360° insider & leak protection",
-   "vi": "Chống thất thoát dữ liệu 360°"
+   "en": "Data loss prevention, insider-risk monitoring and investigation in one platform",
+   "vi": "Chống thất thoát dữ liệu, giám sát rủi ro nội bộ và điều tra trong một nền tảng"
   },
   "description": {
-   "en": "Full 360-degree monitoring across chat apps, personal webmail, and USB drives. It automatically detects sensitive customer records to stop insider fraud, prevent data leaks, and ensure Decree 13 compliance.",
-   "vi": "Giám sát 360° trên ứng dụng chat, webmail cá nhân và USB. Tự động phát hiện hồ sơ khách hàng nhạy cảm để ngăn gian lận nội bộ, rò rỉ dữ liệu và đảm bảo tuân thủ Nghị định 13."
+   "en": "A data loss prevention platform that goes beyond standard content analysis. Proprietary analysis technologies raise detection accuracy, built-in investigation tools reconstruct incidents with legally valid evidence, and the same platform extends into insider-risk monitoring. Agents cover Windows, Linux and macOS, and every function is built in, with no extra modules or products to install.",
+   "vi": "Nền tảng chống thất thoát dữ liệu vượt ra ngoài phân tích nội dung tiêu chuẩn. Các công nghệ phân tích độc quyền nâng cao hiệu quả phát hiện, công cụ điều tra tích hợp giúp tái dựng sự cố với bằng chứng có giá trị pháp lý, và cùng một nền tảng mở rộng sang giám sát rủi ro nội bộ. Agent hỗ trợ Windows, Linux và macOS; toàn bộ chức năng được tích hợp sẵn, không cần cài thêm mô-đun hoặc sản phẩm bổ sung."
+  },
+  "detail": {
+   "lead": {
+    "en": "See, stop and investigate data leaks and insider risk from one platform.",
+    "vi": "Nhìn thấy, ngăn chặn và điều tra rò rỉ dữ liệu cùng rủi ro nội bộ từ một nền tảng."
+   },
+   "stats": [
+    {
+     "value": "30+",
+     "label": {
+      "en": "customizable reports for work-efficiency audit",
+      "vi": "báo cáo tùy chỉnh để kiểm toán hiệu quả làm việc"
+     }
+    },
+    {
+     "value": "100+",
+     "label": {
+      "en": "ready-made integrated services",
+      "vi": "dịch vụ tích hợp được xây dựng sẵn"
+     }
+    },
+    {
+     "value": "10+",
+     "label": {
+      "en": "integration tools with detailed guides and ready scenarios",
+      "vi": "công cụ tích hợp, có tài liệu hướng dẫn chi tiết và kịch bản dựng sẵn"
+     }
+    },
+    {
+     "value": "3 OS",
+     "label": {
+      "en": "agents for Windows, Linux and macOS, managed from one center",
+      "vi": "agent cho Windows, Linux và macOS, quản lý từ một trung tâm"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Proprietary analysis technologies",
+     "vi": "Công nghệ phân tích độc quyền"
+    },
+    {
+     "en": "Investigation tools",
+     "vi": "Công cụ điều tra"
+    },
+    {
+     "en": "Insider-risk monitoring",
+     "vi": "Giám sát rủi ro nội bộ"
+    },
+    {
+     "en": "Agentless integration",
+     "vi": "Tích hợp không cần agent"
+    },
+    {
+     "en": "Cross-platform",
+     "vi": "Đa nền tảng"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Why standard DLP is not enough",
+    "vi": "Vì sao DLP tiêu chuẩn là chưa đủ"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Keyword and pattern matching miss leaks in images, calls and video",
+      "vi": "Khớp từ khóa và mẫu bỏ sót rò rỉ trong hình ảnh, cuộc gọi và video"
+     },
+     "impact": {
+      "en": "Sensitive data leaves as a screenshot, a phone photo of the screen or a spoken conversation, and nothing flags it.",
+      "vi": "Dữ liệu nhạy cảm rời đi dưới dạng ảnh chụp màn hình, ảnh chụp màn hình bằng điện thoại hoặc cuộc hội thoại, và không có gì cảnh báo."
+     }
+    },
+    {
+     "title": {
+      "en": "Incidents are hard to reconstruct and prove",
+      "vi": "Sự cố khó tái dựng và khó chứng minh"
+     },
+     "impact": {
+      "en": "Without recordings and audit trails, security teams cannot identify the parties involved or produce evidence that stands up in court.",
+      "vi": "Không có bản ghi và nhật ký kiểm toán, đội an ninh khó xác định các bên liên quan và thu thập bằng chứng đủ giá trị pháp lý."
+     }
+    },
+    {
+     "title": {
+      "en": "Insider risk goes beyond data: fraud, theft, side jobs and risky behavior",
+      "vi": "Rủi ro nội bộ không chỉ là dữ liệu: gian lận, trộm cắp, làm việc ngoài và hành vi rủi ro"
+     },
+     "impact": {
+      "en": "Teams run separate tools for each risk and still lack one view of what users do.",
+      "vi": "Mỗi rủi ro một công cụ riêng, mà vẫn không có một góc nhìn thống nhất về hoạt động của người dùng."
+     }
+    },
+    {
+     "title": {
+      "en": "Agents on every personal or mobile device are hard to deploy",
+      "vi": "Cài agent lên mọi thiết bị cá nhân và di động rất khó triển khai"
+     },
+     "impact": {
+      "en": "Coverage has gaps, and mixed Windows, Linux and macOS environments multiply the effort.",
+      "vi": "Phạm vi giám sát có khoảng trống, và môi trường hỗn hợp Windows, Linux, macOS làm công sức nhân lên."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the platform covers",
+    "vi": "Nền tảng bao phủ những gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Proprietary analysis technologies",
+      "vi": "Các công nghệ phân tích độc quyền"
+     },
+     "body": {
+      "en": "On top of standard analysis (linguistic morphology, dictionaries, regular expressions, digital fingerprints, OCR): similar-content search, visual image similarity against reference samples, search inside calls and microphone recordings, search inside screen-recording video, employee face recognition, detection of phone photos of the screen, watermarks on screens and documents, statistical and quantitative analysis of activity metrics, and psychological analysis of users to flag risk factors.",
+      "vi": "Ngoài phân tích tiêu chuẩn (hình thái ngôn ngữ, từ điển, biểu thức chính quy, dấu vân tay số, OCR): tìm nội dung tương tự, tìm hình ảnh tương đồng trực quan với mẫu tham chiếu, tìm văn bản trong cuộc gọi và bản ghi từ micro, tìm nội dung trong video ghi màn hình, nhận diện khuôn mặt nhân viên, phát hiện chụp ảnh màn hình bằng điện thoại, watermark bảo vệ màn hình và tài liệu, phân tích thống kê và định lượng mọi chỉ số hoạt động, và phân tích tâm lý người dùng để xác định yếu tố rủi ro."
+     }
+    },
+    {
+     "title": {
+      "en": "Powerful investigation tools in one platform",
+      "vi": "Công cụ điều tra mạnh mẽ trong một nền tảng"
+     },
+     "body": {
+      "en": "Record audio and video of user activity, track file and folder operations, audit logs, device use and software interaction. Real-time audio and video monitoring of policy violators. For incidents, reconstruct exactly what happened, identify the parties involved and collect legally valid evidence for use in court.",
+      "vi": "Ghi âm và ghi hình hoạt động người dùng, theo dõi thao tác với tệp/thư mục, nhật ký kiểm toán, việc sử dụng thiết bị và tương tác với phần mềm. Giám sát âm thanh và video theo thời gian thực với người vi phạm chính sách. Với sự cố, tái dựng chính xác diễn biến, xác định các bên liên quan và thu thập bằng chứng có giá trị pháp lý để sử dụng trước tòa."
+     }
+    },
+    {
+     "title": {
+      "en": "Comprehensive security beyond DLP",
+      "vi": "Giải pháp bảo mật toàn diện vượt ngoài DLP"
+     },
+     "body": {
+      "en": "Audit work efficiency (software and website use, 30+ customizable reports); control business risks such as internal fraud, theft and side jobs through preset policies; control privileged users and remote-access tools; inventory IT assets; encrypt files on mobile storage with zone-based access; audit latent risks such as password strength, website categories, at-risk groups and phishing emails; and raise security awareness with on-screen warnings and policy reminders.",
+      "vi": "Kiểm toán hiệu quả làm việc (phần mềm, website, hơn 30 báo cáo tùy chỉnh); kiểm soát rủi ro kinh doanh như gian lận nội bộ, trộm cắp, làm việc ngoài qua chính sách dựng sẵn; kiểm soát người dùng đặc quyền và công cụ truy cập từ xa; quản lý kiểm kê hạ tầng CNTT; mã hóa tệp trên thiết bị lưu trữ di động với kiểm soát truy cập theo vùng mạng; kiểm toán rủi ro tiềm ẩn như độ mạnh mật khẩu, phân loại website, nhóm nhân viên có nguy cơ, email lừa đảo; và nâng cao nhận thức bằng cảnh báo trên màn hình, nhắc nhở chính sách."
+     }
+    },
+    {
+     "title": {
+      "en": "Protection beyond the enterprise perimeter",
+      "vi": "Bảo vệ dữ liệu ngoài hạ tầng doanh nghiệp"
+     },
+     "body": {
+      "en": "Integrates with dozens of IT solutions at server level over network protocols, so no agent is needed on employees' personal or mobile devices while activity in business applications stays visible. Includes a store of collected data to retrieve any recorded event, 100+ ready-made integrated services (instant messaging, cloud services, task managers, web editors) and 10+ integration tools backed by detailed guides and ready scenarios.",
+      "vi": "Tích hợp với hàng chục giải pháp CNTT ở cấp máy chủ qua các giao thức mạng, nên không cần cài agent trên thiết bị cá nhân hoặc di động của nhân viên mà vẫn thấy hoạt động trong các ứng dụng kinh doanh. Gồm kho lưu trữ dữ liệu đã thu thập để truy xuất mọi sự kiện đã ghi nhận, hơn 100 dịch vụ tích hợp dựng sẵn (nhắn tin tức thời, dịch vụ đám mây, quản lý tác vụ, trình soạn thảo web) và hơn 10 công cụ tích hợp kèm tài liệu hướng dẫn chi tiết và kịch bản dựng sẵn."
+     }
+    },
+    {
+     "title": {
+      "en": "Cross-platform and global access",
+      "vi": "Tương thích đa nền tảng và truy cập toàn cầu"
+     },
+     "body": {
+      "en": "Deploys on Windows and Linux, supports database systems such as MS SQL and PostgreSQL, and provides agents for Windows, Linux and macOS, all managed through a single center. Security teams work from a dedicated desktop application or a browser-based dashboard, from any authorized device.",
+      "vi": "Triển khai trên Windows và Linux, hỗ trợ các hệ quản trị cơ sở dữ liệu như MS SQL, PostgreSQL, cung cấp agent cho Windows, Linux và macOS, quản lý qua một trung tâm duy nhất. Đội an ninh làm việc bằng ứng dụng desktop chuyên dụng hoặc bảng điều khiển trên trình duyệt, từ bất kỳ thiết bị nào được cấp quyền."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks, finance & insurance",
+      "vi": "Ngân hàng, tài chính & bảo hiểm"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Protect KYC data, account records and transactions, and investigate insider fraud with evidence.",
+      "vi": "Bảo vệ dữ liệu KYC, hồ sơ tài khoản và giao dịch, điều tra gian lận nội bộ có bằng chứng."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Chính phủ & khu vực công"
+     },
+     "icon": "building",
+     "industry": "government",
+     "body": {
+      "en": "Keep citizen records from leaving through chat, personal webmail, removable media or screen photos.",
+      "vi": "Ngăn hồ sơ công dân rời đi qua chat, webmail cá nhân, thiết bị lưu trữ di động hoặc ảnh chụp màn hình."
+     }
+    },
+    {
+     "name": {
+      "en": "Manufacturing",
+      "vi": "Sản xuất"
+     },
+     "icon": "factory",
+     "industry": "manufacturing",
+     "body": {
+      "en": "Safeguard designs, formulas and supplier data from copying and unauthorized sharing.",
+      "vi": "Bảo vệ bản thiết kế, công thức và dữ liệu nhà cung cấp khỏi sao chép và chia sẻ trái phép."
+     }
+    },
+    {
+     "name": {
+      "en": "Healthcare",
+      "vi": "Y tế"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Protect patient records across staff workstations, with audit trails for every access.",
+      "vi": "Bảo vệ hồ sơ bệnh nhân trên các máy trạm của nhân viên, có nhật ký kiểm toán cho mọi truy cập."
+     }
+    }
+   ]
   }
  },
  {
