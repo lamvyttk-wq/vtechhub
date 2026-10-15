@@ -22,6 +22,7 @@
   --sans: "Be Vietnam Pro", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --header-h: 78px;
   --gutter: clamp(20px, 5vw, 64px);
+  --gutter-c: clamp(20px, 9vw, 160px);
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -35,7 +36,9 @@ ul { padding: 0; list-style: none; }
 :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 4px; }
 .ic { width: 1.1em; height: 1.1em; flex: none; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.wrap { width: min(1240px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+/* content column: narrower with generous side margins (DXC-like); header, section nav and mega menu keep the wide frame */
+.wrap { width: min(1160px, 100% - 2 * var(--gutter-c)); margin-inline: auto; }
+.hdr .wrap, .lnav .wrap { width: min(1240px, 100% - 2 * var(--gutter)); }
 
 /* ---------- atmosphere: blurred light behind the glass ---------- */
 .ambient { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
@@ -156,7 +159,7 @@ section { position: relative; }
 /* ---------- story engine ---------- */
 .intro { padding: clamp(2rem, 4vw, 3rem) 0 clamp(1rem, 2vw, 1.5rem); }
 .intro .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-.intro .h2 { margin: 1rem 0 1.2rem; font-size: clamp(1.9rem, 3.2vw, 2.8rem); text-wrap: balance; }
+.intro .h2 { margin: 1rem 0 1.2rem; font-size: clamp(1.8rem, 2.9vw, 2.55rem); text-wrap: balance; }
 .intro .lede { font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.7; max-width: 54ch; }
 .intro .grid { align-items: center; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
 .intro .pick button { padding: 1.2rem 0; font-size: 1rem; }
@@ -370,13 +373,15 @@ div.tile { cursor: default; }
   mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 95%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 90%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect; }
 .ind-side .ph-fb { display: none; }
-/* one continuous hero: the illustration sits behind the copy, anchored right, and dissolves into the page toward the text (desktop only) */
+.ind-hero:has(.has-side) { overflow-x: clip; }
+/* one continuous hero: a real two-column grid (so copy and picture can never overlap), but the picture has no frame, a matched background and a feathered left edge, so the eye reads one composition (desktop only) */
 @media (min-width: 961px) {
-  .ind-hero:has(.has-side) { overflow-x: clip; }
-  .ind-top.has-side { display: block; position: relative; min-height: clamp(30rem, 40vw, 36rem); }
-  .ind-top.has-side > div:first-child { position: relative; z-index: 2; max-width: 44%; padding-top: 1rem; }
-  .ind-top.has-side .ind-side { position: absolute; z-index: 1; right: calc(-1 * clamp(1rem, 5vw, 5rem)); top: 50%; translate: 0 -50%; width: min(60vw, 940px); margin: 0; }
-  .ind-top.has-side .ind-side .ph { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 94%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 94%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); }
+  .ind-top.has-side { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(.5rem, 1.5vw, 1.5rem); align-items: center; }
+  .ind-top.has-side .actions { flex-wrap: nowrap; gap: .7rem; }
+  .ind-top.has-side .display { max-width: 15ch; }
+  .ind-top.has-side .lede { max-width: 32ch; }
+  .ind-top.has-side .ind-side { margin: 0 -9% 0 0; transform: scale(1.2); transform-origin: 100% 50%; }
+  .ind-top.has-side .ind-side .ph { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%); }
 }
 
 .ind-side .ph-img { mix-blend-mode: multiply; filter: brightness(1.055) contrast(1.02); }
