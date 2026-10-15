@@ -275,12 +275,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Collecting Credit-Card and Consumer Loan Debt at Scale",
-     "vi": "Thu hồi nợ thẻ tín dụng và vay tiêu dùng ở quy mô lớn"
+     "en": "The Large-Scale Collection Bottleneck in Consumer Credit & Cards",
+     "vi": "Nút thắt thu hồi nợ quy mô lớn trong tín dụng tiêu dùng & thẻ"
     },
     "body": {
-     "en": "Reminding thousands of customers by phone is costly and slow, and many do not answer. Customers struggle to see their balance, repayment history and available offers, so payments run late.",
-     "vi": "Nhắc nợ hàng nghìn khách hàng qua điện thoại vừa tốn kém vừa chậm, nhiều khách không nghe máy. Khách hàng khó nắm dư nợ, lịch sử trả nợ và ưu đãi hiện có nên thanh toán bị trễ."
+     "en": "Relying on telesales staff to call tens of thousands of customers by hand is costly in staffing and ineffective because few customers pick up. Customers lack tools to check their balance and repayment history instantly, which leads to prolonged late payments and rising bad debt.",
+     "vi": "Phụ thuộc vào telesales gọi điện thủ công cho hàng chục nghìn khách hàng vừa tốn kém chi phí nhân sự, vừa kém hiệu quả do tỷ lệ bắt máy thấp. Khách hàng thiếu công cụ tự tra cứu dư nợ và lịch sử hoàn trả tức thì, dẫn đến tình trạng chậm thanh toán kéo dài và nợ xấu gia tăng."
     }
    },
    "solutions": [
@@ -288,8 +288,8 @@
    ],
    "response": {
     "title": {
-     "en": "Remind on the channels customers use",
-     "vi": "Nhắc nợ trên đúng kênh khách hàng đang dùng"
+     "en": "Automated Reminders & Real-Time Multichannel Reconciliation",
+     "vi": "Tự động hóa nhắc nợ & Đối soát đa kênh theo thời gian thực"
     },
     "body": {
      "en": "An AI agent reminds, answers balance questions and guides on-time payment across Zalo, SMS, Messenger and the app, without phone calls, and writes status back to your CRM.",
