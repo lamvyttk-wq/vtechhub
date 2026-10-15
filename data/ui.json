@@ -94,7 +94,7 @@
    {
     "t": {
      "en": "See the answer",
-     "vi": "Thấy lời giải"
+     "vi": "Thấy giải pháp"
     },
     "d": {
      "en": "The challenge transforms into the matching solution as you scroll.",
@@ -177,7 +177,7 @@
   "lnApproach": { "en": "Approach", "vi": "Cách làm" },
   "lnExperts": { "en": "Experts", "vi": "Chuyên gia" },
   "whyTitle": { "en": "Why teams choose V-Tech Foundry", "vi": "Vì sao đội ngũ chọn V-Tech Foundry" },
-  "approachTitle": { "en": "Our approach: problem, answer, proof", "vi": "Cách tiếp cận: vấn đề, lời giải, bằng chứng" },
+  "approachTitle": { "en": "Our approach: problem, answer, proof", "vi": "Cách tiếp cận: vấn đề, giải pháp, bằng chứng" },
   "othersTitle": { "en": "Explore other industry packages", "vi": "Khám phá các gói ngành khác" },
   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
   "lnSolutions": { "en": "Solutions", "vi": "Giải pháp" },
@@ -206,7 +206,7 @@
   },
   "answer": {
    "en": "The answer",
-   "vi": "Lời giải"
+   "vi": "Giải pháp"
   },
   "felt": {
    "en": "Felt by",
@@ -302,7 +302,7 @@
   "solveP": { "en": "Each challenge is paired with the capability that answers it.", "vi": "Mỗi thách thức đi kèm năng lực giải quyết nó." },
   "challenge": { "en": "Challenge", "vi": "Thách thức" },
   "impact": { "en": "Impact", "vi": "Hệ quả" },
-  "answer": { "en": "Our answer", "vi": "Lời giải" },
+  "answer": { "en": "Our answer", "vi": "Giải pháp" },
   "whoKicker": { "en": "Use cases", "vi": "Ứng dụng" },
   "whoTitle": { "en": "Who we build this for", "vi": "Chúng tôi xây dựng giải pháp này cho ai" },
   "whoP": { "en": "Tailored to distinct operational workflows. Pick the one closest to yours.", "vi": "Thiết kế cho từng quy trình vận hành riêng biệt. Chọn trường hợp gần với bạn nhất." },
