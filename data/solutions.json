@@ -1577,12 +1577,304 @@
   "icon": "database",
   "name": "Database Security",
   "tagline": {
-   "en": "Query-level control & real-time masking",
-   "vi": "Kiểm soát truy vấn & che giấu dữ liệu thời gian thực"
+   "en": "Database access control, from identity to accountability",
+   "vi": "Kiểm soát truy cập cơ sở dữ liệu, từ định danh đến truy vết"
   },
   "description": {
-   "en": "Direct query-level access control and real-time data masking built for Core Banking systems. It stops privileged admin abuse without slowing down live transactions or overloading systems with junk logs.",
-   "vi": "Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực dành cho hệ thống Core Banking. Ngăn lạm quyền quản trị mà không làm chậm giao dịch trực tiếp hay tràn log rác."
+   "en": "Database access control stops unauthorized access to an organization's core assets, especially from internal sources. It goes beyond simple query history or data-modification (DML) tracking to cover strong user authentication, granular permission control, real-time monitoring of sensitive data and up-to-date management of personal information within databases.",
+   "vi": "Kiểm soát truy cập cơ sở dữ liệu ngăn chặn truy cập trái phép vào tài sản cốt lõi của tổ chức, đặc biệt từ nguồn nội bộ. Giải pháp vượt xa việc ghi lịch sử truy vấn hay theo dõi thao tác sửa đổi dữ liệu (DML) đơn thuần: xác thực người dùng mạnh, kiểm soát quyền chi tiết, giám sát dữ liệu nhạy cảm theo thời gian thực và quản lý cập nhật thông tin cá nhân trong cơ sở dữ liệu."
+  },
+  "detail": {
+   "lead": {
+    "en": "Control who reaches the database, what they can do there and what they leave behind.",
+    "vi": "Kiểm soát ai truy cập cơ sở dữ liệu, được làm gì và để lại dấu vết gì."
+   },
+   "stats": [
+    {
+     "value": "4",
+     "label": {
+      "en": "steps of access control: identification, authentication, authorization, accountability",
+      "vi": "bước kiểm soát truy cập: định danh, xác thực, phân quyền, truy vết"
+     }
+    },
+    {
+     "value": "4",
+     "label": {
+      "en": "integrated layers: database, system, web and identity management",
+      "vi": "lớp tích hợp: cơ sở dữ liệu, hệ thống, web và quản lý danh tính"
+     }
+    },
+    {
+     "value": "1",
+     "label": {
+      "en": "centralized platform for permissions and policies",
+      "vi": "nền tảng tập trung cho quyền và chính sách"
+     }
+    },
+    {
+     "value": "Real-time",
+     "label": {
+      "en": "monitoring of sensitive data in databases",
+      "vi": "giám sát dữ liệu nhạy cảm trong cơ sở dữ liệu"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Strong user authentication",
+     "vi": "Xác thực người dùng mạnh"
+    },
+    {
+     "en": "Granular permission control",
+     "vi": "Kiểm soát quyền chi tiết"
+    },
+    {
+     "en": "Real-time sensitive-data monitoring",
+     "vi": "Giám sát dữ liệu nhạy cảm theo thời gian thực"
+    },
+    {
+     "en": "Personal-information management",
+     "vi": "Quản lý thông tin cá nhân"
+    },
+    {
+     "en": "Automated approval workflows",
+     "vi": "Tự động hóa quy trình phê duyệt"
+    }
+   ],
+   "pairs": [
+    {
+     "challenge": {
+      "title": {
+       "en": "Threats diversify and compliance tightens",
+       "vi": "Mối đe dọa đa dạng hóa, yêu cầu tuân thủ ngày càng chặt"
+      },
+      "impact": {
+       "en": "Query history or DML tracking alone cannot answer every security risk inside the database.",
+       "vi": "Chỉ ghi lịch sử truy vấn hay theo dõi DML không đủ để giải quyết mọi rủi ro an ninh bên trong cơ sở dữ liệu."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Database Access Control (DAC)",
+       "vi": "Kiểm soát truy cập cơ sở dữ liệu (DAC)"
+      },
+      "body": {
+       "en": "Comprehensive control from strong user authentication and granular permission control to real-time monitoring of sensitive data and up-to-date management of personal information within databases.",
+       "vi": "Kiểm soát toàn diện: từ xác thực người dùng mạnh và kiểm soát quyền chi tiết đến giám sát dữ liệu nhạy cảm theo thời gian thực và quản lý cập nhật thông tin cá nhân trong cơ sở dữ liệu."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Servers and network devices multiply, and access routes grow complex",
+       "vi": "Máy chủ và thiết bị mạng gia tăng, đường truy cập ngày càng phức tạp"
+      },
+      "impact": {
+       "en": "Traditional remote-access management leaves direct console access, critical files and ports uncontrolled.",
+       "vi": "Quản lý truy cập từ xa truyền thống bỏ ngỏ truy cập console trực tiếp, tệp và cổng quan trọng."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "System Access Control (SAC)",
+       "vi": "Kiểm soát truy cập hệ thống (SAC)"
+      },
+      "body": {
+       "en": "Manages remote access, enforces direct console access control, applies granular restrictions on critical files and ports, and automatically detects information-system devices.",
+       "vi": "Quản lý truy cập từ xa, kiểm soát truy cập console trực tiếp, áp dụng giới hạn chi tiết trên tệp và cổng quan trọng, tự động phát hiện thiết bị hệ thống thông tin."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Cloud consoles and large language models open new doors to internal information",
+       "vi": "Cloud console và mô hình ngôn ngữ lớn mở ra những cửa mới tới thông tin nội bộ"
+      },
+      "impact": {
+       "en": "Sensitive internal information can be exposed or learned by AI models.",
+       "vi": "Thông tin nội bộ nhạy cảm có thể bị lộ hoặc bị mô hình AI học lại."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Web Access Control (WAC)",
+       "vi": "Kiểm soát truy cập web (WAC)"
+      },
+      "body": {
+       "en": "Goes beyond blocking unauthorized console access and command execution to web and LLM access control, so sensitive internal information is not exposed or learned by AI models.",
+       "vi": "Vượt ngoài việc chặn truy cập console và thực thi lệnh trái phép, mở rộng sang kiểm soát truy cập web và LLM, để thông tin nội bộ nhạy cảm không bị lộ hoặc bị AI học lại."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Accounts and permissions are scattered across systems",
+       "vi": "Tài khoản và quyền bị phân tán trên nhiều hệ thống"
+      },
+      "impact": {
+       "en": "Without one view, nobody can say who holds which permission on which asset.",
+       "vi": "Không có một góc nhìn thống nhất, không ai trả lời được ai đang giữ quyền nào trên tài sản nào."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Identity Management (IM)",
+       "vi": "Quản lý danh tính (IM)"
+      },
+      "body": {
+       "en": "Manages permissions across the full account lifecycle: centralized control of account creation, approval and deactivation, and permission tracking across servers, networks and system assets.",
+       "vi": "Quản lý quyền trong toàn bộ vòng đời tài khoản: kiểm soát tập trung việc tạo, phê duyệt, vô hiệu hóa tài khoản và theo dõi quyền trên máy chủ, mạng và tài sản hệ thống."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Manual requests and approvals slow operations, and outsiders need access",
+       "vi": "Yêu cầu và phê duyệt thủ công làm chậm vận hành, trong khi bên ngoài vẫn cần truy cập"
+      },
+      "impact": {
+       "en": "Contractors and maintenance staff need system access without being handed account credentials.",
+       "vi": "Nhà thầu và nhân sự bảo trì cần truy cập hệ thống mà không phải giao tài khoản."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Workflow Automation",
+       "vi": "Tự động hóa quy trình"
+      },
+      "body": {
+       "en": "Allows automatic system access without exposing credentials to external users such as contractors and maintenance personnel, and automates account and permission requests and managerial approvals.",
+       "vi": "Cho phép truy cập hệ thống tự động mà không lộ thông tin đăng nhập cho người ngoài như nhà thầu, nhân sự bảo trì, đồng thời tự động hóa yêu cầu cấp tài khoản, cấp quyền và phê duyệt của quản lý."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Separate tools leave gaps between layers",
+       "vi": "Công cụ rời rạc để lại khoảng trống giữa các lớp"
+      },
+      "impact": {
+       "en": "Each layer solves its own challenge, but only an integrated architecture strengthens every layer of cybersecurity.",
+       "vi": "Mỗi lớp giải quyết thách thức riêng, nhưng chỉ kiến trúc tích hợp mới củng cố mọi lớp của an ninh mạng."
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Unified access control and identity management",
+       "vi": "Kiểm soát truy cập và quản lý danh tính hợp nhất"
+      },
+      "body": {
+       "en": "Consolidates permissions and policies into a single centralized platform. Choose only the features you need today, and stay ready for tomorrow's IT environment.",
+       "vi": "Hợp nhất quyền và chính sách vào một nền tảng tập trung. Chọn đúng những tính năng cần dùng hôm nay và sẵn sàng cho môi trường CNTT ngày mai."
+      }
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "How access control works",
+    "vi": "Cách kiểm soát truy cập vận hành"
+   },
+   "modulesTitle": {
+    "en": "Four steps from identity to accountability",
+    "vi": "Bốn bước từ định danh đến truy vết"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "1. Identification",
+      "vi": "1. Định danh (Identification)"
+     },
+     "body": {
+      "en": "Recognizes users through unique credentials.",
+      "vi": "Nhận diện người dùng thông qua thông tin định danh duy nhất."
+     }
+    },
+    {
+     "title": {
+      "en": "2. Authentication",
+      "vi": "2. Xác thực (Authentication)"
+     },
+     "body": {
+      "en": "Verifies the identity of the user.",
+      "vi": "Xác minh danh tính của người dùng."
+     }
+    },
+    {
+     "title": {
+      "en": "3. Authorization",
+      "vi": "3. Phân quyền (Authorization)"
+     },
+     "body": {
+      "en": "Grants access only to permitted resources.",
+      "vi": "Chỉ cấp quyền truy cập vào những tài nguyên được phép."
+     }
+    },
+    {
+     "title": {
+      "en": "4. Accountability",
+      "vi": "4. Truy vết (Accountability)"
+     },
+     "body": {
+      "en": "Blocks unauthorized activities to maintain security and compliance.",
+      "vi": "Chặn các hoạt động trái phép để duy trì an ninh và tuân thủ."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks, finance & insurance",
+      "vi": "Ngân hàng, tài chính & bảo hiểm"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Keep privileged and internal accounts from reaching Core Banking data without approval and an audit trail.",
+      "vi": "Ngăn tài khoản đặc quyền và nội bộ chạm tới dữ liệu Core Banking khi chưa được phê duyệt và không có nhật ký truy vết."
+     }
+    },
+    {
+     "name": {
+      "en": "Government & public sector",
+      "vi": "Chính phủ & khu vực công"
+     },
+     "icon": "building",
+     "industry": "government",
+     "body": {
+      "en": "Control who reaches citizen records and keep personal information in databases up to date and protected.",
+      "vi": "Kiểm soát ai truy cập hồ sơ công dân, giữ thông tin cá nhân trong cơ sở dữ liệu luôn được cập nhật và bảo vệ."
+     }
+    },
+    {
+     "name": {
+      "en": "Healthcare",
+      "vi": "Y tế"
+     },
+     "icon": "heart-pulse",
+     "industry": "healthcare",
+     "body": {
+      "en": "Limit access to patient records by role, with every access tracked.",
+      "vi": "Giới hạn truy cập hồ sơ bệnh nhân theo vai trò, mọi truy cập đều được truy vết."
+     }
+    },
+    {
+     "name": {
+      "en": "Education",
+      "vi": "Giáo dục"
+     },
+     "icon": "graduation-cap",
+     "industry": "education",
+     "body": {
+      "en": "Protect student and staff data held in academic and administrative databases.",
+      "vi": "Bảo vệ dữ liệu sinh viên và cán bộ trong các cơ sở dữ liệu học vụ và hành chính."
+     }
+    }
+   ]
   }
  },
  {
