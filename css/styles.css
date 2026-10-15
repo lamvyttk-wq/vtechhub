@@ -583,3 +583,6 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
   .ambient i, .pain .tag::before, .hero-in { animation: none; }
   * { transition-duration: .01ms !important; transition-delay: 0s !important; }
 }
+/* home hero: keep the red half of the headline on one line on wide screens; balance the wrap on phones */
+.hero-c .display { text-wrap: balance; }
+@media (min-width: 900px) { .hero-c .display { max-width: 24ch; } .hero-c .display em { white-space: nowrap; } }
