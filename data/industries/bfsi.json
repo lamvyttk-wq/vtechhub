@@ -189,8 +189,8 @@
    ],
    "response": {
     "title": {
-     "en": "See sensitive data wherever it tries to leave",
-     "vi": "Thấy dữ liệu nhạy cảm ở mọi nơi nó cố rời đi"
+     "en": "Visibility and control over sensitive data on every outbound channel",
+     "vi": "Giám sát và kiểm soát dữ liệu nhạy cảm trên mọi kênh truyền ra ngoài"
     },
     "body": {
      "en": "360-degree monitoring across chat apps, personal webmail and USB drives detects customer records automatically, stopping insider fraud and leaks while supporting Decree 13 compliance.",
