@@ -297,7 +297,7 @@ function industryPage() {
     <div class="ind-top${heroSide ? ' has-side' : ''}"><div>
       <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>${heroSide ? indCta : ''}</div>
-      ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1400, ratio: '952 / 490', eager: true, nocap: true })}</div>` : indCta}</div>
+      ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1748, ratio: '1748 / 899', eager: true, nocap: true })}</div>` : indCta}</div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
     <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
