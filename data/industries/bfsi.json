@@ -87,12 +87,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Fraudulent Payments and Transaction Changes",
-     "vi": "Thanh toán gian lận và thay đổi giao dịch"
+     "en": "Payment Fraud and the Risk of Unauthorized Tampering With Transactions",
+     "vi": "Gian lận thanh toán và rủi ro can thiệp trái phép vào giao dịch"
     },
     "body": {
-     "en": "Online banking and digital payments make it easier for criminals to use stolen identities, submit fraudulent payment requests, or alter transaction information. If not detected early, the bank faces direct financial loss, operational disruption, and customer complaints.",
-     "vi": "Ngân hàng số và thanh toán điện tử giúp tội phạm dễ dùng danh tính bị đánh cắp, gửi yêu cầu thanh toán gian lận hoặc sửa thông tin giao dịch. Nếu không phát hiện sớm, ngân hàng chịu tổn thất tài chính trực tiếp, gián đoạn vận hành và khiếu nại của khách hàng."
+     "en": "The boom in digital banking makes it easy for criminals to use stolen identities to create forged payment orders, or to tamper directly with transaction data in the system. If not detected and stopped immediately, the bank suffers direct financial loss, operational disruption and lost trust among customers.",
+     "vi": "Sự bùng nổ của ngân hàng số khiến kẻ gian dễ dàng lợi dụng danh tính bị đánh cắp để tạo lệnh thanh toán giả mạo, hoặc can thiệp trực tiếp làm sai lệch dữ liệu giao dịch trên hệ thống. Nếu không phát hiện và ngăn chặn tức thì, ngân hàng sẽ chịu tổn thất tài chính trực tiếp, gián đoạn vận hành và đánh mất uy tín đối với khách hàng."
     }
    },
    "solutions": [
@@ -101,8 +101,8 @@
    ],
    "response": {
     "title": {
-     "en": "Close both doors: the request and the record",
-     "vi": "Đóng cả hai cửa: yêu cầu và dữ liệu"
+     "en": "Layered control: block forged orders, lock down transaction data",
+     "vi": "Kiểm soát đa tầng: Chặn lệnh giả mạo, khóa chặt dữ liệu giao dịch"
     },
     "body": {
      "en": "Spoofed payment requests are filtered at the email layer, and sensitive SQL changes on Core Banking require approval, so a forged instruction cannot quietly become a changed transaction.",
