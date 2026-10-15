@@ -285,7 +285,7 @@ function industryPage() {
     `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
   // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
-  const heroSide = state.images.heroSide?.[id];
+  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
   const indCta = `<div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div>`;

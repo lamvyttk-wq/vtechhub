@@ -421,11 +421,14 @@
       "vi": "Ngân hàng, tài chính và bảo hiểm được bảo vệ"
     }
   },
-  "bfsi-hero": {
+  "heroSide": {
+    "bfsi": "bfsi-hero"
+  },
+  "bfsi-hero-vi": {
     "icon": "landmark",
     "pos": "50% 50%",
     "src": [
-      "assets/photos/bfsi-hero.webp"
+      "assets/photos/bfsi-hero-vi.webp"
     ],
     "alt": {
       "en": "An isometric bank building on a glowing red-and-white platform, surrounded by floating panels for data security, compliance, infrastructure and AI",
@@ -436,7 +439,19 @@
       "vi": "Ngân hàng, tài chính và bảo hiểm"
     }
   },
-  "heroSide": {
-    "bfsi": "bfsi-hero"
+  "bfsi-hero-en": {
+    "icon": "landmark",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/bfsi-hero-en.webp"
+    ],
+    "alt": {
+      "en": "An isometric bank building on a glowing red-and-white platform, surrounded by floating panels for data security, compliance, infrastructure and AI",
+      "vi": "Tòa nhà ngân hàng isometric trên nền đỏ trắng phát sáng, xung quanh là các bảng nổi về bảo mật dữ liệu, tuân thủ, hạ tầng và AI"
+    },
+    "caption": {
+      "en": "Banking, finance and insurance",
+      "vi": "Ngân hàng, tài chính và bảo hiểm"
+    }
   }
 }
