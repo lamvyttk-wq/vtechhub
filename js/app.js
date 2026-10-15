@@ -241,7 +241,10 @@ function industryPage() {
   const chips = (d.regulations || []).map((r) => `<span class="chip">${ic('shield')} ${esc(t(r))}</span>`).join('');
   const n = d.chapters.length;
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
+  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
+  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
   const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
+    .filter(([k]) => !(k === 'overview' && heroSide)) // no overview block when the hero already carries the intro and the numbers
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
@@ -264,8 +267,6 @@ function industryPage() {
     </div></div></section>`;
   }).join('');
 
-  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
-  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
   // Flow (borrowing the logic of enterprise-services pages, not their look): who we are for you -> proof points -> your challenges
   // -> the packaged answers -> why us -> how we work / PoC -> people -> FAQ -> other sectors -> contact.
   const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
@@ -307,12 +308,11 @@ function industryPage() {
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>${heroSide ? indCta : ''}</div>
       ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1748, ratio: '1748 / 899', eager: true, nocap: true })}</div>` : indCta}</div>
     ${kpiBand}</div></section>
-  <section class="sec ov" id="overview"><div class="wrap">
-    ${heroSide ? `<div class="ov-solo"><div><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2></div>
-      <div><p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p></div></div>` : `<div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
+  ${heroSide ? '' : `<section class="sec ov" id="overview"><div class="wrap">
+    <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
-        <div class="kpis rv">${stats}</div></div></div>`}</div></section>
+        <div class="kpis rv">${stats}</div></div></div></div></section>`}
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
