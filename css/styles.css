@@ -601,4 +601,17 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
   .ib-photo .ph { aspect-ratio: 16 / 10 !important; border-radius: 20px; }
   .ib-chips span { padding: .55rem .85rem; font-size: .8rem; }
 }
-@media (max-width: 720px) { .ind-banner .crumbs { flex-wrap: nowrap; white-space: nowrap; } .ind-banner .crumbs span { overflow: hidden; text-overflow: ellipsis; min-width: 0; } .ind-banner .crumbs a:nth-of-type(2), .ind-banner .crumbs i:nth-of-type(1) { display: none; } }
+@media (max-width: 720px) { .ind-banner .crumbs { flex-wrap: nowrap; white-space: nowrap; } .ind-banner .crumbs span { overflow: hidden; text-overflow: ellipsis; min-width: 0; } .ind-banner:not(.ib-split) .crumbs a:nth-of-type(2), .ind-banner:not(.ib-split) .crumbs i:nth-of-type(1) { display: none; } }
+
+/* banner hero, split layout (manufacturing): copy on the left, capability chips + buttons on the right, photo below */
+.ib-top { display: block; }
+.ib-split { text-align: left; }
+.ib-split .ib-top { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: end; }
+.ib-split .ib-copy { justify-items: start; }
+.ib-split .display { margin: 0 0 1.1rem; }
+.ib-split .lede { margin: 0; max-width: 62ch; font-size: clamp(.98rem, 1.2vw, 1.1rem); }
+.ib-split .actions { flex-wrap: nowrap; }
+.ib-split .ib-chips span { padding: .55rem .9rem; font-size: .82rem; }
+.ib-split .ib-chips { justify-content: flex-start; margin: 0 0 1.3rem; }
+.ib-split .actions { justify-content: flex-start; }
+@media (max-width: 960px) { .ib-split .ib-top { grid-template-columns: minmax(0, 1fr); } .ib-split .display { white-space: normal; } .ib-split .actions { flex-wrap: wrap; } .ib-split .ib-copy, .ib-split .ib-side { min-width: 0; } }

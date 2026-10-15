@@ -292,14 +292,14 @@ function industryPage() {
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
-  ${hb ? `<section class="hero ind-hero ind-banner"><div class="wrap">
-    <div class="crumbs hero-in">${link('home', ic('house'))}<i>${ic('chevron-right')}</i>${link('home', u('ind.crumbIndustry'))}<i>${ic('chevron-right')}</i><span>${esc(name)}</span></div>
-    <div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
-      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p>
-      <div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
+  ${hb ? `<section class="hero ind-hero ind-banner${hb.layout === 'split' ? ' ib-split' : ''}"><div class="wrap">
+    <div class="crumbs hero-in">${hb.layout === 'split' ? `${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span>` : `${link('home', ic('house'))}<i>${ic('chevron-right')}</i>${link('home', u('ind.crumbIndustry'))}<i>${ic('chevron-right')}</i><span>${esc(name)}</span>`}</div>
+    <div class="ib-top"><div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
+      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p></div>
+      <div class="ib-side"><div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
       <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#bundle" data-scroll="#bundle">${u('home.explore')} ${ic('arrow-right')}</a>
-        <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
-    ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1595 / 322', eager: true, nocap: true })}</div>` : ''}
+        <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div></div>
+    ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1638 / 344', eager: true, nocap: true })}</div>` : ''}
   </div></section>` : `<section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
     <div class="ind-top"><div>

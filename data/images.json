@@ -437,6 +437,22 @@
     }
   },
   "heroBanner": {
-    "bfsi": "bfsi-banner"
+    "bfsi": "bfsi-banner",
+    "manufacturing": "manufacturing-banner"
+  },
+  "manufacturing-banner": {
+    "icon": "factory",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/manufacturing-banner.webp"
+    ],
+    "alt": {
+      "en": "An engineer in a hard hat checks a tablet on a smart factory floor with robot arms and production dashboards",
+      "vi": "Kỹ sư đội mũ bảo hộ kiểm tra máy tính bảng trong nhà máy thông minh có cánh tay robot và bảng điều khiển sản xuất"
+    },
+    "caption": {
+      "en": "Smart manufacturing",
+      "vi": "Sản xuất thông minh"
+    }
   }
 }
