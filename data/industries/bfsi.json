@@ -11,15 +11,16 @@
   "vi": "Ngân hàng, Dịch vụ Tài chính & Bảo hiểm"
  },
  "tagline": {
-  "en": "Email Security, AI Legal & Compliance, Data Loss Prevention, Core Banking Database Security and Debt Collection AI Agent.",
-  "vi": "Email Security, AI Legal & Compliance, Chống thất thoát dữ liệu, Bảo mật cơ sở dữ liệu Core Banking và Debt Collection AI Agent."
+  "en": "Email Security, AI Legal & Compliance, Data Loss Prevention, Core Banking Database Security, Debt Collection and SuperSales AI Agents.",
+  "vi": "Email Security, AI Legal & Compliance, Chống thất thoát dữ liệu, Bảo mật cơ sở dữ liệu Core Banking, AI Agent Thu hồi nợ và SuperSales."
  },
  "bundle": [
   "email-security",
   "database-security",
   "dlp",
   "ai-legal",
-  "debt-collection"
+  "debt-collection",
+  "ai-agent-supersales"
  ],
  "regulations": [
   "Decree 13",
@@ -314,6 +315,57 @@
      "label": {
       "en": "on-time payment rate",
       "vi": "tỷ lệ thanh toán đúng hạn"
+     }
+    }
+   }
+  },
+  {
+   "id": "engagement",
+   "persona": {
+    "en": "Head of Digital Channels & Customer Experience",
+    "vi": "Trưởng bộ phận Kênh số & Trải nghiệm khách hàng"
+   },
+   "challenge": {
+    "title": {
+     "en": "Consulting and Selling to Customers on Every Channel",
+     "vi": "Tư vấn và bán hàng cho khách hàng trên mọi kênh"
+    },
+    "body": {
+     "en": "Customers ask questions on web, Zalo, Messenger and social platforms at any hour and expect an instant answer. Slow replies, uneven consulting and unsorted leads cost sales, while staff lose time on complex internal processes.",
+     "vi": "Khách hàng hỏi trên web, Zalo, Messenger và mạng xã hội vào mọi giờ và mong được trả lời ngay. Phản hồi chậm, tư vấn không đồng đều và lead chưa được phân loại làm mất doanh thu, trong khi nhân viên tốn thời gian với quy trình nội bộ phức tạp."
+    }
+   },
+   "solutions": [
+    "ai-agent-supersales"
+   ],
+   "response": {
+    "title": {
+     "en": "An AI team that consults, cares and sells",
+     "vi": "Đội ngũ AI tư vấn, chăm sóc và bán hàng"
+    },
+    "body": {
+     "en": "AI Agent SuperSales answers instantly, suggests products from each customer's behavior and captures leads, while AI Agent Assistant helps employees with internal process lookup.",
+     "vi": "AI Agent SuperSales phản hồi tức thì, đề xuất sản phẩm theo hành vi từng khách hàng và thu lead, còn AI Agent Assistant hỗ trợ nhân viên tra cứu quy trình nội bộ."
+    },
+    "points": [
+     {
+      "en": "Instant replies, 24/7 on web, Zalo, Messenger and apps",
+      "vi": "Phản hồi tức thì, 24/7 trên web, Zalo, Messenger và app"
+     },
+     {
+      "en": "Personalized product suggestions",
+      "vi": "Đề xuất sản phẩm cá nhân hóa"
+     },
+     {
+      "en": "Automatic lead capture and classification",
+      "vi": "Tự động thu thập và phân loại lead"
+     }
+    ],
+    "metric": {
+     "value": "<5s",
+     "label": {
+      "en": "to process a request",
+      "vi": "xử lý mỗi yêu cầu"
      }
     }
    }

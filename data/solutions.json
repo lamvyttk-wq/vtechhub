@@ -776,8 +776,8 @@
    "vi": "Trợ lý AI cho pháp chế, hợp đồng và tuân thủ quy định"
   },
   "description": {
-   "en": "An AI assistant that searches legal texts in natural language with clear source citations, drafts and reviews contracts, and is tuned for banking, following State Bank of Vietnam regulations. It plugs straight into your internal document systems and workflows.",
-   "vi": "Trợ lý AI tra cứu văn bản pháp luật bằng ngôn ngữ tự nhiên kèm trích dẫn nguồn rõ ràng, hỗ trợ soạn thảo và rà soát hợp đồng, chuyên biệt cho ngành ngân hàng theo quy định của NHNN. Tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
+   "en": "AI Legal & Compliance searches legal texts, case law and official letters in natural language with clear source citations, supports drafting and compliance review of documents and contracts, and is specialized for banking, following State Bank of Vietnam regulations. It handles many data sources and plugs directly into the organization's internal document systems and processes.",
+   "vi": "AI Legal & Compliance tìm kiếm bằng ngôn ngữ tự nhiên trên hệ thống văn bản pháp luật, án lệ, công văn với trích dẫn nguồn rõ ràng, hỗ trợ soạn thảo và rà soát tuân thủ tài liệu, hợp đồng, chuyên biệt cho ngành ngân hàng theo quy định của NHNN. Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
   },
   "detail": {
    "lead": {
@@ -793,24 +793,24 @@
      }
     },
     {
-     "value": ">50%",
-     "label": {
-      "en": "of document-related tasks automated (estimate)",
-      "vi": "tác vụ liên quan đến tài liệu được tự động hóa (ước tính)"
-     }
-    },
-    {
      "value": "~72%",
      "label": {
-      "en": "higher processing efficiency (estimate)",
-      "vi": "hiệu suất xử lý nghiệp vụ tăng (ước tính)"
+      "en": "higher processing efficiency, with over 50% of document tasks automated (estimate)",
+      "vi": "hiệu suất xử lý nghiệp vụ tăng, tự động hóa hơn 50% tác vụ liên quan đến tài liệu (ước tính)"
      }
     },
     {
-     "value": "SBV",
+     "value": "~45%",
      "label": {
-      "en": "tuned for State Bank of Vietnam regulations",
-      "vi": "chuyên biệt theo quy định của NHNN"
+      "en": "ROI from year two onward (estimate)",
+      "vi": "tỷ suất hoàn vốn từ năm thứ hai trở đi (ước tính)"
+     }
+    },
+    {
+     "value": "~22",
+     "label": {
+      "en": "months estimated payback period",
+      "vi": "tháng thời gian hoàn vốn ước tính"
      }
     }
    ],
@@ -897,18 +897,18 @@
       "vi": "Tra cứu thông minh"
      },
      "body": {
-      "en": "Ask in natural language across legal texts, case law and official letters, and get answers with clear source citations.",
+      "en": "Search in natural language across legal documents, case law and official letters, with clear source citations.",
       "vi": "Tìm kiếm bằng ngôn ngữ tự nhiên trên hệ thống văn bản pháp luật, án lệ, công văn với trích dẫn nguồn rõ ràng."
      }
     },
     {
      "title": {
-      "en": "Drafting and contract support",
+      "en": "Document and contract drafting support",
       "vi": "Hỗ trợ soạn thảo tài liệu và hợp đồng"
      },
      "body": {
-      "en": "Draft documents, check them for compliance, summarize and analyze complex legal texts.",
-      "vi": "Soạn thảo, rà soát tuân thủ, tóm tắt và phân tích các văn bản pháp lý phức tạp."
+      "en": "Draft documents and contracts, review them for compliance, summarize and analyze complex legal texts.",
+      "vi": "Soạn thảo tài liệu, hợp đồng, rà soát tuân thủ, tóm tắt và phân tích các văn bản pháp lý phức tạp."
      }
     },
     {
@@ -917,18 +917,18 @@
       "vi": "Chuyên biệt ngành ngân hàng"
      },
      "body": {
-      "en": "Understands banking operations and follows State Bank of Vietnam regulations, answering accurately in context.",
+      "en": "Understands banking operations in depth, follows State Bank of Vietnam regulations closely and answers accurately in context.",
       "vi": "Hiểu sâu nghiệp vụ ngân hàng, bám sát các quy định của NHNN và hỏi đáp chính xác theo ngữ cảnh."
      }
     },
     {
      "title": {
-      "en": "Versatile integration",
+      "en": "Multi-purpose support",
       "vi": "Hỗ trợ đa năng"
      },
      "body": {
-      "en": "Handles many data sources and integrates directly into the organization's internal document systems and processes.",
-      "vi": "Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
+      "en": "Processes many data sources and integrates directly into the organization's internal document systems and processes.",
+      "vi": "Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản/quy trình nội bộ của doanh nghiệp."
      }
     }
    ],
@@ -1979,8 +1979,8 @@
    "vi": "Nhắc nợ đa kênh, không cần gọi điện"
   },
   "description": {
-   "en": "An AI agent for credit-card and consumer-loan collection. It reminds customers, answers balance questions and guides on-time payment across Zalo, SMS, Messenger and the app, and lets customers look up their loan, repayment history and offers by themselves.",
-   "vi": "Giải pháp AI hỗ trợ thu hồi nợ thẻ tín dụng và vay tiêu dùng, giúp nhắc nợ, truy vấn dư nợ và hướng dẫn thanh toán đúng hạn qua đa kênh (Zalo, SMS, Messenger, App) mà không cần gọi điện. Khách hàng có thể tự tra cứu khoản vay, lịch sử trả nợ và ưu đãi."
+   "en": "Debt Collection AI Agent is an AI solution for credit-card and consumer-loan collection. It reminds customers, answers balance queries and guides on-time payment across channels (Zalo, SMS, Messenger, app) without phone calls. Customers can look up their loan, repayment history and offers by themselves, which adds transparency and puts them in control.",
+   "vi": "Debt Collection AI Agent là giải pháp AI hỗ trợ thu hồi nợ thẻ tín dụng và vay tiêu dùng, giúp nhắc nợ, truy vấn dư nợ và hướng dẫn thanh toán đúng hạn qua đa kênh (Zalo, SMS, Messenger, App...) mà không cần gọi điện. Khách hàng có thể tự tra cứu khoản vay, lịch sử trả nợ và ưu đãi, tăng tính minh bạch và chủ động."
   },
   "detail": {
    "lead": {
@@ -1988,6 +1988,13 @@
     "vi": "Nhắc nợ, trả lời và hướng dẫn thanh toán trên nhiều kênh, cá nhân hóa cho từng khách hàng."
    },
    "stats": [
+    {
+     "value": "↓",
+     "label": {
+      "en": "lower collection cost",
+      "vi": "giảm chi phí thu hồi nợ"
+     }
+    },
     {
      "value": "5,000+",
      "label": {
@@ -1999,14 +2006,7 @@
      "value": "+20%",
      "label": {
       "en": "on-time payment rate from multichannel, personalized reminders",
-      "vi": "tỷ lệ thanh toán đúng hạn nhờ nhắc nợ đa kênh và cá nhân hóa"
-     }
-    },
-    {
-     "value": "Multi",
-     "label": {
-      "en": "channel: Zalo, SMS, Messenger, WhatsApp, app",
-      "vi": "kênh: Zalo, SMS, Messenger, WhatsApp, app"
+      "vi": "tỷ lệ thanh toán đúng hạn nhờ nhắc nợ đa kênh và cá nhân hóa nội dung"
      }
     }
    ],
@@ -2079,8 +2079,8 @@
    "modules": [
     {
      "title": {
-      "en": "Proactive outbound reminders in the app",
-      "vi": "Chủ động nhắc nợ qua call outbound trên mobile app"
+      "en": "Proactive outbound reminders on the mobile app",
+      "vi": "Chủ động nhắc nợ thông qua call outbound trên mobile app"
      },
      "body": {
       "en": "Reaches customers through outbound calls inside the mobile app, without a traditional phone call.",
@@ -2089,22 +2089,22 @@
     },
     {
      "title": {
-      "en": "Reminders on social channels",
-      "vi": "Nhắc nợ qua các kênh social network"
+      "en": "Proactive reminders on social channels",
+      "vi": "Chủ động nhắc nợ qua các kênh social network"
      },
      "body": {
-      "en": "Reminds on Zalo, Messenger and WhatsApp, answers balance questions and guides on-time payment.",
-      "vi": "Nhắc nợ trên Zalo, Messenger, WhatsApp, trả lời truy vấn dư nợ và hướng dẫn thanh toán đúng hạn."
+      "en": "Reminds on Zalo, Messenger and WhatsApp, answers balance queries and guides on-time payment.",
+      "vi": "Nhắc nợ qua Zalo, Messenger, WhatsApp, truy vấn dư nợ và hướng dẫn thanh toán đúng hạn."
      }
     },
     {
      "title": {
-      "en": "CRM integration",
-      "vi": "Tích hợp hệ thống CRM"
+      "en": "CRM integration and status marking",
+      "vi": "Tích hợp hệ thống CRM, đánh dấu tình trạng thu hồi nợ"
      },
      "body": {
-      "en": "Marks each customer's collection status back into the CRM, so teams see one up-to-date picture.",
-      "vi": "Đánh dấu tình trạng thu hồi nợ của từng khách hàng vào CRM để đội ngũ thấy một bức tranh cập nhật."
+      "en": "Integrates with the CRM and marks each customer's collection status.",
+      "vi": "Tích hợp hệ thống CRM, đánh dấu tình trạng thu hồi nợ của từng khách hàng."
      }
     },
     {
@@ -2141,6 +2141,213 @@
      "body": {
       "en": "Handle thousands of reminder conversations a day without growing the call team.",
       "vi": "Xử lý hàng nghìn hội thoại nhắc nợ mỗi ngày mà không phải tăng đội ngũ gọi điện."
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "ai-agent-supersales",
+  "icon": "message-circle",
+  "name": "AI Agent SuperSales & Assistant",
+  "tagline": {
+   "en": "Automated consulting, customer care and omnichannel selling",
+   "vi": "Tự động hóa tư vấn, chăm sóc khách hàng và bán hàng đa kênh"
+  },
+  "description": {
+   "en": "AI Agent SuperSales and AI Agent Assistant form a comprehensive AI solution that automates consulting, customer care and omnichannel selling. SuperSales answers customers instantly and sells across channels, while Assistant helps employees look up complex internal processes such as legal and tax.",
+   "vi": "AI Agent SuperSales & AI Agent Assistant là giải pháp AI toàn diện, hỗ trợ tự động hóa tư vấn, chăm sóc khách hàng và bán hàng đa kênh. SuperSales phản hồi khách hàng tức thì và bán hàng trên nhiều kênh, còn Assistant hỗ trợ nhân viên tra cứu quy trình nội bộ phức tạp như pháp chế, thuế."
+  },
+  "detail": {
+   "lead": {
+    "en": "One AI team for customer consulting, care and selling, on every channel.",
+    "vi": "Một đội ngũ AI cho tư vấn, chăm sóc và bán hàng, trên mọi kênh."
+   },
+   "stats": [
+    {
+     "value": "10M+",
+     "label": {
+      "en": "customers reached through TikTok, Facebook and other platforms",
+      "vi": "khách hàng được tiếp cận qua TikTok, Facebook và các nền tảng khác"
+     }
+    },
+    {
+     "value": "<5s",
+     "label": {
+      "en": "to process a request",
+      "vi": "tốc độ xử lý yêu cầu"
+     }
+    },
+    {
+     "value": "30%",
+     "label": {
+      "en": "average lead capture rate, about 2,000+ potential customers per month",
+      "vi": "tỷ lệ thu lead trung bình, tương đương 2.000+ khách hàng tiềm năng/tháng"
+     }
+    },
+    {
+     "value": "4.7/5",
+     "label": {
+      "en": "satisfaction score, with 24/7 support on web, Zalo, Messenger, iOS and Android",
+      "vi": "chỉ số hài lòng, hỗ trợ 24/7 trên web, Zalo, Messenger, iOS, Android"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Instant replies",
+     "vi": "Phản hồi tức thì"
+    },
+    {
+     "en": "Personalized product suggestions",
+     "vi": "Đề xuất sản phẩm cá nhân hóa"
+    },
+    {
+     "en": "Lead capture and classification",
+     "vi": "Thu thập và phân loại lead"
+    },
+    {
+     "en": "Internal process lookup",
+     "vi": "Tra cứu quy trình nội bộ"
+    },
+    {
+     "en": "Sales automation",
+     "vi": "Tự động hóa tư vấn bán hàng"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Why consulting and selling at scale is hard",
+    "vi": "Vì sao tư vấn và bán hàng ở quy mô lớn khó"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Customers ask on many channels and expect an answer at once",
+      "vi": "Khách hàng hỏi trên nhiều kênh và mong được trả lời ngay"
+     },
+     "impact": {
+      "en": "Slow replies lose sales and hurt the customer experience.",
+      "vi": "Phản hồi chậm làm mất đơn hàng và giảm trải nghiệm khách hàng."
+     }
+    },
+    {
+     "title": {
+      "en": "Potential customers are hard to capture and sort",
+      "vi": "Khách hàng tiềm năng khó thu thập và phân loại"
+     },
+     "impact": {
+      "en": "Sales teams spend time on the wrong leads while good ones go cold.",
+      "vi": "Đội bán hàng tốn thời gian vào lead chưa phù hợp trong khi lead tốt bị nguội."
+     }
+    },
+    {
+     "title": {
+      "en": "Upsell, cross-sell and posting depend on manual effort",
+      "vi": "Upsell, cross-sell và đăng bài phụ thuộc vào thao tác thủ công"
+     },
+     "impact": {
+      "en": "Revenue opportunities are missed because consulting is not consistent or personalized.",
+      "vi": "Cơ hội doanh thu bị bỏ lỡ vì tư vấn không đồng đều và chưa cá nhân hóa."
+     }
+    },
+    {
+     "title": {
+      "en": "Employees struggle with complex internal processes (legal, tax)",
+      "vi": "Nhân viên khó tra cứu quy trình nội bộ phức tạp (pháp chế, thuế)"
+     },
+     "impact": {
+      "en": "Time is lost searching for answers that should take seconds.",
+      "vi": "Mất thời gian tìm những câu trả lời lẽ ra chỉ mất vài giây."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the AI agents do",
+    "vi": "Các AI Agent làm được gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Instant responses",
+      "vi": "Phản hồi tức thì"
+     },
+     "body": {
+      "en": "Answers every question immediately, improving the customer experience.",
+      "vi": "Phản hồi tức thì mọi thắc mắc, tăng trải nghiệm khách hàng."
+     }
+    },
+    {
+     "title": {
+      "en": "Smart product suggestions",
+      "vi": "Đề xuất sản phẩm thông minh"
+     },
+     "body": {
+      "en": "Recommends products based on each customer's behavior and personal needs.",
+      "vi": "Đề xuất sản phẩm thông minh dựa trên hành vi và nhu cầu cá nhân hóa."
+     }
+    },
+    {
+     "title": {
+      "en": "Lead capture and classification",
+      "vi": "Thu thập và phân loại khách hàng tiềm năng"
+     },
+     "body": {
+      "en": "Automatically collects and classifies potential customers.",
+      "vi": "Tự động thu thập và phân loại khách hàng tiềm năng."
+     }
+    },
+    {
+     "title": {
+      "en": "Internal process lookup for employees",
+      "vi": "Tra cứu quy trình nội bộ cho nhân viên"
+     },
+     "body": {
+      "en": "Helps employees look up complex internal processes (legal, tax and more), built exclusively for staff.",
+      "vi": "Hỗ trợ tra cứu quy trình nội bộ phức tạp (pháp chế, thuế...), dành riêng cho nhân viên."
+     }
+    },
+    {
+     "title": {
+      "en": "Automated sales consulting",
+      "vi": "Tự động hóa tư vấn bán hàng"
+     },
+     "body": {
+      "en": "Automates upsell, cross-sell, closing sales and publishing promotional posts.",
+      "vi": "Tự động hóa tư vấn bán hàng: upsell, cross-sell, chốt sales, đăng bài quảng bá."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks & financial institutions",
+      "vi": "Ngân hàng & tổ chức tài chính"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Consult and care for customers on every channel, and give staff a tool for internal process lookup.",
+      "vi": "Tư vấn và chăm sóc khách hàng trên mọi kênh, đồng thời có công cụ tra cứu quy trình nội bộ cho nhân viên."
+     }
+    },
+    {
+     "name": {
+      "en": "E-commerce & retail",
+      "vi": "Thương mại điện tử & bán lẻ"
+     },
+     "icon": "shopping-bag",
+     "industry": "retail",
+     "body": {
+      "en": "Answer shoppers instantly, recommend products and capture leads across social and messaging platforms.",
+      "vi": "Trả lời người mua tức thì, đề xuất sản phẩm và thu lead trên mạng xã hội và các nền tảng nhắn tin."
      }
     }
    ]
