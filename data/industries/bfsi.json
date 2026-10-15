@@ -261,8 +261,8 @@
     "metric": {
      "value": "95%",
      "label": {
-      "en": "accuracy, up to",
-      "vi": "mức độ chính xác, lên đến"
+      "en": "accuracy of up to",
+      "vi": "mức độ chính xác lên đến"
      }
     }
    }
