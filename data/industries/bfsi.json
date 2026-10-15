@@ -189,8 +189,8 @@
    ],
    "response": {
     "title": {
-     "en": "Visibility and control over sensitive data on every outbound channel",
-     "vi": "Giám sát và kiểm soát dữ liệu nhạy cảm trên mọi kênh truyền ra ngoài"
+     "en": "Control the flow of sensitive data and prevent multichannel information leaks.",
+     "vi": "Kiểm soát luồng truyền dữ liệu nhạy cảm, chống rò rỉ thông tin đa kênh."
     },
     "body": {
      "en": "360-degree monitoring across chat apps, personal webmail and USB drives detects customer records automatically, stopping insider fraud and leaks while supporting Decree 13 compliance.",
