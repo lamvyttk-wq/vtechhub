@@ -70,3 +70,9 @@ Without it the page is just hero + "where it appears". Currently only `cdn` has 
   "audiences": [ {"name":{..},"body":{..},"icon":"globe","industry":"media"} ]     // industry (optional) links to that industry story
 }
 ```
+
+## Customer stories (optional, `industry.stories`)
+The "Customer stories" band on an industry page. With no `stories`, three "Coming soon" placeholders are shown.
+```jsonc
+"stories": [ { "title": {"en":"","vi":""}, "body": {"en":"","vi":""}, "url": "https://…", "tag": {"en":"","vi":""} } ]   // url optional (no url = shown as coming soon), tag optional
+```

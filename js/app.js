@@ -243,7 +243,7 @@ function industryPage() {
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
   // An industry can ship its own hero (data `hero` + images.heroBanner): centred headline, capability chips and a wide photo banner. It replaces the overview block.
   const hb = d.hero ? { ...d.hero, photo: state.images.heroBanner?.[id] } : null;
-  const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
+  const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['stories', 'ind.lnStories'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
     .filter(([k]) => !(k === 'overview' && hb)) // no overview block when the hero already carries the intro and the numbers
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
@@ -271,14 +271,6 @@ function industryPage() {
   const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
     .map(([v, key]) => `<div><strong>${v}</strong><span>${u(key)}</span></div>`).join('');
 
-  const cards = d.bundle.map((s, k) => {
-    const covers = d.chapters.map((c, j) => (c.solutions.includes(s) ? roman(j + 1) : '')).filter(Boolean).join(' · ');
-    const x = sol(s);
-    const th = thumb(ICONS[x.icon] || ICONS.box, `${id}${k}`, k);
-    return link(`solution-${s}`, `<div class="sc-img">${state.images.bySolution?.[s] ? photo(state.images.bySolution[s], { w: 700, ratio: '1', nocap: true, fb: th }) : th}</div>
-      <div class="sc-body"><h3>${esc(x.name)}</h3><p>${esc(t(x.description))}</p>
-        <div class="sc-foot"><span>${u('ind.coversLabel')} <b>${covers}</b></span><span class="more"><i></i>${u('ind.learn')}</span></div></div>`, 'sc rv');
-  }).join('');
 
   const why = d.outcomes.map((o, k) => `<div class="why-c rv"><span class="why-i">${ic(['shield-check', 'check-circle-2', 'zap'][k % 3])}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
   const steps = ui('home.steps').map((st, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(st.t)}</h3><p>${t(st.d)}</p></div>`).join('');
@@ -286,6 +278,14 @@ function industryPage() {
   const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
     `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
+  // Customer stories: `d.stories` = [{ title, body, url?, tag? }] in {en, vi}. Until a sector has its own, three "coming soon" cards hold the place.
+  const soon = { title: ui('ind.csSoonTitle'), body: ui('ind.csSoonBody'), soon: true };
+  const storyCards = (d.stories && d.stories.length ? d.stories : [soon, soon, soon]).map((x, k) => {
+    const isSoon = x.soon || !x.url;
+    return `<article class="cs-card rv${isSoon ? ' is-soon' : ''}"><div class="cs-top">${isSoon ? `<span class="cs-tag">${u('ind.csSoon')}</span>` : (x.tag ? `<span class="cs-tag live">${esc(t(x.tag))}</span>` : '')}</div>
+      <h3>${esc(t(x.title))}</h3><p>${esc(t(x.body))}</p>
+      ${isSoon ? `<span class="cs-read off">${u('ind.csRead')}</span>` : `<a class="cs-read" href="${esc(x.url)}" target="_blank" rel="noopener">${u('ind.csRead')} ${ic('arrow-up-right')}</a>`}</article>`;
+  }).join('');
   const indCta = `<div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
         <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div>`;
@@ -297,7 +297,7 @@ function industryPage() {
     <div class="ib-top"><div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p></div>
       <div class="ib-side"><div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
-      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#bundle" data-scroll="#bundle">${u('home.explore')} ${ic('arrow-right')}</a>
+      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#story" data-scroll="#story">${u('home.explore')} ${ic('arrow-right')}</a>
         <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div></div>
     ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1638 / 344', eager: true, nocap: true })}</div>` : ''}
   </div></section>` : `<section class="hero ind-hero"><div class="wrap">
@@ -315,7 +315,7 @@ function industryPage() {
     <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name })).replace(/ - /g, '\u00a0- ')}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
   <div class="story" id="story">${chapters}</div>
-  <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div><div class="scs">${cards}</div></div></section>
+  <section class="cs" id="stories"><div class="wrap"><div class="cs-head"><h2 class="h2 rv">${u('ind.csTitle')}</h2><a class="btn btn-line rv" href="#contact" data-scroll="#contact">${u('ind.csMore')}</a></div><div class="cs-grid">${storyCards}</div></div></section>
   <section class="sec why" id="why"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span><h2 class="h2 rv">${u('ind.whyTitle')}</h2></div><div class="whys">${why}</div></div></section>
   <section class="sec" id="approach"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>
     <div class="poc glass rv" style="margin-top:clamp(2rem,4vw,3.5rem)"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
