@@ -257,8 +257,7 @@ function industryPage() {
     return `<section class="chapter" id="ch-${k}"><div class="wrap"><div class="stage">
       <div class="numeral" aria-hidden="true">${roman(k + 1)}</div>
       <article class="pain">${media}<span class="tag">${u('ind.challenge')} <i>${roman(k + 1)} / ${roman(n)}</i></span>
-        <h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.challenge.body))}</p>${stat}
-        <div class="persona">${ic('user-round')}<span>${u('ind.felt')} <b>${esc(t(c.persona))}</b></span></div></article>
+        <h3>${esc(t(c.challenge.title))}</h3><p>${esc(t(c.challenge.body))}</p>${stat}</article>
       <div class="bridge" aria-hidden="true"></div>
       <article class="ans glass"><div class="ans-in"><span class="tag">${u('ind.answer')}</span>
         <div class="solchips"><span class="sr">${u('ind.solvedBy')}</span>${chips2}</div>
