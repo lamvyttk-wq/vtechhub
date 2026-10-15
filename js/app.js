@@ -327,7 +327,7 @@ function solutionPage() {
   const stories = uses.length ? `<section class="sec" id="stories" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.where')}</span></div><div class="tiles">${tiles}</div></div></section>` : '';
 
   // Solutions with rich detail follow a buyer's path: what is it -> proof -> which problem is mine -> is it for people like me -> stories -> try it -> talk.
-  let lnav = '', stats = '', overview = '', solve = '', modules = '', who = '', poc = '';
+  let lnav = '', stats = '', overview = '', solve = '', modules = '', impl = '', who = '', poc = '';
   if (dt) {
     const links = [['overview', 'sol.lnOverview'], ['solve', 'sol.lnSolve'], ...(dt.modules ? [['modules', 'sol.lnModules']] : []), ['who', 'sol.lnWho'], ...(uses.length ? [['stories', 'sol.lnStories']] : [])]
       .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
@@ -339,7 +339,7 @@ function solutionPage() {
     const pairs = (dt.pairs || []).map((p, k) => {
       const m = p.module;
       return `<article class="pair rv"><div class="pair-q"><span class="tag">${u('sol.challenge')} ${roman(k + 1)}</span><h3>${esc(t(p.challenge.title))}</h3>
-        <p class="impact"><b>${u('sol.impact')}</b> ${esc(t(p.challenge.impact))}</p></div>
+        ${p.challenge.impact ? `<p class="impact"><b>${u('sol.impact')}</b> ${esc(t(p.challenge.impact))}</p>` : ''}</div>
         <div class="pair-go" aria-hidden="true">${ic('arrow-right')}</div>
         <div class="pair-a glass"><span class="num">${roman(k + 1)}</span><div><span class="tag">${u('sol.answer')}</span><h4>${esc(t(m.title))}</h4><p>${esc(t(m.body))}</p>
           ${m.metric ? `<div class="metric sm"><strong>${esc(m.metric.value)}</strong><span>${esc(t(m.metric.label))}</span></div>` : ''}</div></div></article>`;
@@ -350,6 +350,9 @@ function solutionPage() {
       ? `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${esc(t(sk))}</span><h2 class="h2 rv">${esc(t(st))}</h2></div><div class="probs">${probs}</div></div></section>`
       : `<section class="sec" id="solve"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('sol.solveKicker')}</span><h2 class="h2 rv">${u('sol.solveTitle')}</h2><p class="lede rv">${u('sol.solveP')}</p></div><div class="pairs">${pairs}</div></div></section>`;
 
+    // Optional second chain: when a solution has both `problems` and `pairs`, the pairs follow the modules as "challenges when adopting it"
+    impl = dt.problems && dt.pairs
+      ? `<section class="sec" id="implement" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${esc(t(dt.pairsKicker))}</span><h2 class="h2 rv">${esc(t(dt.pairsTitle))}</h2>${dt.pairsLede ? `<p class="lede rv">${esc(t(dt.pairsLede))}</p>` : ''}</div><div class="pairs">${pairs}</div></div></section>` : '';
     const mods = (dt.modules || []).map((m, k) => `<article class="mod rv"><span class="num">${roman(k + 1)}</span><div><h3>${esc(t(m.title))}</h3><p>${esc(t(m.body))}</p></div></article>`).join('');
     modules = dt.modules ? `<section class="sec" id="modules" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${esc(t(dt.modulesKicker))}</span><h2 class="h2 rv">${esc(t(dt.modulesTitle))}</h2></div><div class="mods">${mods}</div></div></section>` : '';
     const aud = (dt.audiences || []).map((a) => {
@@ -369,7 +372,7 @@ function solutionPage() {
     <div class="actions hero-in" style="margin-top:2rem;animation-delay:.24s"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
       ${dt ? `<a class="btn btn-line" href="#solve" data-scroll="#solve">${ic('arrow-down')} ${u('sol.seeSolve')}</a>` : ''}</div></div>
     <div class="hero-art hero-in" style="animation-delay:.2s">${aura(photo(state.images.bySolution?.[id] || 'conference', { w: 1200, ratio: '4 / 3', eager: true, fb: art('tile', s.icon, 's') }))}</div></div>${stats}</div></section>
-  ${overview}${solve}${modules}${who}${stories}${poc}
+  ${overview}${solve}${modules}${impl}${who}${stories}${poc}
   ${experts()}
   ${contact()}`;
 }

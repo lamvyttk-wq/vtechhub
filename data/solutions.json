@@ -1447,6 +1447,128 @@
       "vi": "Bảo vệ hồ sơ bệnh nhân trên các máy trạm của nhân viên, có nhật ký kiểm toán cho mọi truy cập."
      }
     }
+   ],
+   "pairsKicker": {
+    "en": "Adopting DLP in practice",
+    "vi": "Triển khai DLP trong thực tế"
+   },
+   "pairsTitle": {
+    "en": "Common challenges when adopting DLP, and how to overcome them",
+    "vi": "Thách thức khi áp dụng DLP và cách khắc phục"
+   },
+   "pairsLede": {
+    "en": "DLP is not software you install once and forget. It takes a comprehensive security strategy of people, process and technology, so data stays protected from inside the system to the moment it leaves.",
+    "vi": "DLP không chỉ là phần mềm cài đặt một lần là xong. Doanh nghiệp cần xây dựng chiến lược bảo mật toàn diện gồm con người, quy trình và công nghệ để đảm bảo dữ liệu luôn được bảo vệ, từ trong hệ thống cho đến khi truyền ra ngoài."
+   },
+   "pairs": [
+    {
+     "challenge": {
+      "title": {
+       "en": "Hard to identify and correctly classify sensitive data in the system",
+       "vi": "Khó xác định và phân loại đúng dữ liệu nhạy cảm trong hệ thống"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "AI-driven classification",
+       "vi": "Phân loại bằng AI"
+      },
+      "body": {
+       "en": "Apply AI and machine learning to scan, tag and classify data automatically, which cuts manual errors.",
+       "vi": "Ứng dụng công nghệ AI và machine learning để tự động quét, gắn nhãn và phân loại dữ liệu, giúp giảm sai sót thủ công."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "DLP policies are complex and easily conflict with internal operating processes",
+       "vi": "Chính sách DLP phức tạp, dễ xung đột với quy trình vận hành nội bộ"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Ready-made policy templates",
+       "vi": "Mẫu chính sách dựng sẵn"
+      },
+      "body": {
+       "en": "Use automatic policy templates from a trusted provider, then adjust them flexibly to the way your business operates.",
+       "vi": "Sử dụng mẫu chính sách tự động từ nhà cung cấp uy tín, đồng thời điều chỉnh linh hoạt theo mô hình hoạt động của doanh nghiệp."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Too many false alerts overload the IT team",
+       "vi": "Quá nhiều cảnh báo giả (false positive), gây quá tải cho bộ phận IT"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "AI plus user behavior analytics",
+       "vi": "AI kết hợp phân tích hành vi người dùng"
+      },
+      "body": {
+       "en": "Combine AI with user behavior analytics (UBA) to filter alerts intelligently and show only events with real risk.",
+       "vi": "Kết hợp AI và phân tích hành vi người dùng (UBA) để lọc cảnh báo thông minh, chỉ hiển thị các sự kiện có rủi ro thực sự."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Hard to integrate DLP with existing systems and applications",
+       "vi": "Khó tích hợp DLP với hệ thống và ứng dụng sẵn có"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Multi-platform connectivity",
+       "vi": "Kết nối đa nền tảng"
+      },
+      "body": {
+       "en": "Choose a solution that connects across platforms (email, cloud, endpoint) and supports API Protection, so data syncs easily.",
+       "vi": "Chọn giải pháp có khả năng kết nối đa nền tảng (email, cloud, endpoint) và hỗ trợ API Protection để đồng bộ dữ liệu dễ dàng."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "Employees lack data-security awareness and easily break DLP policy",
+       "vi": "Nhân viên thiếu nhận thức về an toàn dữ liệu, dễ vi phạm chính sách DLP"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Training plus 24/7 SOC monitoring",
+       "vi": "Đào tạo kết hợp giám sát SOC 24/7"
+      },
+      "body": {
+       "en": "Train regularly and pair DLP with a 24/7 security operations center to monitor and spot unusual behavior early.",
+       "vi": "Tổ chức đào tạo định kỳ và kết hợp DLP với trung tâm giám sát SOC 24/7 để giám sát, phát hiện sớm hành vi bất thường."
+      }
+     }
+    },
+    {
+     "challenge": {
+      "title": {
+       "en": "No control over who can access data internally",
+       "vi": "Không kiểm soát được quyền truy cập dữ liệu trong nội bộ"
+      }
+     },
+     "module": {
+      "title": {
+       "en": "Zero Trust model",
+       "vi": "Mô hình Zero Trust"
+      },
+      "body": {
+       "en": "Apply a Zero Trust model, never trust by default, and grant data access only after clear authentication.",
+       "vi": "Áp dụng mô hình Zero Trust: “Không tin tưởng mặc định”, chỉ cấp quyền truy cập khi có xác thực rõ ràng."
+      }
+     }
+    }
    ]
   }
  },
