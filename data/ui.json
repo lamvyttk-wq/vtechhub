@@ -184,6 +184,7 @@
   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
   "lnSolutions": { "en": "Solutions", "vi": "Giải pháp" },
   "lnStories": { "en": "Customers", "vi": "Khách hàng" },
+  "solLine": { "en": "Solutions", "vi": "Giải pháp" },
   "csTitle": { "en": "Customer stories", "vi": "Câu chuyện khách hàng" },
   "csMore": { "en": "Explore more customer stories", "vi": "Xem thêm câu chuyện khách hàng" },
   "csRead": { "en": "Read the story", "vi": "Đọc câu chuyện" },

@@ -299,8 +299,7 @@ function industryPage() {
     <div class="ib-top"><div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p></div>
       <div class="ib-side"><div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
-      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#story" data-scroll="#story">${u('home.explore')} ${ic('arrow-right')}</a>
-        <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div></div>
+      <div class="ib-sols hero-in" style="animation-delay:.24s"><b>${u('ind.solLine')}</b>${d.bundle.map((sid) => `<a href="#solution-${sid}" data-go="solution-${sid}">${ic(sol(sid).icon)} ${esc(sol(sid).name)}</a>`).join('')}</div></div></div>
     ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1638 / 344', eager: true, nocap: true })}</div>` : ''}
   </div></section>` : `<section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
@@ -573,7 +572,7 @@ function render(instant = false) {
   const s = page === 'solution' ? state.solutions.get(id) : null;
   document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
-  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
+  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}<a class="fab-expert" href="#contact" data-scroll="#contact">${ic('user-round')}<span>${u('ind.talk')}</span></a>`;
   bindChrome(); bindForm(); initLocalNav(); initFaq();
   initMotion(instant);
   phCheck();

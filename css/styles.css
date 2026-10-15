@@ -638,3 +638,16 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .oc-b small { font: 400 .78rem/1.4 var(--sans); color: var(--ink-3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .oc-b { align-items: flex-start; }
 @media (max-width: 560px) { #solutions-all .ocs { grid-template-columns: 1fr; } #solutions-all .oc-img .ph { aspect-ratio: 16 / 9 !important; } }
+
+/* industry solutions line (replaces the hero buttons) */
+.ib-sols { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .55rem .6rem; margin-top: .2rem; }
+.ib-sols b { font: 600 .72rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-right: .3rem; }
+.ib-sols a { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .9rem; border-radius: 999px; border: 1px solid var(--hair); background: rgba(255,255,255,.8); font: 600 .82rem/1 var(--sans); color: var(--ink); transition: border-color .25s, color .25s, transform .25s; }
+.ib-sols a svg { width: 15px; height: 15px; fill: none; stroke: var(--red); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ib-sols a:hover { border-color: var(--red); color: var(--red-ink, var(--red)); transform: translateY(-1px); }
+.ib-split .ib-sols { justify-content: flex-start; }
+/* floating "talk to an expert" (DXC-like): dark tab pinned to the bottom-right corner */
+.fab-expert { position: fixed; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 24px); z-index: 45; display: inline-flex; align-items: center; gap: .65rem; padding: .85rem 1.15rem; background: #0e1020; color: #fff; font: 700 .78rem/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(11,12,17,.55); transition: transform .25s, background .25s; }
+.fab-expert svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.fab-expert:hover { background: var(--red); transform: translateY(-2px); }
+@media (max-width: 560px) { .fab-expert { padding: .8rem .9rem; font-size: .7rem; } }
