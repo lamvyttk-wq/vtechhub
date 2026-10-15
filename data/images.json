@@ -420,5 +420,23 @@
       "en": "Banking, finance and insurance, secured",
       "vi": "Ngân hàng, tài chính và bảo hiểm được bảo vệ"
     }
+  },
+  "bfsi-hero": {
+    "icon": "landmark",
+    "pos": "50% 50%",
+    "src": [
+      "assets/photos/bfsi-hero.webp"
+    ],
+    "alt": {
+      "en": "An isometric bank building surrounded by four capabilities: Core Banking data security, regulatory compliance and audit, flexible cost-optimized infrastructure, and AI and automation",
+      "vi": "Tòa nhà ngân hàng dạng isometric bao quanh bởi bốn năng lực: bảo mật dữ liệu Core Banking, tuân thủ quy định và kiểm toán, hạ tầng linh hoạt và tối ưu chi phí, ứng dụng AI và tự động hóa"
+    },
+    "caption": {
+      "en": "Banking, finance and insurance",
+      "vi": "Ngân hàng, tài chính và bảo hiểm"
+    }
+  },
+  "heroSide": {
+    "bfsi": "bfsi-hero"
   }
 }

@@ -356,6 +356,10 @@ div.tile { cursor: default; }
 .ind-hero .display { max-width: 20ch; }
 .ind-cta { display: grid; gap: 1.6rem; justify-items: start; padding-bottom: .4rem; }
 .ind-cta .chips { margin: 0; }
+.ind-top.has-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.ind-top.has-side .display { max-width: 14ch; }
+.ind-top.has-side .ind-cta { margin-top: 1.8rem; }
+.ind-side .ph { border-radius: 28px; box-shadow: 0 30px 60px -30px rgba(48,34,70,.28); }
 .banner { margin-top: clamp(2rem, 4vw, 3.4rem); }
 .banner .ph { min-height: 230px; }
 .ph-fb .banner-art { width: 100%; height: 100%; display: block; }
@@ -402,6 +406,8 @@ div.tile { cursor: default; }
 @media (max-width: 960px) {
   .ind-top, .ov-row, .whys { grid-template-columns: 1fr; }
   .ind-top { align-items: start; }
+  .ind-top.has-side { grid-template-columns: 1fr; }
+  .ind-top.has-side .display { max-width: none; }
   .scs { grid-template-columns: 1fr; }
   .sc { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
   .sc-body p { -webkit-line-clamp: 5; }

@@ -284,17 +284,20 @@ function industryPage() {
   const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
     `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
+  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
+  const heroSide = state.images.heroSide?.[id];
+  const indCta = `<div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
+        <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
+        <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div>`;
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
   <section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
-    <div class="ind-top"><div>
+    <div class="ind-top${heroSide ? ' has-side' : ''}"><div>
       <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
-      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p></div>
-      <div class="ind-cta hero-in" style="animation-delay:.22s"><div class="chips">${chips}</div>
-        <div class="actions"><a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a>
-        <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div></div>
+      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>${heroSide ? indCta : ''}</div>
+      ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1400, ratio: '952 / 490', eager: true, nocap: true })}</div>` : indCta}</div>
   </div></section>
   <section class="sec ov" id="overview"><div class="wrap">
     <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
