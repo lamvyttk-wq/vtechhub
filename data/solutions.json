@@ -772,12 +772,204 @@
   "icon": "scale",
   "name": "AI Legal & Compliance",
   "tagline": {
-   "en": "AI assistant for contracts & regulation",
-   "vi": "Trợ lý AI cho hợp đồng & quy định"
+   "en": "AI assistant for legal, contracts and regulatory compliance",
+   "vi": "Trợ lý AI cho pháp chế, hợp đồng và tuân thủ quy định"
   },
   "description": {
-   "en": "A specialized AI assistant trained on State Bank of Vietnam regulations with 95% accuracy. It automates loan and contract reviews to cut routine workload by 42%, with an on-premise option to ensure total data privacy.",
-   "vi": "Trợ lý AI chuyên biệt được huấn luyện trên quy định của Ngân hàng Nhà nước, độ chính xác 95%. Tự động rà soát hợp đồng tín dụng, giảm 42% khối lượng công việc thường nhật, có tùy chọn triển khai on-premise để đảm bảo riêng tư dữ liệu tuyệt đối."
+   "en": "An AI assistant that searches legal texts in natural language with clear source citations, drafts and reviews contracts, and is tuned for banking, following State Bank of Vietnam regulations. It plugs straight into your internal document systems and workflows.",
+   "vi": "Trợ lý AI tra cứu văn bản pháp luật bằng ngôn ngữ tự nhiên kèm trích dẫn nguồn rõ ràng, hỗ trợ soạn thảo và rà soát hợp đồng, chuyên biệt cho ngành ngân hàng theo quy định của NHNN. Tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
+  },
+  "detail": {
+   "lead": {
+    "en": "Find the rule, draft the contract, check compliance, with a source for every answer.",
+    "vi": "Tìm đúng quy định, soạn đúng hợp đồng, kiểm tra tuân thủ, mỗi câu trả lời đều có nguồn."
+   },
+   "stats": [
+    {
+     "value": "~42%",
+     "label": {
+      "en": "less routine operational workload (estimate)",
+      "vi": "khối lượng công việc vận hành giảm (ước tính)"
+     }
+    },
+    {
+     "value": ">50%",
+     "label": {
+      "en": "of document-related tasks automated (estimate)",
+      "vi": "tác vụ liên quan đến tài liệu được tự động hóa (ước tính)"
+     }
+    },
+    {
+     "value": "~72%",
+     "label": {
+      "en": "higher processing efficiency (estimate)",
+      "vi": "hiệu suất xử lý nghiệp vụ tăng (ước tính)"
+     }
+    },
+    {
+     "value": "SBV",
+     "label": {
+      "en": "tuned for State Bank of Vietnam regulations",
+      "vi": "chuyên biệt theo quy định của NHNN"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Natural-language search with citations",
+     "vi": "Tra cứu ngôn ngữ tự nhiên có trích dẫn"
+    },
+    {
+     "en": "Contract drafting and review",
+     "vi": "Soạn thảo và rà soát hợp đồng"
+    },
+    {
+     "en": "Banking specialization",
+     "vi": "Chuyên biệt ngành ngân hàng"
+    },
+    {
+     "en": "Multi-source integration",
+     "vi": "Tích hợp đa nguồn dữ liệu"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Where legal and compliance time goes",
+    "vi": "Thời gian của đội pháp chế và tuân thủ đang đi đâu"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Finding the right regulation, case law or official letter takes manual searching",
+      "vi": "Tìm đúng văn bản pháp luật, án lệ, công văn phải tra cứu thủ công"
+     },
+     "impact": {
+      "en": "Staff spend hours across scattered sources and still struggle to prove where an answer came from.",
+      "vi": "Nhân sự mất hàng giờ qua nhiều nguồn rời rạc mà vẫn khó chứng minh câu trả lời đến từ đâu."
+     }
+    },
+    {
+     "title": {
+      "en": "Drafting and reviewing contracts is slow and repetitive",
+      "vi": "Soạn thảo và rà soát hợp đồng chậm, lặp đi lặp lại"
+     },
+     "impact": {
+      "en": "Approvals and customer service wait on detailed manual review of loan, insurance and service contracts.",
+      "vi": "Phê duyệt và phục vụ khách hàng phải chờ rà soát thủ công chi tiết hợp đồng tín dụng, bảo hiểm và dịch vụ."
+     }
+    },
+    {
+     "title": {
+      "en": "Banking rules change and must be applied in context",
+      "vi": "Quy định ngân hàng thay đổi và phải áp dụng đúng ngữ cảnh"
+     },
+     "impact": {
+      "en": "Generic tools do not understand banking operations or State Bank of Vietnam requirements, so answers need re-checking.",
+      "vi": "Công cụ chung không hiểu nghiệp vụ ngân hàng và yêu cầu của NHNN nên câu trả lời phải kiểm tra lại."
+     }
+    },
+    {
+     "title": {
+      "en": "Knowledge sits in many systems and file formats",
+      "vi": "Tri thức nằm rải rác trong nhiều hệ thống và định dạng"
+     },
+     "impact": {
+      "en": "Internal policies, templates and legal texts are hard to use together inside daily workflows.",
+      "vi": "Quy chế nội bộ, biểu mẫu và văn bản pháp luật khó dùng cùng nhau trong quy trình hằng ngày."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the assistant does",
+    "vi": "Trợ lý làm được gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Smart lookup",
+      "vi": "Tra cứu thông minh"
+     },
+     "body": {
+      "en": "Ask in natural language across legal texts, case law and official letters, and get answers with clear source citations.",
+      "vi": "Tìm kiếm bằng ngôn ngữ tự nhiên trên hệ thống văn bản pháp luật, án lệ, công văn với trích dẫn nguồn rõ ràng."
+     }
+    },
+    {
+     "title": {
+      "en": "Drafting and contract support",
+      "vi": "Hỗ trợ soạn thảo tài liệu và hợp đồng"
+     },
+     "body": {
+      "en": "Draft documents, check them for compliance, summarize and analyze complex legal texts.",
+      "vi": "Soạn thảo, rà soát tuân thủ, tóm tắt và phân tích các văn bản pháp lý phức tạp."
+     }
+    },
+    {
+     "title": {
+      "en": "Banking specialization",
+      "vi": "Chuyên biệt ngành ngân hàng"
+     },
+     "body": {
+      "en": "Understands banking operations and follows State Bank of Vietnam regulations, answering accurately in context.",
+      "vi": "Hiểu sâu nghiệp vụ ngân hàng, bám sát các quy định của NHNN và hỏi đáp chính xác theo ngữ cảnh."
+     }
+    },
+    {
+     "title": {
+      "en": "Versatile integration",
+      "vi": "Hỗ trợ đa năng"
+     },
+     "body": {
+      "en": "Handles many data sources and integrates directly into the organization's internal document systems and processes.",
+      "vi": "Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks & financial institutions",
+      "vi": "Ngân hàng & tổ chức tài chính"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Credit, legal and compliance teams check regulation and review loan contracts faster.",
+      "vi": "Đội tín dụng, pháp chế và tuân thủ tra cứu quy định và rà soát hợp đồng tín dụng nhanh hơn."
+     }
+    },
+    {
+     "name": {
+      "en": "Insurers",
+      "vi": "Doanh nghiệp bảo hiểm"
+     },
+     "icon": "shield-check",
+     "industry": "bfsi",
+     "body": {
+      "en": "Review policy wording and regulatory changes with cited answers.",
+      "vi": "Rà soát điều khoản hợp đồng và thay đổi quy định với câu trả lời có trích dẫn."
+     }
+    },
+    {
+     "name": {
+      "en": "In-house legal teams",
+      "vi": "Bộ phận pháp chế nội bộ"
+     },
+     "icon": "scale",
+     "industry": null,
+     "body": {
+      "en": "Draft, summarize and compare documents without leaving the document system you already use.",
+      "vi": "Soạn thảo, tóm tắt và so sánh tài liệu ngay trong hệ thống văn bản đang dùng."
+     }
+    }
+   ]
   }
  },
  {
@@ -1773,6 +1965,182 @@
      "body": {
       "en": "Find and protect every API you expose.",
       "vi": "Tìm ra và bảo vệ mọi API bạn mở ra bên ngoài."
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "debt-collection",
+  "icon": "phone",
+  "name": "Debt Collection AI Agent",
+  "tagline": {
+   "en": "Multichannel payment reminders without phone calls",
+   "vi": "Nhắc nợ đa kênh, không cần gọi điện"
+  },
+  "description": {
+   "en": "An AI agent for credit-card and consumer-loan collection. It reminds customers, answers balance questions and guides on-time payment across Zalo, SMS, Messenger and the app, and lets customers look up their loan, repayment history and offers by themselves.",
+   "vi": "Giải pháp AI hỗ trợ thu hồi nợ thẻ tín dụng và vay tiêu dùng, giúp nhắc nợ, truy vấn dư nợ và hướng dẫn thanh toán đúng hạn qua đa kênh (Zalo, SMS, Messenger, App) mà không cần gọi điện. Khách hàng có thể tự tra cứu khoản vay, lịch sử trả nợ và ưu đãi."
+  },
+  "detail": {
+   "lead": {
+    "en": "Remind, answer and guide payment across channels, personalized for each customer.",
+    "vi": "Nhắc nợ, trả lời và hướng dẫn thanh toán trên nhiều kênh, cá nhân hóa cho từng khách hàng."
+   },
+   "stats": [
+    {
+     "value": "5,000+",
+     "label": {
+      "en": "conversations handled automatically per day",
+      "vi": "cuộc hội thoại được xử lý tự động mỗi ngày"
+     }
+    },
+    {
+     "value": "+20%",
+     "label": {
+      "en": "on-time payment rate from multichannel, personalized reminders",
+      "vi": "tỷ lệ thanh toán đúng hạn nhờ nhắc nợ đa kênh và cá nhân hóa"
+     }
+    },
+    {
+     "value": "Multi",
+     "label": {
+      "en": "channel: Zalo, SMS, Messenger, WhatsApp, app",
+      "vi": "kênh: Zalo, SMS, Messenger, WhatsApp, app"
+     }
+    }
+   ],
+   "capabilities": [
+    {
+     "en": "Outbound reminders in the mobile app",
+     "vi": "Nhắc nợ chủ động trên mobile app"
+    },
+    {
+     "en": "Social channel reminders",
+     "vi": "Nhắc nợ qua kênh mạng xã hội"
+    },
+    {
+     "en": "CRM integration and status tracking",
+     "vi": "Tích hợp CRM, đánh dấu tình trạng thu hồi nợ"
+    },
+    {
+     "en": "Customer self-service lookup",
+     "vi": "Khách hàng tự tra cứu"
+    }
+   ],
+   "problemsKicker": {
+    "en": "Business challenges solved",
+    "vi": "Thách thức kinh doanh được giải quyết"
+   },
+   "problemsTitle": {
+    "en": "Why collection by phone is hard to scale",
+    "vi": "Vì sao thu hồi nợ bằng điện thoại khó mở rộng"
+   },
+   "problems": [
+    {
+     "title": {
+      "en": "Reminders depend on staff making calls",
+      "vi": "Nhắc nợ phụ thuộc vào nhân viên gọi điện"
+     },
+     "impact": {
+      "en": "Cost grows with the portfolio, and customers often do not pick up unknown numbers.",
+      "vi": "Chi phí tăng theo quy mô danh mục, và khách hàng thường không nghe máy số lạ."
+     }
+    },
+    {
+     "title": {
+      "en": "Customers cannot easily see what they owe or what offers exist",
+      "vi": "Khách hàng khó biết mình nợ bao nhiêu và có ưu đãi nào"
+     },
+     "impact": {
+      "en": "Without clear balance and repayment history, payments are delayed and disputes rise.",
+      "vi": "Không có dư nợ và lịch sử trả nợ rõ ràng, thanh toán bị chậm và tranh chấp tăng."
+     }
+    },
+    {
+     "title": {
+      "en": "Collection status is scattered across channels",
+      "vi": "Tình trạng thu hồi nợ phân tán giữa các kênh"
+     },
+     "impact": {
+      "en": "Teams lose track of who was reminded, who replied and who needs follow-up.",
+      "vi": "Đội ngũ khó theo dõi ai đã được nhắc, ai đã phản hồi và ai cần theo dõi tiếp."
+     }
+    }
+   ],
+   "modulesKicker": {
+    "en": "Core architecture & key features",
+    "vi": "Kiến trúc cốt lõi & tính năng chính"
+   },
+   "modulesTitle": {
+    "en": "What the agent does",
+    "vi": "AI Agent làm được gì"
+   },
+   "modules": [
+    {
+     "title": {
+      "en": "Proactive outbound reminders in the app",
+      "vi": "Chủ động nhắc nợ qua call outbound trên mobile app"
+     },
+     "body": {
+      "en": "Reaches customers through outbound calls inside the mobile app, without a traditional phone call.",
+      "vi": "Tiếp cận khách hàng bằng cuộc gọi outbound ngay trên mobile app, không cần cuộc gọi điện thoại truyền thống."
+     }
+    },
+    {
+     "title": {
+      "en": "Reminders on social channels",
+      "vi": "Nhắc nợ qua các kênh social network"
+     },
+     "body": {
+      "en": "Reminds on Zalo, Messenger and WhatsApp, answers balance questions and guides on-time payment.",
+      "vi": "Nhắc nợ trên Zalo, Messenger, WhatsApp, trả lời truy vấn dư nợ và hướng dẫn thanh toán đúng hạn."
+     }
+    },
+    {
+     "title": {
+      "en": "CRM integration",
+      "vi": "Tích hợp hệ thống CRM"
+     },
+     "body": {
+      "en": "Marks each customer's collection status back into the CRM, so teams see one up-to-date picture.",
+      "vi": "Đánh dấu tình trạng thu hồi nợ của từng khách hàng vào CRM để đội ngũ thấy một bức tranh cập nhật."
+     }
+    },
+    {
+     "title": {
+      "en": "Self-service lookup",
+      "vi": "Khách hàng tự tra cứu"
+     },
+     "body": {
+      "en": "Customers check their loan, repayment history and offers themselves, which adds transparency and puts them in control.",
+      "vi": "Khách hàng tự tra cứu khoản vay, lịch sử trả nợ và ưu đãi, tăng tính minh bạch và chủ động."
+     }
+    }
+   ],
+   "audiences": [
+    {
+     "name": {
+      "en": "Banks with credit cards & consumer loans",
+      "vi": "Ngân hàng có thẻ tín dụng & vay tiêu dùng"
+     },
+     "icon": "landmark",
+     "industry": "bfsi",
+     "body": {
+      "en": "Reduce collection cost and raise on-time payment with automated multichannel reminders.",
+      "vi": "Giảm chi phí thu hồi nợ và tăng thanh toán đúng hạn nhờ nhắc nợ đa kênh tự động."
+     }
+    },
+    {
+     "name": {
+      "en": "Consumer finance companies",
+      "vi": "Công ty tài chính tiêu dùng"
+     },
+     "icon": "users",
+     "industry": "bfsi",
+     "body": {
+      "en": "Handle thousands of reminder conversations a day without growing the call team.",
+      "vi": "Xử lý hàng nghìn hội thoại nhắc nợ mỗi ngày mà không phải tăng đội ngũ gọi điện."
      }
     }
    ]
