@@ -275,8 +275,10 @@ function industryPage() {
   const why = d.outcomes.map((o, k) => `<div class="why-c rv"><span class="why-i">${ic(['shield-check', 'check-circle-2', 'zap'][k % 3])}</span><h3>${esc(t(o.title))}</h3><p>${esc(t(o.body))}</p></div>`).join('');
   const steps = ui('home.steps').map((st, k) => `<div class="col rv"><span class="n">${roman(k + 1)}</span><h3>${t(st.t)}</h3><p>${t(st.d)}</p></div>`).join('');
   const faq = d.faq.map((f) => `<details class="rv"><summary>${esc(t(f.q))}${ic('plus')}</summary><div class="a">${esc(t(f.a))}</div></details>`).join('');
-  const others = state.industries.filter((i) => i.id !== id).map((i, k) => link(`industry-${i.id}`,
-    `<div class="oc-img">${photo(state.images.heroByIndustry?.[i.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[i.icon] || ICONS.box, `o${i.id}`, k + 1, true) })}</div><div class="oc-b"><span>${esc(t(i.name))}</span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
+  // Roundup of every solution in the menu (replaces the "other industries" cards): photo, name, one-line tagline
+  const menuIds = state.menu ? state.menu.groups.flatMap((g) => g.columns.flatMap((c) => c.items.map((it) => it.id))).filter(Boolean) : [...state.solutions.keys()];
+  const allSol = menuIds.map((sid) => state.solutions.get(sid)).filter(Boolean).map((s, k) => link(`solution-${s.id}`,
+    `<div class="oc-img">${photo(state.images.bySolution?.[s.id] || '', { w: 700, ratio: '240 / 190', nocap: true, fb: thumb(ICONS[s.icon] || ICONS.box, `as${s.id}`, k, true) })}</div><div class="oc-b"><span>${esc(s.name)}<small>${esc(t(s.tagline))}</small></span>${ic('arrow-up-right')}</div>`, 'oc rv')).join('');
 
   // Customer stories: `d.stories` = [{ title, body, url?, tag? }] in {en, vi}. Until a sector has its own, three "coming soon" cards hold the place.
   const soon = { title: ui('ind.csSoonTitle'), body: ui('ind.csSoonBody'), soon: true };
@@ -322,7 +324,7 @@ function industryPage() {
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
   ${experts()}
   <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
-  <section class="sec" id="others" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.otherIndustries')}</span><h2 class="h2 rv">${u('ind.othersTitle')}</h2></div><div class="ocs">${others}</div></div></section>
+  <section class="sec" id="solutions-all" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.allSolKicker')}</span><h2 class="h2 rv">${u('ind.allSolTitle')}</h2></div><div class="ocs">${allSol}</div></div></section>
   ${anyIndustry()}
   ${contact(id)}`;
 }
@@ -532,7 +534,7 @@ function initLocalNav() {
   const map = new Map(links.map((a) => [a.dataset.spy, a]));
   const on = (id) => links.forEach((a) => a.classList.toggle('on', a.dataset.spy === id));
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) on(map.has(e.target.id) ? e.target.id : null); }), { rootMargin: '-35% 0px -60% 0px' });
-  [...map.keys(), 'others', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+  [...map.keys(), 'solutions-all', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   cleanups.push(() => io.disconnect());
   const nav = $('#lnav'); const bar = () => nav.classList.toggle('stuck', nav.getBoundingClientRect().top <= (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) + 1);
   addEventListener('scroll', bar, { passive: true }); bar();

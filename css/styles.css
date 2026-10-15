@@ -633,3 +633,8 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .cs-read svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .cs-read.off { color: #b9b6b3; }
 @media (max-width: 900px) { .cs-grid { grid-template-columns: 1fr; } .cs-card { min-height: 0; } }
+
+.oc-b > span { display: grid; gap: .25rem; min-width: 0; }
+.oc-b small { font: 400 .78rem/1.4 var(--sans); color: var(--ink-3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.oc-b { align-items: flex-start; }
+@media (max-width: 560px) { #solutions-all .ocs { grid-template-columns: 1fr; } #solutions-all .oc-img .ph { aspect-ratio: 16 / 9 !important; } }
