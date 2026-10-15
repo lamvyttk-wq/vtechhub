@@ -2328,18 +2328,6 @@
    "audiences": [
     {
      "name": {
-      "en": "Banks & financial institutions",
-      "vi": "Ngân hàng & tổ chức tài chính"
-     },
-     "icon": "landmark",
-     "industry": "bfsi",
-     "body": {
-      "en": "Consult and care for customers on every channel, and give staff a tool for internal process lookup.",
-      "vi": "Tư vấn và chăm sóc khách hàng trên mọi kênh, đồng thời có công cụ tra cứu quy trình nội bộ cho nhân viên."
-     }
-    },
-    {
-     "name": {
       "en": "E-commerce & retail",
       "vi": "Thương mại điện tử & bán lẻ"
      },
@@ -2348,6 +2336,18 @@
      "body": {
       "en": "Answer shoppers instantly, recommend products and capture leads across social and messaging platforms.",
       "vi": "Trả lời người mua tức thì, đề xuất sản phẩm và thu lead trên mạng xã hội và các nền tảng nhắn tin."
+     }
+    },
+    {
+     "name": {
+      "en": "Employees across the business",
+      "vi": "Nhân viên trong doanh nghiệp"
+     },
+     "icon": "users",
+     "industry": null,
+     "body": {
+      "en": "Look up complex internal processes such as legal and tax with AI Agent Assistant, built exclusively for staff.",
+      "vi": "Tra cứu quy trình nội bộ phức tạp như pháp chế, thuế với AI Agent Assistant, dành riêng cho nhân viên."
      }
     }
    ]
