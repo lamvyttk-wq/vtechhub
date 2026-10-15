@@ -220,12 +220,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Hard to Keep Up With Constant Regulatory Change",
-     "vi": "Khó theo kịp thay đổi pháp lý liên tục"
+     "en": "Review Pressure and Risk of Errors as Regulations Keep Changing",
+     "vi": "Áp lực rà soát và nguy cơ sai sót khi quy định thay đổi liên tục"
     },
     "body": {
-     "en": "Changes from the State Bank of Vietnam keep coming, and updating internal documents costs hundreds of hours. Rules are applied unevenly across units, so inspection pressure, penalties and reputational damage become real risks.",
-     "vi": "Thay đổi pháp lý từ NHNN liên tục xuất hiện, việc cập nhật văn bản nội bộ tốn hàng trăm giờ. Quy định được áp dụng thiếu đồng bộ giữa các đơn vị nên áp lực kiểm tra, rủi ro bị phạt và ảnh hưởng uy tín trở thành rủi ro thật."
+     "en": "New circulars and regulations from the State Bank of Vietnam keep arriving, so reviewing and adjusting internal documents takes hundreds of working hours. When rules are applied unevenly across branches and departments, the risk of administrative violations, penalties and damage to the brand's reputation becomes a constant threat.",
+     "vi": "Các thông tư, quy định mới từ Ngân hàng Nhà nước liên tục cập nhật khiến việc rà soát và điều chỉnh văn bản nội bộ tốn hàng trăm giờ làm việc. Khi quy định áp dụng thiếu đồng bộ giữa các chi nhánh và phòng ban, rủi ro vi phạm hành chính, bị phạt và ảnh hưởng uy tín thương hiệu trở thành mối đe dọa thường trực."
     }
    },
    "solutions": [
@@ -233,12 +233,12 @@
    ],
    "response": {
     "title": {
-     "en": "Answers with sources, drafts in minutes",
-     "vi": "Câu trả lời có nguồn, bản thảo trong vài phút"
+     "en": "Source-accurate lookup, drafts in an instant",
+     "vi": "Tra cứu chuẩn xác theo nguồn, số hóa dự thảo trong tích tắc"
     },
     "body": {
-     "en": "An AI assistant specialized for banking searches legal texts in natural language with clear citations, helps draft and review contracts, and plugs into your internal document systems and workflows.",
-     "vi": "Trợ lý AI chuyên biệt cho ngân hàng tra cứu văn bản pháp luật bằng ngôn ngữ tự nhiên kèm trích dẫn rõ ràng, hỗ trợ soạn thảo và rà soát hợp đồng, tích hợp vào hệ thống văn bản và quy trình nội bộ."
+     "en": "A specialized AI assistant for banking: it automates lookup across the legal system and State Bank of Vietnam regulations in natural language, with precise clause citations; supports drafting and review of contract terms; and integrates seamlessly into internal approval workflows.",
+     "vi": "Trợ lý AI chuyên biệt cho ngành ngân hàng: tự động hóa tra cứu hệ thống luật và quy định NHNN bằng ngôn ngữ tự nhiên kèm trích dẫn điều khoản chính xác; hỗ trợ soạn thảo, rà soát điều khoản hợp đồng và tích hợp liền mạch vào quy trình phê duyệt nội bộ."
     },
     "points": [
      {
