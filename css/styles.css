@@ -122,8 +122,8 @@ main, .foot { position: relative; z-index: 1; }
 
 /* ---------- sections ---------- */
 section { position: relative; }
-.sec { padding: clamp(4.5rem, 9vw, 8.5rem) 0; }
-.sec-head { display: grid; gap: 1.3rem; margin-bottom: clamp(2.4rem, 5vw, 4rem); max-width: 46rem; }
+.sec { padding: clamp(3rem, 6vw, 5.5rem) 0; }
+.sec-head { display: grid; gap: 1.3rem; margin-bottom: clamp(1.8rem, 3.4vw, 2.8rem); max-width: 46rem; }
 
 .index { border-top: 1px solid var(--hair); }
 .ix { position: relative; display: grid; grid-template-columns: 2.6rem minmax(0, 1.1fr) minmax(0, 1.4fr) 2.4rem; gap: 1.5rem; align-items: center; padding: 1.7rem 0; border-bottom: 1px solid var(--hair); }
@@ -154,7 +154,7 @@ section { position: relative; }
 .tile .foot .ic { color: var(--ink); }
 
 /* ---------- story engine ---------- */
-.intro { padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem); }
+.intro { padding: clamp(2rem, 4vw, 3rem) 0 clamp(1rem, 2vw, 1.5rem); }
 .intro .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
 .intro .h2 { margin: 1.2rem 0 1.4rem; }
 .pick { display: grid; gap: .2rem; }
@@ -167,7 +167,7 @@ section { position: relative; }
 .pick button:hover .ic { color: var(--red); transform: translateX(3px); }
 
 .story { position: relative; }
-.chapter { position: relative; display: grid; align-items: center; padding: clamp(3.5rem, 7vw, 6.5rem) 0; scroll-margin-top: 120px; }
+.chapter { position: relative; display: grid; align-items: center; padding: clamp(2.2rem, 4.2vw, 3.6rem) 0; scroll-margin-top: 120px; }
 .chapter + .chapter { border-top: 1px solid var(--hair-2); }
 .stage { display: grid; grid-template-columns: minmax(0, 5fr) 1px minmax(0, 6.4fr); gap: clamp(1.6rem, 4vw, 4.5rem); align-items: stretch; position: relative; }
 .numeral { position: absolute; z-index: -1; left: -.05em; top: -.5em; font: 800 clamp(9rem, 22vw, 18rem)/1 var(--serif); letter-spacing: -.05em; color: rgba(11,12,17,.035); pointer-events: none; user-select: none; font-feature-settings: "lnum"; }
@@ -217,7 +217,7 @@ section { position: relative; }
 .poc .h2 { margin: 1.2rem 0; }
 
 /* ---------- contact ---------- */
-.contact { padding: clamp(4rem, 8vw, 7rem) 0 clamp(4.5rem, 9vw, 8rem); }
+.contact { padding: clamp(3rem, 6vw, 5rem) 0 clamp(3.5rem, 7vw, 6rem); }
 .contact-box { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 5rem); padding: clamp(1.8rem, 5vw, 4.5rem); }
 .contact-box .h2 { margin: 1.3rem 0 1.4rem; }
 .direct { display: grid; margin-top: 2.2rem; border-top: 1px solid var(--hair); }
@@ -274,7 +274,7 @@ form { display: grid; gap: 1.4rem; }
   .stage { grid-template-columns: 1fr; }
   .bridge { width: 100%; height: 1px; transform-origin: left; }
   .bridge::after { top: -4px; }
-  .chapter { padding: 3rem 0; }
+  .chapter { padding: 2rem 0; }
   .numeral { font-size: 8rem; top: -.5em; }
   .fg { grid-template-columns: 1fr; }
   .logo { font-size: 1.35rem; }
