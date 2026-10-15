@@ -241,10 +241,10 @@ function industryPage() {
   const chips = (d.regulations || []).map((r) => `<span class="chip">${ic('shield')} ${esc(t(r))}</span>`).join('');
   const n = d.chapters.length;
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
-  // An industry can have its own hero illustration (images.heroSide): it sits beside the title and the chips + buttons move under the intro line
-  const heroSideKey = state.images.heroSide?.[id], heroSide = heroSideKey && (state.images[`${heroSideKey}-${state.lang}`] ? `${heroSideKey}-${state.lang}` : heroSideKey); // the illustration carries text, so there is one file per language
+  // An industry can ship its own hero (data `hero` + images.heroBanner): centred headline, capability chips and a wide photo banner. It replaces the overview block.
+  const hb = d.hero ? { ...d.hero, photo: state.images.heroBanner?.[id] } : null;
   const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['bundle', 'ind.lnSolutions'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
-    .filter(([k]) => !(k === 'overview' && heroSide)) // no overview block when the hero already carries the intro and the numbers
+    .filter(([k]) => !(k === 'overview' && hb)) // no overview block when the hero already carries the intro and the numbers
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
@@ -292,13 +292,21 @@ function industryPage() {
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact">${u('ind.talk')}</a></div></nav>
-  <section class="hero ind-hero"><div class="wrap">
+  ${hb ? `<section class="hero ind-hero ind-banner"><div class="wrap">
+    <div class="crumbs hero-in">${link('home', ic('house'))}<i>${ic('chevron-right')}</i>${link('home', u('ind.crumbIndustry'))}<i>${ic('chevron-right')}</i><span>${esc(name)}</span></div>
+    <div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
+      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p>
+      <div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
+      <div class="actions hero-in" style="animation-delay:.24s"><a class="btn btn-red" href="#bundle" data-scroll="#bundle">${u('home.explore')} ${ic('arrow-right')}</a>
+        <a class="btn btn-line" href="#contact" data-scroll="#contact">${u('ind.talk')} ${ic('arrow-right')}</a></div></div>
+    ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1595 / 322', eager: true, nocap: true })}</div>` : ''}
+  </div></section>` : `<section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
-    <div class="ind-top${heroSide ? ' has-side' : ''}"><div>
+    <div class="ind-top"><div>
       <h1 class="display hero-in" style="animation-delay:.08s">${esc(t(d.title))}</h1>
-      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p>${heroSide ? indCta : ''}</div>
-      ${heroSide ? `<div class="ind-side hero-in" style="animation-delay:.2s">${photo(heroSide, { w: 1748, ratio: '1748 / 899', eager: true, nocap: true })}</div>` : indCta}</div></div></section>
-  ${heroSide ? '' : `<section class="sec ov" id="overview"><div class="wrap">
+      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(d.tagline))}</p></div>
+      ${indCta}</div></div></section>`}
+  ${hb ? '' : `<section class="sec ov" id="overview"><div class="wrap">
     <div class="ov-row"><div class="ov-art rv">${aura(photo(state.images.heroByIndustry?.[id] || state.images.byIndustry?.[id] || 'skyline', { w: 1600, ratio: '5 / 4', eager: true, caption: d.name, fb: banner(id, d.bundle.map((s) => ICONS[sol(s).icon] || ICONS.box), 'h') }))}</div>
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>

@@ -376,5 +376,49 @@
  "newSolutions": [],
  "sources": [
   "V-IT Alliance AI Studio mockup (BFSI page)"
- ]
+ ],
+ "hero": {
+  "title": {
+   "en": "Comprehensive technology solutions for",
+   "vi": "Giải pháp công nghệ toàn diện cho"
+  },
+  "em": {
+   "en": "Banking, Financial Services and Insurance",
+   "vi": "Ngân hàng, Tài chính và Bảo hiểm"
+  },
+  "sub": {
+   "en": "Partnering with financial institutions on their digital journey with secure, flexible infrastructure that is ready for the AI future.",
+   "vi": "Đồng hành cùng các tổ chức tài chính trong hành trình chuyển đổi số với hạ tầng an toàn, linh hoạt và sẵn sàng cho tương lai AI."
+  },
+  "chips": [
+   {
+    "icon": "shield",
+    "label": {
+     "en": "Data security",
+     "vi": "Bảo mật dữ liệu"
+    }
+   },
+   {
+    "icon": "landmark",
+    "label": {
+     "en": "Regulatory compliance",
+     "vi": "Tuân thủ quy định"
+    }
+   },
+   {
+    "icon": "server",
+    "label": {
+     "en": "Flexible infrastructure",
+     "vi": "Hạ tầng linh hoạt"
+    }
+   },
+   {
+    "icon": "cpu",
+    "label": {
+     "en": "AI applications",
+     "vi": "Ứng dụng AI"
+    }
+   }
+  ]
+ }
 }

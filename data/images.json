@@ -421,37 +421,22 @@
       "vi": "Ngân hàng, tài chính và bảo hiểm được bảo vệ"
     }
   },
-  "heroSide": {
-    "bfsi": "bfsi-hero"
-  },
-  "bfsi-hero-vi": {
+  "bfsi-banner": {
     "icon": "landmark",
     "pos": "50% 50%",
     "src": [
-      "assets/photos/bfsi-hero-vi.webp"
+      "assets/photos/bfsi-banner.webp"
     ],
     "alt": {
-      "en": "An isometric bank building on a glowing red-and-white platform, surrounded by floating panels for data security, compliance, infrastructure and AI",
-      "vi": "Tòa nhà ngân hàng isometric trên nền đỏ trắng phát sáng, xung quanh là các bảng nổi về bảo mật dữ liệu, tuân thủ, hạ tầng và AI"
+      "en": "A banker in a modern trading office watches three dashboards showing national, market and portfolio data, with a bank sign in the background",
+      "vi": "Chuyên viên ngân hàng trong văn phòng giao dịch hiện đại theo dõi ba bảng điều khiển dữ liệu, với biển hiệu ngân hàng phía sau"
     },
     "caption": {
       "en": "Banking, finance and insurance",
       "vi": "Ngân hàng, tài chính và bảo hiểm"
     }
   },
-  "bfsi-hero-en": {
-    "icon": "landmark",
-    "pos": "50% 50%",
-    "src": [
-      "assets/photos/bfsi-hero-en.webp"
-    ],
-    "alt": {
-      "en": "An isometric bank building on a glowing red-and-white platform, surrounded by floating panels for data security, compliance, infrastructure and AI",
-      "vi": "Tòa nhà ngân hàng isometric trên nền đỏ trắng phát sáng, xung quanh là các bảng nổi về bảo mật dữ liệu, tuân thủ, hạ tầng và AI"
-    },
-    "caption": {
-      "en": "Banking, finance and insurance",
-      "vi": "Ngân hàng, tài chính và bảo hiểm"
-    }
+  "heroBanner": {
+    "bfsi": "bfsi-banner"
   }
 }
