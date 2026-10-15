@@ -1214,68 +1214,68 @@
   "icon": "shield-check",
   "name": "Data Loss Prevention",
   "tagline": {
-   "en": "Data loss prevention, insider-risk monitoring and investigation in one platform",
-   "vi": "Chống thất thoát dữ liệu, giám sát rủi ro nội bộ và điều tra trong một nền tảng"
+   "en": "Detect, monitor and stop leaks of sensitive data",
+   "vi": "Phát hiện, giám sát và ngăn chặn rò rỉ dữ liệu nhạy cảm"
   },
   "description": {
-   "en": "A data loss prevention platform that goes beyond standard content analysis. Proprietary analysis technologies raise detection accuracy, built-in investigation tools reconstruct incidents with legally valid evidence, and the same platform extends into insider-risk monitoring. Agents cover Windows, Linux and macOS, and every function is built in, with no extra modules or products to install.",
-   "vi": "Nền tảng chống thất thoát dữ liệu vượt ra ngoài phân tích nội dung tiêu chuẩn. Các công nghệ phân tích độc quyền nâng cao hiệu quả phát hiện, công cụ điều tra tích hợp giúp tái dựng sự cố với bằng chứng có giá trị pháp lý, và cùng một nền tảng mở rộng sang giám sát rủi ro nội bộ. Agent hỗ trợ Windows, Linux và macOS; toàn bộ chức năng được tích hợp sẵn, không cần cài thêm mô-đun hoặc sản phẩm bổ sung."
+   "en": "Data Loss Prevention (DLP) detects, monitors and stops data leaks, above all of sensitive data such as customer information, finances, contracts and business secrets. It lets organizations control how data is transferred, shared and stored on every channel: from internal computers and personal devices to cloud platforms.",
+   "vi": "DLP (Data Loss Prevention) là giải pháp giúp phát hiện, giám sát và ngăn chặn việc rò rỉ dữ liệu, đặc biệt là dữ liệu nhạy cảm như thông tin khách hàng, tài chính, hợp đồng hay bí mật kinh doanh. Giải pháp giúp doanh nghiệp kiểm soát việc truyền tải, chia sẻ và lưu trữ dữ liệu trên mọi kênh: từ máy tính nội bộ, thiết bị cá nhân cho đến nền tảng đám mây."
   },
   "detail": {
    "lead": {
-    "en": "See, stop and investigate data leaks and insider risk from one platform.",
-    "vi": "Nhìn thấy, ngăn chặn và điều tra rò rỉ dữ liệu cùng rủi ro nội bộ từ một nền tảng."
+    "en": "Data is a living asset. Detect, monitor and stop leaks before they cost money and trust.",
+    "vi": "Dữ liệu là “tài sản sống” của doanh nghiệp. Chủ động phát hiện, giám sát và ngăn chặn rò rỉ trước khi gây thiệt hại về tiền bạc và niềm tin."
    },
    "stats": [
     {
-     "value": "30+",
+     "value": "5",
      "label": {
-      "en": "customizable reports for work-efficiency audit",
-      "vi": "báo cáo tùy chỉnh để kiểm toán hiệu quả làm việc"
+      "en": "closed-loop steps, from classifying data to classifying new data",
+      "vi": "bước vận hành khép kín, từ phân loại đến phân loại lại dữ liệu mới"
      }
     },
     {
-     "value": "100+",
+     "value": "3",
      "label": {
-      "en": "ready-made integrated services",
-      "vi": "dịch vụ tích hợp được xây dựng sẵn"
+      "en": "confidentiality levels: high, medium and low",
+      "vi": "mức độ bảo mật dữ liệu: cao, trung bình và thấp"
      }
     },
     {
-     "value": "10+",
+     "value": "3",
      "label": {
-      "en": "integration tools with detailed guides and ready scenarios",
-      "vi": "công cụ tích hợp, có tài liệu hướng dẫn chi tiết và kịch bản dựng sẵn"
+      "en": "environments monitored together: on-premises servers, personal devices and cloud apps",
+      "vi": "môi trường được giám sát đồng bộ: máy chủ nội bộ, thiết bị cá nhân và ứng dụng đám mây"
      }
     },
     {
-     "value": "3 OS",
+     "value": "Real-time",
      "label": {
-      "en": "agents for Windows, Linux and macOS, managed from one center",
-      "vi": "agent cho Windows, Linux và macOS, quản lý từ một trung tâm"
+      "en": "alert or block when sensitive files are uploaded or sent",
+      "vi": "cảnh báo hoặc chặn ngay khi tệp nhạy cảm bị tải lên hoặc gửi đi"
      }
     }
    ],
    "capabilities": [
     {
-     "en": "Proprietary analysis technologies",
-     "vi": "Công nghệ phân tích độc quyền"
+     "en": "Comprehensive protection of sensitive data",
+     "vi": "Bảo vệ toàn diện dữ liệu nhạy cảm"
     },
     {
-     "en": "Investigation tools",
-     "vi": "Công cụ điều tra"
+     "en": "Effective access control",
+     "vi": "Kiểm soát truy cập hiệu quả"
     },
     {
-     "en": "Insider-risk monitoring",
-     "vi": "Giám sát rủi ro nội bộ"
+     "en": "Fast incident response",
+     "vi": "Phản ứng nhanh trước sự cố"
     },
     {
-     "en": "Agentless integration",
-     "vi": "Tích hợp không cần agent"
+     "en": "Legal and regulatory compliance",
+     "vi": "Tuân thủ quy định pháp luật"
     },
     {
-     "en": "Cross-platform",
-     "vi": "Đa nền tảng"
+     "en": "Stronger brand reputation and trust",
+     "vi": "Tăng uy tín và niềm tin thương hiệu"
     }
    ],
    "problemsKicker": {
@@ -1283,108 +1283,118 @@
     "vi": "Thách thức kinh doanh được giải quyết"
    },
    "problemsTitle": {
-    "en": "Why standard DLP is not enough",
-    "vi": "Vì sao DLP tiêu chuẩn là chưa đủ"
+    "en": "Data leakage, the nightmare of the digital enterprise",
+    "vi": "Rò rỉ dữ liệu, “cơn ác mộng” của doanh nghiệp thời số"
    },
    "problems": [
     {
      "title": {
-      "en": "Keyword and pattern matching miss leaks in images, calls and video",
-      "vi": "Khớp từ khóa và mẫu bỏ sót rò rỉ trong hình ảnh, cuộc gọi và video"
+      "en": "Human error",
+      "vi": "Lỗi con người"
      },
      "impact": {
-      "en": "Sensitive data leaves as a screenshot, a phone photo of the screen or a spoken conversation, and nothing flags it.",
-      "vi": "Dữ liệu nhạy cảm rời đi dưới dạng ảnh chụp màn hình, ảnh chụp màn hình bằng điện thoại hoặc cuộc hội thoại, và không có gì cảnh báo."
+      "en": "Employees send an email to the wrong person, share the wrong file or delete data by mistake.",
+      "vi": "Nhân viên gửi nhầm email, chia sẻ nhầm tệp, xóa nhầm dữ liệu."
      }
     },
     {
      "title": {
-      "en": "Incidents are hard to reconstruct and prove",
-      "vi": "Sự cố khó tái dựng và khó chứng minh"
+      "en": "Cyberattacks",
+      "vi": "Tấn công mạng"
      },
      "impact": {
-      "en": "Without recordings and audit trails, security teams cannot identify the parties involved or produce evidence that stands up in court.",
-      "vi": "Không có bản ghi và nhật ký kiểm toán, đội an ninh khó xác định các bên liên quan và thu thập bằng chứng đủ giá trị pháp lý."
+      "en": "Hackers exploit application vulnerabilities and take over access.",
+      "vi": "Hacker khai thác lỗ hổng ứng dụng, chiếm quyền truy cập."
      }
     },
     {
      "title": {
-      "en": "Insider risk goes beyond data: fraud, theft, side jobs and risky behavior",
-      "vi": "Rủi ro nội bộ không chỉ là dữ liệu: gian lận, trộm cắp, làm việc ngoài và hành vi rủi ro"
+      "en": "Lost devices",
+      "vi": "Mất thiết bị"
      },
      "impact": {
-      "en": "Teams run separate tools for each risk and still lack one view of what users do.",
-      "vi": "Mỗi rủi ro một công cụ riêng, mà vẫn không có một góc nhìn thống nhất về hoạt động của người dùng."
+      "en": "Laptops and phones that hold company data get stolen.",
+      "vi": "Laptop, điện thoại chứa dữ liệu bị đánh cắp."
      }
     },
     {
      "title": {
-      "en": "Agents on every personal or mobile device are hard to deploy",
-      "vi": "Cài agent lên mọi thiết bị cá nhân và di động rất khó triển khai"
+      "en": "Weak internal control",
+      "vi": "Thiếu kiểm soát nội bộ"
      },
      "impact": {
-      "en": "Coverage has gaps, and mixed Windows, Linux and macOS environments multiply the effort.",
-      "vi": "Phạm vi giám sát có khoảng trống, và môi trường hỗn hợp Windows, Linux, macOS làm công sức nhân lên."
+      "en": "Employees upload important documents to personal cloud accounts.",
+      "vi": "Nhân viên tải tài liệu quan trọng lên cloud cá nhân."
+     }
+    },
+    {
+     "title": {
+      "en": "APIs that are not properly protected",
+      "vi": "API không được bảo vệ đúng cách"
+     },
+     "impact": {
+      "en": "APIs are a common entry point for attackers and lead to data leaks.",
+      "vi": "API là “cửa ngõ” phổ biến để tin tặc khai thác, dẫn đến rò rỉ dữ liệu."
      }
     }
    ],
    "modulesKicker": {
-    "en": "Core architecture & key features",
-    "vi": "Kiến trúc cốt lõi & tính năng chính"
+    "en": "How DLP works",
+    "vi": "Cách thức hoạt động của DLP"
    },
    "modulesTitle": {
-    "en": "What the platform covers",
-    "vi": "Nền tảng bao phủ những gì"
+    "en": "A closed 5-step workflow",
+    "vi": "Quy trình khép kín gồm 5 bước"
    },
    "modules": [
     {
      "title": {
-      "en": "Proprietary analysis technologies",
-      "vi": "Các công nghệ phân tích độc quyền"
+      "en": "1. Classifying data",
+      "vi": "1. Phân loại dữ liệu"
      },
      "body": {
-      "en": "On top of standard analysis (linguistic morphology, dictionaries, regular expressions, digital fingerprints, OCR): similar-content search, visual image similarity against reference samples, search inside calls and microphone recordings, search inside screen-recording video, employee face recognition, detection of phone photos of the screen, watermarks on screens and documents, statistical and quantitative analysis of activity metrics, and psychological analysis of users to flag risk factors.",
-      "vi": "Ngoài phân tích tiêu chuẩn (hình thái ngôn ngữ, từ điển, biểu thức chính quy, dấu vân tay số, OCR): tìm nội dung tương tự, tìm hình ảnh tương đồng trực quan với mẫu tham chiếu, tìm văn bản trong cuộc gọi và bản ghi từ micro, tìm nội dung trong video ghi màn hình, nhận diện khuôn mặt nhân viên, phát hiện chụp ảnh màn hình bằng điện thoại, watermark bảo vệ màn hình và tài liệu, phân tích thống kê và định lượng mọi chỉ số hoạt động, và phân tích tâm lý người dùng để xác định yếu tố rủi ro."
+      "en": "The system scans and sorts all data across the enterprise infrastructure and identifies what is sensitive, such as personal information, account numbers, confidential documents and customer data. Classification is the foundation for the right protective measures.",
+      "vi": "Hệ thống quét và sắp xếp toàn bộ dữ liệu trong hạ tầng doanh nghiệp, xác định loại dữ liệu nào thuộc nhóm nhạy cảm, ví dụ thông tin cá nhân, số tài khoản, tài liệu mật hay dữ liệu khách hàng. Phân loại là nền tảng để triển khai các biện pháp bảo vệ phù hợp."
      }
     },
     {
      "title": {
-      "en": "Powerful investigation tools in one platform",
-      "vi": "Công cụ điều tra mạnh mẽ trong một nền tảng"
+      "en": "2. Determining confidentiality levels",
+      "vi": "2. Xác định mức độ bảo mật"
      },
      "body": {
-      "en": "Record audio and video of user activity, track file and folder operations, audit logs, device use and software interaction. Real-time audio and video monitoring of policy violators. For incidents, reconstruct exactly what happened, identify the parties involved and collect legally valid evidence for use in court.",
-      "vi": "Ghi âm và ghi hình hoạt động người dùng, theo dõi thao tác với tệp/thư mục, nhật ký kiểm toán, việc sử dụng thiết bị và tương tác với phần mềm. Giám sát âm thanh và video theo thời gian thực với người vi phạm chính sách. Với sự cố, tái dựng chính xác diễn biến, xác định các bên liên quan và thu thập bằng chứng có giá trị pháp lý để sử dụng trước tòa."
+      "en": "Based on classification, each data group gets a confidentiality level (high, medium, low), so access is controlled precisely, permissions fit the role and leak risk falls.",
+      "vi": "Dựa trên kết quả phân loại, mỗi nhóm dữ liệu được gán một cấp độ bảo mật (cao, trung bình, thấp), giúp kiểm soát truy cập chính xác, phân quyền phù hợp và giảm thiểu rủi ro rò rỉ thông tin."
      }
     },
     {
      "title": {
-      "en": "Comprehensive security beyond DLP",
-      "vi": "Giải pháp bảo mật toàn diện vượt ngoài DLP"
+      "en": "3. Developing security rules",
+      "vi": "3. Xây dựng quy tắc bảo mật"
      },
      "body": {
-      "en": "Audit work efficiency (software and website use, 30+ customizable reports); control business risks such as internal fraud, theft and side jobs through preset policies; control privileged users and remote-access tools; inventory IT assets; encrypt files on mobile storage with zone-based access; audit latent risks such as password strength, website categories, at-risk groups and phishing emails; and raise security awareness with on-screen warnings and policy reminders.",
-      "vi": "Kiểm toán hiệu quả làm việc (phần mềm, website, hơn 30 báo cáo tùy chỉnh); kiểm soát rủi ro kinh doanh như gian lận nội bộ, trộm cắp, làm việc ngoài qua chính sách dựng sẵn; kiểm soát người dùng đặc quyền và công cụ truy cập từ xa; quản lý kiểm kê hạ tầng CNTT; mã hóa tệp trên thiết bị lưu trữ di động với kiểm soát truy cập theo vùng mạng; kiểm toán rủi ro tiềm ẩn như độ mạnh mật khẩu, phân loại website, nhóm nhân viên có nguy cơ, email lừa đảo; và nâng cao nhận thức bằng cảnh báo trên màn hình, nhắc nhở chính sách."
+      "en": "Set policies and data-management rules that define who may access, share or transfer which data. The rules can automatically warn about or block sensitive data leaving the system.",
+      "vi": "Thiết lập các chính sách và quy tắc quản lý dữ liệu, quy định rõ ai được phép truy cập, chia sẻ hay truyền tải dữ liệu nào. Các quy tắc này có thể tự động cảnh báo hoặc ngăn chặn việc gửi dữ liệu nhạy cảm ra ngoài hệ thống."
      }
     },
     {
      "title": {
-      "en": "Protection beyond the enterprise perimeter",
-      "vi": "Bảo vệ dữ liệu ngoài hạ tầng doanh nghiệp"
+      "en": "4. Monitoring and investigating",
+      "vi": "4. Giám sát và điều tra"
      },
      "body": {
-      "en": "Integrates with dozens of IT solutions at server level over network protocols, so no agent is needed on employees' personal or mobile devices while activity in business applications stays visible. Includes a store of collected data to retrieve any recorded event, 100+ ready-made integrated services (instant messaging, cloud services, task managers, web editors) and 10+ integration tools backed by detailed guides and ready scenarios.",
-      "vi": "Tích hợp với hàng chục giải pháp CNTT ở cấp máy chủ qua các giao thức mạng, nên không cần cài agent trên thiết bị cá nhân hoặc di động của nhân viên mà vẫn thấy hoạt động trong các ứng dụng kinh doanh. Gồm kho lưu trữ dữ liệu đã thu thập để truy xuất mọi sự kiện đã ghi nhận, hơn 100 dịch vụ tích hợp dựng sẵn (nhắn tin tức thời, dịch vụ đám mây, quản lý tác vụ, trình soạn thảo web) và hơn 10 công cụ tích hợp kèm tài liệu hướng dẫn chi tiết và kịch bản dựng sẵn."
+      "en": "The system continuously monitors user activity and records unusual behavior, such as deliberately emailing files with sensitive data. On a violation it can warn automatically, block the action or pass the incident to the security team.",
+      "vi": "Hệ thống liên tục giám sát hoạt động người dùng, phát hiện và ghi nhận các hành vi bất thường, chẳng hạn như cố tình gửi tệp chứa dữ liệu nhạy cảm qua email. Khi phát hiện vi phạm, DLP có thể tự động cảnh báo, khóa hành động hoặc chuyển sự cố đến đội ngũ an ninh mạng để xử lý."
      }
     },
     {
      "title": {
-      "en": "Cross-platform and global access",
-      "vi": "Tương thích đa nền tảng và truy cập toàn cầu"
+      "en": "5. Classifying new data",
+      "vi": "5. Phân loại lại dữ liệu mới"
      },
      "body": {
-      "en": "Deploys on Windows and Linux, supports database systems such as MS SQL and PostgreSQL, and provides agents for Windows, Linux and macOS, all managed through a single center. Security teams work from a dedicated desktop application or a browser-based dashboard, from any authorized device.",
-      "vi": "Triển khai trên Windows và Linux, hỗ trợ các hệ quản trị cơ sở dữ liệu như MS SQL, PostgreSQL, cung cấp agent cho Windows, Linux và macOS, quản lý qua một trung tâm duy nhất. Đội an ninh làm việc bằng ứng dụng desktop chuyên dụng hoặc bảng điều khiển trên trình duyệt, từ bất kỳ thiết bị nào được cấp quyền."
+      "en": "Whenever new data appears, DLP updates and reclassifies it automatically, so information always stays inside the safe control zone and matches current policy. Combined with API protection, DLP can also control data flows between applications and platforms and prevent leaks through APIs.",
+      "vi": "Mỗi khi có dữ liệu mới phát sinh, DLP tự động cập nhật và phân loại lại, đảm bảo toàn bộ thông tin luôn nằm trong vùng kiểm soát an toàn, phù hợp với chính sách bảo mật hiện hành. Khi tích hợp cùng công nghệ bảo vệ API, DLP có thể mở rộng khả năng kiểm soát luồng dữ liệu giữa các ứng dụng và nền tảng, ngăn ngừa rò rỉ thông tin qua các API."
      }
     }
    ],
