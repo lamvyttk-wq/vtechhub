@@ -220,12 +220,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Legal Lookup and Contract Review Take Too Long",
-     "vi": "Tra cứu pháp lý và rà soát hợp đồng tốn quá nhiều thời gian"
+     "en": "Hard to Keep Up With Constant Regulatory Change",
+     "vi": "Khó theo kịp thay đổi pháp lý liên tục"
     },
     "body": {
-     "en": "Regulations, case law and official letters sit in many places, and loan agreements, insurance contracts and internal documents need detailed manual review. Approvals slow down, and legal and compliance teams struggle to keep up with changing banking rules.",
-     "vi": "Văn bản pháp luật, án lệ và công văn nằm ở nhiều nơi, còn hợp đồng tín dụng, hợp đồng bảo hiểm và tài liệu nội bộ phải rà soát thủ công chi tiết. Phê duyệt bị chậm, đội pháp chế và tuân thủ khó theo kịp quy định ngân hàng thay đổi."
+     "en": "Changes from the State Bank of Vietnam keep coming, and updating internal documents costs hundreds of hours. Rules are applied unevenly across units, so inspection pressure, penalties and reputational damage become real risks.",
+     "vi": "Thay đổi pháp lý từ NHNN liên tục xuất hiện, việc cập nhật văn bản nội bộ tốn hàng trăm giờ. Quy định được áp dụng thiếu đồng bộ giữa các đơn vị nên áp lực kiểm tra, rủi ro bị phạt và ảnh hưởng uy tín trở thành rủi ro thật."
     }
    },
    "solutions": [
@@ -242,27 +242,27 @@
     },
     "points": [
      {
-      "en": "Natural-language search with source citations",
-      "vi": "Tra cứu ngôn ngữ tự nhiên, trích dẫn nguồn rõ ràng"
+      "en": "AI-powered legal research and analysis",
+      "vi": "Tra cứu và phân tích pháp lý bằng AI"
      },
      {
-      "en": "Contract drafting, summary and compliance review",
-      "vi": "Soạn thảo, tóm tắt và rà soát tuân thủ hợp đồng"
+      "en": "Drafting of legal documents on request",
+      "vi": "Soạn thảo văn bản pháp chế theo yêu cầu"
      },
      {
-      "en": "Follows State Bank of Vietnam regulations",
-      "vi": "Bám sát quy định của NHNN"
+      "en": "Multilingual, multi-source support",
+      "vi": "Hỗ trợ đa ngôn ngữ, đa nguồn dữ liệu"
      },
      {
-      "en": "Integrates with internal document systems",
-      "vi": "Tích hợp hệ thống văn bản nội bộ"
+      "en": "Review integrated into internal workflows",
+      "vi": "Rà soát, tích hợp vào quy trình nội bộ"
      }
     ],
     "metric": {
-     "value": "~42%",
+     "value": "95%",
      "label": {
-      "en": "less routine workload (estimate)",
-      "vi": "khối lượng công việc thường nhật giảm (ước tính)"
+      "en": "accuracy, up to",
+      "vi": "mức độ chính xác, lên đến"
      }
     }
    }

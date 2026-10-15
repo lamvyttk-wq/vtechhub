@@ -772,113 +772,113 @@
   "icon": "scale",
   "name": "AI Legal & Compliance",
   "tagline": {
-   "en": "AI assistant for legal, contracts and regulatory compliance",
-   "vi": "Trợ lý AI cho pháp chế, hợp đồng và tuân thủ quy định"
+   "en": "AI assistant for legal research, drafting and compliance",
+   "vi": "Trợ lý AI cho tra cứu pháp lý, soạn thảo và tuân thủ"
   },
   "description": {
-   "en": "AI Legal & Compliance searches legal texts, case law and official letters in natural language with clear source citations, supports drafting and compliance review of documents and contracts, and is specialized for banking, following State Bank of Vietnam regulations. It handles many data sources and plugs directly into the organization's internal document systems and processes.",
-   "vi": "AI Legal & Compliance tìm kiếm bằng ngôn ngữ tự nhiên trên hệ thống văn bản pháp luật, án lệ, công văn với trích dẫn nguồn rõ ràng, hỗ trợ soạn thảo và rà soát tuân thủ tài liệu, hợp đồng, chuyên biệt cho ngành ngân hàng theo quy định của NHNN. Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản và quy trình nội bộ của doanh nghiệp."
+   "en": "A smart legal AI assistant for BFSI: AI-powered legal research and analysis, drafting of legal documents on request, multilingual and multi-source support, and review that plugs into internal workflows. Deep knowledge of BFSI operations and AI specialized for legal work cover the entire document lifecycle, with accuracy of up to 95%.",
+   "vi": "Trợ lý AI pháp chế thông minh cho BFSI: tra cứu và phân tích pháp lý bằng AI, soạn thảo văn bản pháp chế theo yêu cầu, hỗ trợ đa ngôn ngữ và đa nguồn dữ liệu, rà soát và tích hợp vào quy trình nội bộ. Hiểu sâu nghiệp vụ BFSI cùng AI chuyên biệt cho pháp lý, xử lý toàn bộ vòng đời tài liệu, với mức độ chính xác lên đến 95%."
   },
   "detail": {
    "lead": {
-    "en": "Find the rule, draft the contract, check compliance, with a source for every answer.",
-    "vi": "Tìm đúng quy định, soạn đúng hợp đồng, kiểm tra tuân thủ, mỗi câu trả lời đều có nguồn."
+    "en": "A legal and compliance AI assistant that understands BFSI, with accuracy of up to 95%.",
+    "vi": "Trợ lý AI pháp chế & tuân thủ hiểu sâu BFSI, với mức độ chính xác lên đến 95%."
    },
    "stats": [
     {
-     "value": "~42%",
+     "value": "95%",
      "label": {
-      "en": "less routine operational workload (estimate)",
-      "vi": "khối lượng công việc vận hành giảm (ước tính)"
+      "en": "accuracy, up to",
+      "vi": "mức độ chính xác, lên đến"
      }
     },
     {
-     "value": "~72%",
+     "value": "72%",
      "label": {
-      "en": "higher processing efficiency, with over 50% of document tasks automated (estimate)",
-      "vi": "hiệu suất xử lý nghiệp vụ tăng, tự động hóa hơn 50% tác vụ liên quan đến tài liệu (ước tính)"
+      "en": "higher business-processing efficiency",
+      "vi": "hiệu suất xử lý nghiệp vụ tăng"
      }
     },
     {
-     "value": "~45%",
+     "value": "42%",
      "label": {
-      "en": "ROI from year two onward (estimate)",
-      "vi": "tỷ suất hoàn vốn từ năm thứ hai trở đi (ước tính)"
+      "en": "less operational workload",
+      "vi": "khối lượng việc vận hành giảm"
      }
     },
     {
-     "value": "~22",
+     "value": "3 mo",
      "label": {
-      "en": "months estimated payback period",
-      "vi": "tháng thời gian hoàn vốn ước tính"
+      "en": "deployment time",
+      "vi": "thời gian triển khai"
      }
     }
    ],
    "capabilities": [
     {
-     "en": "Natural-language search with citations",
-     "vi": "Tra cứu ngôn ngữ tự nhiên có trích dẫn"
+     "en": "Deep BFSI knowledge",
+     "vi": "Hiểu sâu nghiệp vụ BFSI"
     },
     {
-     "en": "Contract drafting and review",
-     "vi": "Soạn thảo và rà soát hợp đồng"
+     "en": "AI specialized for legal work",
+     "vi": "AI chuyên biệt cho pháp lý"
     },
     {
-     "en": "Banking specialization",
-     "vi": "Chuyên biệt ngành ngân hàng"
+     "en": "Full document lifecycle",
+     "vi": "Xử lý toàn bộ vòng đời tài liệu"
     },
     {
-     "en": "Multi-source integration",
-     "vi": "Tích hợp đa nguồn dữ liệu"
+     "en": "Multilingual, multi-source",
+     "vi": "Đa ngôn ngữ, đa nguồn dữ liệu"
     }
    ],
    "problemsKicker": {
-    "en": "Business challenges solved",
-    "vi": "Thách thức kinh doanh được giải quyết"
+    "en": "Core challenges of BFSI",
+    "vi": "Thách thức cốt lõi của BFSI"
    },
    "problemsTitle": {
-    "en": "Where legal and compliance time goes",
-    "vi": "Thời gian của đội pháp chế và tuân thủ đang đi đâu"
+    "en": "Why legal and compliance work keeps piling up",
+    "vi": "Vì sao công việc pháp chế và tuân thủ ngày càng dồn lại"
    },
    "problems": [
     {
      "title": {
-      "en": "Finding the right regulation, case law or official letter takes manual searching",
-      "vi": "Tìm đúng văn bản pháp luật, án lệ, công văn phải tra cứu thủ công"
+      "en": "Hard to follow constant legal changes from the State Bank of Vietnam",
+      "vi": "Khó theo dõi các thay đổi pháp lý liên tục từ NHNN"
      },
      "impact": {
-      "en": "Staff spend hours across scattered sources and still struggle to prove where an answer came from.",
-      "vi": "Nhân sự mất hàng giờ qua nhiều nguồn rời rạc mà vẫn khó chứng minh câu trả lời đến từ đâu."
+      "en": "New circulars and guidance arrive faster than teams can read, interpret and apply them.",
+      "vi": "Thông tư và hướng dẫn mới đến nhanh hơn khả năng đọc, diễn giải và áp dụng của đội ngũ."
      }
     },
     {
      "title": {
-      "en": "Drafting and reviewing contracts is slow and repetitive",
-      "vi": "Soạn thảo và rà soát hợp đồng chậm, lặp đi lặp lại"
+      "en": "Hundreds of hours spent updating internal documents",
+      "vi": "Tốn hàng trăm giờ cập nhật văn bản nội bộ"
      },
      "impact": {
-      "en": "Approvals and customer service wait on detailed manual review of loan, insurance and service contracts.",
-      "vi": "Phê duyệt và phục vụ khách hàng phải chờ rà soát thủ công chi tiết hợp đồng tín dụng, bảo hiểm và dịch vụ."
+      "en": "Skilled legal staff spend their time on repetitive edits instead of advice and risk review.",
+      "vi": "Nhân sự pháp chế giỏi mất thời gian chỉnh sửa lặp lại thay vì tư vấn và đánh giá rủi ro."
      }
     },
     {
      "title": {
-      "en": "Banking rules change and must be applied in context",
-      "vi": "Quy định ngân hàng thay đổi và phải áp dụng đúng ngữ cảnh"
+      "en": "Regulations applied inconsistently across the organization",
+      "vi": "Thiếu đồng bộ khi áp dụng quy định"
      },
      "impact": {
-      "en": "Generic tools do not understand banking operations or State Bank of Vietnam requirements, so answers need re-checking.",
-      "vi": "Công cụ chung không hiểu nghiệp vụ ngân hàng và yêu cầu của NHNN nên câu trả lời phải kiểm tra lại."
+      "en": "Different units read the same rule differently, which creates gaps that surface in audits.",
+      "vi": "Mỗi đơn vị hiểu một quy định theo cách khác nhau, tạo ra khoảng trống lộ ra khi kiểm tra."
      }
     },
     {
      "title": {
-      "en": "Knowledge sits in many systems and file formats",
-      "vi": "Tri thức nằm rải rác trong nhiều hệ thống và định dạng"
+      "en": "Inspection pressure, risk of penalties and reputational damage",
+      "vi": "Áp lực kiểm tra, rủi ro bị phạt và ảnh hưởng uy tín"
      },
      "impact": {
-      "en": "Internal policies, templates and legal texts are hard to use together inside daily workflows.",
-      "vi": "Quy chế nội bộ, biểu mẫu và văn bản pháp luật khó dùng cùng nhau trong quy trình hằng ngày."
+      "en": "Human error under a heavy workload turns into legal exposure and loss of trust.",
+      "vi": "Sai sót của con người khi khối lượng công việc lớn trở thành rủi ro pháp lý và mất niềm tin."
      }
     }
    ],
@@ -893,42 +893,62 @@
    "modules": [
     {
      "title": {
-      "en": "Smart lookup",
-      "vi": "Tra cứu thông minh"
+      "en": "AI-powered legal research and analysis",
+      "vi": "Tra cứu và phân tích pháp lý bằng AI"
      },
      "body": {
-      "en": "Search in natural language across legal documents, case law and official letters, with clear source citations.",
-      "vi": "Tìm kiếm bằng ngôn ngữ tự nhiên trên hệ thống văn bản pháp luật, án lệ, công văn với trích dẫn nguồn rõ ràng."
+      "en": "Search and analyze legal texts, case law and official letters in natural language, with clear source citations.",
+      "vi": "Tra cứu và phân tích văn bản pháp luật, án lệ, công văn bằng ngôn ngữ tự nhiên, kèm trích dẫn nguồn rõ ràng."
      }
     },
     {
      "title": {
-      "en": "Document and contract drafting support",
-      "vi": "Hỗ trợ soạn thảo tài liệu và hợp đồng"
+      "en": "Drafting legal documents on request",
+      "vi": "Soạn thảo văn bản pháp chế theo yêu cầu"
      },
      "body": {
-      "en": "Draft documents and contracts, review them for compliance, summarize and analyze complex legal texts.",
-      "vi": "Soạn thảo tài liệu, hợp đồng, rà soát tuân thủ, tóm tắt và phân tích các văn bản pháp lý phức tạp."
+      "en": "Drafts, summarizes and checks documents and contracts for compliance to the requirements you give it.",
+      "vi": "Soạn thảo, tóm tắt và rà soát tuân thủ tài liệu, hợp đồng theo đúng yêu cầu của bạn."
      }
     },
     {
      "title": {
-      "en": "Banking specialization",
-      "vi": "Chuyên biệt ngành ngân hàng"
+      "en": "Multilingual, multi-source support",
+      "vi": "Hỗ trợ đa ngôn ngữ, đa nguồn dữ liệu"
      },
      "body": {
-      "en": "Understands banking operations in depth, follows State Bank of Vietnam regulations closely and answers accurately in context.",
-      "vi": "Hiểu sâu nghiệp vụ ngân hàng, bám sát các quy định của NHNN và hỏi đáp chính xác theo ngữ cảnh."
+      "en": "Works across languages and data sources, so regulations, policies and templates are read together.",
+      "vi": "Làm việc xuyên ngôn ngữ và nguồn dữ liệu, để quy định, quy chế và biểu mẫu được đọc cùng nhau."
      }
     },
     {
      "title": {
-      "en": "Multi-purpose support",
-      "vi": "Hỗ trợ đa năng"
+      "en": "Review and integration into internal workflows",
+      "vi": "Rà soát và tích hợp vào quy trình nội bộ"
      },
      "body": {
-      "en": "Processes many data sources and integrates directly into the organization's internal document systems and processes.",
-      "vi": "Xử lý đa nguồn dữ liệu, tích hợp trực tiếp vào hệ thống văn bản/quy trình nội bộ của doanh nghiệp."
+      "en": "Reviews documents and plugs directly into the internal processes teams already follow.",
+      "vi": "Rà soát tài liệu và tích hợp trực tiếp vào các quy trình nội bộ mà đội ngũ đang dùng."
+     }
+    },
+    {
+     "title": {
+      "en": "Operational efficiency",
+      "vi": "Hiệu quả hoạt động"
+     },
+     "body": {
+      "en": "About 72% higher business-processing efficiency, over 50% of document work automated, 40% shorter consulting processes and 42% less operational workload. Fewer human errors on heavy workloads is estimated to reduce legal risk by around VND 400 million a year.",
+      "vi": "Hiệu suất xử lý nghiệp vụ tăng khoảng 72%, tự động hóa hơn 50% công việc tài liệu, rút ngắn 40% quy trình tư vấn, giảm 42% khối lượng việc vận hành. Giảm sai sót của con người khi xử lý khối lượng công việc lớn, ước tính giảm rủi ro pháp lý khoảng 400 triệu đồng/năm."
+     }
+    },
+    {
+     "title": {
+      "en": "Investment efficiency",
+      "vi": "Hiệu quả đầu tư"
+     },
+     "body": {
+      "en": "Estimated ROI of about 40% and IRR of about 22%, payback in about 20 months, and a deployment time of 3 months.",
+      "vi": "Ước tính ROI khoảng 40%, IRR khoảng 22%, thời gian hoàn vốn khoảng 20 tháng, thời gian triển khai 3 tháng."
      }
     }
    ],
@@ -941,8 +961,8 @@
      "icon": "landmark",
      "industry": "bfsi",
      "body": {
-      "en": "Credit, legal and compliance teams check regulation and review loan contracts faster.",
-      "vi": "Đội tín dụng, pháp chế và tuân thủ tra cứu quy định và rà soát hợp đồng tín dụng nhanh hơn."
+      "en": "Credit, legal and compliance teams follow State Bank of Vietnam changes and review loan contracts faster.",
+      "vi": "Đội tín dụng, pháp chế và tuân thủ theo dõi thay đổi của NHNN và rà soát hợp đồng tín dụng nhanh hơn."
      }
     },
     {
