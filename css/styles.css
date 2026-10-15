@@ -370,7 +370,16 @@ div.tile { cursor: default; }
   mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 95%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 90%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect; }
 .ind-side .ph-fb { display: none; }
-.ind-side .ph-img { mix-blend-mode: multiply; }
+/* one continuous hero: the illustration sits behind the copy, anchored right, and dissolves into the page toward the text (desktop only) */
+@media (min-width: 961px) {
+  .ind-hero:has(.has-side) { overflow-x: clip; }
+  .ind-top.has-side { display: block; position: relative; min-height: clamp(30rem, 40vw, 36rem); }
+  .ind-top.has-side > div:first-child { position: relative; z-index: 2; max-width: 44%; padding-top: 1rem; }
+  .ind-top.has-side .ind-side { position: absolute; z-index: 1; right: calc(-1 * clamp(1rem, 5vw, 5rem)); top: 50%; translate: 0 -50%; width: min(60vw, 940px); margin: 0; }
+  .ind-top.has-side .ind-side .ph { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 94%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 94%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); }
+}
+
+.ind-side .ph-img { mix-blend-mode: multiply; filter: brightness(1.055) contrast(1.02); }
 @media (max-width: 900px) { .ind-side { margin-right: 0; } }
 .banner { margin-top: clamp(2rem, 4vw, 3.4rem); }
 .banner .ph { min-height: 230px; }
