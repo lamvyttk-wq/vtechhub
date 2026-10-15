@@ -161,8 +161,11 @@ section { position: relative; }
 
 /* ---------- story engine ---------- */
 .intro { padding: clamp(2rem, 4vw, 3rem) 0 clamp(1rem, 2vw, 1.5rem); }
-.intro .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
-.intro .h2 { margin: 1.2rem 0 1.4rem; }
+.intro .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.intro .h2 { margin: 1rem 0 1.2rem; font-size: clamp(1.9rem, 3.2vw, 2.8rem); text-wrap: balance; }
+.intro .lede { font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.7; max-width: 54ch; }
+.intro .grid { align-items: center; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+.intro .pick button { padding: 1.2rem 0; font-size: 1rem; }
 .pick { display: grid; gap: .2rem; }
 .pick > span { margin-bottom: 1rem; }
 .pick button { display: grid; grid-template-columns: 2.4rem 1fr 1.4rem; align-items: center; gap: .6rem; text-align: left; background: none; border: 0; border-top: 1px solid var(--hair); padding: 1rem 0; font: 500 1rem/1.45 var(--serif); transition: padding .35s cubic-bezier(.2,.8,.2,1), color .2s; }
@@ -1121,7 +1124,7 @@ function industryPage() {
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>`}
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
-    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
+    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name })).replace(/ - /g, '\u00a0- ')}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
   <div class="story" id="story">${chapters}</div>
   <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div><div class="scs">${cards}</div></div></section>

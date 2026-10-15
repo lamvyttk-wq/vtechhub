@@ -304,7 +304,7 @@ function industryPage() {
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>`}
   <section class="intro" id="intro"><div class="wrap"><div class="grid">
-    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name }))}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
+    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name })).replace(/ - /g, '\u00a0- ')}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
     <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
   <div class="story" id="story">${chapters}</div>
   <section class="sec" id="bundle"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.bundleKicker')}</span><h2 class="h2 rv">${u('ind.bundleTitle')}</h2></div><div class="scs">${cards}</div></div></section>
