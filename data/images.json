@@ -259,9 +259,6 @@
     "logistics/partner-data": [
       "dlp"
     ],
-    "retail/customer-data": [
-      "dlp"
-    ],
     "education/student-data": [
       "dlp"
     ],
@@ -269,9 +266,6 @@
       "vcloud"
     ],
     "logistics/uptime": [
-      "vcloud"
-    ],
-    "retail/payment-cloud": [
       "vcloud"
     ],
     "healthcare/sovereignty": [
@@ -282,6 +276,12 @@
     ],
     "media/buffering": [
       "cdn"
+    ],
+    "retail/customer-data": [
+      "dlp"
+    ],
+    "retail/scalability": [
+      "vcloud"
     ]
   },
   "dlp": {
