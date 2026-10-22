@@ -673,3 +673,5 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .ib-split .ib-chips span + span::before, .ib-split .ib-chips span:first-child::before { content: none; }
 .ib-split .ib-chips { column-gap: 1.6rem; }
 @media (max-width: 960px) { .ib-split .ib-chips span, .ib-split .ib-chips span + span { padding: 0; } }
+
+.solchips .solchip-plain { display: inline-flex; align-items: center; padding: .45rem .9rem; border-radius: 999px; border: 1px dashed var(--hair); font: 600 .78rem/1 var(--sans); color: var(--ink-3); }

@@ -248,7 +248,9 @@ function industryPage() {
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
-    const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('');
+    const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('')
+      // `tags`: related products without a page of their own; with `to` they link to a solution page, otherwise they are plain labels
+      + (c.tags || []).map((x) => (x.to ? `<a href="#${x.to}" data-go="${x.to}">${esc(x.name)}</a>` : `<span class="solchip-plain">${esc(x.name)}</span>`)).join('');
     const pts = (c.response.points || []).map((p) => `<li class="pt">${ic('check')}<span>${esc(t(p))}</span></li>`).join('');
     const stat = c.challenge.stat ? `<div class="stat"><strong>${esc(c.challenge.stat.value)}</strong><span>${esc(t(c.challenge.stat.label))}</span></div>` : '';
     const m = c.response.metric ? `<div class="metric"><strong data-count="${esc(c.response.metric.value)}">${esc(c.response.metric.value)}</strong><span>${esc(t(c.response.metric.label))}</span></div>` : '';

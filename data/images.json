@@ -244,9 +244,6 @@
     "logistics/bec": [
       "phishing"
     ],
-    "media/latency": [
-      "cdn"
-    ],
     "bfsi/leak": [
       "dlp"
     ],
@@ -260,9 +257,6 @@
       "dlp"
     ],
     "logistics/partner-data": [
-      "dlp"
-    ],
-    "media/leaks": [
       "dlp"
     ],
     "retail/customer-data": [
@@ -285,6 +279,9 @@
     ],
     "education/budget-sovereignty": [
       "vcloud"
+    ],
+    "media/buffering": [
+      "cdn"
     ]
   },
   "dlp": {
