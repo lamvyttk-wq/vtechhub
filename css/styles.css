@@ -684,5 +684,12 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .solchips a:hover { border-color: var(--red); color: var(--red); }
 .solchips .solchip-plain { color: var(--ink-3); }
 
-.intro .grid.solo { grid-template-columns: minmax(0, 1fr); max-width: 52rem; }
+.intro .grid.solo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.intro .grid.solo > div { display: contents; }
+.intro .grid.solo .h2 { grid-column: 1; margin: 0; }
+.intro .grid.solo .lede { grid-column: 2; margin: 0; max-width: 56ch; align-self: center; }
+@media (max-width: 900px) { .intro .grid.solo { grid-template-columns: 1fr; } .intro .grid.solo .h2, .intro .grid.solo .lede { grid-column: 1; } }
 .ind-banner .ib-top:not(:has(.ib-side)) { grid-template-columns: 1fr; }
+
+.lnav .wrap { justify-content: space-between; }
+.lnav-l { margin-left: auto; }
