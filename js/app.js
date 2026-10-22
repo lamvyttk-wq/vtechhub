@@ -244,7 +244,7 @@ function industryPage() {
   // An industry can ship its own hero (data `hero` + images.heroBanner): centred headline, capability chips and a wide photo banner. It replaces the overview block.
   const hb = d.hero ? { ...d.hero, photo: state.images.heroBanner?.[id] } : null;
   const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['stories', 'ind.lnStories'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['faq', 'ind.lnFaq']]
-    .filter(([k]) => !(k === 'overview' && hb)) // no overview block when the hero already carries the intro and the numbers
+    .filter(([k]) => !(k === 'overview' && hb) && !(k === 'stories' && d.showStories === false)) // no overview block when the hero already carries the intro and the numbers
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
@@ -300,8 +300,8 @@ function industryPage() {
     <div class="crumbs hero-in">${hb.layout === 'split' ? `${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span>` : `${link('home', ic('house'))}<i>${ic('chevron-right')}</i>${link('home', u('ind.crumbIndustry'))}<i>${ic('chevron-right')}</i><span>${esc(name)}</span>`}</div>
     <div class="ib-top"><div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
       <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p></div>
-      <div class="ib-side"><div class="ib-chips hero-in" style="animation-delay:.2s">${(hb.chips || []).map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>
-      <div class="ib-sols hero-in" style="animation-delay:.24s"><b>${u('ind.solLine')}</b>${d.bundle.map((sid) => `<a href="#solution-${sid}" data-go="solution-${sid}">${ic(sol(sid).icon)} ${esc(sol(sid).name)}</a>`).join('')}</div></div></div>
+      ${(hb.chips || []).length || hb.sols !== false ? `<div class="ib-side">${(hb.chips || []).length ? `<div class="ib-chips hero-in" style="animation-delay:.2s">${hb.chips.map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>` : ''}
+      ${hb.sols !== false ? `<div class="ib-sols hero-in" style="animation-delay:.24s"><b>${u('ind.solLine')}</b>${d.bundle.map((sid) => `<a href="#solution-${sid}" data-go="solution-${sid}">${ic(sol(sid).icon)} ${esc(sol(sid).name)}</a>`).join('')}</div>` : ''}</div>` : ''}</div>
     ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: '1638 / 344', eager: true, nocap: true })}</div>` : ''}
   </div></section>` : `<section class="hero ind-hero"><div class="wrap">
     <div class="crumbs hero-in">${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span></div>
@@ -314,11 +314,11 @@ function industryPage() {
       <div class="ov-copy"><span class="eyebrow rv">${u('ind.ovKicker')}</span><h2 class="h2 rv">${u('ind.ovTitle')}</h2>
         <p class="ov-line rv">${esc(fill(u('ind.ovP1'), { n: d.bundle.length, name }))}</p><p class="ov-line sub rv">${u('ind.ovP2')} ${u('ind.anyLine')}</p>
         <div class="kpis rv">${stats}</div></div></div></div></section>`}
-  <section class="intro" id="intro"><div class="wrap"><div class="grid">
-    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(fill(u('ind.chTitle'), { name })).replace(/ - /g, '\u00a0- ')}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
-    <div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div></div></div></section>
+  <section class="intro" id="intro"><div class="wrap"><div class="grid${d.showPick === false ? ' solo' : ''}">
+    <div><span class="eyebrow rv">${u('ind.chKicker')}</span><h2 class="h2 rv">${esc(d.challengesTitle ? t(d.challengesTitle) : fill(u('ind.chTitle'), { name })).replace(/ - /g, '\u00a0- ')}</h2><p class="lede rv">${esc(t(d.challengesIntro))}</p></div>
+    ${d.showPick === false ? '' : `<div class="pick rv"><span class="eyebrow">${u('ind.pick')}</span>${picks}</div>`}</div></div></section>
   <div class="story" id="story">${chapters}</div>
-  <section class="cs" id="stories"><div class="wrap"><div class="cs-head"><h2 class="h2 rv">${u('ind.csTitle')}</h2><a class="btn btn-line rv" href="#contact" data-scroll="#contact">${u('ind.csMore')}</a></div><div class="cs-grid">${storyCards}</div></div></section>
+  ${d.showStories === false ? '' : `<section class="cs" id="stories"><div class="wrap"><div class="cs-head"><h2 class="h2 rv">${u('ind.csTitle')}</h2><a class="btn btn-line rv" href="#contact" data-scroll="#contact">${u('ind.csMore')}</a></div><div class="cs-grid">${storyCards}</div></div></section>`}
   <section class="sec why" id="why"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span><h2 class="h2 rv">${u('ind.whyTitle')}</h2></div><div class="whys">${why}</div></div></section>
   <section class="sec" id="approach"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>
     <div class="poc glass rv" style="margin-top:clamp(2rem,4vw,3.5rem)"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>

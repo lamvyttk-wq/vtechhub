@@ -27,8 +27,8 @@
   "PCI DSS"
  ],
  "challengesIntro": {
-  "en": "Digital transformation helps improve customer experience, but it also broadens the attack surface and increases compliance pressure for the banking, financial, and insurance sectors. In the face of increasingly sophisticated threats from both outside attackers and insiders, IT and cybersecurity teams must ensure systems run securely and continuously, keep sensitive data strictly protected, and still respond quickly to business demands.",
-  "vi": "Chuyển đổi số giúp tối ưu trải nghiệm khách hàng nhưng đồng thời mở rộng bề mặt tấn công và gia tăng áp lực tuân thủ cho khối tài chính, ngân hàng và bảo hiểm. Trước các mối đe dọa đa tầng ngày càng tinh vi từ bên ngoài lẫn nội bộ, đội ngũ công nghệ thông tin và bảo mật phải đảm bảo hệ thống luôn vận hành an toàn, liên tục, dữ liệu nhạy cảm được bảo vệ nghiêm ngặt mà vẫn đáp ứng kịp thời tốc độ phát triển của nghiệp vụ."
+  "en": "As financial services embrace cloud-native technology, protection becomes a moving target. Modern security leaders must navigate relentless AI-driven attacks, strict compliance mandates, and zero-tolerance downtime—all while delivering seamless digital experiences.",
+  "vi": "Khi các dịch vụ tài chính chuyển sang công nghệ cloud-native, bảo vệ trở thành một mục tiêu luôn dịch chuyển. Lãnh đạo an ninh hiện đại phải đối phó với các cuộc tấn công dùng AI không ngừng, yêu cầu tuân thủ nghiêm ngặt và mức chấp nhận gián đoạn bằng không, đồng thời vẫn mang lại trải nghiệm số liền mạch."
  },
  "chapters": [
   {
@@ -39,12 +39,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Phishing and Ransomware Through Email",
-     "vi": "Phishing và Ransomware qua Email"
+     "en": "Critical Vulnerability: Phishing & Email Ransomware",
+     "vi": "Lỗ hổng trọng yếu: Phishing và ransomware qua email"
     },
     "body": {
-     "en": "Email is one of the most common ways attackers enter financial organisations. Phishing emails, fake payment requests, and ransomware can steal employee credentials, trigger fraudulent transfers, and disrupt critical banking operations.",
-     "vi": "Email là con đường phổ biến nhất để tin tặc xâm nhập tổ chức tài chính. Email phishing, yêu cầu thanh toán giả mạo và ransomware có thể đánh cắp thông tin đăng nhập, kích hoạt chuyển tiền gian lận và làm gián đoạn hoạt động ngân hàng."
+     "en": "Email remains the primary entry point for financial cybercrime. Advanced phishing, Business Email Compromise (BEC), and ransomware continuously target employee credentials, orchestrate fraudulent wire transfers, and threaten core banking continuity.",
+     "vi": "Email vẫn là điểm xâm nhập chính của tội phạm mạng tài chính. Phishing tinh vi, Business Email Compromise (BEC) và ransomware liên tục nhắm vào thông tin đăng nhập của nhân viên, dàn dựng các lệnh chuyển tiền gian lận và đe dọa tính liên tục của hệ thống ngân hàng lõi."
     }
    },
    "solutions": [
@@ -52,29 +52,29 @@
    ],
    "response": {
     "title": {
-     "en": "Stop it before it reaches the inbox",
-     "vi": "Chặn từ trước khi vào hộp thư"
+     "en": "Pre-Inbox Threat Neutralization",
+     "vi": "Vô hiệu hóa mối đe dọa trước khi vào hộp thư"
     },
     "body": {
-     "en": "Advanced email defense stops phishing, executive spoofing and ransomware before they reach employees.",
-     "vi": "Bảo vệ email nâng cao chặn phishing, giả mạo lãnh đạo và ransomware trước khi tới nhân viên."
+     "en": "Complete email security coverage that protects your workforce and prevents data loss.",
+     "vi": "Bảo vệ email toàn diện, che chắn đội ngũ nhân sự và ngăn thất thoát dữ liệu."
     },
     "points": [
      {
-      "en": "Blocks phishing and executive spoofing",
-      "vi": "Chặn phishing và giả mạo lãnh đạo"
+      "en": "Anti-Phishing & Anti-Spoofing: AI-powered identification of executive impersonation and fake payment requests.",
+      "vi": "Chống phishing và giả mạo: nhận diện bằng AI việc mạo danh lãnh đạo và các yêu cầu thanh toán giả."
      },
      {
-      "en": "Stops ransomware at the mail gateway",
-      "vi": "Ngăn ransomware ngay tại cổng email"
+      "en": "Mail Gateway Perimeter Protection: Instantly halts ransomware payloads at the boundary.",
+      "vi": "Bảo vệ vành đai cổng thư: chặn ngay mã ransomware tại biên."
      },
      {
-      "en": "Screens malicious links and attachments",
-      "vi": "Kiểm tra liên kết và tệp đính kèm độc hại"
+      "en": "Link & Attachment Deep Scanning: Real-time analysis of dynamic links and malicious files.",
+      "vi": "Quét sâu liên kết và tệp đính kèm: phân tích theo thời gian thực các liên kết động và tệp độc hại."
      },
      {
-      "en": "Warns on misdirected emails and stops outbound data leaks",
-      "vi": "Cảnh báo gửi nhầm và chống rò rỉ dữ liệu khi gửi ra ngoài"
+      "en": "Inbound & Outbound Data Guard: Detects misdirected emails and halts unauthorized data leaks.",
+      "vi": "Bảo vệ dữ liệu hai chiều: phát hiện email gửi nhầm và chặn rò rỉ dữ liệu trái phép."
      }
     ]
    }
@@ -176,12 +176,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Customer Data Leakage and Compliance Pressure",
-     "vi": "Rò rỉ dữ liệu khách hàng và áp lực tuân thủ"
+     "en": "Data Exfiltration Risk & Severe Regulatory Penalties",
+     "vi": "Rủi ro rò rỉ dữ liệu & chế tài pháp lý nghiêm khắc"
     },
     "body": {
-     "en": "Banks hold highly sensitive data: customer identity, account details, card data, loan records, insurance documents. A single leak can create serious compliance issues under Decree 13, SBV requirements and PCI DSS, and lasting damage to customer trust.",
-     "vi": "Ngân hàng nắm giữ dữ liệu cực kỳ nhạy cảm: danh tính khách hàng, tài khoản, thẻ, hồ sơ vay, hợp đồng bảo hiểm. Một vụ rò rỉ có thể gây vi phạm nghiêm trọng theo Nghị định 13, yêu cầu của NHNN và PCI DSS, cùng tổn hại lâu dài đến niềm tin khách hàng."
+     "en": "Protecting customer identity, card details, and credit records against insider leaks is a critical challenge under strict Decree 13 and SBV compliance frameworks.",
+     "vi": "Bảo vệ danh tính khách hàng, thông tin thẻ và hồ sơ tín dụng trước rò rỉ từ nội bộ là thách thức then chốt theo khuôn khổ tuân thủ nghiêm ngặt của Nghị định 13 và NHNN."
     }
    },
    "solutions": [
@@ -220,12 +220,12 @@
    },
    "challenge": {
     "title": {
-     "en": "Review Pressure and Risk of Errors as Regulations Keep Changing",
-     "vi": "Áp lực rà soát và nguy cơ sai sót khi quy định thay đổi liên tục"
+     "en": "Regulatory Volatility & Operational Review Bottlenecks",
+     "vi": "Quy định biến động & nút thắt rà soát vận hành"
     },
     "body": {
-     "en": "New circulars and regulations from the State Bank of Vietnam keep arriving, so reviewing and adjusting internal documents takes hundreds of working hours. When rules are applied unevenly across branches and departments, the risk of administrative violations, penalties and damage to the brand's reputation becomes a constant threat.",
-     "vi": "Các thông tư, quy định mới từ Ngân hàng Nhà nước liên tục cập nhật khiến việc rà soát và điều chỉnh văn bản nội bộ tốn hàng trăm giờ làm việc. Khi quy định áp dụng thiếu đồng bộ giữa các chi nhánh và phòng ban, rủi ro vi phạm hành chính, bị phạt và ảnh hưởng uy tín thương hiệu trở thành mối đe dọa thường trực."
+     "en": "Frequent updates to SBV circulars and banking regulations create massive compliance overhead. Manually auditing internal policies takes hundreds of hours, while inconsistent implementation across branches exposes institutions to severe legal penalties and reputational damage.",
+     "vi": "Các thông tư của NHNN và quy định ngân hàng thường xuyên được cập nhật tạo ra gánh nặng tuân thủ rất lớn. Rà soát thủ công chính sách nội bộ tốn hàng trăm giờ, trong khi việc triển khai thiếu nhất quán giữa các chi nhánh khiến tổ chức đối mặt với chế tài pháp lý nặng nề và tổn hại uy tín."
     }
    },
    "solutions": [
@@ -233,29 +233,29 @@
    ],
    "response": {
     "title": {
-     "en": "Source-accurate lookup, drafts in an instant",
-     "vi": "Tra cứu chuẩn xác theo nguồn, số hóa dự thảo trong tích tắc"
+     "en": "Precision Legal AI: Automated Compliance & Policy Drafting",
+     "vi": "AI pháp lý chính xác: tự động hóa tuân thủ và soạn thảo chính sách"
     },
     "body": {
-     "en": "A specialized AI assistant for banking: it automates lookup across the legal system and State Bank of Vietnam regulations in natural language, with precise clause citations; supports drafting and review of contract terms; and integrates seamlessly into internal approval workflows.",
-     "vi": "Trợ lý AI chuyên biệt cho ngành ngân hàng: tự động hóa tra cứu hệ thống luật và quy định NHNN bằng ngôn ngữ tự nhiên kèm trích dẫn điều khoản chính xác; hỗ trợ soạn thảo, rà soát điều khoản hợp đồng và tích hợp liền mạch vào quy trình phê duyệt nội bộ."
+     "en": "Streamline legal research and internal policy reviews with a specialized, enterprise-grade AI assistant, delivering up to 95% legal citation accuracy with zero operational friction.",
+     "vi": "Tinh gọn tra cứu pháp lý và rà soát chính sách nội bộ với trợ lý AI chuyên biệt cấp doanh nghiệp, đạt độ chính xác trích dẫn pháp lý lên đến 95% mà không gây xáo trộn vận hành."
     },
     "points": [
      {
-      "en": "AI-powered legal research and analysis",
-      "vi": "Tra cứu và phân tích pháp lý bằng AI"
+      "en": "Source-Accurate Natural Language Lookup: Instant legal research across national laws and SBV directives with exact clause and article citations.",
+      "vi": "Tra cứu ngôn ngữ tự nhiên chuẩn nguồn: tra cứu pháp lý tức thì trên luật quốc gia và chỉ thị NHNN, kèm trích dẫn đúng điều khoản."
      },
      {
-      "en": "Drafting of legal documents on request",
-      "vi": "Soạn thảo văn bản pháp chế theo yêu cầu"
+      "en": "AI-Assisted Contract & Policy Drafting: Generates and audits legal documents, contract terms, and internal policies in seconds.",
+      "vi": "Soạn thảo hợp đồng và chính sách có AI hỗ trợ: tạo và kiểm tra văn bản pháp lý, điều khoản hợp đồng, chính sách nội bộ trong vài giây."
      },
      {
-      "en": "Multilingual, multi-source support",
-      "vi": "Hỗ trợ đa ngôn ngữ, đa nguồn dữ liệu"
+      "en": "Multilingual & Multi-Source Intelligence: Cross-references complex international standards with local Vietnamese banking laws seamlessly.",
+      "vi": "Phân tích đa ngôn ngữ, đa nguồn: đối chiếu liền mạch các chuẩn mực quốc tế phức tạp với luật ngân hàng Việt Nam."
      },
      {
-      "en": "Review integrated into internal workflows",
-      "vi": "Rà soát, tích hợp vào quy trình nội bộ"
+      "en": "Native Workflow Integration: Fits directly into existing internal review and approval systems to eliminate human error and branch-level inconsistencies.",
+      "vi": "Tích hợp tự nhiên vào quy trình: gắn thẳng vào hệ thống rà soát và phê duyệt nội bộ để loại bỏ sai sót của con người và thiếu nhất quán giữa các chi nhánh."
      }
     ],
     "metric": {
@@ -275,12 +275,12 @@
    },
    "challenge": {
     "title": {
-     "en": "The Large-Scale Collection Bottleneck in Consumer Credit & Cards",
-     "vi": "Nút thắt thu hồi nợ quy mô lớn trong tín dụng tiêu dùng & thẻ"
+     "en": "Scalability Bottlenecks in Consumer Debt Collection",
+     "vi": "Nút thắt mở rộng trong thu hồi nợ tiêu dùng"
     },
     "body": {
-     "en": "Relying on telesales staff to call tens of thousands of customers by hand is costly in staffing and ineffective because few customers pick up. Customers lack tools to check their balance and repayment history instantly, which leads to prolonged late payments and rising bad debt.",
-     "vi": "Phụ thuộc vào telesales gọi điện thủ công cho hàng chục nghìn khách hàng vừa tốn kém chi phí nhân sự, vừa kém hiệu quả do tỷ lệ bắt máy thấp. Khách hàng thiếu công cụ tự tra cứu dư nợ và lịch sử hoàn trả tức thì, dẫn đến tình trạng chậm thanh toán kéo dài và nợ xấu gia tăng."
+     "en": "Manual telesales outreach across tens of thousands of credit and card accounts drives up operational costs while pick-up rates continue to drop. Without self-service tools to check balances or payment schedules, customers delay payments accelerating Non-Performing Loan risks.",
+     "vi": "Telesales gọi thủ công cho hàng chục nghìn tài khoản tín dụng và thẻ đẩy chi phí vận hành lên cao trong khi tỷ lệ bắt máy tiếp tục giảm. Khi không có công cụ tự phục vụ để kiểm tra dư nợ hay lịch thanh toán, khách hàng trì hoãn thanh toán và làm tăng rủi ro nợ xấu."
     }
    },
    "solutions": [
@@ -288,25 +288,25 @@
    ],
    "response": {
     "title": {
-     "en": "Automated Reminders & Real-Time Multichannel Reconciliation",
-     "vi": "Tự động hóa nhắc nợ & Đối soát đa kênh theo thời gian thực"
+     "en": "Automated Reminders. Instant Multichannel Reconciliation.",
+     "vi": "Nhắc nợ tự động. Đối soát đa kênh tức thì."
     },
     "body": {
-     "en": "An AI agent reminds, answers balance questions and guides on-time payment across Zalo, SMS, Messenger and the app, without phone calls, and writes status back to your CRM.",
-     "vi": "AI Agent nhắc nợ, trả lời truy vấn dư nợ và hướng dẫn thanh toán đúng hạn qua Zalo, SMS, Messenger và app, không cần gọi điện, đồng thời ghi tình trạng về CRM."
+     "en": "Scale debt recovery effortlessly with an AI agent that handles reminders, balance lookups, and payment guidance delivering from 20% increase in on-time repayments.",
+     "vi": "Mở rộng thu hồi nợ nhẹ nhàng với AI Agent đảm nhiệm nhắc nợ, tra cứu dư nợ và hướng dẫn thanh toán, giúp tăng 20% tỷ lệ trả nợ đúng hạn."
     },
     "points": [
      {
-      "en": "Multichannel reminders without phone calls",
-      "vi": "Nhắc nợ đa kênh, không cần gọi điện"
+      "en": "Replaces intrusive phone calls with automated, personalized notifications on preferred messaging platforms.",
+      "vi": "Thay các cuộc gọi gây phiền bằng thông báo tự động, cá nhân hóa trên nền tảng nhắn tin khách hàng ưa dùng."
      },
      {
-      "en": "Customers look up loan, history and offers themselves",
-      "vi": "Khách hàng tự tra cứu khoản vay, lịch sử và ưu đãi"
+      "en": "Self-Service Loan Portal empowers borrowers to instantly check real-time balances, histories, and personalized settlement offers.",
+      "vi": "Cổng vay tự phục vụ giúp người vay tự kiểm tra tức thì dư nợ thời gian thực, lịch sử và đề xuất tất toán cá nhân hóa."
      },
      {
-      "en": "Collection status tracked in the CRM",
-      "vi": "Tình trạng thu hồi nợ được theo dõi trong CRM"
+      "en": "Real-Time CRM Sync tracks collection status and syncs payment logs with enterprise CRM systems instantly.",
+      "vi": "Đồng bộ CRM thời gian thực theo dõi tình trạng thu hồi nợ và đồng bộ nhật ký thanh toán với hệ thống CRM doanh nghiệp ngay lập tức."
      }
     ],
     "metric": {
@@ -379,46 +379,24 @@
  ],
  "hero": {
   "title": {
-   "en": "Comprehensive technology solutions for",
-   "vi": "Giải pháp công nghệ toàn diện cho"
+   "en": "Secure. Scalable. AI-Driven.",
+   "vi": "An toàn. Mở rộng. Dẫn dắt bởi AI."
   },
   "em": {
-   "en": "Banking, Financial Services and Insurance",
-   "vi": "Ngân hàng, Tài chính và Bảo hiểm"
+   "en": "The Next-Gen Tech Stack for BFSI",
+   "vi": "Nền tảng công nghệ thế hệ mới cho BFSI"
   },
   "sub": {
-   "en": "Partnering with financial institutions on their digital journey with secure, flexible infrastructure that is ready for the AI future.",
-   "vi": "Đồng hành cùng các tổ chức tài chính trong hành trình chuyển đổi số với hạ tầng an toàn, linh hoạt và sẵn sàng cho tương lai AI."
+   "en": "Unlocking seamless digital transformation with uncompromised uptime and automated defense.",
+   "vi": "Mở khóa chuyển đổi số liền mạch với thời gian hoạt động không gián đoạn và phòng thủ tự động."
   },
-  "chips": [
-   {
-    "icon": "shield",
-    "label": {
-     "en": "Data security",
-     "vi": "Bảo mật dữ liệu"
-    }
-   },
-   {
-    "icon": "landmark",
-    "label": {
-     "en": "Regulatory compliance",
-     "vi": "Tuân thủ quy định"
-    }
-   },
-   {
-    "icon": "server",
-    "label": {
-     "en": "Flexible infrastructure",
-     "vi": "Hạ tầng linh hoạt"
-    }
-   },
-   {
-    "icon": "cpu",
-    "label": {
-     "en": "AI applications",
-     "vi": "Ứng dụng AI"
-    }
-   }
-  ]
- }
+  "chips": [],
+  "sols": false
+ },
+ "challengesTitle": {
+  "en": "Innovation Expanded the Horizon. And the Threat Surface.",
+  "vi": "Đổi mới mở rộng chân trời. Và cả bề mặt tấn công."
+ },
+ "showPick": false,
+ "showStories": false
 }

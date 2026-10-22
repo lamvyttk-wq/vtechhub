@@ -683,3 +683,6 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .solchips a .ic, .solchips a svg { display: none; }
 .solchips a:hover { border-color: var(--red); color: var(--red); }
 .solchips .solchip-plain { color: var(--ink-3); }
+
+.intro .grid.solo { grid-template-columns: minmax(0, 1fr); max-width: 52rem; }
+.ind-banner .ib-top:not(:has(.ib-side)) { grid-template-columns: 1fr; }
