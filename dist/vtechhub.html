@@ -1169,7 +1169,7 @@ function industryPage() {
   const picks = d.chapters.map((c, k) => `<button data-goto="${k}"><b>${roman(k + 1)}</b><span>${esc(t(c.challenge.title))}</span>${ic('arrow-right')}</button>`).join('');
   // An industry can ship its own hero (data `hero` + images.heroBanner): centred headline, capability chips and a wide photo banner. It replaces the overview block.
   const hb = d.hero ? { ...d.hero, photo: state.images.heroBanner?.[id] } : null;
-  const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['stories', 'ind.lnStories'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['experts', 'ind.lnExperts'], ['faq', 'ind.lnFaq']]
+  const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['stories', 'ind.lnStories'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['faq', 'ind.lnFaq']]
     .filter(([k]) => !(k === 'overview' && hb)) // no overview block when the hero already carries the intro and the numbers
     .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
 
@@ -1249,9 +1249,7 @@ function industryPage() {
   <section class="sec" id="approach"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>
     <div class="poc glass rv" style="margin-top:clamp(2rem,4vw,3.5rem)"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
-  ${experts()}
   <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
-  <section class="sec" id="solutions-all" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.allSolKicker')}</span><h2 class="h2 rv">${u('ind.allSolTitle')}</h2></div><div class="ocs">${allSol}</div></div></section>
   ${anyIndustry()}
   ${contact(id)}`;
 }
@@ -1461,7 +1459,7 @@ function initLocalNav() {
   const map = new Map(links.map((a) => [a.dataset.spy, a]));
   const on = (id) => links.forEach((a) => a.classList.toggle('on', a.dataset.spy === id));
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) on(map.has(e.target.id) ? e.target.id : null); }), { rootMargin: '-35% 0px -60% 0px' });
-  [...map.keys(), 'solutions-all', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+  [...map.keys(), 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   cleanups.push(() => io.disconnect());
   const nav = $('#lnav'); const bar = () => nav.classList.toggle('stuck', nav.getBoundingClientRect().top <= (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 78) + 1);
   addEventListener('scroll', bar, { passive: true }); bar();
