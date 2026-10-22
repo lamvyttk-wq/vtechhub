@@ -11,13 +11,12 @@
   "vi": "Sản xuất & Chuỗi cung ứng công nghiệp"
  },
  "tagline": {
-  "en": "VCLOUD, Email Security, Database Security and Data Loss Prevention to keep production lines running and designs protected.",
-  "vi": "VCLOUD, Email Security, Bảo mật cơ sở dữ liệu và Chống thất thoát dữ liệu để dây chuyền luôn chạy và bản thiết kế luôn an toàn."
+  "en": "VCLOUD, Email Security and Data Loss Prevention to keep production lines running and designs protected.",
+  "vi": "VCLOUD, Email Security và Chống thất thoát dữ liệu để giữ dây chuyền sản xuất vận hành và bảo vệ bản thiết kế."
  },
  "bundle": [
   "vcloud",
   "email-security",
-  "database-security",
   "dlp"
  ],
  "regulations": [
@@ -121,50 +120,6 @@
    }
   },
   {
-   "id": "erp-data",
-   "persona": {
-    "en": "Head of ERP / MES & DBA",
-    "vi": "Trưởng bộ phận ERP / MES & DBA"
-   },
-   "challenge": {
-    "title": {
-     "en": "ERP and MES Data Open to Too Many Hands",
-     "vi": "Dữ liệu ERP và MES quá nhiều người chạm tới"
-    },
-    "body": {
-     "en": "Production plans, costs, pricing and customer orders sit in ERP and MES databases that administrators, developers and integrators can reach directly. Without query-level control, a mistake or misuse may go unnoticed.",
-     "vi": "Kế hoạch sản xuất, giá thành, báo giá và đơn hàng nằm trong CSDL ERP, MES mà quản trị viên, lập trình viên và đơn vị tích hợp có thể truy cập trực tiếp. Thiếu kiểm soát mức truy vấn, sai sót hoặc lạm quyền có thể không bị phát hiện."
-    }
-   },
-   "solutions": [
-    "database-security"
-   ],
-   "response": {
-    "title": {
-     "en": "Every query seen, every sensitive field masked",
-     "vi": "Mọi truy vấn đều được thấy, trường nhạy cảm đều được che"
-    },
-    "body": {
-     "en": "Query-level access control and real-time data masking protect ERP and MES data without slowing live operations.",
-     "vi": "Kiểm soát truy cập mức truy vấn và che giấu dữ liệu thời gian thực bảo vệ dữ liệu ERP, MES mà không làm chậm vận hành."
-    },
-    "points": [
-     {
-      "en": "Restricts direct database access",
-      "vi": "Hạn chế truy cập trực tiếp vào CSDL"
-     },
-     {
-      "en": "Masks costs and pricing from unauthorized admins",
-      "vi": "Che giá thành, báo giá với quản trị viên không có quyền"
-     },
-     {
-      "en": "Audit trail for every change",
-      "vi": "Nhật ký kiểm toán mọi thay đổi"
-     }
-    ]
-   }
-  },
-  {
    "id": "vendor-access",
    "persona": {
     "en": "Head of IT Infrastructure",
@@ -176,35 +131,35 @@
      "vi": "Nhà cung cấp truy cập từ xa thường trực"
     },
     "body": {
-     "en": "Machine makers, system integrators and software vendors often need remote access to support the plant. Broad, long-lived access to databases turns a third party into the weakest link.",
-     "vi": "Hãng máy, đơn vị tích hợp và nhà cung cấp phần mềm thường cần truy cập từ xa để hỗ trợ nhà máy. Quyền truy cập rộng và kéo dài vào cơ sở dữ liệu biến bên thứ ba thành mắt xích yếu nhất."
+     "en": "Machine makers, system integrators and software vendors often need remote access to support the plant. Broad, long-lived access to systems and files turns a third party into the weakest link.",
+     "vi": "Hãng máy, đơn vị tích hợp và nhà cung cấp phần mềm thường cần truy cập từ xa để hỗ trợ nhà máy. Quyền truy cập rộng và kéo dài vào hệ thống, tệp tin biến bên thứ ba thành mắt xích yếu nhất."
     }
    },
    "solutions": [
-    "database-security",
-    "email-security"
+    "email-security",
+    "dlp"
    ],
    "response": {
     "title": {
-     "en": "Give vendors a controlled door, not a key",
-     "vi": "Cho nhà cung cấp một cửa có kiểm soát, không phải chìa khóa"
+     "en": "Watch what vendors send and what leaves",
+     "vi": "Theo dõi những gì nhà cung cấp gửi đến và những gì rời đi"
     },
     "body": {
-     "en": "Vendor sessions to databases go through a controlled gateway with approval for sensitive actions, while mail defense filters the invoices and attachments that vendors send in.",
-     "vi": "Phiên truy cập CSDL của nhà cung cấp đi qua cổng kiểm soát với phê duyệt cho thao tác nhạy cảm, còn lớp bảo vệ email lọc hóa đơn và tệp đính kèm họ gửi đến."
+     "en": "Mail defense filters the invoices and attachments that vendors send in, while data monitoring shows what technical files leave toward third parties.",
+     "vi": "Lớp bảo vệ email lọc hóa đơn và tệp đính kèm nhà cung cấp gửi đến, còn giám sát dữ liệu cho thấy tệp kỹ thuật nào đang rời đi tới bên thứ ba."
     },
     "points": [
      {
-      "en": "Approval workflow for sensitive actions",
-      "vi": "Quy trình phê duyệt cho thao tác nhạy cảm"
-     },
-     {
-      "en": "Full record of what vendors did",
-      "vi": "Ghi lại đầy đủ những gì nhà cung cấp đã làm"
-     },
-     {
       "en": "Filters inbound vendor attachments",
       "vi": "Lọc tệp đính kèm từ nhà cung cấp"
+     },
+     {
+      "en": "Shows technical files sent to third parties",
+      "vi": "Cho thấy tệp kỹ thuật gửi tới bên thứ ba"
+     },
+     {
+      "en": "Full record of what was shared",
+      "vi": "Ghi lại đầy đủ những gì đã chia sẻ"
      }
     ]
    }
@@ -228,8 +183,7 @@
    "solutions": [
     "dlp",
     "email-security",
-    "vcloud",
-    "database-security"
+    "vcloud"
    ],
    "response": {
     "title": {
@@ -237,8 +191,8 @@
      "vi": "Kiểm soát và bằng chứng sẵn sàng khi đoàn đánh giá đến"
     },
     "body": {
-     "en": "Data monitoring, database access control and in-country hosting give you documented controls and logs to show customers and prepare for Decree 13 and ISO 27001-style requirements.",
-     "vi": "Giám sát dữ liệu, kiểm soát truy cập CSDL và lưu trữ trong nước giúp bạn có các biện pháp kiểm soát và nhật ký được ghi nhận để trình khách hàng, chuẩn bị cho Nghị định 13 và các yêu cầu theo ISO 27001."
+     "en": "Data monitoring and in-country hosting give you documented controls and logs to show customers and prepare for Decree 13 and ISO 27001-style requirements.",
+     "vi": "Giám sát dữ liệu và lưu trữ trong nước giúp bạn có các biện pháp kiểm soát và nhật ký được ghi nhận để trình khách hàng, chuẩn bị cho Nghị định 13 và các yêu cầu theo ISO 27001."
     },
     "points": [
      {
@@ -274,8 +228,8 @@
     "vi": "Bảo vệ tài sản trí tuệ"
    },
    "body": {
-    "en": "Keep designs, formulas and cost data from leaving through users, vendors or databases.",
-    "vi": "Ngăn bản thiết kế, công thức và dữ liệu giá thành rời đi qua người dùng, nhà cung cấp hoặc cơ sở dữ liệu."
+    "en": "Keep designs, formulas and cost data from leaving through users or vendors.",
+    "vi": "Giữ bản thiết kế, công thức và dữ liệu chi phí không bị đưa ra ngoài qua người dùng hay nhà cung cấp."
    }
   },
   {
@@ -296,8 +250,8 @@
     "vi": "Chúng tôi có phải thay ERP hoặc MES hiện có không?"
    },
    "a": {
-    "en": "No. Database security and data monitoring sit around your existing systems. Scope and integration are assessed with the V-Tech Foundry team for each plant.",
-    "vi": "Không. Bảo mật cơ sở dữ liệu và giám sát dữ liệu được đặt quanh hệ thống hiện có. Phạm vi và cách tích hợp được đánh giá cùng đội ngũ V-Tech Foundry cho từng nhà máy."
+    "en": "No. Data monitoring and email defense sit around your existing systems. Scope and integration are assessed with the V-Tech Foundry team for each plant.",
+    "vi": "Không. Giám sát dữ liệu và bảo vệ email đặt xung quanh các hệ thống hiện có. Phạm vi và cách tích hợp được đánh giá cùng đội ngũ V-Tech Foundry cho từng nhà máy."
    }
   },
   {
@@ -308,16 +262,6 @@
    "a": {
     "en": "It provides access controls, monitoring and logs that you can document as evidence. Certification outcomes depend on your overall program.",
     "vi": "Giải pháp cung cấp kiểm soát truy cập, giám sát và nhật ký để bạn làm bằng chứng. Kết quả chứng nhận còn phụ thuộc vào chương trình an ninh tổng thể của doanh nghiệp."
-   }
-  },
-  {
-   "q": {
-    "en": "How do we handle remote access by machine and software vendors?",
-    "vi": "Làm sao quản lý truy cập từ xa của hãng máy và nhà cung cấp phần mềm?"
-   },
-   "a": {
-    "en": "Database access is routed through a controlled gateway with approval for sensitive queries and a full audit trail, so vendors get only what they need.",
-    "vi": "Truy cập CSDL được đi qua cổng kiểm soát với phê duyệt cho truy vấn nhạy cảm và nhật ký kiểm toán đầy đủ, nhà cung cấp chỉ nhận đúng quyền cần thiết."
    }
   }
  ],

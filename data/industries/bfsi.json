@@ -11,12 +11,11 @@
   "vi": "Ngân hàng, Dịch vụ Tài chính & Bảo hiểm"
  },
  "tagline": {
-  "en": "Email Security, AI Legal & Compliance, Data Loss Prevention, Core Banking Database Security and Debt Collection AI Agent.",
-  "vi": "Email Security, AI Legal & Compliance, Chống thất thoát dữ liệu, Bảo mật cơ sở dữ liệu Core Banking và AI Agent Thu hồi nợ."
+  "en": "Email Security, AI Legal & Compliance, Data Loss Prevention and Debt Collection AI Agent.",
+  "vi": "Email Security, AI Legal & Compliance, Chống thất thoát dữ liệu và AI Agent Thu hồi nợ."
  },
  "bundle": [
   "email-security",
-  "database-security",
   "dlp",
   "ai-legal",
   "debt-collection"
@@ -96,17 +95,16 @@
     }
    },
    "solutions": [
-    "email-security",
-    "database-security"
+    "email-security"
    ],
    "response": {
     "title": {
-     "en": "Layered control: block forged orders, lock down transaction data",
-     "vi": "Kiểm soát đa tầng: Chặn lệnh giả mạo, khóa chặt dữ liệu giao dịch"
+     "en": "Stop forged orders before they reach the bank",
+     "vi": "Chặn lệnh giả mạo trước khi chạm tới ngân hàng"
     },
     "body": {
-     "en": "Spoofed payment requests are filtered at the email layer, and sensitive SQL changes on Core Banking require approval, so a forged instruction cannot quietly become a changed transaction.",
-     "vi": "Yêu cầu thanh toán giả mạo bị lọc ở lớp email, còn các thay đổi SQL nhạy cảm trên Core Banking phải qua phê duyệt, nên một chỉ thị giả không thể âm thầm biến thành giao dịch bị sửa."
+     "en": "Spoofed payment requests and executive impersonation are filtered at the email layer, so a forged instruction cannot quietly become a payment.",
+     "vi": "Yêu cầu thanh toán giả mạo và mạo danh lãnh đạo bị lọc ngay ở lớp email, nên một chỉ thị giả không thể âm thầm biến thành một giao dịch thanh toán."
     },
     "points": [
      {
@@ -114,56 +112,12 @@
       "vi": "Lọc yêu cầu thanh toán giả từ nguồn"
      },
      {
-      "en": "Approval workflow for sensitive SQL",
-      "vi": "Quy trình phê duyệt cho SQL nhạy cảm"
+      "en": "Detects executive impersonation and spoofing",
+      "vi": "Phát hiện mạo danh lãnh đạo và giả mạo"
      },
      {
-      "en": "Audit trail for every change",
-      "vi": "Nhật ký kiểm toán mọi thay đổi"
-     }
-    ]
-   }
-  },
-  {
-   "id": "core-access",
-   "persona": {
-    "en": "Head of Core Banking / DBA Lead",
-    "vi": "Trưởng bộ phận Core Banking / DBA"
-   },
-   "challenge": {
-    "title": {
-     "en": "Uncontrolled Access to Core Banking Data",
-     "vi": "Truy cập không kiểm soát vào dữ liệu Core Banking"
-    },
-    "body": {
-     "en": "Core banking databases are accessed by internal teams, administrators, developers, and external service providers. Without clear access control and monitoring, privileged users may view, copy, or change sensitive data without timely detection.",
-     "vi": "Cơ sở dữ liệu lõi được truy cập bởi đội nội bộ, quản trị viên, lập trình viên và nhà cung cấp bên ngoài. Thiếu kiểm soát và giám sát rõ ràng, người dùng đặc quyền có thể xem, sao chép hoặc sửa dữ liệu nhạy cảm mà không bị phát hiện kịp thời."
-    }
-   },
-   "solutions": [
-    "database-security"
-   ],
-   "response": {
-    "title": {
-     "en": "Every query seen, every secret masked",
-     "vi": "Mọi truy vấn đều được thấy, mọi bí mật đều được che"
-    },
-    "body": {
-     "en": "Query-level access control and real-time data masking stop privileged admin abuse without slowing live transactions or flooding systems with junk logs.",
-     "vi": "Kiểm soát mức truy vấn và che giấu dữ liệu thời gian thực ngăn lạm quyền quản trị mà không làm chậm giao dịch hay tràn log rác."
-    },
-    "points": [
-     {
-      "en": "Proxy gateway restricts direct database access",
-      "vi": "Cổng proxy hạn chế truy cập trực tiếp CSDL"
-     },
-     {
-      "en": "Account numbers and balances masked for unauthorized admins",
-      "vi": "Số tài khoản và số dư được che với quản trị viên không có quyền"
-     },
-     {
-      "en": "No impact on live transactions",
-      "vi": "Không ảnh hưởng giao dịch trực tiếp"
+      "en": "Flags misdirected emails and outbound leaks",
+      "vi": "Cảnh báo email gửi nhầm và rò rỉ khi gửi ra ngoài"
      }
     ]
    }
@@ -326,8 +280,8 @@
     "vi": "Bảo vệ dữ liệu toàn diện"
    },
    "body": {
-    "en": "Safeguard customer account data, transaction records, and internal documents across email gateways, user endpoints, and core database queries—reducing exposure to leaks and unauthorized access.",
-    "vi": "Bảo vệ dữ liệu tài khoản khách hàng, hồ sơ giao dịch và tài liệu nội bộ trên cổng email, thiết bị người dùng và các truy vấn cơ sở dữ liệu lõi, giảm thiểu nguy cơ rò rỉ và truy cập trái phép."
+    "en": "Safeguard customer account data, transaction records, and internal documents across email gateways and user endpoints—reducing exposure to leaks and unauthorized access.",
+    "vi": "Bảo vệ dữ liệu tài khoản khách hàng, hồ sơ giao dịch và tài liệu nội bộ trên cổng email và thiết bị người dùng, giảm thiểu nguy cơ rò rỉ và truy cập trái phép."
    }
   },
   {
@@ -352,16 +306,6 @@
   }
  ],
  "faq": [
-  {
-   "q": {
-    "en": "How does the platform secure core banking databases from privileged internal accounts?",
-    "vi": "Nền tảng bảo vệ CSDL core banking khỏi tài khoản nội bộ đặc quyền như thế nào?"
-   },
-   "a": {
-    "en": "DBSAFER DB restricts direct database access through proxy gateways, enforces approval workflows for sensitive SQL queries, and applies DATACRYPTO masking so account numbers and balances are unreadable to unauthorized administrators.",
-    "vi": "DBSAFER DB hạn chế truy cập trực tiếp qua cổng proxy, áp dụng quy trình phê duyệt cho truy vấn SQL nhạy cảm và che giấu bằng DATACRYPTO để số tài khoản, số dư không thể đọc được với quản trị viên không có quyền."
-   }
-  },
   {
    "q": {
     "en": "How does the AI Legal solution reduce compliance processing times?",
