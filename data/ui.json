@@ -126,9 +126,9 @@
   },
   "solP": { "en": "Each solution stands on its own, and they work together as one package.", "vi": "Mỗi giải pháp đều dùng độc lập, và kết hợp được thành một gói hoàn chỉnh." },
   "anyKicker": { "en": "Other sectors", "vi": "Ngành khác" },
-  "anyTitle": { "en": "Your sector is not listed? Let's talk.", "vi": "Ngành của bạn chưa có trong danh sách? Hãy trao đổi với chúng tôi." },
-  "anyP": { "en": "We package in depth for the sectors where most of our customers operate. Tell us about your sector and we will shape the right combination of solutions.", "vi": "Chúng tôi đóng gói chuyên sâu cho những ngành có nhiều khách hàng nhất. Hãy cho chúng tôi biết ngành của bạn, chúng tôi sẽ thiết kế tổ hợp giải pháp phù hợp." },
-  "anyBtn": { "en": "Talk about my industry", "vi": "Trao đổi về ngành của tôi" },
+  "anyTitle": { "en": "Not finding your exact industry framework listed above?", "vi": "Chưa thấy đúng khung ngành của bạn ở trên?" },
+  "anyP": { "en": "Every enterprise environment is unique. Work directly with our technical team to map out a custom security perimeter aligned with your operational standards and compliance needs.", "vi": "Mỗi môi trường doanh nghiệp là duy nhất. Làm việc trực tiếp với đội ngũ kỹ thuật của chúng tôi để dựng một vành đai an ninh riêng, phù hợp tiêu chuẩn vận hành và yêu cầu tuân thủ của bạn." },
+  "anyBtn": { "en": "Schedule Consultation", "vi": "Đặt lịch tư vấn" },
   "anyNav": { "en": "Other industries? Talk to us", "vi": "Ngành khác? Trao đổi với chúng tôi" },
   "v1t": { "en": "Leading partners, one entry point", "vi": "Nhiều đối tác hàng đầu, một đầu mối" },
   "v1d": { "en": "Technologies from many partners across fields, brought together so you do not have to source them one by one.", "vi": "Công nghệ từ nhiều đối tác ở nhiều lĩnh vực được tập hợp lại, để bạn không phải tự làm việc với từng bên." },
@@ -184,6 +184,7 @@
   "lnOverview": { "en": "Overview", "vi": "Tổng quan" },
   "lnSolutions": { "en": "Solutions", "vi": "Giải pháp" },
   "lnStories": { "en": "Customers", "vi": "Khách hàng" },
+  "lnPilot": { "en": "Pilot", "vi": "Pilot" },
   "solLine": { "en": "Solutions", "vi": "Giải pháp" },
   "csTitle": { "en": "Customer stories", "vi": "Câu chuyện khách hàng" },
   "csMore": { "en": "Explore more customer stories", "vi": "Xem thêm câu chuyện khách hàng" },
@@ -255,16 +256,16 @@
    "vi": "Thử nghiệm PoC"
   },
   "pocTitle": {
-   "en": "Need a dedicated PoC test environment?",
-   "vi": "Cần môi trường PoC riêng để kiểm chứng?"
+   "en": "Experience the Architecture in Action",
+   "vi": "Trải nghiệm kiến trúc vận hành thực tế"
   },
   "pocP": {
-   "en": "V-TECH FOUNDRY technical architects can deploy a custom Proof-of-Concept environment, load test, and security audit for your enterprise within 14 business days.",
-   "vi": "Kiến trúc sư V-TECH FOUNDRY có thể triển khai môi trường PoC riêng, kiểm thử tải và đánh giá an ninh cho doanh nghiệp của bạn trong vòng 14 ngày làm việc."
+   "en": "Deploy a customized, non-intrusive Pilot built around your operational requirements.",
+   "vi": "Triển khai Pilot tùy chỉnh, không xâm lấn, được xây dựng quanh yêu cầu vận hành của bạn."
   },
   "pocBtn": {
-   "en": "Request PoC Sandbox",
-   "vi": "Yêu cầu môi trường PoC"
+   "en": "Request Pilot",
+   "vi": "Đăng ký Pilot"
   },
   "notFound": {
    "en": "Industry not found",

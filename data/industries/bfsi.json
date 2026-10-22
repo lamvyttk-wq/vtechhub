@@ -322,32 +322,32 @@
  "outcomes": [
   {
    "title": {
-    "en": "Protect Customer Data & Trust",
-    "vi": "Bảo vệ dữ liệu & niềm tin khách hàng"
+    "en": "Comprehensive Data Protection",
+    "vi": "Bảo vệ dữ liệu toàn diện"
    },
    "body": {
-    "en": "Protect KYC data, account information and transaction records across email, users, infrastructure and Core Banking, reducing the risk of leakage and unauthorized access.",
-    "vi": "Bảo vệ dữ liệu KYC, thông tin tài khoản và giao dịch trên email, người dùng, hạ tầng và Core Banking, giảm rủi ro rò rỉ và truy cập trái phép."
+    "en": "Safeguard customer account data, transaction records, and internal documents across email gateways, user endpoints, and core database queries—reducing exposure to leaks and unauthorized access.",
+    "vi": "Bảo vệ dữ liệu tài khoản khách hàng, hồ sơ giao dịch và tài liệu nội bộ trên cổng email, thiết bị người dùng và các truy vấn cơ sở dữ liệu lõi, giảm thiểu nguy cơ rò rỉ và truy cập trái phép."
    }
   },
   {
    "title": {
-    "en": "Stay Ahead of Compliance",
-    "vi": "Đi trước yêu cầu tuân thủ"
+    "en": "Simplified Compliance Alignment",
+    "vi": "Đồng bộ tuân thủ đơn giản hóa"
    },
    "body": {
-    "en": "Data protection and access controls help institutions prepare for data protection requirements, audits and industry regulations.",
-    "vi": "Các kiểm soát bảo vệ dữ liệu và truy cập giúp tổ chức chuẩn bị cho yêu cầu bảo vệ dữ liệu, kiểm toán và quy định ngành."
+    "en": "Streamline audit readiness with built-in access controls and automated monitoring that simplify security assessments while maintaining alignment with Decree 13, SBV guidelines, and PCI-DSS requirements.",
+    "vi": "Tinh gọn việc sẵn sàng kiểm toán nhờ kiểm soát truy cập tích hợp và giám sát tự động, giúp đánh giá an ninh dễ dàng hơn mà vẫn bám sát Nghị định 13, hướng dẫn của NHNN và yêu cầu PCI-DSS."
    }
   },
   {
    "title": {
-    "en": "Optimize Operations & Cost",
-    "vi": "Tối ưu vận hành & chi phí"
+    "en": "Operational Efficiency & Risk Reduction",
+    "vi": "Hiệu quả vận hành & giảm thiểu rủi ro"
    },
    "body": {
-    "en": "Automate security controls, data monitoring and document review to reduce manual work, incident-response cost and IT effort.",
-    "vi": "Tự động hóa kiểm soát an ninh, giám sát dữ liệu và rà soát tài liệu để giảm công việc thủ công, chi phí ứng phó sự cố và tải cho IT."
+    "en": "Reduce manual overhead for IT and Risk teams by automating repetitive security checks, legal research, and routine customer communications while minimizing human error.",
+    "vi": "Giảm khối lượng công việc thủ công cho đội CNTT và Quản trị rủi ro bằng cách tự động hóa các kiểm tra an ninh lặp lại, tra cứu pháp lý và liên lạc khách hàng thường nhật, đồng thời hạn chế sai sót của con người."
    }
   }
  ],
@@ -398,5 +398,7 @@
   "vi": "Đổi mới mở rộng chân trời. Và cả bề mặt tấn công."
  },
  "showPick": false,
- "showStories": false
+ "showStories": false,
+ "showApproach": false,
+ "showFaq": false
 }

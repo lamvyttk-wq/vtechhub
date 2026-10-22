@@ -245,7 +245,8 @@ function industryPage() {
   const hb = d.hero ? { ...d.hero, photo: state.images.heroBanner?.[id] } : null;
   const lnav = [['overview', 'ind.lnOverview'], ['story', 'ind.chKicker'], ['stories', 'ind.lnStories'], ['why', 'ind.lnWhy'], ['approach', 'ind.lnApproach'], ['faq', 'ind.lnFaq']]
     .filter(([k]) => !(k === 'overview' && hb) && !(k === 'stories' && d.showStories === false)) // no overview block when the hero already carries the intro and the numbers
-    .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(key)}</a>`).join('');
+    .filter(([k]) => !(k === 'faq' && d.showFaq === false))
+    .map(([k, key]) => `<a href="#${k}" data-scroll="#${k}" data-spy="${k}">${u(d.showApproach === false && k === 'approach' ? 'ind.lnPilot' : key)}</a>`).join('');
 
   const chapters = d.chapters.map((c, k) => {
     const chips2 = c.solutions.map((s) => `<a href="#solution-${s}" data-go="solution-${s}">${ic(sol(s).icon)} ${esc(sol(s).name)}</a>`).join('')
@@ -320,10 +321,10 @@ function industryPage() {
   <div class="story" id="story">${chapters}</div>
   ${d.showStories === false ? '' : `<section class="cs" id="stories"><div class="wrap"><div class="cs-head"><h2 class="h2 rv">${u('ind.csTitle')}</h2><a class="btn btn-line rv" href="#contact" data-scroll="#contact">${u('ind.csMore')}</a></div><div class="cs-grid">${storyCards}</div></div></section>`}
   <section class="sec why" id="why"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.whyKicker')}</span><h2 class="h2 rv">${u('ind.whyTitle')}</h2></div><div class="whys">${why}</div></div></section>
-  <section class="sec" id="approach"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>
-    <div class="poc glass rv" style="margin-top:clamp(2rem,4vw,3.5rem)"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
+  <section class="sec" id="approach"><div class="wrap">${d.showApproach === false ? '' : `<div class="sec-head"><span class="eyebrow rv">${u('home.stepsKicker')}</span><h2 class="h2 rv">${u('ind.approachTitle')}</h2></div><div class="cols3">${steps}</div>`}
+    <div class="poc glass rv" style="${d.showApproach === false ? '' : 'margin-top:clamp(2rem,4vw,3.5rem)'}"><div><span class="eyebrow">${u('ind.pocKicker')}</span><h2 class="h2">${u('ind.pocTitle')}</h2><p class="lede">${u('ind.pocP')}</p></div>
     <a class="btn btn-red" href="#contact" data-scroll="#contact" data-prefill="poc">${u('ind.pocBtn')} ${ic('arrow-right')}</a></div></div></section>
-  <section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>
+  ${d.showFaq === false ? '' : `<section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow rv">${u('ind.faqKicker')}</span></div><div class="faq">${faq}</div></div></section>`}
   ${anyIndustry()}
   ${contact(id)}`;
 }
