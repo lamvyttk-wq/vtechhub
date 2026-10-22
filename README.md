@@ -25,7 +25,7 @@ Instead (all in `js/app.js` + the motion block at the end of `css/styles.css`):
 
 ## How the industry page reads
 Modelled on the information flow of enterprise-services pages (overview -> proof -> offering -> why us -> approach -> people -> FAQ -> other sectors), not on their look:
-sticky local nav -> hero + illustrated banner -> **Overview** (who we are for you + 4 proof points taken from the site's own copy: challenges, solutions, 14-day PoC, 1-day reply)
+sticky local nav -> hero + illustrated banner -> **Overview** (who we are for you + 4 proof points taken from the site's own copy: challenges, solutions, PoC support, 1-day reply)
 -> **Challenges** (picker + 5 timed challenge/answer chapters) -> **Solutions** (image cards) -> **Why us** -> **Approach** (problem, answer, proof + PoC CTA)
 -> **Experts** -> **FAQ** -> **Other industries** -> contact. EN/VI toggle persists. Single white theme.
 

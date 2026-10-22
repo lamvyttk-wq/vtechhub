@@ -271,7 +271,7 @@ function industryPage() {
 
   // Flow (borrowing the logic of enterprise-services pages, not their look): who we are for you -> proof points -> your challenges
   // -> the packaged answers -> why us -> how we work / PoC -> people -> FAQ -> other sectors -> contact.
-  const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], [14, 'ind.stPoc'], [1, 'ind.stReply']]
+  const stats = [[n, 'ind.stChallenges'], [d.bundle.length, 'ind.stSolutions'], ['PoC', 'ind.stPoc'], [1, 'ind.stReply']]
     .map(([v, key]) => `<div><strong>${v}</strong><span>${u(key)}</span></div>`).join('');
 
 

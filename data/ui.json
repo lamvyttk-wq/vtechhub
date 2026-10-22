@@ -107,8 +107,8 @@
      "vi": "Chứng minh"
     },
     "d": {
-     "en": "Validate in a dedicated PoC environment within 14 business days.",
-     "vi": "Kiểm chứng trong môi trường PoC riêng trong vòng 14 ngày làm việc."
+     "en": "Validate in a dedicated PoC environment, with PoC support available.",
+     "vi": "Kiểm chứng trong môi trường PoC riêng, có hỗ trợ triển khai PoC."
     }
    }
   ],
@@ -135,7 +135,7 @@
   "v2t": { "en": "Mapped to your need", "vi": "Ghép đúng nhu cầu" },
   "v2d": { "en": "We match each partner’s products to your business problem and integrate them into one working whole.", "vi": "Chúng tôi ghép sản phẩm của từng đối tác với bài toán của bạn và tích hợp thành một hệ thống vận hành thống nhất." },
   "v3t": { "en": "Proof before commitment", "vi": "Kiểm chứng trước khi cam kết" },
-  "v3d": { "en": "A working proof of concept in a dedicated environment within 14 business days.", "vi": "Bản thử nghiệm PoC vận hành được trong môi trường riêng, trong vòng 14 ngày làm việc." },
+  "v3d": { "en": "A dedicated proof-of-concept environment, with PoC support available.", "vi": "Môi trường PoC riêng để kiểm chứng, có hỗ trợ triển khai PoC." },
   "allKicker": { "en": "Why V-Tech Foundry", "vi": "Vì sao chọn V-Tech Foundry" },
   "allTitle": { "en": "One consortium, one accountable partner", "vi": "Một liên danh, một đối tác chịu trách nhiệm" },
   "allP": { "en": "Cloud, security and AI from one team, backed by leading technology partners.", "vi": "Đám mây, an ninh mạng và AI từ một đội ngũ, được hậu thuẫn bởi các đối tác công nghệ hàng đầu." },
@@ -166,11 +166,11 @@
   "ovKicker": { "en": "Overview", "vi": "Tổng quan" },
   "ovTitle": { "en": "One partner, from problem to proof", "vi": "Một đối tác, từ vấn đề đến bằng chứng" },
   "ovP1": { "en": "{n} integrated solutions, packaged for {name}.", "vi": "{n} giải pháp tích hợp, đóng gói cho ngành {name}." },
-  "ovP2": { "en": "From challenge to a working PoC in 14 business days.", "vi": "Từ thách thức đến PoC vận hành được trong 14 ngày làm việc." },
+  "ovP2": { "en": "From challenge to a working PoC, with PoC support.", "vi": "Từ thách thức đến PoC vận hành được, có hỗ trợ PoC." },
   "anyLine": { "en": "Each solution is also available on its own.", "vi": "Mỗi giải pháp cũng có thể dùng riêng lẻ." },
   "stChallenges": { "en": "key challenges addressed", "vi": "thách thức chính được giải quyết" },
   "stSolutions": { "en": "integrated solutions in the package", "vi": "giải pháp tích hợp trong gói" },
-  "stPoc": { "en": "business days to a dedicated PoC environment", "vi": "ngày làm việc để có môi trường PoC riêng" },
+  "stPoc": { "en": "PoC support available", "vi": "hỗ trợ triển khai PoC" },
   "stReply": { "en": "business day to hear back from an expert", "vi": "ngày làm việc để chuyên gia phản hồi" },
   "chTitle": { "en": "Challenges facing {name} organisations", "vi": "Thách thức của các tổ chức ngành {name}" },
   "lnWhy": { "en": "Why us", "vi": "Vì sao chọn" },
