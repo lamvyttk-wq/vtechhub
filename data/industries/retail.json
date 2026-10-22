@@ -372,5 +372,30 @@
   "PCI Security Standards Council, PCI DSS",
   "Law on Cybersecurity 2018 (24/2018/QH14)",
   "vnetwork.vn (not reachable from this environment; product names to be confirmed)"
- ]
+ ],
+ "hero": {
+  "title": {
+   "en": "Fast. Secure. Always Selling.",
+   "vi": "Nhanh. An toàn. Luôn sẵn sàng bán hàng."
+  },
+  "em": {
+   "en": "The Tech Stack for Retail & E-Commerce",
+   "vi": "Nền tảng công nghệ cho Bán lẻ & Thương mại điện tử"
+  },
+  "sub": {
+   "en": "Keeping storefronts fast, protected and ready for every peak season.",
+   "vi": "Giữ gian hàng luôn nhanh, được bảo vệ và sẵn sàng cho mọi mùa cao điểm."
+  },
+  "chips": [],
+  "sols": false,
+  "ratio": "16 / 6"
+ },
+ "challengesTitle": {
+  "en": "Peak Sales Moments Put Every Layer Under Pressure",
+  "vi": "Những thời điểm bán hàng đỉnh điểm đặt mọi lớp hệ thống dưới áp lực"
+ },
+ "showPick": false,
+ "showStories": false,
+ "showApproach": false,
+ "showFaq": false
 }

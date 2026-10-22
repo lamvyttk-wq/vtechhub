@@ -366,5 +366,30 @@
  ],
  "sources": [
   "Web access to vnetwork.vn blocked in this environment; based on data/solutions.json and general public knowledge that VNETWORK offers CDN and Anti-DDoS/WAF (verify product names/scope with VNETWORK)"
- ]
+ ],
+ "hero": {
+  "title": {
+   "en": "Fast. Resilient. Always On.",
+   "vi": "Nhanh. Bền bỉ. Luôn trực tuyến."
+  },
+  "em": {
+   "en": "The Tech Stack for Media & Digital Content",
+   "vi": "Nền tảng công nghệ cho Truyền thông & Nội dung số"
+  },
+  "sub": {
+   "en": "Keeping every live moment and launch online, at any audience size.",
+   "vi": "Giữ mọi khoảnh khắc trực tiếp và mọi lần ra mắt luôn trực tuyến, ở mọi quy mô khán giả."
+  },
+  "chips": [],
+  "sols": false,
+  "ratio": "16 / 6"
+ },
+ "challengesTitle": {
+  "en": "When the Audience Arrives All at Once, Everything Is Tested",
+  "vi": "Khi khán giả đổ về cùng lúc, mọi thứ đều bị thử thách"
+ },
+ "showPick": false,
+ "showStories": false,
+ "showApproach": false,
+ "showFaq": false
 }

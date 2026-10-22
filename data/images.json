@@ -434,7 +434,9 @@
   },
   "heroBanner": {
     "bfsi": "bfsi-banner",
-    "manufacturing": "manufacturing-banner"
+    "manufacturing": "manufacturing-banner",
+    "media": "media",
+    "retail": "retail"
   },
   "manufacturing-banner": {
     "icon": "factory",
