@@ -646,11 +646,6 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 .ib-sols a svg { width: 15px; height: 15px; fill: none; stroke: var(--red); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .ib-sols a:hover { border-color: var(--red); color: var(--red-ink, var(--red)); transform: translateY(-1px); }
 .ib-split .ib-sols { justify-content: flex-start; }
-/* floating "talk to an expert" (DXC-like): dark tab pinned to the bottom-right corner */
-.fab-expert { position: fixed; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 24px); z-index: 45; display: inline-flex; align-items: center; gap: .65rem; padding: .85rem 1.15rem; background: #0e1020; color: #fff; font: 700 .78rem/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(11,12,17,.55); transition: transform .25s, background .25s; }
-.fab-expert svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.fab-expert:hover { background: var(--red); transform: translateY(-2px); }
-@media (max-width: 560px) { .fab-expert { padding: .8rem .9rem; font-size: .7rem; } }
 
 /* calmer hero meta: plain text instead of pill chips (less "template", closer to DXC) */
 .ib-chips { gap: 0; margin: 1.3rem 0 1.1rem; }

@@ -572,7 +572,7 @@ function render(instant = false) {
   const s = page === 'solution' ? state.solutions.get(id) : null;
   document.title = d ? `${t(d.name)} | V-TECH FOUNDRY` : s ? `${s.name} | V-TECH FOUNDRY` : 'V-TECH FOUNDRY';
   const body = page === 'industry' ? industryPage() : page === 'solution' ? solutionPage() : homePage();
-  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}<a class="fab-expert" href="#contact" data-scroll="#contact">${ic('user-round')}<span>${u('ind.talk')}</span></a>`;
+  $('#app').innerHTML = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>${header()}<main>${body}</main>${footer()}`;
   bindChrome(); bindForm(); initLocalNav(); initFaq();
   initMotion(instant);
   phCheck();
