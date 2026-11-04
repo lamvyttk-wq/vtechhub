@@ -296,10 +296,10 @@ function industryPage() {
         <a class="btn btn-line" href="#story" data-scroll="#story">${ic('arrow-down')} ${u('ind.scroll')}</a></div></div>`;
   return `
   <nav class="lnav" id="lnav" aria-label="${esc(name)}"><div class="wrap"><span class="lnav-t">${esc(name)}</span><div class="lnav-l">${lnav}</div></div></nav>
-  ${hb ? `<section class="hero ind-hero ind-banner${hb.layout === 'split' ? ' ib-split' : ''}"><div class="wrap">
+  ${hb ? `<section class="hero ind-hero ind-banner${hb.layout === 'split' ? ' ib-split' : ''}${hb.wrap ? ' ib-wrap' : ''}"><div class="wrap">
     <div class="crumbs hero-in">${hb.layout === 'split' ? `${link('home', 'V-TECH FOUNDRY')} / ${link('home', u('ind.crumbIndustry'))} / <span>${esc(name)}</span>` : `${link('home', ic('house'))}<i>${ic('chevron-right')}</i>${link('home', u('ind.crumbIndustry'))}<i>${ic('chevron-right')}</i><span>${esc(name)}</span>`}</div>
     <div class="ib-top"><div class="ib-copy"><h1 class="display hero-in" style="animation-delay:.08s">${esc(t(hb.title))} <em>${esc(t(hb.em))}</em></h1>
-      <p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p></div>
+      ${hb.sub ? `<p class="lede hero-in" style="animation-delay:.16s">${esc(t(hb.sub))}</p>` : ''}</div>
       ${(hb.chips || []).length || hb.sols !== false ? `<div class="ib-side">${(hb.chips || []).length ? `<div class="ib-chips hero-in" style="animation-delay:.2s">${hb.chips.map((x) => `<span>${ic(x.icon)} ${esc(t(x.label))}</span>`).join('')}</div>` : ''}
       ${hb.sols !== false ? `<div class="ib-sols hero-in" style="animation-delay:.24s"><b>${u('ind.solLine')}</b>${d.bundle.map((sid) => `<a href="#solution-${sid}" data-go="solution-${sid}">${ic(sol(sid).icon)} ${esc(sol(sid).name)}</a>`).join('')}</div>` : ''}</div>` : ''}</div>
     ${hb.photo ? `<div class="ib-photo hero-in" style="animation-delay:.3s">${photo(hb.photo, { w: 1600, ratio: hb.ratio || '1638 / 344', eager: true, nocap: true })}</div>` : ''}

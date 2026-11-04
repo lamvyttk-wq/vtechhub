@@ -369,24 +369,21 @@
  ],
  "hero": {
   "title": {
-   "en": "Fast. Resilient. Always On.",
-   "vi": "Nhanh. Bền bỉ. Luôn trực tuyến."
+   "en": "Media, Entertainment & Digital Content",
+   "vi": "Media, Entertainment & Digital Content"
   },
   "em": {
-   "en": "The Tech Stack for Media & Digital Content",
-   "vi": "Nền tảng công nghệ cho Truyền thông & Nội dung số"
-  },
-  "sub": {
-   "en": "Keeping every live moment and launch online, at any audience size.",
-   "vi": "Giữ mọi khoảnh khắc trực tiếp và mọi lần ra mắt luôn trực tuyến, ở mọi quy mô khán giả."
+   "en": "Seamless content delivery. Ready for every peak moment.",
+   "vi": "Phân phối nội dung liền mạch. Sẵn sàng cho mọi thời điểm cao tải."
   },
   "chips": [],
   "sols": false,
-  "ratio": "16 / 6"
+  "ratio": "16 / 6",
+  "wrap": true
  },
  "challengesTitle": {
-  "en": "When the Audience Arrives All at Once, Everything Is Tested",
-  "vi": "Khi khán giả đổ về cùng lúc, mọi thứ đều bị thử thách"
+  "en": "Online Content Is Growing, and Viewer Experience Has Become the Competitive Edge",
+  "vi": "Nội dung trực tuyến phát triển, trải nghiệm người xem trở thành yếu tố cạnh tranh"
  },
  "showPick": false,
  "showStories": false,

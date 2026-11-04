@@ -691,3 +691,8 @@ a.mega-item:hover .ic { color: var(--red); transform: translateX(3px); }
 
 .lnav .wrap { justify-content: space-between; }
 .lnav-l { margin-left: auto; }
+
+/* long two-sentence headline: let it wrap and balance instead of staying on one line */
+@media (min-width: 900px) { .ind-banner.ib-wrap .display { white-space: normal; max-width: 26ch; } }
+.ind-banner.ib-wrap .display { text-wrap: balance; }
+.ind-banner.ib-wrap .display em { margin-top: .25rem; }
